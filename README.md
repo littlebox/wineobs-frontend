@@ -1,0 +1,2 @@
+# wineobs-frontend
+Frontend wineobs
