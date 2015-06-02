@@ -95,7 +95,7 @@ $row-width: rem-calc(1000);
 // $font-weight-normal: normal;
 // $font-weight-bold: bold;
 
-// $white       : #FFFFFF;
+$white          : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
@@ -115,10 +115,14 @@ $row-width: rem-calc(1000);
 // $jet         : #222222;
 // $black       : #000000;
 
-$rojo-malbec: #9f4b55;
+$tinto-wineobs: #9f4b55;
+$tinto-malbec:  #5E3038;
+$white2:        #F0EDE5;
+$grey:          #9B9A9A;
+$grey2:         #545454;
 
 // We use these as default colors throughout
-$primary-color: $rojo-malbec;
+$primary-color: $tinto-wineobs;
 $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;

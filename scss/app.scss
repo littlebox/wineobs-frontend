@@ -39,170 +39,107 @@
 //   "foundation/components/offcanvas",
 "foundation/components/visibility";
 
+/* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Roboto);
-
+@font-face{
+	font-family: 'BebasNeue';
+	src: url('/assets/fonts/BebasNeue.otf');
+}
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
 
-/* Header style */
-.header-row {
-
-	width:100%;
-	margin:0;
-
-	.header-column {
-
-		padding: 0 0;
-		float: left;
-
-	}
+/* Flexbox! */
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 }
-/* Overlay style - Codrops http://tympanus.net/Development/FullscreenOverlayStyles/index7.html*/
-
-.menu-button{
-	position:relative;
-	left:0;
-	top:0;
+.flex{
+	@include flexbox();
 }
 
-.overlay {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: $rojo-malbec;
+/* General styles */
+body{
+	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
+	background-size: 100% 100%;
+	color:$white;
 
-
-	.overlay-close {
-		/* Overlay closing cross */
-		width: 80px;
-		height: 80px;
-		position: absolute;
-		right: 20px;
-		top: 20px;
-		overflow: hidden;
-		border: none;
-		background: url(../img/cross.png) no-repeat center center;
-		text-indent: 200%;
-		color: transparent;
-		outline: none;
-		z-index: 100;
+	.logo{
+		background-image: url('/assets/img/logo-wineobs.svg');
+		background-repeat: no-repeat;
+		background-size:contain;
 	}
-
-	nav {
-		/* Menu style */
-		text-align: center;
-		position: relative;
-		top: 50%;
-		height: 60%;
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%);
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0 auto;
-		display: inline-block;
-		height: 100%;
-		width:20.5rem;
-		position: relative;
-	}
-
-	ul li {
-		display: block;
-		height: 15%;
-		height: calc(100% / 6.67);
-		min-height: 54px;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-	}
-
-	ul li a {
-		font-family: "Roboto";
-		font-size: 1.3rem;
-		font-weight: normal;
-		display: block;
-		color: #fff;
-		-webkit-transition: color 0.2s;
-		transition: color 0.2s;
-		border-bottom: 1px solid white;
-		text-transform: lowercase;
-	}
-
-	ul li a:hover, ul li a:focus {
-		color: #f0f0f0;
-	}
-
 }
-
-/* Effects */
-html, body {
-	overflow-x: hidden;
-}
-
-.container {
-	overflow-x: hidden;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-
-	.overlay-open {
-		-webkit-transform: translateX(50%);
-		transform: translateX(50%);
-	}
-
-}
-
-.container::after {
-	content: '';
-	opacity: 0;
-	visibility: hidden;
+.fake-background {
 	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.6);
-	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-	transition: opacity 0.5s, visibility 0s 0.5s;
+	background-color: rgba(10, 10, 10, 0.6);
+}
+.step .step-number{
+	width: 3rem;
+	height: 2.25rem;
+	background-size: 3rem 2.25rem;
+	background-image: url('/assets/img/step-number.svg');
+	padding: 1.5rem 1rem;
 }
 
-.container.overlay-open::after {
-	visibility: visible;
-	opacity: 1;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
-}
+/* Presentation View */
+body.presentation{
+	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
+	background-size: 100% 100%;
 
-.overlay-contentpush {
-	background: $rojo-malbec;
-	visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-webkit-transform: translateX(-100%);
-	transform: translateX(-100%);
-	-webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
-	transition: transform 0.5s, visibility 0s 0.5s;
-}
+	.content.presentation{
+		position:relative;
+		top: calc(50% - 200px);
 
-.overlay-contentpush.open {
-	visibility: visible;
-	-webkit-transform: translateX(0%);
-	transform: translateX(0%);
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-}
+		.slogan{
+			text-transform:uppercase;
+			text-align: center;
+			font-size: 4rem;
+			font-family: BebasNeue;
+			letter-spacing: 0.1rem;
+		}
 
-@media #{$small-only} {
-	.overlay nav {
-		height: 70%;
-		font-size: 34px;
+		.logo{
+			height: 245px;
+			background-position:50%;
+		}
 	}
-	.overlay ul li {
-		min-height: 34px;
+}
+
+/* Steps View */
+body.steps{
+	background-image: url('/assets/img/backgrounds/backgroundcolor1.jpg');
+	background-size: 100%;
+
+	.content.steps{
+		position:relative;
+		top: 2rem;
+
+		.logo{
+			height: 140px;
+			background-position:50%;
+		}
+
+		.title{
+			text-transform:uppercase;
+			text-align: center;
+			font-size: 3.5rem;
+			font-family: BebasNeue;
+			letter-spacing: 0.1rem;
+		}
+
+		.step{
+			&>div{
+				margin: 0 auto;
+			}
+		}
+
 	}
 }
