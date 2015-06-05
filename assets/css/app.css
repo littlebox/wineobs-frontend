@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
 /* line 347, ../foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.5.1/";
@@ -3215,26 +3214,42 @@ th.hide-for-touch {
   font-family: 'BebasNeue';
   src: url("/assets/fonts/BebasNeue.otf");
 }
-/* line 49, ../../scss/app.scss */
+@font-face {
+  font-family: 'FuturaLTHeavy';
+  src: url("/assets/fonts/FuturaLT-Heavy_2.ttf");
+}
+@font-face {
+  font-family: 'BigJohn';
+  src: url("/assets/fonts/bigjohn.otf");
+}
+@font-face {
+  font-family: 'CamptonBold';
+  src: url("/assets/fonts/Campton-Bold.otf");
+}
+@font-face {
+  font-family: 'GrandHotel';
+  src: url("/assets/fonts/GrandHotel-Regular.otf");
+}
+/* line 65, ../../scss/app.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 50, ../../scss/app.scss */
+/* line 66, ../../scss/app.scss */
 .clearfix:before, .clearfix:after {
   content: '';
   display: table;
 }
 
-/* line 51, ../../scss/app.scss */
+/* line 67, ../../scss/app.scss */
 .clearfix:after {
   clear: both;
 }
 
 /* Flexbox! */
-/* line 62, ../../scss/app.scss */
+/* line 78, ../../scss/app.scss */
 .flex {
   display: -webkit-box;
   display: -moz-box;
@@ -3243,21 +3258,22 @@ th.hide-for-touch {
   display: flex;
 }
 
+/* -- Flexbox */
 /* General styles */
-/* line 67, ../../scss/app.scss */
+/* line 84, ../../scss/app.scss */
 body {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
   background-size: 100% 100%;
   color: #FFFFFF;
 }
-/* line 72, ../../scss/app.scss */
+/* line 89, ../../scss/app.scss */
 body .logo {
   background-image: url("/assets/img/logo-wineobs.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-/* line 78, ../../scss/app.scss */
+/* line 95, ../../scss/app.scss */
 .fake-background {
   position: absolute;
   width: 100%;
@@ -3265,27 +3281,219 @@ body .logo {
   background-color: rgba(10, 10, 10, 0.6);
 }
 
-/* line 84, ../../scss/app.scss */
+/* line 101, ../../scss/app.scss */
 .step .step-number {
-  width: 3rem;
-  height: 2.25rem;
-  background-size: 3rem 2.25rem;
+  width: 4rem;
+  height: 3rem;
+  background-size: 4rem 3rem;
   background-image: url("/assets/img/step-number.svg");
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 0.4rem;
+  font-family: CamptonBold;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
+/* line 111, ../../scss/app.scss */
+.row.full-width {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+/* line 117, ../../scss/app.scss */
+.wineobs-button {
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  padding: 0.7rem 1.4rem 0.7625rem 1.4rem;
+  background-color: #9f4b55;
+  border-color: #7f3c44;
+  color: #FFFFFF;
+  border-radius: 0;
+  transition: background-color 300ms ease-out;
+  font-family: BigJohn;
+  font-size: 0.9rem;
+  padding: 0.3rem 1rem 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid #F0EDE5;
+}
+/* line 158, ../foundation/scss/foundation/components/_buttons.scss */
+.wineobs-button:hover, .wineobs-button:focus {
+  background-color: #7f3c44;
+}
+/* line 164, ../foundation/scss/foundation/components/_buttons.scss */
+.wineobs-button:hover, .wineobs-button:focus {
+  color: #FFFFFF;
+}
+/* line 132, ../../scss/app.scss */
+.wineobs-button:before {
+  content: " ";
+  position: absolute;
+  width: calc( 100% + 10px );
+  height: calc( 100% + 10px );
+  background-color: #9f4b55;
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+}
+
+/* line 143, ../../scss/app.scss */
+.white-border {
+  border: 2px solid #FFFFFF;
+}
+
+/* -- Checkbox li*/
+/* line 149, ../../scss/app.scss */
+.dotoptions ul {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 163, ../../scss/app.scss */
+.dotoptions ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2rem;
+  cursor: pointer;
+}
+/* line 169, ../../scss/app.scss */
+.dotoptions ul li a {
+  top: 1rem;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  outline: none;
+  border-radius: 50%;
+  text-indent: -999em;
+  /* make the text accessible to screen readers */
+  cursor: pointer;
+  position: absolute;
+}
+/* line 179, ../../scss/app.scss */
+.dotoptions ul li a:focus {
+  outline: none;
+}
+
+/* line 188, ../../scss/app.scss */
+.dotoptions-circle li a {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid #FFFFFF;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+/* line 197, ../../scss/app.scss */
+.dotoptions-circle li.current a {
+  background-color: #9f4b55;
+}
+/* line 201, ../../scss/app.scss */
+.dotoptions-circle li span.text {
+  display: inline-block;
+  position: absolute;
+  left: 2rem;
+  font-family: GrandHotel;
+  font-size: 1.8rem;
+}
+/* line 209, ../../scss/app.scss */
+.dotoptions-circle li svg {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  z-index: 10;
+}
+/* line 214, ../../scss/app.scss */
+.dotoptions-circle li svg circle {
+  opacity: 0;
+  fill: #9f4b55;
+  width: 16px;
+  height: 16px;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 39 39;
+  stroke-dashoffset: 39;
+  /* length of circle path (pi*2r) */
+  -webkit-transition: stroke-dashoffset 0.3s;
+  transition: stroke-dashoffset 0.3s;
+}
+/* line 231, ../../scss/app.scss */
+.dotoptions-circle li.current a, .dotoptions-circle li a:hover, .dotoptions-circle li a:focus {
+  opacity: 0.5;
+}
+/* line 235, ../../scss/app.scss */
+.dotoptions-circle li.current svg circle {
+  opacity: 1;
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s, opacity 0.15s;
+  transition: stroke-dashoffset 0.3s, opacity 0.15s;
+}
+
+/* line 244, ../../scss/app.scss */
+.footer {
+  position: absolute;
+  height: 2rem;
+  margin-top: 1rem;
+  bottom: 0;
+}
+/* line 249, ../../scss/app.scss */
+.footer .footer-left, .footer .footer-right {
+  padding: 0 1.8rem 0;
+}
+/* line 251, ../../scss/app.scss */
+.footer .footer-left .column, .footer .footer-right .column {
+  padding: 0 0.4rem;
+}
+/* line 256, ../../scss/app.scss */
+.footer .footer-right .left {
+  padding: 0 0.4rem;
+}
+/* line 259, ../../scss/app.scss */
+.footer .footer-right .lbox {
+  font-size: 1.7rem;
+  line-height: 0rem;
+  position: relative;
+  bottom: 0.2rem;
+}
+
+/* -- General Styles */
 /* Presentation View */
-/* line 93, ../../scss/app.scss */
+/* line 271, ../../scss/app.scss */
 body.presentation {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
   background-size: 100% 100%;
 }
-/* line 97, ../../scss/app.scss */
+/* line 275, ../../scss/app.scss */
 body.presentation .content.presentation {
   position: relative;
   top: calc(50% - 200px);
 }
-/* line 101, ../../scss/app.scss */
+/* line 279, ../../scss/app.scss */
 body.presentation .content.presentation .slogan {
   text-transform: uppercase;
   text-align: center;
@@ -3293,39 +3501,170 @@ body.presentation .content.presentation .slogan {
   font-family: BebasNeue;
   letter-spacing: 0.1rem;
 }
-/* line 109, ../../scss/app.scss */
+/* line 287, ../../scss/app.scss */
 body.presentation .content.presentation .logo {
   height: 245px;
   background-position: 50%;
 }
+/* line 293, ../../scss/app.scss */
+body.presentation .footer {
+  display: none;
+}
 
 /* Steps View */
-/* line 117, ../../scss/app.scss */
+/* line 299, ../../scss/app.scss */
 body.steps {
   background-image: url("/assets/img/backgrounds/backgroundcolor1.jpg");
   background-size: 100%;
 }
-/* line 121, ../../scss/app.scss */
+/* line 303, ../../scss/app.scss */
+body.steps .fake-background {
+  background-color: rgba(10, 10, 10, 0.4);
+}
+/* line 307, ../../scss/app.scss */
 body.steps .content.steps {
   position: relative;
   top: 2rem;
 }
-/* line 125, ../../scss/app.scss */
+/* line 311, ../../scss/app.scss */
 body.steps .content.steps .logo {
   height: 140px;
   background-position: 50%;
 }
-/* line 130, ../../scss/app.scss */
+/* line 316, ../../scss/app.scss */
 body.steps .content.steps .title {
   text-transform: uppercase;
   text-align: center;
   font-size: 3.5rem;
   font-family: BebasNeue;
   letter-spacing: 0.1rem;
+  margin: 1.7rem 0 0;
 }
-/* line 139, ../../scss/app.scss */
+/* line 326, ../../scss/app.scss */
 body.steps .content.steps .step > div {
-  margin: 0 auto;
+  margin: 0.5rem auto;
+}
+/* line 330, ../../scss/app.scss */
+body.steps .content.steps .step .step-icon {
+  font-size: 2.2rem;
+}
+/* line 334, ../../scss/app.scss */
+body.steps .content.steps .step .step-text {
+  font-family: FuturaLTHeavy;
+}
+/* line 338, ../../scss/app.scss */
+body.steps .content.steps .button-next {
+  margin: 2rem auto;
+}
+
+/* step-1-2-3 View */
+/* line 345, ../../scss/app.scss */
+body.step-1-2-3 {
+  background-image: url("/assets/img/backgrounds/backgroundcolor1.jpg");
+  background-size: 100%;
+}
+/* line 349, ../../scss/app.scss */
+body.step-1-2-3 .fake-background {
+  background-color: rgba(10, 10, 10, 0.4);
+}
+/* line 353, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 {
+  position: relative;
+  top: 2rem;
+}
+/* line 357, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .title {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 3rem;
+  font-family: BebasNeue;
+  letter-spacing: 0.1rem;
+}
+/* line 365, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step {
+  width: 100%;
+  padding: 0;
+}
+/* line 368, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step > div {
+  margin: 0.5rem auto;
+}
+/* line 372, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-text {
+  font-family: FuturaLTHeavy;
+}
+/* line 374, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-text h2.step-title {
+  display: inline-block;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  width: 100%;
+  font-family: BigJohn;
+  padding: 0.6rem 0 0.5rem;
+  letter-spacing: 0.07rem;
+}
+/* line 386, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content {
+  position: relative;
+}
+/* line 388, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content:before {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/* line 399, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content .step-content-container {
+  width: 50%;
+  margin: 2rem auto;
+}
+/* line 404, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-date input[type="text"] {
+  background-color: transparent;
+  font-family: CamptonBold;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-align: center;
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem 0;
+}
+/* line 418, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty ul li {
+  list-style: none;
+  text-align: left;
+  margin: 0.2rem 0;
+}
+/* line 422, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty ul li input {
+  background-color: transparent;
+  font-family: CamptonBold;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+}
+/* line 433, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty ul li span.text {
+  display: inline-block;
+  font-family: GrandHotel;
+  font-size: 1.8rem;
+  padding: 0 1rem;
+}
+/* line 444, ../../scss/app.scss */
+body.step-1-2-3 .content.step-1-2-3 .button-next {
+  margin: 2rem auto;
 }
 
 /*# sourceMappingURL=app.css.map */
