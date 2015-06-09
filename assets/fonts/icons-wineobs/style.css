@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons-wineobs';
-	src:url('fonts/icons-wineobs.eot?pzs2xq');
-	src:url('fonts/icons-wineobs.eot?#iefixpzs2xq') format('embedded-opentype'),
-		url('fonts/icons-wineobs.ttf?pzs2xq') format('truetype'),
-		url('fonts/icons-wineobs.woff?pzs2xq') format('woff'),
-		url('fonts/icons-wineobs.svg?pzs2xq#icons-wineobs') format('svg');
+	src:url('fonts/icons-wineobs.eot?bbxava');
+	src:url('fonts/icons-wineobs.eot?#iefixbbxava') format('embedded-opentype'),
+		url('fonts/icons-wineobs.ttf?bbxava') format('truetype'),
+		url('fonts/icons-wineobs.woff?bbxava') format('woff'),
+		url('fonts/icons-wineobs.svg?bbxava#icons-wineobs') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -25,6 +25,15 @@
 
 .icon-wineobs-info:before {
 	content: "\e60f";
+}
+.icon-wineobs-cross:before {
+	content: "\e612";
+}
+.icon-wineobs-3lines:before {
+	content: "\e611";
+}
+.icon-wineobs-wine-glass:before {
+	content: "\e610";
 }
 .icon-wineobs-lbox .path1:before {
 	content: "\e608";

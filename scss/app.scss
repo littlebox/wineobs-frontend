@@ -1,3 +1,4 @@
+@import "flexbox";
 @import "settings";
 //@import "foundation";
 
@@ -50,6 +51,10 @@
 	src: url('/assets/fonts/FuturaLT-Heavy_2.ttf');
 }
 @font-face{
+	font-family: 'FuturaLTBold';
+	src: url('/assets/fonts/FuturaLT-Bold_2.ttf');
+}
+@font-face{
 	font-family: 'BigJohn';
 	src: url('/assets/fonts/bigjohn.otf');
 }
@@ -68,20 +73,19 @@
 
 
 /* Flexbox! */
-@mixin flexbox() {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-}
 .flex{
 	@include flexbox();
+	&.column{
+		@include flex-direction(column)
+	}
 }
 /* -- Flexbox */
 
 /* General styles */
 body{
+	@include flexbox();
+	@include flex-direction(column);
+	min-height:100vh;
 	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
 	background-size: 100% 100%;
 	color:$white;
@@ -90,13 +94,132 @@ body{
 		background-image: url('/assets/img/logo-wineobs.svg');
 		background-repeat: no-repeat;
 		background-size:contain;
+		height: 120px;
+		background-position:50%;
 	}
-}
-.fake-background {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(10, 10, 10, 0.6);
+
+	header{
+		.fake-background{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(10, 10, 10, 0.6);
+			left:0;
+			top:0;
+			z-index: -1;
+		}
+		.header-content{
+			@include flexbox();
+			.header-left,.header-right{
+				flex:1 1;
+			}
+			.header-center{
+				flex:5 0;
+				.title{
+					display: none;
+				}
+			}
+			.header-left{
+				@include flexbox();
+				&>div>div{
+					background-color:$tinto-wineobs;
+					padding: 0.5rem 1.2rem;
+					margin: 0 3px 0 0;
+					font-size: 1.5rem;
+					&:hover{
+						background-color:$tinto-malbec;
+					}
+				}
+				.menu-content{
+					@include flexbox();
+					@include flex-direction(column);
+					justify-content: center;
+					align-items:center;
+					height:100%;
+					font-family: FuturaLTHeavy;
+					.menu-close-button{
+						align-self:flex-end;
+						cursor: pointer;
+						&>div{
+							margin:2rem;
+						}
+					}
+					.menu-items{
+						@include flex(1);
+						@include flexbox();
+						@include align-items(center);
+						&>ul{
+							list-style: none;
+							text-align: center;
+							margin: 0;
+							a{
+								color:$white;
+								font-size: 2.2rem;
+							}
+							li{
+								min-width: 20rem;
+								padding: 0.3rem 0 0.6rem;
+								&:not(:last-child){
+									border-bottom:1px solid $white;
+								}
+							}
+						}
+					}
+				}
+			}
+			.header-right{
+				ul{
+					text-align: right;
+					padding: 1rem 1rem 0 0;
+					list-style: none;
+					font-family: FuturaLTBold;
+					font-weight: bold;
+					text-transform: uppercase;
+					font-size: 1rem;
+					margin: 0;
+					a{
+						color:$white;
+						&:hover{
+							color:$white2;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.site-content{
+		flex:1;
+	}
+
+	.footer{
+		.footer-content{
+			@include flexbox();
+			.footer-left,.footer-right{
+				flex:1 1;
+				@include flexbox();
+				@include justify-content(space-around);
+				@include align-items(center)
+			}
+			.footer-center{
+				flex:7 0;
+			}
+
+			.footer-left{
+				@include justify-content(center);
+				&>div{
+					margin: 0 0.4rem;
+				}
+			}
+
+			.footer-right{
+				min-width: 12rem;
+				.lbox{
+					font-size: 1.7rem;
+				}
+			}
+		}
+	}
 }
 .step .step-number{
 	width: 4rem;
@@ -142,6 +265,87 @@ body{
 }
 .white-border{
 	border:2px solid $white;
+}
+
+/* -- Tooltip */
+.tooltip {
+	display: inline-block;
+	position: relative;
+	z-index: 10;
+	font-size: 1rem;
+	font-family: FuturaLTHeavy;
+	.tooltip-item {
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 700;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 200px;
+			height: 20px;
+			bottom: 100%;
+			left: 50%;
+			pointer-events: none;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+			pointer-events: auto;
+		}
+		.icon{
+			font-size: 0.9rem;
+		}
+	}
+	.tooltip-content {
+		position: absolute;
+		z-index: 9999;
+		padding: 0.5rem 1rem;
+		width: 200px;
+		left: 1.6rem;
+		bottom: 100%;
+		text-align: center;
+		line-height: 1.4;
+		background: $tinto-wineobs;
+		opacity: 0;
+		cursor: default;
+		pointer-events: none;
+		&:after{
+			content: '';
+			top: 100%;
+			left:0;
+			border: solid rgba(0, 0, 0, 0);
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(0, 0, 0, 0);
+			border-left-color: $tinto-wineobs;
+			border-width: 20px;
+			margin: -20px 0 0 0;
+			z-index: -1;
+		}
+	}
+	.tooltip-text {
+		font-size: 0.75rem;
+		line-height: 1.35;
+		display: block;
+		color: $white2;
+	}
+}
+
+.tooltip:hover .tooltip-item::after {
+	pointer-events: auto;
+}
+
+.tooltip-effect .tooltip-content {
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+.tooltip:hover .tooltip-content {
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,0,0) rotate3d(0,0,0,0);
 }
 
 /* -- Checkbox li*/
@@ -241,30 +445,32 @@ $dotoptions-top: 1rem;
 
 }
 
-.footer{
-	position:absolute;
-	height:2rem;
-	margin-top:1rem;
-	bottom:0;
-	.footer-left,.footer-right{
-		padding: 0 1.8rem 0;
-		.column{
-			padding: 0 0.4rem;
-		}
-	}
-	.footer-right{
-		.left{
-			padding: 0 0.4rem;
-		}
-		.lbox{
-			font-size: 1.7rem;
-			line-height: 0rem;
-			position: relative;
-			bottom: 0.2rem;
-		}
+/* -- Fullscreen overlay */
+.overlay-slide {
+	visibility: hidden;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+	transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+}
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: fade-out($tinto-wineobs,0.05);
+	z-index:99;
+	&.open {
+		visibility: visible;
+		-webkit-transform: translateX(0%);
+		transform: translateX(0%);
+		-webkit-transition: -webkit-transform 0.4s ease-in-out;
+		transition: transform 0.4s ease-in-out;
 	}
 }
-/* -- General Styles */
+
+/* -- General Styles -- */
 
 
 /* Presentation View */
@@ -272,21 +478,27 @@ body.presentation{
 	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
 	background-size: 100% 100%;
 
-	.content.presentation{
-		position:relative;
-		top: calc(50% - 200px);
+	header{
+		@include flex(1);
+	}
 
-		.slogan{
-			text-transform:uppercase;
+	.header-left,.header-right{
+		visibility: hidden;
+		display: none !important;
+	}
+
+	.header-center{
+		text-align: center;
+		margin:5rem 0 0;
+		.title{
+			text-transform: uppercase;
 			text-align: center;
-			font-size: 4rem;
+			font-size: 3.5rem;
 			font-family: BebasNeue;
 			letter-spacing: 0.1rem;
 		}
-
 		.logo{
-			height: 245px;
-			background-position:50%;
+			height: 230px;
 		}
 	}
 
@@ -307,11 +519,6 @@ body.steps{
 	.content.steps{
 		position:relative;
 		top: 2rem;
-
-		.logo{
-			height: 140px;
-			background-position:50%;
-		}
 
 		.title{
 			text-transform:uppercase;
@@ -446,3 +653,5 @@ body.step-1-2-3{
 		}
 	}
 }
+
+/* step-4 View */

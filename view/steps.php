@@ -1,6 +1,4 @@
-<div class="fake-background"></div>
 <div class="content steps">
-	<div class="logo small-12"></div>
 	<div class="title">Reserve su visita en s&oacute;lo 5 pasos</div>
 	<div class="steps small-12 row full-width">
 		<div class="step small-12 medium-2 text-center small-offset-1 column">

@@ -8,8 +8,8 @@
 			</div>
 			<!-- END TITLE -->
 			<!-- BEGIN STEPS -->
-			<div class="row small-12">
-				<div class="small-12 medium-3 column">
+			<div class="row small-12" data-equalizer>
+				<div class="small-12 medium-3 column" data-equalizer-watch>
 					<div class="step small-12 medium-2 text-center column">
 						<div class="step-number">1</div>
 						<div class="step-text">
@@ -22,7 +22,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="small-12 medium-4 column">
+				<div class="small-12 medium-4 column" data-equalizer-watch>
 					<div class="step small-12 medium-2 text-center column">
 						<div class="step-number">2</div>
 						<div class="step-text">
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="small-12 medium-5 column">
+				<div class="small-12 medium-5 column" data-equalizer-watch>
 					<div class="step small-12 medium-2 text-center column">
 						<div class="step-number">3</div>
 						<div class="step-text">
@@ -67,8 +67,19 @@
 									</li>
 									<li>
 										<input type="text">
-										<span class="text">menores</span>
-										<span class="tooltip icon-wineobs-info" data-tooltip="Los menores de 18 anos NO podran participar de la degustacion"></span>
+										<span class="text">
+											menores
+											<span class="tooltip tooltip-effect">
+												<span class="tooltip-item">
+													<span class="icon icon-wineobs-info"></span>
+												</span>
+												<span class="tooltip-content clearfix">
+													<span class="tooltip-text">
+														*Los menores de 18 anos NO podran participar de la degustacion
+													</span>
+												</span>
+											</span>
+										</span>
 									</li>
 								</ul>
 							</div>

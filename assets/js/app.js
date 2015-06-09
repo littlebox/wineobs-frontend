@@ -2,9 +2,9 @@
 	'use strict';
 	var Wineobs = {
 		init: function(){
+			this.initMenu();
 			this.initDateDropper();
 			this.initDotOptions();
-			this.initTooltips();
 		},
 		initDateDropper: function(){
 			$('.datedropper').dateDropper({
@@ -27,11 +27,16 @@
 				} );
 			} );
 		},
-		initTooltips: function(){
-			[].slice.call( document.querySelectorAll( '.tooltip' ) ).forEach( function( tooltip ) {
-				console.log(tooltip);
-				var after = tooltip.querySelector(':after');
-				console.log(after)
+		initMenu: function(){
+			var menuOpen = document.querySelector('.menu-open-button');
+			var menuOverlay = menuOpen.querySelector('.menu-overlay');
+			var menuClose = document.querySelector('.menu-close-button');
+			menuOpen.addEventListener('click',function(ev){
+				menuOverlay.classList.add('open');
+			})
+			menuClose.addEventListener('click',function(ev){
+				ev.stopPropagation();
+				menuOverlay.classList.remove('open');
 			})
 		},
 	}
@@ -80,4 +85,6 @@
 
 	// add to global namespace
 	window.DotNav = DotNav;
+
+
 })(window)
