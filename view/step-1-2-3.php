@@ -1,4 +1,3 @@
-<div class="fake-background"></div>
 <div class="content step-1-2-3">
 	<div class="small-12 column">
 		<div class="small-12 medium-9 column">

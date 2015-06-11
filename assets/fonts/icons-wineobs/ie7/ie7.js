@@ -14,6 +14,7 @@
 	}
 	var icons = {
 		'icon-wineobs-info': '&#xe60f;',
+		'icon-wineobs-photo': '&#xe613;',
 		'icon-wineobs-cross': '&#xe612;',
 		'icon-wineobs-3lines': '&#xe611;',
 		'icon-wineobs-wine-glass': '&#xe610;',

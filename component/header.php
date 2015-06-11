@@ -46,8 +46,8 @@
 			<div class="header-right">
 				<div class="languages">
 					<ul>
-						<li><a href="">ingles</a></li>
-						<li><a href="">portugues</a></li>
+						<li><a href="">inglés</a></li>
+						<li><a href="">portugués</a></li>
 					</ul>
 				</div>
 			</div>

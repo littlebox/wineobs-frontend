@@ -32,6 +32,7 @@
 	<script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/foundation/js/foundation.min.js"></script>
 	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDEDXVukpE4oEEhjfWmhaZctW3SobbJYV4"></script>
 	<!-- BEGIN DATEDROPPER -->
 	<script src="/assets/plugins/datedropper/datedropper.js"></script>
 	<link rel="stylesheet" type="text/css" href="/assets/plugins/datedropper/datedropper.css">

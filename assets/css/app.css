@@ -3234,26 +3234,26 @@ th.hide-for-touch {
   font-family: 'GrandHotel';
   src: url("/assets/fonts/GrandHotel-Regular.otf");
 }
-/* line 70, ../../scss/app.scss */
+/* line 72, ../../scss/app.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 71, ../../scss/app.scss */
+/* line 73, ../../scss/app.scss */
 .clearfix:before, .clearfix:after {
   content: '';
   display: table;
 }
 
-/* line 72, ../../scss/app.scss */
+/* line 74, ../../scss/app.scss */
 .clearfix:after {
   clear: both;
 }
 
 /* Flexbox! */
-/* line 76, ../../scss/app.scss */
+/* line 78, ../../scss/app.scss */
 .flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3261,8 +3261,8 @@ th.hide-for-touch {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 78, ../../scss/app.scss */
-.flex.column {
+/* line 80, ../../scss/app.scss */
+.flex.fcolumn {
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;
@@ -3271,9 +3271,19 @@ th.hide-for-touch {
   flex-direction: column;
 }
 
+/* line 84, ../../scss/app.scss */
+.f1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 /* -- Flexbox */
 /* General styles */
-/* line 85, ../../scss/app.scss */
+/* line 90, ../../scss/app.scss */
 body {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3291,15 +3301,16 @@ body {
   background-size: 100% 100%;
   color: #FFFFFF;
 }
-/* line 93, ../../scss/app.scss */
+/* line 98, ../../scss/app.scss */
 body .logo {
   background-image: url("/assets/img/logo-wineobs.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  height: 120px;
+  height: 100px;
   background-position: 50%;
+  margin: 1rem 0 0;
 }
-/* line 102, ../../scss/app.scss */
+/* line 108, ../../scss/app.scss */
 body header .fake-background {
   position: absolute;
   width: 100%;
@@ -3309,7 +3320,7 @@ body header .fake-background {
   top: 0;
   z-index: -1;
 }
-/* line 111, ../../scss/app.scss */
+/* line 117, ../../scss/app.scss */
 body header .header-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3317,19 +3328,19 @@ body header .header-content {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 113, ../../scss/app.scss */
+/* line 119, ../../scss/app.scss */
 body header .header-content .header-left, body header .header-content .header-right {
   flex: 1 1;
 }
-/* line 116, ../../scss/app.scss */
+/* line 122, ../../scss/app.scss */
 body header .header-content .header-center {
   flex: 5 0;
 }
-/* line 118, ../../scss/app.scss */
+/* line 124, ../../scss/app.scss */
 body header .header-content .header-center .title {
   display: none;
 }
-/* line 122, ../../scss/app.scss */
+/* line 128, ../../scss/app.scss */
 body header .header-content .header-left {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3337,18 +3348,18 @@ body header .header-content .header-left {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 124, ../../scss/app.scss */
+/* line 130, ../../scss/app.scss */
 body header .header-content .header-left > div > div {
   background-color: #9f4b55;
   padding: 0.5rem 1.2rem;
   margin: 0 3px 0 0;
   font-size: 1.5rem;
 }
-/* line 129, ../../scss/app.scss */
+/* line 135, ../../scss/app.scss */
 body header .header-content .header-left > div > div:hover {
   background-color: #5E3038;
 }
-/* line 133, ../../scss/app.scss */
+/* line 139, ../../scss/app.scss */
 body header .header-content .header-left .menu-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3366,16 +3377,16 @@ body header .header-content .header-left .menu-content {
   height: 100%;
   font-family: FuturaLTHeavy;
 }
-/* line 140, ../../scss/app.scss */
+/* line 146, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-close-button {
   align-self: flex-end;
   cursor: pointer;
 }
-/* line 143, ../../scss/app.scss */
+/* line 149, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-close-button > div {
   margin: 2rem;
 }
-/* line 147, ../../scss/app.scss */
+/* line 153, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-items {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -3394,27 +3405,27 @@ body header .header-content .header-left .menu-content .menu-items {
   -moz-align-items: center;
   align-items: center;
 }
-/* line 151, ../../scss/app.scss */
+/* line 157, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-items > ul {
   list-style: none;
   text-align: center;
   margin: 0;
 }
-/* line 155, ../../scss/app.scss */
+/* line 161, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-items > ul a {
   color: #FFFFFF;
   font-size: 2.2rem;
 }
-/* line 159, ../../scss/app.scss */
+/* line 165, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-items > ul li {
   min-width: 20rem;
   padding: 0.3rem 0 0.6rem;
 }
-/* line 162, ../../scss/app.scss */
+/* line 168, ../../scss/app.scss */
 body header .header-content .header-left .menu-content .menu-items > ul li:not(:last-child) {
   border-bottom: 1px solid #FFFFFF;
 }
-/* line 171, ../../scss/app.scss */
+/* line 177, ../../scss/app.scss */
 body header .header-content .header-right ul {
   text-align: right;
   padding: 1rem 1rem 0 0;
@@ -3425,19 +3436,44 @@ body header .header-content .header-right ul {
   font-size: 1rem;
   margin: 0;
 }
-/* line 180, ../../scss/app.scss */
+/* line 186, ../../scss/app.scss */
 body header .header-content .header-right ul a {
   color: #FFFFFF;
 }
-/* line 182, ../../scss/app.scss */
+/* line 188, ../../scss/app.scss */
 body header .header-content .header-right ul a:hover {
   color: #F0EDE5;
 }
-/* line 191, ../../scss/app.scss */
+/* line 197, ../../scss/app.scss */
 body .site-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
-/* line 196, ../../scss/app.scss */
+/* line 201, ../../scss/app.scss */
+body .site-content .content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/* line 207, ../../scss/app.scss */
 body .footer .footer-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3445,7 +3481,7 @@ body .footer .footer-content {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 198, ../../scss/app.scss */
+/* line 209, ../../scss/app.scss */
 body .footer .footer-content .footer-left, body .footer .footer-content .footer-right {
   flex: 1 1;
   display: -webkit-box;
@@ -3463,11 +3499,11 @@ body .footer .footer-content .footer-left, body .footer .footer-content .footer-
   -moz-align-items: center;
   align-items: center;
 }
-/* line 204, ../../scss/app.scss */
+/* line 215, ../../scss/app.scss */
 body .footer .footer-content .footer-center {
   flex: 7 0;
 }
-/* line 208, ../../scss/app.scss */
+/* line 219, ../../scss/app.scss */
 body .footer .footer-content .footer-left {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -3475,21 +3511,21 @@ body .footer .footer-content .footer-left {
   -moz-justify-content: center;
   justify-content: center;
 }
-/* line 210, ../../scss/app.scss */
+/* line 221, ../../scss/app.scss */
 body .footer .footer-content .footer-left > div {
   margin: 0 0.4rem;
 }
-/* line 215, ../../scss/app.scss */
+/* line 226, ../../scss/app.scss */
 body .footer .footer-content .footer-right {
   min-width: 12rem;
 }
-/* line 217, ../../scss/app.scss */
+/* line 228, ../../scss/app.scss */
 body .footer .footer-content .footer-right .lbox {
   font-size: 1.7rem;
 }
 
-/* line 224, ../../scss/app.scss */
-.step .step-number {
+/* line 235, ../../scss/app.scss */
+.step-number {
   width: 4rem;
   height: 3rem;
   background-size: 4rem 3rem;
@@ -3498,9 +3534,26 @@ body .footer .footer-content .footer-right .lbox {
   font-family: CamptonBold;
   font-weight: bold;
   font-size: 1.5rem;
+  text-align: center;
 }
 
-/* line 234, ../../scss/app.scss */
+/* line 246, ../../scss/app.scss */
+.step-text {
+  font-family: FuturaLTHeavy;
+}
+/* line 248, ../../scss/app.scss */
+.step-text h2.step-title {
+  display: inline-block;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  width: 100%;
+  font-family: BigJohn;
+  padding: 0.6rem 0 0.5rem;
+  letter-spacing: 0.07rem;
+}
+
+/* line 259, ../../scss/app.scss */
 .row.full-width {
   width: 100%;
   margin-left: auto;
@@ -3508,7 +3561,7 @@ body .footer .footer-content .footer-right .lbox {
   max-width: initial;
 }
 
-/* line 240, ../../scss/app.scss */
+/* line 265, ../../scss/app.scss */
 .wineobs-button {
   border-style: solid;
   border-width: 0;
@@ -3534,7 +3587,7 @@ body .footer .footer-content .footer-right .lbox {
   font-size: 0.9rem;
   padding: 0.3rem 1rem 0;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
   border: 1px solid #F0EDE5;
 }
 /* line 158, ../foundation/scss/foundation/components/_buttons.scss */
@@ -3545,7 +3598,7 @@ body .footer .footer-content .footer-right .lbox {
 .wineobs-button:hover, .wineobs-button:focus {
   color: #FFFFFF;
 }
-/* line 255, ../../scss/app.scss */
+/* line 280, ../../scss/app.scss */
 .wineobs-button:before {
   content: " ";
   position: absolute;
@@ -3557,13 +3610,13 @@ body .footer .footer-content .footer-right .lbox {
   z-index: -1;
 }
 
-/* line 266, ../../scss/app.scss */
+/* line 291, ../../scss/app.scss */
 .white-border {
   border: 2px solid #FFFFFF;
 }
 
 /* -- Tooltip */
-/* line 271, ../../scss/app.scss */
+/* line 296, ../../scss/app.scss */
 .tooltip {
   display: inline-block;
   position: relative;
@@ -3571,13 +3624,13 @@ body .footer .footer-content .footer-right .lbox {
   font-size: 1rem;
   font-family: FuturaLTHeavy;
 }
-/* line 277, ../../scss/app.scss */
+/* line 302, ../../scss/app.scss */
 .tooltip .tooltip-item {
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
 }
-/* line 281, ../../scss/app.scss */
+/* line 306, ../../scss/app.scss */
 .tooltip .tooltip-item::after {
   content: '';
   position: absolute;
@@ -3590,11 +3643,11 @@ body .footer .footer-content .footer-right .lbox {
   transform: translateX(-50%);
   pointer-events: auto;
 }
-/* line 293, ../../scss/app.scss */
+/* line 318, ../../scss/app.scss */
 .tooltip .tooltip-item .icon {
   font-size: 0.9rem;
 }
-/* line 297, ../../scss/app.scss */
+/* line 322, ../../scss/app.scss */
 .tooltip .tooltip-content {
   position: absolute;
   z-index: 9999;
@@ -3609,7 +3662,7 @@ body .footer .footer-content .footer-right .lbox {
   cursor: default;
   pointer-events: none;
 }
-/* line 310, ../../scss/app.scss */
+/* line 335, ../../scss/app.scss */
 .tooltip .tooltip-content:after {
   content: '';
   top: 100%;
@@ -3625,7 +3678,7 @@ body .footer .footer-content .footer-right .lbox {
   margin: -20px 0 0 0;
   z-index: -1;
 }
-/* line 326, ../../scss/app.scss */
+/* line 351, ../../scss/app.scss */
 .tooltip .tooltip-text {
   font-size: 0.75rem;
   line-height: 1.35;
@@ -3633,12 +3686,12 @@ body .footer .footer-content .footer-right .lbox {
   color: #F0EDE5;
 }
 
-/* line 334, ../../scss/app.scss */
+/* line 359, ../../scss/app.scss */
 .tooltip:hover .tooltip-item::after {
   pointer-events: auto;
 }
 
-/* line 338, ../../scss/app.scss */
+/* line 363, ../../scss/app.scss */
 .tooltip-effect .tooltip-content {
   -webkit-transform: translate3d(0, -10px, 0);
   transform: translate3d(0, -10px, 0);
@@ -3646,7 +3699,7 @@ body .footer .footer-content .footer-right .lbox {
   transition: opacity 0.3s, transform 0.3s;
 }
 
-/* line 344, ../../scss/app.scss */
+/* line 369, ../../scss/app.scss */
 .tooltip:hover .tooltip-content {
   pointer-events: auto;
   opacity: 1;
@@ -3655,7 +3708,7 @@ body .footer .footer-content .footer-right .lbox {
 }
 
 /* -- Checkbox li*/
-/* line 353, ../../scss/app.scss */
+/* line 378, ../../scss/app.scss */
 .dotoptions ul {
   position: relative;
   display: inline-block;
@@ -3671,7 +3724,7 @@ body .footer .footer-content .footer-right .lbox {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 367, ../../scss/app.scss */
+/* line 392, ../../scss/app.scss */
 .dotoptions ul li {
   position: relative;
   display: block;
@@ -3679,7 +3732,7 @@ body .footer .footer-content .footer-right .lbox {
   height: 2rem;
   cursor: pointer;
 }
-/* line 373, ../../scss/app.scss */
+/* line 398, ../../scss/app.scss */
 .dotoptions ul li a {
   top: 1rem;
   left: 0;
@@ -3692,12 +3745,12 @@ body .footer .footer-content .footer-right .lbox {
   cursor: pointer;
   position: absolute;
 }
-/* line 383, ../../scss/app.scss */
+/* line 408, ../../scss/app.scss */
 .dotoptions ul li a:focus {
   outline: none;
 }
 
-/* line 392, ../../scss/app.scss */
+/* line 417, ../../scss/app.scss */
 .dotoptions-circle li a {
   width: 10px;
   height: 10px;
@@ -3706,11 +3759,11 @@ body .footer .footer-content .footer-right .lbox {
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 401, ../../scss/app.scss */
+/* line 426, ../../scss/app.scss */
 .dotoptions-circle li.current a {
   background-color: #9f4b55;
 }
-/* line 405, ../../scss/app.scss */
+/* line 430, ../../scss/app.scss */
 .dotoptions-circle li span.text {
   display: inline-block;
   position: absolute;
@@ -3718,14 +3771,14 @@ body .footer .footer-content .footer-right .lbox {
   font-family: GrandHotel;
   font-size: 1.8rem;
 }
-/* line 413, ../../scss/app.scss */
+/* line 438, ../../scss/app.scss */
 .dotoptions-circle li svg {
   position: absolute;
   top: 1rem;
   left: 0;
   z-index: 10;
 }
-/* line 418, ../../scss/app.scss */
+/* line 443, ../../scss/app.scss */
 .dotoptions-circle li svg circle {
   opacity: 0;
   fill: #9f4b55;
@@ -3741,11 +3794,11 @@ body .footer .footer-content .footer-right .lbox {
   -webkit-transition: stroke-dashoffset 0.3s;
   transition: stroke-dashoffset 0.3s;
 }
-/* line 435, ../../scss/app.scss */
+/* line 460, ../../scss/app.scss */
 .dotoptions-circle li.current a, .dotoptions-circle li a:hover, .dotoptions-circle li a:focus {
   opacity: 0.5;
 }
-/* line 439, ../../scss/app.scss */
+/* line 464, ../../scss/app.scss */
 .dotoptions-circle li.current svg circle {
   opacity: 1;
   stroke-dashoffset: 0;
@@ -3754,7 +3807,7 @@ body .footer .footer-content .footer-right .lbox {
 }
 
 /* -- Fullscreen overlay */
-/* line 449, ../../scss/app.scss */
+/* line 474, ../../scss/app.scss */
 .overlay-slide {
   visibility: hidden;
   -webkit-transform: translateX(-100%);
@@ -3763,7 +3816,7 @@ body .footer .footer-content .footer-right .lbox {
   transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
 }
 
-/* line 456, ../../scss/app.scss */
+/* line 481, ../../scss/app.scss */
 .overlay {
   position: fixed;
   width: 100%;
@@ -3773,7 +3826,7 @@ body .footer .footer-content .footer-right .lbox {
   background: rgba(159, 75, 85, 0.95);
   z-index: 99;
 }
-/* line 464, ../../scss/app.scss */
+/* line 489, ../../scss/app.scss */
 .overlay.open {
   visibility: visible;
   -webkit-transform: translateX(0%);
@@ -3784,12 +3837,12 @@ body .footer .footer-content .footer-right .lbox {
 
 /* -- General Styles -- */
 /* Presentation View */
-/* line 477, ../../scss/app.scss */
+/* line 502, ../../scss/app.scss */
 body.presentation {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
   background-size: 100% 100%;
 }
-/* line 481, ../../scss/app.scss */
+/* line 506, ../../scss/app.scss */
 body.presentation header {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -3798,17 +3851,17 @@ body.presentation header {
   -ms-flex: 1;
   flex: 1;
 }
-/* line 485, ../../scss/app.scss */
+/* line 510, ../../scss/app.scss */
 body.presentation .header-left, body.presentation .header-right {
   visibility: hidden;
   display: none !important;
 }
-/* line 490, ../../scss/app.scss */
+/* line 515, ../../scss/app.scss */
 body.presentation .header-center {
   text-align: center;
   margin: 5rem 0 0;
 }
-/* line 493, ../../scss/app.scss */
+/* line 518, ../../scss/app.scss */
 body.presentation .header-center .title {
   text-transform: uppercase;
   text-align: center;
@@ -3816,31 +3869,31 @@ body.presentation .header-center .title {
   font-family: BebasNeue;
   letter-spacing: 0.1rem;
 }
-/* line 500, ../../scss/app.scss */
+/* line 525, ../../scss/app.scss */
 body.presentation .header-center .logo {
   height: 230px;
 }
-/* line 505, ../../scss/app.scss */
+/* line 530, ../../scss/app.scss */
 body.presentation .footer {
   display: none;
 }
 
 /* Steps View */
-/* line 511, ../../scss/app.scss */
+/* line 536, ../../scss/app.scss */
 body.steps {
   background-image: url("/assets/img/backgrounds/backgroundcolor1.jpg");
   background-size: 100%;
 }
-/* line 515, ../../scss/app.scss */
+/* line 540, ../../scss/app.scss */
 body.steps .fake-background {
   background-color: rgba(10, 10, 10, 0.4);
 }
-/* line 519, ../../scss/app.scss */
+/* line 544, ../../scss/app.scss */
 body.steps .content.steps {
   position: relative;
   top: 2rem;
 }
-/* line 523, ../../scss/app.scss */
+/* line 548, ../../scss/app.scss */
 body.steps .content.steps .title {
   text-transform: uppercase;
   text-align: center;
@@ -3849,39 +3902,39 @@ body.steps .content.steps .title {
   letter-spacing: 0.1rem;
   margin: 1.7rem 0 0;
 }
-/* line 533, ../../scss/app.scss */
+/* line 558, ../../scss/app.scss */
 body.steps .content.steps .step > div {
   margin: 0.5rem auto;
 }
-/* line 537, ../../scss/app.scss */
+/* line 562, ../../scss/app.scss */
 body.steps .content.steps .step .step-icon {
   font-size: 2.2rem;
 }
-/* line 541, ../../scss/app.scss */
+/* line 566, ../../scss/app.scss */
 body.steps .content.steps .step .step-text {
   font-family: FuturaLTHeavy;
 }
-/* line 545, ../../scss/app.scss */
+/* line 570, ../../scss/app.scss */
 body.steps .content.steps .button-next {
   margin: 2rem auto;
 }
 
 /* step-1-2-3 View */
-/* line 552, ../../scss/app.scss */
+/* line 577, ../../scss/app.scss */
 body.step-1-2-3 {
   background-image: url("/assets/img/backgrounds/backgroundcolor1.jpg");
   background-size: 100%;
 }
-/* line 556, ../../scss/app.scss */
+/* line 581, ../../scss/app.scss */
 body.step-1-2-3 .fake-background {
   background-color: rgba(10, 10, 10, 0.4);
 }
-/* line 560, ../../scss/app.scss */
+/* line 585, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 {
   position: relative;
   top: 2rem;
 }
-/* line 564, ../../scss/app.scss */
+/* line 589, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .title {
   text-transform: uppercase;
   text-align: left;
@@ -3889,20 +3942,20 @@ body.step-1-2-3 .content.step-1-2-3 .title {
   font-family: BebasNeue;
   letter-spacing: 0.1rem;
 }
-/* line 572, ../../scss/app.scss */
+/* line 597, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step {
   width: 100%;
   padding: 0;
 }
-/* line 575, ../../scss/app.scss */
+/* line 600, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step > div {
   margin: 0.5rem auto;
 }
-/* line 579, ../../scss/app.scss */
+/* line 604, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-text {
   font-family: FuturaLTHeavy;
 }
-/* line 581, ../../scss/app.scss */
+/* line 606, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-text h2.step-title {
   display: inline-block;
   color: #FFF;
@@ -3913,11 +3966,11 @@ body.step-1-2-3 .content.step-1-2-3 .step .step-text h2.step-title {
   padding: 0.6rem 0 0.5rem;
   letter-spacing: 0.07rem;
 }
-/* line 593, ../../scss/app.scss */
+/* line 618, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content {
   position: relative;
 }
-/* line 595, ../../scss/app.scss */
+/* line 620, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content:before {
   content: ' ';
   display: inline-block;
@@ -3929,12 +3982,12 @@ body.step-1-2-3 .content.step-1-2-3 .step .step-content:before {
   left: 0;
   z-index: -1;
 }
-/* line 606, ../../scss/app.scss */
+/* line 631, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content .step-content-container {
   width: 50%;
   margin: 2rem auto;
 }
-/* line 611, ../../scss/app.scss */
+/* line 636, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-date input[type="text"] {
   background-color: transparent;
   font-family: CamptonBold;
@@ -3946,13 +3999,13 @@ body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-date input[ty
   margin: 2rem auto;
   padding: 1rem 0;
 }
-/* line 625, ../../scss/app.scss */
+/* line 650, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty ul li {
   list-style: none;
   text-align: left;
   margin: 0.2rem 0;
 }
-/* line 629, ../../scss/app.scss */
+/* line 654, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty ul li input {
   background-color: transparent;
   font-family: CamptonBold;
@@ -3964,18 +4017,296 @@ body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty u
   height: 2rem;
   border: 1px solid white;
 }
-/* line 640, ../../scss/app.scss */
+/* line 665, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .step .step-content.step-1-2-3-persons-qty ul li span.text {
   display: inline-block;
   font-family: GrandHotel;
   font-size: 1.8rem;
   padding: 0 1rem;
 }
-/* line 651, ../../scss/app.scss */
+/* line 676, ../../scss/app.scss */
 body.step-1-2-3 .content.step-1-2-3 .button-next {
   margin: 2rem auto;
 }
 
 /* step-4 View */
+/* line 683, ../../scss/app.scss */
+body.step-4 {
+  background-image: url("/assets/img/backgrounds/backgroundcolor2.jpg");
+  background-size: 100%;
+}
+/* line 687, ../../scss/app.scss */
+body.step-4 .header-center {
+  max-height: 4rem;
+}
+/* line 691, ../../scss/app.scss */
+body.step-4 .content > div {
+  padding: 0 1rem;
+}
+/* line 695, ../../scss/app.scss */
+body.step-4 .step-header {
+  padding: 0 1rem;
+}
+/* line 697, ../../scss/app.scss */
+body.step-4 .step-header > div {
+  flex: 1;
+  max-width: 20em;
+  justify-content: center;
+  align-items: center;
+}
+/* line 703, ../../scss/app.scss */
+body.step-4 .step-header .step-text {
+  width: 100%;
+  text-align: center;
+}
+/* line 707, ../../scss/app.scss */
+body.step-4 .step-header h2.step-title {
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem 0.4rem;
+}
+/* line 713, ../../scss/app.scss */
+body.step-4 .step-content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/* line 715, ../../scss/app.scss */
+body.step-4 .step-content .map {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+  -moz-box-flex: 4;
+  -moz-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+  padding: 0 1rem;
+}
+/* line 718, ../../scss/app.scss */
+body.step-4 .step-content .map .map-container {
+  background-color: #ccc;
+}
+/* line 722, ../../scss/app.scss */
+body.step-4 .step-content .wineries {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+  -moz-box-flex: 5;
+  -moz-flex: 5;
+  -ms-flex: 5;
+  flex: 5;
+}
+/* line 724, ../../scss/app.scss */
+body.step-4 .step-content .wineries > div > div:not(:last-child) {
+  margin: 0 0 0.5rem 0;
+}
+/* line 727, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card {
+  position: relative;
+  margin: 0 0.25rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -moz-perspective: 1000;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -moz-transform-origin: 50% 50% -5px;
+  -webkit-transform-origin: 50% 50% -5px;
+  transform-origin: 50% 50% -5px;
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+/* line 735, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card > div {
+  z-index: 9;
+}
+/* line 739, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front, body.step-4 .step-content .wineries .winery-card .winery-card-back {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/* line 750, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front > div, body.step-4 .step-content .wineries .winery-card .winery-card-back > div {
+  z-index: 9;
+}
+/* line 755, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front {
+  background-color: #000;
+  background-image: url("/assets/img/trapiche.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 2;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+/* line 762, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front:after {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+/* line 772, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front:hover:after {
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 200ms ease-in-out;
+}
+/* line 777, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-card-top {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4 0;
+  -moz-box-flex: 4;
+  -moz-flex: 4 0;
+  -ms-flex: 4 0;
+  flex: 4 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* line 782, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-card-top .winery-logo, body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-card-top .winery-address {
+  flex: 1 0 100%;
+  text-align: center;
+}
+/* line 787, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-card-top .winery-logo img {
+  height: 4.5rem;
+}
+/* line 792, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-icons, body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-button {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/* line 797, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-icons a .icon {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+}
+/* line 800, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-icons a .icon:hover {
+  color: #9f4b55;
+  transition: color 200ms ease-in-out;
+}
+/* line 807, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-button {
+  padding: 0 0 1rem;
+}
+/* line 809, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-front .winery-button .wineobs-button {
+  font-size: 0.7rem;
+  padding: 0.3rem 1rem 0.1rem;
+}
+/* line 816, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-back {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 1;
+  background: #F0EDE5;
+}
+/* line 820, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card .winery-card-back .winery-reserve {
+  background: #5E3038;
+  margin: 2rem;
+}
+/* line 826, ../../scss/app.scss */
+body.step-4 .step-content .wineries .winery-card.flipped {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transition: -moz-transform, 600ms, ease-in-out;
+  -o-transition: -o-transform, 600ms, ease-in-out;
+  -webkit-transition: -webkit-transform, 600ms, ease-in-out;
+  transition: transform, 600ms, ease-in-out;
+}
+@keyframes flip {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  50% {
+    -moz-transform: rotateY(150deg);
+    -webkit-transform: rotateY(150deg);
+    transform: rotateY(150deg);
+  }
+  100% {
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+/* line 848, ../../scss/app.scss */
+body.step-4 .step-footer {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  margin: 1rem 0 0;
+}
+/* line 851, ../../scss/app.scss */
+body.step-4 .step-footer > div {
+  margin: 0 1rem;
+}
 
 /*# sourceMappingURL=app.css.map */

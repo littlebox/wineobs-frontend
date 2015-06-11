@@ -5,6 +5,8 @@
 			this.initMenu();
 			this.initDateDropper();
 			this.initDotOptions();
+			this.initMap();
+			this.initCardsFlip();
 		},
 		initDateDropper: function(){
 			$('.datedropper').dateDropper({
@@ -39,6 +41,25 @@
 				menuOverlay.classList.remove('open');
 			})
 		},
+		initMap: function(){
+			function initialize() {
+				var mapOptions = {
+					center: { lat: -32.883333, lng: -68.816667},
+					zoom: 8
+				};
+				var map = new google.maps.Map(document.querySelector('.map-container'),
+					mapOptions);
+				}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		},
+		initCardsFlip: function(){
+			var buttons = [].slice.call( document.querySelectorAll( '.winery-card-front .winery-button .wineobs-button' ) )
+			buttons.forEach( function( button, idx ) {
+				button.addEventListener('click', function(ev){
+					ev.target.parentNode.parentNode.parentNode.classList.add('flipped')
+				})
+			} )
+		}
 	}
 	window.Wineobs = Wineobs;
 

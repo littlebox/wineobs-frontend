@@ -1,4 +1,6 @@
 @import "flexbox";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
 @import "settings";
 //@import "foundation";
 
@@ -75,9 +77,12 @@
 /* Flexbox! */
 .flex{
 	@include flexbox();
-	&.column{
+	&.fcolumn{
 		@include flex-direction(column)
 	}
+}
+.f1{
+	@include flex(1);
 }
 /* -- Flexbox */
 
@@ -94,8 +99,9 @@ body{
 		background-image: url('/assets/img/logo-wineobs.svg');
 		background-repeat: no-repeat;
 		background-size:contain;
-		height: 120px;
+		height: 100px;
 		background-position:50%;
+		margin: 1rem 0 0;
 	}
 
 	header{
@@ -189,7 +195,12 @@ body{
 	}
 
 	.site-content{
-		flex:1;
+		@include flexbox();
+		@include flex-direction(column);
+		@include flex(1);
+		.content{
+			@include flex(1);
+		}
 	}
 
 	.footer{
@@ -221,7 +232,7 @@ body{
 		}
 	}
 }
-.step .step-number{
+.step-number{
 	width: 4rem;
 	height: 3rem;
 	background-size: 4rem 3rem;
@@ -230,6 +241,20 @@ body{
 	font-family: CamptonBold;
 	font-weight: bold;
 	font-size: 1.5rem;
+	text-align: center;
+}
+.step-text{
+	font-family: FuturaLTHeavy;
+	h2.step-title{
+		display: inline-block;
+		color: #FFF;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		width: 100%;
+		font-family: BigJohn;
+		padding: 0.6rem 0 0.5rem;
+		letter-spacing: 0.07rem;
+	}
 }
 .row.full-width {
 	width: 100%;
@@ -250,7 +275,7 @@ body{
 	font-size:0.9rem;
 	padding: 0.3rem 1rem 0;
 	text-transform:uppercase;
-	font-weight:bold;
+	font-weight:normal;
 	border: 1px solid $white2;
 	&:before {
 		content: " ";
@@ -655,3 +680,176 @@ body.step-1-2-3{
 }
 
 /* step-4 View */
+body.step-4{
+	background-image: url('/assets/img/backgrounds/backgroundcolor2.jpg');
+	background-size: 100%;
+
+	.header-center{
+		max-height: 4rem;
+	}
+
+	.content>div{
+		padding:0 1rem;
+	}
+
+	.step-header{
+		padding: 0 1rem;
+		&>div{
+			flex:1;
+			max-width: 20em;
+			justify-content: center;
+			align-items: center;
+		}
+		.step-text{
+			width: 100%;
+			text-align: center;
+		}
+		h2.step-title{
+			font-size: 0.75rem;
+			padding: 0.5rem 1rem 0.4rem;
+		}
+	}
+
+	.step-content{
+		@include flex(1);
+		.map{
+			@include flex(4);
+			padding: 0 1rem;
+			.map-container{
+				background-color: #ccc;
+			}
+		}
+		.wineries{
+			@include flex(5);
+			&>div>div:not(:last-child){
+				margin: 0 0 0.5rem 0;
+			}
+			.winery-card {
+				position: relative;
+				margin: 0 0.25rem;
+				@include justify-content(center);
+				@include align-items(center);
+				@include perspective(1000);
+				@include transform-origin(50%,50%,-5px);
+				@include transform(rotateY(0));
+				&>div{
+					z-index:9;
+				}
+
+				.winery-card-front,.winery-card-back{
+					@include flexbox();
+					@include flex-direction(column);
+					@include align-items(center);
+					@include justify-content(center);
+					@include backface-visibility(hidden);
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top:0;
+					left:0;
+					&>div{
+						z-index:9;
+					}
+				}
+
+				.winery-card-front{
+					background-color: #000;
+					background-image: url('/assets/img/trapiche.jpg');
+					background-size: cover;
+					background-position: 50% 50%;
+					z-index:2;
+					@include transform(rotateY(0deg));
+					&:after{
+						content: ' ';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						background-color: rgba(0, 0, 0, 0.6);
+					}
+					&:hover{
+						&:after{
+							background-color: rgba(0, 0, 0, 0.4);
+							transition: background-color 200ms ease-in-out;
+						}
+					}
+					.winery-card-top{
+						@include flex(4 0);
+						@include flexbox();
+						@include align-items(center);
+						overflow: hidden;
+						.winery-logo,.winery-address{
+							flex: 1 0 100%;
+							text-align: center;
+						}
+						.winery-logo{
+							img{
+								height: 4.5rem;
+							}
+						}
+					}
+					.winery-icons, .winery-button{
+						@include flex(1);
+					}
+					.winery-icons{
+						a{
+							.icon{
+								color:$white;
+								font-size:1.2rem;
+								&:hover{
+									color: $tinto-wineobs;
+									transition: color 200ms ease-in-out;
+								}
+							}
+						}
+					}
+					.winery-button{
+						padding:0 0 1rem;
+						.wineobs-button{
+							font-size: 0.7rem;
+							padding: 0.3rem 1rem 0.1rem;
+						}
+					}
+				}
+
+				.winery-card-back{
+					@include transform(rotateY(180deg));
+					z-index: 1;
+					background: $white2;
+					.winery-reserve {
+						background:$tinto-malbec;
+						margin: 2rem;
+					}
+				}
+
+				&.flipped {
+					@include transform(rotateY(180deg));
+					@include transform-style(preserve-3d);
+					@include transition(transform,600ms,ease-in-out);
+				}
+
+				@keyframes flip{
+					0%{
+						@include transform(rotateY(0deg));
+					}
+					50%{
+						@include transform(rotateY(150deg),translateZ(-80px));
+					}
+					100%{
+						@include transform(rotateY(180deg),translateZ(-150px));
+					}
+				}
+
+			}
+		}
+	}
+
+	.step-footer{
+		@include justify-content(center);
+		margin: 1rem 0 0;
+		&>div{
+			margin: 0 1rem;
+		}
+	}
+}
