@@ -6,6 +6,7 @@
 			this.initDateDropper();
 			this.initDotOptions();
 			this.initMap();
+			this.initSearch();
 			this.initCardsFlip();
 		},
 		initDateDropper: function(){
@@ -56,10 +57,79 @@
 			var buttons = [].slice.call( document.querySelectorAll( '.winery-card-front .winery-button .wineobs-button' ) )
 			buttons.forEach( function( button, idx ) {
 				button.addEventListener('click', function(ev){
-					ev.target.parentNode.parentNode.parentNode.classList.add('flipped')
+					button.parentNode.parentNode.parentNode.classList.add('flipped')
 				})
 			} )
-		}
+
+			var closeButtons = [].slice.call( document.querySelectorAll( '.winery-card-back .winery-close' ) )
+			closeButtons.forEach( function( button, idx ) {
+				button.addEventListener('click', function(ev){
+					button.parentNode.parentNode.classList.remove('flipped')
+				})
+			} )
+
+			var pinButtons = [].slice.call( document.querySelectorAll( '.winery-icons .icon-wineobs-pin' ) )
+			pinButtons.forEach( function( button, idx ) {
+				var mask = button.parentNode.parentNode.parentNode.querySelector('.winery-card-top-mask');
+				button.addEventListener('click', function(ev){
+					ev.preventDefault();
+					mask.classList.toggle('swipe-pin');
+				})
+			} )
+
+			var infoButtons = [].slice.call( document.querySelectorAll( '.winery-icons .icon-wineobs-info' ) )
+			var modalInfo = document.querySelector('footer .modals .modal-info-winery')
+			infoButtons.forEach( function( button, idx ) {
+				var closeButton = modalInfo.querySelector('.close-modal');
+				button.addEventListener('click', function(ev){
+					ev.preventDefault();
+					modalInfo.classList.add('show');
+				})
+				closeButton.addEventListener('click', function(ev){
+					ev.preventDefault();
+					modalInfo.classList.remove('show');
+				})
+			} )
+
+			var photoButtons = [].slice.call( document.querySelectorAll( '.winery-icons .icon-wineobs-photo' ) )
+			var modalGallery = document.querySelector('footer .modals .modal-image-gallery')
+			var iframe = modalGallery.querySelector('iframe');
+			modalGallery.style.display = "block";
+			photoButtons.forEach( function( button, idx ) {
+				var closeButton = modalGallery.querySelector('.close-modal');
+				button.addEventListener('click', function(ev){
+					ev.preventDefault();
+					iframe.innerHTML = "";
+					iframe.setAttribute('src','assets/GammaGallery/index.php');
+					button.classList.remove('icon-wineobs-photo');
+					button.classList.add('icon-wineobs-repeat');
+					iframe.addEventListener('load',function(ev){
+						modalGallery.classList.add('show');
+						button.classList.remove('icon-wineobs-repeat');
+						button.classList.add('icon-wineobs-photo');
+					})
+				})
+				closeButton.addEventListener('click', function(ev){
+					ev.preventDefault();
+					modalGallery.classList.remove('show');
+				})
+			} )
+		},
+		initSearch: function(){
+			var search = document.querySelector( '.wineries .search' );
+			if(search){
+				var lens = search.querySelector('.search-lens');
+				var input = search.querySelector('.search-input input');
+				lens.addEventListener('click',function(ev){
+					ev.preventDefault();
+					search.classList.toggle('active');
+				});
+				input.addEventListener('blur',function(ev){
+					ev.preventDefault();
+					search.classList.remove('active');
+				})
+			}
+		},
 	}
 	window.Wineobs = Wineobs;
 

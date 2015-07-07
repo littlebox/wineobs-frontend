@@ -1,6 +1,9 @@
 .icon-wineobs-info {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe60f;');
 }
+.icon-wineobs-lens {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe614;');
+}
 .icon-wineobs-photo {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe613;');
 }
@@ -45,4 +48,10 @@
 }
 .icon-wineobs-world {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe607;');
+}
+.icon-wineobs-repeat {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf01e;');
+}
+.icon-wineobs-rotate-right {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf01e;');
 }
