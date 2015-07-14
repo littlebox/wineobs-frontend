@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 	<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
 	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
+	<script src="/assets/angular/angular.min.js"></script>
 </head>
 <body class="<?= $view ?>">
 	<header>
