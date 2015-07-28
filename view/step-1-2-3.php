@@ -1,4 +1,4 @@
-<div class="content step-1-2-3">
+<div class="content reserve-form-data" ng-controller="123StepController">
 	<div class="small-12 column">
 		<div class="small-12 medium-9 column">
 			<!-- BEGIN TITLE -->
@@ -16,7 +16,7 @@
 								Elija una fecha
 							</h2>
 						</div>
-						<div class="step-content white-border step-1-2-3-date">
+						<div class="step-content white-border reserve-form-data-date">
 							<input type="text" id="date" class="datedropper white-border" placeholder="dd.mm.aa">
 						</div>
 					</div>
@@ -29,7 +29,7 @@
 								Elija el idioma
 							</h2>
 						</div>
-						<div class="step-content white-border step-1-2-3-language">
+						<div class="step-content white-border reserve-form-data-language">
 							<div class="step-content-container">
 								<div class="dotoptions dotoptions-circle">
 									<ul>
@@ -57,7 +57,7 @@
 								Indique la cantidad de personas
 							</h2>
 						</div>
-						<div class="step-content white-border step-1-2-3-persons-qty">
+						<div class="step-content white-border reserve-form-data-persons-qty">
 							<div class="step-content-container">
 								<ul>
 									<li>
@@ -89,5 +89,7 @@
 			<!-- END STEPS -->
 		</div>
 		<div class="small-12 medium-3 column">Publicidad</div>
+
 	</div>
+
 </div>

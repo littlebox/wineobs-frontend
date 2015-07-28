@@ -248,18 +248,20 @@ body{
 				z-index:99;
 				text-align: center;
 				background: rgba(0,0,0,0.6);
-				@include transform(translateY(-100%));
+				@include transform(translateY(-100%) scale(0));
 				&.show{
 					display:block;
-					@include transform(translateY(0%));
+					@include transform(translateY(0%) scale(1));
 					@include transition(transform,300ms,cubic-bezier(0.01, 0.81, 0.58, 1));
 				}
 				.close-modal{
 					position: absolute;
 					top: 0;
-					right: 1rem;
-					padding: 1rem 1rem 0 0;
-					z-index:2;
+					right: 0rem;
+					padding: 0.1rem 0.4rem;
+					background: $tinto-wineobs;
+					color: $white2;
+					z-index: 2;
 				}
 				iframe{
 					border:0;
@@ -270,7 +272,7 @@ body{
 					height: 100%;
 				}
 				.modal-content{
-					margin: 15% auto;
+					margin: 7rem auto;
 					width: 85%;
 					background: $tinto-wineobs;
 					padding: 0;
@@ -292,11 +294,26 @@ body{
 					.tabs-info{
 						background-color: $white2;
 						.tabs-content{
-							min-height: 10rem;
+							height: 27rem;
+							.info-bodega{
+								color: $grey;
+								h1.winery-name{
+									font-size: 2rem;
+									color: $grey;
+									text-transform: capitalize;
+								}
+								p.winery-description{
+									font-size: 1rem;
+									color: $grey;
+								}
+							}
 						}
-						.info-bodega-tabs{
+						.info-tours-tabs{
 							ul.tabs{
 								margin: 1rem 0;
+								.tab-title{
+									padding: 0.1rem 0.5rem 0 0;
+								}
 								& dd>a, & .tab-title>a {
 									padding: 0.125rem 0.55rem;
 									font-family: BigJohn;
@@ -310,98 +327,130 @@ body{
 								}
 							}
 						}
-						.tabs-content{
-							margin: 1rem 0;
-							.content{
-								font-family: FuturaLTHeavy;
-								color:$grey2;
-								p{
-									font-size: 0.8rem;
-									text-align: justify;
+						.tours-content{
+							position: relative;
+							height: 20rem;
+							.tour-content{
+								position: absolute;
+								top: 0;
+								left: 0;
+								margin: 1rem 0;
+								opacity: 0;
+								visibility: hidden;
+								@include transition(opacity 300ms ease-in-out);
+								@include flexbox();
+								&.active{
+									opacity: 1;
+									visibility: visible;
+									@include transition(opacity 500ms ease-in-out)
 								}
-							}
-						}
-					}
-					.modal-winery-reserve{
-						font-family: FuturaLTHeavy;
-						.winery-reserve {
-							color:$tinto-wineobs;
-							width: 100%;
-							padding: 1rem;
-							@include flexbox();
-							@include flex-direction(column);
-							@include align-items(center);
-							.winery-title{
-								text-transform:uppercase;
-								text-align: center;
-								font-size: 0.9rem;
-							}
-							.winery-hours{
-								.winery-hours-title{
-									color:$grey;
-									text-align: center;
-									border-bottom: 1px solid $grey;
-									text-transform: uppercase;
-									font-size: 0.8rem;
-								}
-								.winery-hours-grid{
-									@include flexbox();
-									@include flex-wrap(wrap);
-									@include justify-content(center);
-									.winery-hour{
-										background: $white;
-										margin: 0.2rem 0.2rem 0;
-										padding: 0.2rem;
+								.description{
+									font-family: FuturaLTHeavy;
+									color:$grey2;
+									@include flex(3,0);
+									p{
 										font-size: 0.8rem;
+										text-align: justify;
+									}
+								}
+								.modal-winery-reserve{
+									font-family: FuturaLTHeavy;
+									@include flex(2,0);
+									.winery-reserve {
+										color:$tinto-wineobs;
+										width: 100%;
+										padding: 1rem;
+										margin: -1.5rem 0 0 0;
+										@include flexbox();
+										@include flex-direction(column);
+										@include align-items(center);
+
+										.winery-length {
+											width: 100%;
+											margin: 0 0 1rem;
+											.winery-length-title {
+												color: $grey;
+												text-transform: uppercase;
+												font-size: 0.8rem;
+												width: 100%;
+												text-align: center;
+												border-bottom: 1px solid $grey;
+											}
+											.winery-length-grid {
+												color: $tinto-wineobs;
+											}
+										}
+
+										.winery-hours{
+											width: 100%;
+											.winery-hours-title{
+												color:$grey;
+												text-align: center;
+												border-bottom: 1px solid $grey;
+												text-transform: uppercase;
+												font-size: 0.8rem;
+											}
+											.winery-hours-grid{
+												@include flexbox();
+												@include flex-wrap(wrap);
+												@include justify-content(center);
+												.winery-hour{
+													background: $white;
+													margin: 0.2rem 0.2rem 0;
+													padding: 0.2rem;
+													font-size: 0.8rem;
+													cursor: pointer;
+													&.active{
+														background:$tinto-wineobs;
+														color: $white;
+													}
+													&.disabled{
+														background:$grey;
+														color: $white2;
+														cursor: default;
+													}
+												}
+											}
+										}
+										.winery-prices{
+											@include justify-content(center);
+											border-top:1px solid $grey;
+											border-bottom:1px solid $grey;
+											margin: 1rem 0;
+											width:100%;
+											div > div{
+												margin:0.2rem;
+											}
+											.price{
+												background: $grey2;
+												color: $white;
+											}
+											.text{
+												font-family: GrandHotel;
+												font-size: 1.4rem;
+												color: $grey2;
+											}
+										}
+										.winery-button{
+											padding:0 0 1rem;
+											.wineobs-button{
+												font-size: 0.7rem;
+												padding: 0.3rem 1rem 0.1rem;
+											}
+										}
+									}
+									.winery-close {
+										position: absolute;
+										top: 0;
+										right: 0;
+										padding: 0.2rem 0.3rem;
+										background-color: $tinto-wineobs;
+										font-size: 0.6rem;
 										cursor: pointer;
-										&:hover{
-											background:$tinto-wineobs;
-											color: $white;
-										}
-										&.disabled{
-											background:$grey;
-											color: $white2;
-											cursor: default;
-										}
+										z-index: 10;
 									}
 								}
 							}
-							.winery-prices{
-								@include justify-content(center);
-								border-top:1px solid $grey;
-								border-bottom:1px solid $grey;
-								margin: 1rem 0;
-								width:100%;
-								div > div{
-									margin:0.2rem;
-								}
-								.price{
-									background: $grey2;
-									color: $white;
-								}
-								.text{
-									font-family: GrandHotel;
-									font-size: 1.4rem;
-									color: $grey2;
-								}
-							}
-							.winery-button{
-								padding:0 0 1rem;
-								.wineobs-button{
-									font-size: 0.7rem;
-									padding: 0.3rem 1rem 0.1rem;
-								}
-							}
-						}
-						.winery-close {
-							position: absolute;
-							top: 0;
-							right: 0;
-							padding: 0.2rem 0.3rem;
-							background-color: $tinto-wineobs;
-							font-size: 0.6rem;
-							cursor: pointer;
-							z-index: 10;
 						}
 					}
 				}
@@ -454,16 +503,8 @@ body{
 	text-transform:uppercase;
 	font-weight:normal;
 	border: 1px solid $white2;
-	&:before {
-		content: " ";
-		position: absolute;
-		width: calc( 100% + 10px );
-		height: calc( 100% + 10px );
-		background-color: $tinto-wineobs;
-		top: -5px;
-		left: -5px;
-		z-index: -1;
-	}
+	z-index: 2;
+	outline: $tinto-wineobs solid 4px;
 }
 .white-border{
 	border:2px solid $white;
@@ -764,8 +805,8 @@ body.steps{
 	}
 }
 
-/* step-1-2-3 View */
-body.step-1-2-3{
+/* reserve-form-data View */
+body.reserve-form-data{
 	background-image: url('/assets/img/backgrounds/backgroundcolor1.jpg');
 	background-size: 100%;
 
@@ -773,7 +814,7 @@ body.step-1-2-3{
 		background-color: rgba(10, 10, 10, 0.4);
 	}
 
-	.content.step-1-2-3{
+	.content.reserve-form-data{
 		position:relative;
 		top: 2rem;
 
@@ -814,16 +855,37 @@ body.step-1-2-3{
 					position: absolute;
 					width: 100%;
 					height: 100%;
-					background-color: rgba(255, 255, 255, 0.3);
+					background-color: rgba(255, 255, 255, 0.05);
 					top: 0;
 					left: 0;
 					z-index: -1;
 				}
 				.step-content-container{
 					width:50%;
-					margin: 2rem auto;
+					margin: 1rem auto;
 				}
-				&.step-1-2-3-date{
+				&.reserve-form-data-language{
+					.language{
+						li{
+							list-style: none;
+							@include flexbox;
+							@include align-items(center);
+							input[type="radio"]{
+								position: relative;
+								right: 0.6rem;
+								position: relative;
+								right: 0.8rem;
+							}
+							label{
+								font-family: GrandHotel;
+								font-size: 1.8rem;
+								text-transform: lowercase;
+								line-height: 1.3;
+							}
+						}
+					}
+				}
+				&.reserve-form-data-date{
 					input[type="text"]{
 						background-color: rgba(0,0,0,0);
 						font-family: CamptonBold;
@@ -836,7 +898,7 @@ body.step-1-2-3{
 						padding:1rem 0;
 					}
 				}
-				&.step-1-2-3-persons-qty{
+				&.reserve-form-data-persons-qty{
 					ul{
 						li{
 							list-style: none;
@@ -867,11 +929,20 @@ body.step-1-2-3{
 		.button-next{
 			margin: 2rem auto;
 		}
+
+		.step-footer{
+			@include justify-content(center);
+			margin: 1rem 0 0;
+			&>div{
+				margin: 0 1rem;
+			}
+		}
 	}
+
 }
 
-/* step-4 View */
-body.step-4{
+/* results View */
+body.results{
 	background-image: url('/assets/img/backgrounds/backgroundcolor2.jpg');
 	background-size: 100%;
 
@@ -907,16 +978,184 @@ body.step-4{
 			@include flex(4);
 			padding: 0 1rem;
 			.map-container{
-				background-color: #ccc;
+				width: 100%;
+				min-width: 200px;
+				min-height: 400px;
 			}
 		}
 		.wineries{
 			@include flex(5);
 			position: relative;
-			&>div>div:not(:last-child){
-				margin: 0 0 0.5rem 0;
+
+			.wineries-paginator{
+				width:100%;
+				@include flexbox();
+				@include flex-wrap(wrap);
+				.winery-card{
+					@include flexbox();
+					@include flex(0,0,calc(33% - 0.5rem));
+					position:relative;
+					min-height: 12.8rem;
+					margin: 0.25rem 0.25rem;
+
+					&.reservation .winery-card-front{
+						display: none;
+					}
+
+					.reservation-card.visible{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top:0;
+						left:0;
+						background-color: $white2;
+						color:$grey2;
+						text-transform: uppercase;
+						font-weight: bold;
+						@include flexbox;
+						@include flex-wrap(wrap);
+						div,ul{
+							@include flex(1,0,100%);
+							margin:0;
+							@include align-self(center);
+						}
+						div{
+							text-align: center;
+						}
+						p{
+							line-height:1.1;
+							margin: 0;
+							font-weight: bold;
+							font-size: 0.9rem;
+						}
+						p.winery-name{
+							text-transform: uppercase;
+						}
+						p.hour{
+							text-transform: uppercase;
+						}
+						ul{
+							list-style: none;
+							li{
+								font-size: 0.77rem;
+								font-weight: normal;
+								padding: 0 0 0 1rem;
+								span{
+									font-weight: bold;
+								}
+							}
+						}
+						div.price p{
+							background-color: $tinto-wineobs;
+							color: $white;
+							position:relative;
+							width: 90%;
+							height: 1.2rem;
+							line-height: 1.3;
+							&:after{
+								position: absolute;
+								content: ' ';
+								top: 0;
+								left: calc(100% - 0.55rem);
+								border-bottom: 0.6rem solid rgba(0, 0, 0, 0);
+								border-right: 0.6rem solid $white2;
+								border-top: 0.6rem solid rgba(0, 0, 0, 0);
+							}
+						}
+					}
+
+					.winery-card-front{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top:0;
+						left:0;
+						background-color: #000;
+						background-image: url('/assets/img/trapiche.jpg');
+						background-size: cover;
+						background-position: 50% 50%;
+						&>div{
+							z-index:9;
+						}
+						&:after{
+							content: ' ';
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							top: 0;
+							left: 0;
+							background-color: rgba(0, 0, 0, 0.6);
+						}
+						&:hover{
+							&:after{
+								background-color: rgba(0, 0, 0, 0.4);
+								transition: background-color 200ms ease-in-out;
+							}
+						}
+						.winery-card-top{
+							@include flex(4 0);
+							@include flexbox();
+							@include align-items(center);
+							overflow: hidden;
+							width:100%;
+							.winery-card-top-mask{
+								@include align-items(center);
+								@include transition(transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1));
+								&.swipe-pin{
+									transform: translateX(-100%);
+								}
+								.winery-logo,.winery-address{
+									flex: 1 0 100%;
+									text-align: center;
+								}
+								.winery-logo{
+									img{
+										height: 4.5rem;
+									}
+								}
+								.winery-address{
+									padding: 1rem;
+									text-align: left;
+									p{
+										margin: 0 0 0.7rem;
+										font-family: FuturaLTHeavy;
+										font-size: 0.8rem;
+										&.address-title{
+											text-transform:uppercase;
+										}
+									}
+								}
+							}
+						}
+						.winery-icons, .winery-button{
+							@include flex(1);
+							text-align: center;
+						}
+						.winery-icons{
+							a{
+								.icon{
+									color:$white;
+									font-size:1.2rem;
+									&:hover{
+										color: $tinto-wineobs;
+										transition: color 200ms ease-in-out;
+									}
+								}
+							}
+						}
+						.winery-button{
+							padding:0 0 1rem;
+							.wineobs-button{
+								font-size: 0.7rem;
+								padding: 0.3rem 1rem 0.1rem;
+							}
+						}
+					}
+
+				}
 			}
-			.winery-card {
+
+			/* .winery-card {
 				position: relative;
 				min-height: 12.8rem;
 				margin: 0 0.25rem;
@@ -1122,7 +1361,7 @@ body.step-4{
 					@include transition(transform,600ms,ease-in-out);
 				}
 
-			}
+			} */
 
 			.search{
 				position: absolute;
@@ -1163,11 +1402,11 @@ body.step-4{
 				bottom: -35px;
 				right: 0px;
 				ul{
-					width: 120px;
+					@include flexbox();
 					li{
+						@include flex(1,0);
+						list-style: none;
 						position: relative;
-						float: left;
-						display: inline;
 						margin: 0 0.2rem;
 						background-color: $tinto-wineobs;
 						color: $white;
@@ -1177,9 +1416,14 @@ body.step-4{
 						height: 1.2rem;
 						text-align: center;
 						border-radius: 0.6rem;
+						a{
+							color: $white;
+						}
 						&.active, &:hover{
 							background-color: $white;
-							color: $tinto-wineobs;
+							a{
+								color: $tinto-wineobs;
+							}
 						}
 					}
 				}
@@ -1195,6 +1439,66 @@ body.step-4{
 			margin: 0 1rem;
 		}
 	}
+}
+
+body.personal-data{
+	background-image: url('/assets/img/backgrounds/backgroundcolor2.jpg');
+	background-size: 100%;
+
+	.header-center{
+		max-height: 4rem;
+	}
+
+	.content>div{
+		padding:0 1rem;
+	}
+
+	.step-header{
+		padding: 0 1rem;
+		&>div{
+			flex:1;
+			max-width: 20em;
+			justify-content: center;
+			align-items: center;
+		}
+		.step-text{
+			width: 100%;
+			text-align: center;
+		}
+		h2.step-title{
+			font-size: 0.75rem;
+			padding: 0.5rem 1rem 0.4rem;
+		}
+	}
+
+	.step-footer{
+		@include justify-content(center);
+		margin: 1rem 0 0;
+		&>div{
+			margin: 0 1rem;
+		}
+	}
+
+	.step-content{
+		.personal-data-form{
+			.form-container{
+				position: relative;
+				height: 12rem;
+				padding: 1rem;
+				form div{
+					height:2rem;
+					label.form-title{
+						text-transform: uppercase;
+					}
+				}
+				input{
+					margin: 0.1rem;
+					width: 100%;
+				}
+			}
+		}
+	}
+
 }
 
 body.winery{

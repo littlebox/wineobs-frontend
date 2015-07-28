@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="wineobsApp">
 <head>
 	<title>Wineobs</title>
 	<link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 	<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
 	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
-	<script src="/assets/angular/angular.min.js"></script>
+	<script src="/assets/angular/angular-1.4.2/angular.js"></script>
+	<script src="/assets/js/controller.js"></script>
+	<script src="/assets/js/dirPagination.js"></script>
 </head>
 <body class="<?= $view ?>">
 	<header>

@@ -1,4 +1,4 @@
-<div class="content step-4 flex fcolumn">
+<div class="content results flex fcolumn">
 	<div class="small-12 row column-2">
 		<h1>ONE SITE. ONE OBSESSION.</h1>
 		<p><strong>WineObs</strong> es una empresa joven creada en 2014 por Carolina Puebla, relacionista pública y guía de turismo; y Sofía Ruiz Cavanagh, Licenciada en Enología.

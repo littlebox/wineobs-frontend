@@ -1,4 +1,4 @@
-<div class="content step-4 flex fcolumn">
+<div class="content results flex fcolumn">
 	<div class="flex fcolumn f1">
 
 		<div class="step-header">

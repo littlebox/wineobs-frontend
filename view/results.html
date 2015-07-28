@@ -1,0 +1,82 @@
+<div class="content results flex fcolumn" ng-controller="resultsController">
+	<div class="flex fcolumn f1">
+
+		<div class="step-header">
+			<div class="flex fcolumn">
+				<div class="step-number">4</div>
+				<div class="step-text">
+					<h2 class="step-title white-border">
+						Seleccione las bodegas
+					</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="step-content flex">
+			<div class="map flex">
+				<div class="map-container f1"></div>
+			</div>
+			<div class="wineries flex">
+				<div class="search">
+					<div class="search-input">
+						<input type="text">
+					</div>
+					<div ng-model="q" class="search-lens">
+						<div class="lens">
+							<span class="icon-wineobs-lens"></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="wineries-paginator">
+					<div class="winery-card" ng-class="{'reservation': w.reservation}" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in cards | itemsPerPage: 6 | filter:q">
+						<div class="winery-card-front f1 flex fcolumn">
+							<div class="winery-card-top flex">
+								<div class="winery-card-top-mask f1 flex">
+									<div class="winery-logo f1">
+										<img src="/assets/img/lagardegrande.png">
+										<p>{{w.Winery.name}}</p>
+									</div>
+									<div class="winery-address f1">
+										<p class="address-title">{{w.Winery.name}}</p>
+										<p>{{w.Winery.address}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="winery-icons f1">
+								<a ng-click="infoClick(w)" href=""><span class="icon icon-wineobs-info"></span></a>
+								<a href=""><span class="icon icon-wineobs-photo"></span></a>
+								<a href=""><span class="icon icon-wineobs-pin"></span></a>
+							</div>
+							<div class="winery-button f1">
+								<a ng-click="buttonClick(w)" class="wineobs-button">reservar</a>
+							</div>
+						</div>
+						<div ng-class="{'visible': w.reservation}" class="reservation-card">
+							<div><p class="winery-name">{{w.winery.name}}</p></div>
+							<div><p class="tour-name">{{w.tour.name}}</p></div>
+							<div><p class="hour">{{w.hour}}hs</p></div>
+							<ul>
+								<li>Cupos reservados: <span>{{w.quota}}</span></li>
+								<li>Idioma del tour: <span>{{w.language}}</span></li>
+								<li>Duracion: <span>{{w.tour.length}}</span></li>
+							</ul>
+							<div class="price"><p>Precio: ${{w.minors*w.tour.minors_price+w.adults*w.tour.price }}</p></div>
+						</div>
+					</div>
+				</div>
+
+				<div dir-pagination-controls class="pagination"></div>
+			</div>
+		</div>
+
+		<div class="step-footer flex">
+			<div>
+				<a ng-href="/datos" class="wineobs-button">Anterior</a>
+			</div>
+			<div>
+				<a ng-href="/datosPersonales" class="wineobs-button">Siguiente</a>
+			</div>
+		</div>
+	</div>
+</div>

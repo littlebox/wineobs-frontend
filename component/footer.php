@@ -128,7 +128,7 @@
 	<script type="text/javascript">
 		$(document).foundation();
 		$(function(){
-			window.Wineobs.init();
+			// window.Wineobs.init();
 		})
 	</script>
 	</body>
