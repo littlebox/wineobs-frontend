@@ -62,6 +62,9 @@
 								<li>Duracion: <span>{{w.tour.length}}</span></li>
 							</ul>
 							<div class="price"><p>Precio: ${{w.minors*w.tour.minors_price+w.adults*w.tour.price }}</p></div>
+							<div class="remove-button">
+								<a ng-click="removeReserve($index)"><span class="icon-wineobs-cross"></span></a>
+							</div>
 						</div>
 					</div>
 				</div>

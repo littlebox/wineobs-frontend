@@ -1,4 +1,4 @@
-wineobsApp.service('reservation',function($rootScope){
+wineobsApp.service('reservation',function($rootScope, $http){
 
 	var reservesToMake = [];
 
@@ -11,6 +11,13 @@ wineobsApp.service('reservation',function($rootScope){
 
 	var getReservesToMake = function(){
 		return reservesToMake;
+	}
+
+	var removeReserve = function(k){
+		reservesToMake.splice(k,1);
+		$rootScope.$broadcast('updateReservesToMake',{
+			reservesToMake,
+		});
 	}
 
 	var formData = {
@@ -26,14 +33,23 @@ wineobsApp.service('reservation',function($rootScope){
 		},
 	}
 
+	var personalData = {}
+
 	var setFormData = function(date,language,quota){
-		formData.date = date.date[2]+'-'+date.date[1]+'-'+date.date[0];
+		formData.date = date;
 		formData.language = language;
 		formData.quota = quota;
 	}
 
 	var getFormData = function(){
 		return formData;
+	}
+
+	getPersonalData = function(){
+		return personalData;
+	}
+	setPersonalData = function(data){
+		personalData = data;
 	}
 
 	var currentWinery;
@@ -54,13 +70,30 @@ wineobsApp.service('reservation',function($rootScope){
 		});
 	}
 
+	var sendReservesToMake = function(){
+		console.log(personalData);
+		console.log(reservesToMake);
+		$http.defaults.useXDomain = true;
+		$http.post('http://reservas.wineobs.com/reserves/api_add', {personalData: personalData, reserves: reservesToMake}).
+			success(function(data, status, headers, config) {
+
+			}).
+			error(function(data, status, headers, config) {
+
+			});
+	}
+
 	return {
 		getFormData: getFormData,
 		setFormData: setFormData,
+		getPersonalData: getPersonalData,
+		setPersonalData: setPersonalData,
 		setWinery: setCurrentWinery,
 		getWinery: getCurrentWinery,
 		showReservationModal: showReservationModal,
 		pushReservesToMake: pushReservesToMake,
 		getReservesToMake: getReservesToMake,
+		removeReserve: removeReserve,
+		sendReservesToMake: sendReservesToMake,
 	}
 })

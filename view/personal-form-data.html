@@ -6,7 +6,7 @@
 				<div class="step-number">5</div>
 				<div class="step-text">
 					<h2 class="step-title white-border">
-						Confirme la reserva
+						Confirme su reserva
 					</h2>
 				</div>
 			</div>
@@ -15,47 +15,70 @@
 		<div class="step-content flex">
 			<div class="small-12">
 				<div class="small-5 column">
-					<div class="small-12">fecha</div>
+					<div class="small-12 date">{{formData.date.formattedDate}}</div>
 					<div class="personal-data-form small-12">
 						<div class="white-border">
 							<div class="form-container">
-								<form>
+								<form novalidate>
 									<div class="small-12">
 										<label class="form-title">Datos personales</label>
 									</div>
 									<div class="small-12">
 										<div class="small-12 column">
-											<input>
+											<input type="text" placeholder="nombre y apellido" type="text" ng-model="formPersonalData.name" required />
 										</div>
 									</div>
 									<div class="small-12">
 										<div class="small-3 column">
-											<input>
+											<input type="number" ng-maxlength="2" placeholder="edad" type="text" ng-model="formPersonalData.age" required />
 										</div>
 										<div class="small-4 column">
-											<input>
+											<input type="text" placeholder="celular" type="text" ng-model="formPersonalData.phone" required />
 										</div>
 										<div class="small-5 column">
-											<input>
+											<input type="text" placeholder="email" type="text" ng-model="formPersonalData.email" required />
 										</div>
 									</div>
 									<div class="small-12">
 										<div class="small-6 column">
-											<input>
+											<input type="text" placeholder="lugar de origen" type="text" ng-model="formPersonalData.originPlace" required />
 										</div>
 									</div>
 									<div class="small-12">
 										<div class="small-12 column">
-											<input>
+											<input type="text" placeholder="hotel/alojamiento" type="text" ng-model="formPersonalData.hotel" required />
 										</div>
 									</div>
 								</form>
+								{{form}}
 							</div>
 						</div>
 					</div>
 					<div class="small-12">mas publicidad</div>
 				</div>
-				<div class="small-5 column">cards</div>
+				<div class="small-5 column">
+					<div>
+						<div class="wineries-paginator">
+							<div class="winery-card reservation" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in reservations | itemsPerPage: 4 | filter:q">
+								<div class="visible reservation-card">
+									<div><p class="winery-name">{{w.winery.name}}</p></div>
+									<div><p class="tour-name">{{w.tour.name}}</p></div>
+									<div><p class="hour">{{w.hour}}hs</p></div>
+									<ul>
+										<li>Cupos reservados: <span>{{w.quota}}</span></li>
+										<li>Idioma del tour: <span>{{w.language}}</span></li>
+										<li>Duracion: <span>{{w.tour.length}}</span></li>
+									</ul>
+									<div class="price"><p>Precio: ${{w.minors*w.tour.minors_price+w.adults*w.tour.price }}</p></div>
+									<div class="remove-button">
+										<a ng-click="removeReserve($index)"><span class="icon-wineobs-cross"></span></a>
+									</div>
+								</div>
+							</div>
+							<div dir-pagination-controls class="pagination"></div>
+						</div>
+					</div>
+				</div>
 				<div class="small-2 column">publicidad</div>
 			</div>
 		</div>
@@ -65,7 +88,7 @@
 				<a ng-href="/resultados" class="wineobs-button">Anterior</a>
 			</div>
 			<div>
-				<a class="wineobs-button">Confirmar</a>
+				<a ng-click="submit()" class="wineobs-button">Confirmar</a>
 			</div>
 		</div>
 	</div>

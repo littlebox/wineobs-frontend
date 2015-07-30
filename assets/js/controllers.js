@@ -50,11 +50,11 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	formData = reservation.getFormData();
 	language = formData.language;
 	date = formData.date;
-	$scope.reservesToMake = [];
+	$scope.reservesToMake = reservation.getReservesToMake();
 
 	$http.defaults.useXDomain = true;
-	$http.get('http://reservas.wineobs.com/wineries/get/language:'+language+'/date:'+date).
-	// $http.get('http://reservas.wineobs.com/wineries/get/language:1/date:2015-11-23').
+	// $http.get('http://reservas.wineobs.com/wineries/get/language:'+language+'/date:'+date).
+	$http.get('http://reservas.wineobs.com/wineries/get/language:1/date:2015-11-23').
 		success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.wineries = data;
@@ -76,6 +76,11 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 		reservation.showReservationModal(winery, 'tours')
 	}
 
+	$scope.removeReserve = function($index){
+		console.debug('a')
+		reservation.removeReserve($index);
+	}
+
 	$scope.$on('updateReservesToMake', function(){
 		$scope.reservesToMake = reservation.getReservesToMake();
 		console.debug($scope.reservesToMake);
@@ -86,6 +91,17 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 
 wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,reservation){
 	$rootScope.bodyClass = 'personal-data';
+	$scope.reservations = reservation.getReservesToMake();
+	$scope.formData = reservation.getFormData();
+
+	$scope.submit = function(){
+		reservation.setPersonalData($scope.formPersonalData);
+		reservation.sendReservesToMake();
+	}
+
+	$scope.removeReserve = function($index){
+		reservation.removeReserve($index);
+	}
 });
 
 wineobsApp.controller('contactController', function ($scope,$rootScope){
@@ -155,7 +171,7 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 			minors: formData.quota.minors,
 			adults: formData.quota.adults,
 			quota: formData.quota.total,
-			date: formData.date.formattedDate,
+			date: formData.date,
 			languageId: formData.language,
 			language: language.name,
 		}
