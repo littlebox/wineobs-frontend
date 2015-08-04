@@ -74,7 +74,7 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		console.log(personalData);
 		console.log(reservesToMake);
 		$http.defaults.useXDomain = true;
-		$http.post('http://reservas.wineobs.com/reserves/api_add', {personalData: personalData, reserves: reservesToMake}).
+		$http.post('http://admin.wineobs.local/reserves/api_add', JSON.stringify({personalData: personalData, reserves: reservesToMake}), {headers:{ 'Content-Type': 'text/plain'}}).
 			success(function(data, status, headers, config) {
 
 			}).
