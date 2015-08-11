@@ -93,9 +93,9 @@
 
 /* General styles */
 body{
-	@include flexbox();
-	@include flex-direction(column);
-	min-height:100vh;
+	/* @include flexbox();
+	@include flex-direction(column); */
+	height:100%;
 	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
 	background-size: 100% 100%;
 	color:$white;
@@ -207,10 +207,17 @@ body{
 		.content{
 			@include flex(1);
 		}
-		min-height: 70vh;
+		min-height: 70%;
+		margin-bottom: 40px;
+		&:after{
+			height: 40px;
+			content: "";
+			display: block;
+		}
 	}
 
 	.footer{
+		height: 40px;
 		.footer-content{
 			@include flexbox();
 			.footer-left,.footer-right{
