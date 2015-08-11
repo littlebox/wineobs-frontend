@@ -91,7 +91,7 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		reservesToMake.forEach(function(reserve,k){
 			if(k==0){
 				reserves.language = reserve.languageId;
-				reserves.date = reserve.serverDate;
+				reserves.date = reserve.date.serverDate;
 				reserves.minors = reserve.minors;
 				reserves.adults = reserve.adults;
 			}
