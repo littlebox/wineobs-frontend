@@ -19,7 +19,7 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	})()
 
 	$scope.setData = function(){
-		$scope.date.date = $scope.date.formattedDate.split('.');
+		$scope.formData.date.date = $scope.formData.date.formattedDate.split('.');
 	}
 
 	$scope.quota = {
@@ -31,10 +31,18 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	$scope.setFormData = function(){
 
 		//DATA VALIDATION!!!
+		if(typeof $scope.formData.date == 'undefined') return;
+		if($scope.formData.date.formattedDate == '') return;
+		if($scope.formData.language == '') return;
+		debugger;
+		if(parseInt($scope.formData.minors,10) < 0 ) return;
+		if(parseInt($scope.formData.adults,10) < 1 ) return;
 
-		reservation.setFormData($scope.date,$scope.language,{
-			minors: $scope.minors,
-			adults: $scope.adults,
+		$scope.formData.date['serverDate'] = $scope.formData.date.date.reverse().join('-')
+
+		reservation.setFormData($scope.formData.date,$scope.formData.language,{
+			minors: $scope.formData.minors,
+			adults: $scope.formData.adults,
 			total: parseInt($scope.minors)+parseInt($scope.adults),
 		});
 		$location.path('/resultados');
@@ -53,8 +61,8 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	$scope.reservesToMake = reservation.getReservesToMake();
 
 	$http.defaults.useXDomain = true;
-	// $http.get('http://reservas.wineobs.com/wineries/get/language:'+language+'/date:'+date).
-	$http.get('http://reservas.wineobs.com/wineries/get/language:1/date:2015-11-23').
+	$http.get('http://reservas.wineobs.com/wineries/get/language:'+language+'/date:'+date.serverDate).
+	//$http.get('http://reservas.wineobs.com/wineries/get/language:1/date:2015-11-23').
 		success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.wineries = data;
@@ -77,7 +85,6 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	}
 
 	$scope.removeReserve = function($index){
-		console.debug('a')
 		reservation.removeReserve($index);
 	}
 

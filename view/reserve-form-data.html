@@ -17,7 +17,7 @@
 							</h2>
 						</div>
 						<div class="step-content white-border reserve-form-data-date" style="height:{{stepContentHeight}}">
-							<input type="text" id="date" ng-model="date.formattedDate" ng-change="setData()" class="datedropper white-border" placeholder="dd.mm.aa">
+							<input type="text" id="date" ng-model="formData.date.formattedDate" ng-change="setData()" class="datedropper white-border" placeholder="dd.mm.aa">
 						</div>
 					</div>
 				</div>
@@ -33,8 +33,8 @@
 							<div class="step-content-container">
 								<div class="language">
 									<ul>
-										<li><input ng-model="language" value="1" type="radio"><label>Español</label></li>
-										<li><input ng-model="language" value="2" type="radio"><label>Inglés</label></li>
+										<li><input ng-model="formData.language" value="1" type="radio" required><label>Español</label></li>
+										<li><input ng-model="formData.language" value="2" type="radio" required><label>Inglés</label></li>
 										<!-- <li><input ng-model="language" value="3" type="radio"><label>Portugués</label></li> -->
 									</ul>
 								</div>
@@ -54,11 +54,11 @@
 							<div class="step-content-container">
 								<ul>
 									<li>
-										<input ng-model="adults" type="text">
+										<input ng-model="formData.adults" type="text">
 										<span class="text">adultos</span>
 									</li>
 									<li>
-										<input ng-model="minors" type="text">
+										<input ng-model="formData.minors" type="text">
 										<span class="text">
 											menores
 											<span class="tooltip tooltip-effect">

@@ -24,6 +24,7 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		date: {
 			formattedDate: '01.01.2016',
 			date: ['2016','01','01'],
+			serverDate: '2016-01-01',
 		},
 		language: 1,
 		quota: {
@@ -73,14 +74,46 @@ wineobsApp.service('reservation',function($rootScope, $http){
 	var sendReservesToMake = function(){
 		console.log(personalData);
 		console.log(reservesToMake);
-		$http.defaults.useXDomain = true;
-		$http.post('http://reservas.wineobs.com/reserves/api_add', {personalData: personalData, reserves: reservesToMake}).
+
+		var data = {
+			json:'',
+		}
+		var client = {
+			email: personalData.email,
+			name: personalData.name,
+			age: personalData.age,
+			phone: personalData.phone,
+			lodging: personalData.hotel,
+		};
+		var reserves = {
+			tours: []
+		};
+		reservesToMake.forEach(function(reserve,k){
+			if(k==0){
+				reserves.language = reserve.languageId;
+				reserves.date = reserve.serverDate;
+				reserves.minors = reserve.minors;
+				reserves.adults = reserve.adults;
+			}
+			reserves.tours[k] = {
+				id: reserve.tour.id,
+				time: reserve.hour
+			}
+		})
+		console.log(reserves);
+		console.log(client);
+		/*$http.defaults.useXDomain = true;
+		$http.post('http://reservas.wineobs.com/reserves/api_add',
+			{personalData: personalData, reserves: reservesToMake},
+			{headers:{
+				'Content-Type': 'text/plain'
+			}}).
 			success(function(data, status, headers, config) {
 
 			}).
 			error(function(data, status, headers, config) {
 
-			});
+			});*/
 	}
 
 	return {
