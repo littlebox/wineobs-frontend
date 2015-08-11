@@ -61,8 +61,8 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	$scope.reservesToMake = reservation.getReservesToMake();
 
 	$http.defaults.useXDomain = true;
-	$http.get('http://reservas.wineobs.com/wineries/get/language:'+language+'/date:'+date.serverDate).
-	//$http.get('http://reservas.wineobs.com/wineries/get/language:1/date:2015-11-23').
+	// $http.get('http://admin.wineobs.local/wineries/get/language:'+language+'/date:'+date).
+	$http.get('http://admin.wineobs.local/wineries/get/language:1/date:2015-11-23').
 		success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.wineries = data;

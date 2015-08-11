@@ -102,18 +102,15 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		})
 		console.log(reserves);
 		console.log(client);
-		/*$http.defaults.useXDomain = true;
-		$http.post('http://reservas.wineobs.com/reserves/api_add',
-			{personalData: personalData, reserves: reservesToMake},
-			{headers:{
-				'Content-Type': 'text/plain'
-			}}).
+
+		$http.defaults.useXDomain = true;
+		$http.post('http://admin.wineobs.local/reserves/api_add', JSON.stringify({personalData: personalData, reserves: reservesToMake}), {headers:{ 'Content-Type': 'text/plain'}}).
 			success(function(data, status, headers, config) {
 
 			}).
 			error(function(data, status, headers, config) {
 
-			});*/
+			});
 	}
 
 	return {
