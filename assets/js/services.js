@@ -103,8 +103,11 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		console.log(reserves);
 		console.log(client);
 
-		$http.defaults.useXDomain = true;
-		$http.post('http://admin.wineobs.local/reserves/api_add', JSON.stringify({personalData: personalData, reserves: reservesToMake}), {headers:{ 'Content-Type': 'text/plain'}}).
+		//Prepare data to send CORS Ajax request (avoid the OPTIONS method request)
+		var data = '_method=POST&data%5Bjson%5D=';
+		data += encodeURIComponent(JSON.stringify({personalData: personalData, reserves: reserves}));
+
+		$http.post('http://admin.wineobs.local/reserves/api_add', data, {headers:{'Content-Type': 'application/x-www-form-urlencoded'}}).
 			success(function(data, status, headers, config) {
 
 			}).
