@@ -60,9 +60,11 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	date = formData.date;
 	$scope.reservesToMake = reservation.getReservesToMake();
 
+	$scope.apiUrl = 'http://reservas.wineobs.com';
+	// $scope.apiUrl = 'http://admin.wineobs.local';
+
 	$http.defaults.useXDomain = true;
-	// $http.get('http://admin.wineobs.local/wineries/get/language:'+language+'/date:'+date).
-	$http.get('http://admin.wineobs.local/wineries/get/language:1/date:2015-11-23').
+	$http.get($scope.apiUrl + '/wineries/get/language:'+language+'/date:'+date).
 		success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.wineries = data;
@@ -98,6 +100,9 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 
 wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,reservation){
 	$rootScope.bodyClass = 'personal-data';
+	$scope.formPersonalData = {
+		country: 'AR'
+	}
 	$scope.reservations = reservation.getReservesToMake();
 	$scope.formData = reservation.getFormData();
 

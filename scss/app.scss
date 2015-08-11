@@ -1316,13 +1316,16 @@ body.personal-data{
 			font-family: BigJohn;
 		}
 		form{
-			input{
+			input,select{
 				font-family: FuturaLTHeavy;
 			}
 			input.ng-invalid.ng-touched {
 				background-color: $tinto-wineobs;
 			}
-
+			select.country{
+				background: #FFF;
+				font-size: 0.9rem;
+			}
 		}
 	}
 

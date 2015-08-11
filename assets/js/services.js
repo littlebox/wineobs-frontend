@@ -80,10 +80,11 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		}
 		var client = {
 			email: personalData.email,
-			name: personalData.name,
-			age: personalData.age,
+			fullName: personalData.fullName,
+			birthDate: [personalData.birthDate.getFullYear(),personalData.birthDate.getMonth()+1,personalData.birthDate.getDate()].join('-'),
 			phone: personalData.phone,
 			lodging: personalData.hotel,
+			country: personalData.country,
 		};
 		var reserves = {
 			tours: []
@@ -105,7 +106,7 @@ wineobsApp.service('reservation',function($rootScope, $http){
 
 		//Prepare data to send CORS Ajax request (avoid the OPTIONS method request)
 		var data = '_method=POST&data%5Bjson%5D=';
-		data += encodeURIComponent(JSON.stringify({personalData: personalData, reserves: reserves}));
+		data += encodeURIComponent(JSON.stringify({personalData: client, reserves: reserves}));
 
 		$http.post('http://admin.wineobs.local/reserves/api_add', data, {headers:{'Content-Type': 'application/x-www-form-urlencoded'}}).
 			success(function(data, status, headers, config) {
