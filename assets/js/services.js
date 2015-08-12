@@ -108,7 +108,7 @@ wineobsApp.service('reservation',function($rootScope, $http){
 		var data = '_method=POST&data%5Bjson%5D=';
 		data += encodeURIComponent(JSON.stringify({personalData: client, reserves: reserves}));
 
-		$http.post('http://admin.wineobs.local/reserves/api_add', data, {headers:{'Content-Type': 'application/x-www-form-urlencoded'}}).
+		$http.post($rootScope.apiUrl + '/reserves/api_add', data, {headers:{'Content-Type': 'application/x-www-form-urlencoded'}}).
 			success(function(data, status, headers, config) {
 
 			}).

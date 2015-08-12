@@ -1,5 +1,7 @@
 wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = '';
+	// $rootScope.apiUrl = 'http://reservas.wineobs.com';
+	$rootScope.apiUrl = 'http://admin.wineobs.local';
 	Wineobs.init()
 });
 
@@ -60,11 +62,10 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	date = formData.date;
 	$scope.reservesToMake = reservation.getReservesToMake();
 
-	$scope.apiUrl = 'http://reservas.wineobs.com';
-	// $scope.apiUrl = 'http://admin.wineobs.local';
+
 
 	$http.defaults.useXDomain = true;
-	$http.get($scope.apiUrl + '/wineries/get/language:'+language+'/date:'+date).
+	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date).
 		success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.wineries = data;
