@@ -36,7 +36,6 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 		if(typeof $scope.formData.date == 'undefined') return;
 		if($scope.formData.date.formattedDate == '') return;
 		if($scope.formData.language == '') return;
-		debugger;
 		if(parseInt($scope.formData.minors,10) < 0 ) return;
 		if(parseInt($scope.formData.adults,10) < 1 ) return;
 
@@ -65,7 +64,7 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 
 
 	$http.defaults.useXDomain = true;
-	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date).
+	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate).
 		success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.wineries = data;
