@@ -110,10 +110,14 @@ wineobsApp.service('reservation',function($rootScope, $http){
 
 		$http.post($rootScope.apiUrl + '/reserves/api_add', data, {headers:{'Content-Type': 'application/x-www-form-urlencoded'}}).
 			success(function(data, status, headers, config) {
-
+				if(data.content == ''){
+					data.error.forEach(function(e){
+						swal('Error',e.text,'error')
+					})
+				}
 			}).
 			error(function(data, status, headers, config) {
-
+				swal('Hubo un error al intentar reservar','Error','error');
 			});
 	}
 

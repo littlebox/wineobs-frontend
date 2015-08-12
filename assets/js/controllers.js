@@ -1,7 +1,7 @@
 wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = '';
-	// $rootScope.apiUrl = 'http://reservas.wineobs.com';
-	$rootScope.apiUrl = 'http://admin.wineobs.local';
+	$rootScope.apiUrl = 'http://reservas.wineobs.com';
+	// $rootScope.apiUrl = 'http://admin.wineobs.local';
 	Wineobs.init()
 });
 
