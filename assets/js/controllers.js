@@ -12,8 +12,10 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 		date: '',
 	};
 	$scope.language = 0;
-	$scope.minors;
-	$scope.adults;
+	if(typeof $scope.formData == "undefined") $scope.formData = {
+		adults: 2,
+		minors: 0,
+	};
 
 	//height equalizer for form steps
 	$scope.stepContentHeight = (function(){
@@ -25,8 +27,8 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	}
 
 	$scope.quota = {
-		minors: $scope.minors,
-		adults: $scope.adults,
+		minors: $scope.formData.minors,
+		adults: $scope.formData.adults,
 		total: parseInt($scope.minors)+parseInt($scope.adults),
 	}
 
