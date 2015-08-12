@@ -97,7 +97,7 @@ body{
 	@include flex-direction(column); */
 	height:100%;
 	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
-	background-size: 100% 100%;
+	// background-size: 100% 100%;
 	color:$white;
 	overflow-x:hidden;
 
@@ -740,7 +740,7 @@ $dotoptions-top: 1rem;
 /* Presentation View */
 body.presentation{
 	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
-	background-size: 100% 100%;
+	// background-size: 100% 100%;
 
 	header{
 		@include flex(1);
@@ -774,7 +774,7 @@ body.presentation{
 /* Steps View */
 body.steps{
 	background-image: url('/assets/img/backgrounds/backgroundcolor1.jpg');
-	background-size: 100%;
+	// background-size: 100%;
 
 	.fake-background {
 		background-color: rgba(10, 10, 10, 0.4);
@@ -815,7 +815,7 @@ body.steps{
 /* reserve-form-data View */
 body.reserve-form-data{
 	background-image: url('/assets/img/backgrounds/backgroundcolor1.jpg');
-	background-size: 100%;
+	// background-size: 100%;
 
 	.fake-background {
 		background-color: rgba(10, 10, 10, 0.4);
@@ -951,7 +951,7 @@ body.reserve-form-data{
 /* results View */
 body.results{
 	background-image: url('/assets/img/backgrounds/backgroundcolor2.jpg');
-	background-size: 100%;
+	// background-size: 100%;
 
 	.header-center{
 		max-height: 4rem;
@@ -1256,7 +1256,7 @@ body.results{
 
 body.personal-data{
 	background-image: url('/assets/img/backgrounds/backgroundcolor4.jpg');
-	background-size: 100%;
+	// background-size: 100%;
 
 	.header-center{
 		max-height: 4rem;
@@ -1522,7 +1522,7 @@ body.personal-data{
 
 body.winery{
 	background-image: url('/assets/img/backgrounds/backgroundcolor6.jpg');
-	background-size: 100%;
+	// background-size: 100%;
 	background-attachment: fixed;
 
 	header div.fake-background {
@@ -1570,7 +1570,7 @@ body.winery{
 
 body.contact{
 	background-image: url('/assets/img/backgrounds/backgroundcolor5.jpg');
-	background-size: 100%;
+	// background-size: 100%;
 	background-attachment: fixed;
 
 	header div.fake-background {

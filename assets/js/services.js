@@ -1,4 +1,4 @@
-wineobsApp.service('reservation',function($rootScope, $http){
+wineobsApp.service('reservation',function($rootScope, $http, $location){
 
 	var reservesToMake = [];
 
@@ -72,8 +72,6 @@ wineobsApp.service('reservation',function($rootScope, $http){
 	}
 
 	var sendReservesToMake = function(){
-		console.log(personalData);
-		console.log(reservesToMake);
 
 		var data = {
 			json:'',
@@ -101,8 +99,6 @@ wineobsApp.service('reservation',function($rootScope, $http){
 				time: reserve.hour
 			}
 		})
-		console.log(reserves);
-		console.log(client);
 
 		//Prepare data to send CORS Ajax request (avoid the OPTIONS method request)
 		var data = '_method=POST&data%5Bjson%5D=';
@@ -114,6 +110,23 @@ wineobsApp.service('reservation',function($rootScope, $http){
 					data.error.forEach(function(e){
 						swal('Error',e.text,'error')
 					})
+				}else{
+					swal({
+						title: data.content.title,
+						text: data.content.text,
+						closeOnConfirm: false,
+					},
+						function(){
+							swal({
+								title:'Forma de pago',
+								text:'Redireccion a mercado pago o paypal',
+							},
+								function(){
+									location.href = '/pasos';
+								}
+							)
+						}
+					)
 				}
 			}).
 			error(function(data, status, headers, config) {

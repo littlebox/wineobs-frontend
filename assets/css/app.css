@@ -3421,7 +3421,6 @@ body {
   @include flex-direction(column); */
   height: 100%;
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
-  background-size: 100% 100%;
   color: #FFFFFF;
   overflow-x: hidden;
 }
@@ -4284,7 +4283,6 @@ body .footer .modals .modal-image-gallery .modal-content .tabs-info .tours-conte
 /* line 741, ../../scss/app.scss */
 body.presentation {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
-  background-size: 100% 100%;
 }
 /* line 745, ../../scss/app.scss */
 body.presentation header {
@@ -4326,7 +4324,6 @@ body.presentation .footer {
 /* line 775, ../../scss/app.scss */
 body.steps {
   background-image: url("/assets/img/backgrounds/backgroundcolor1.jpg");
-  background-size: 100%;
 }
 /* line 779, ../../scss/app.scss */
 body.steps .fake-background {
@@ -4367,7 +4364,6 @@ body.steps .content.steps .button-next {
 /* line 816, ../../scss/app.scss */
 body.reserve-form-data {
   background-image: url("/assets/img/backgrounds/backgroundcolor1.jpg");
-  background-size: 100%;
 }
 /* line 820, ../../scss/app.scss */
 body.reserve-form-data .fake-background {
@@ -4518,7 +4514,6 @@ body.reserve-form-data .content.reserve-form-data .step-footer > div {
 /* line 952, ../../scss/app.scss */
 body.results {
   background-image: url("/assets/img/backgrounds/backgroundcolor2.jpg");
-  background-size: 100%;
 }
 /* line 956, ../../scss/app.scss */
 body.results .header-center {
@@ -4977,7 +4972,6 @@ body.results .step-footer > div {
 /* line 1257, ../../scss/app.scss */
 body.personal-data {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
-  background-size: 100%;
 }
 /* line 1261, ../../scss/app.scss */
 body.personal-data .header-center {
@@ -5326,7 +5320,6 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-b
 /* line 1523, ../../scss/app.scss */
 body.winery {
   background-image: url("/assets/img/backgrounds/backgroundcolor6.jpg");
-  background-size: 100%;
   background-attachment: fixed;
 }
 /* line 1528, ../../scss/app.scss */
@@ -5388,7 +5381,6 @@ body.winery .wineries .winery .winery-content {
 /* line 1571, ../../scss/app.scss */
 body.contact {
   background-image: url("/assets/img/backgrounds/backgroundcolor5.jpg");
-  background-size: 100%;
   background-attachment: fixed;
 }
 /* line 1576, ../../scss/app.scss */

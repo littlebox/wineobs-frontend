@@ -19,8 +19,13 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			templateUrl: '/view/personal-form-data.html'
 		})
 
-		.otherwise('/datos',{
-			templateUrl: '/view/reserve-form-data.html',
+		.when('/pasos',{
+			templateUrl: '/view/steps.html',
+			// controller: 'stepsController'
+		})
+
+		.otherwise('/pasos',{
+			templateUrl: '/view/steps.html',
 		})
 
 		$locationProvider.html5Mode(true);

@@ -2,7 +2,14 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = '';
 	$rootScope.apiUrl = 'http://reservas.wineobs.com';
 	// $rootScope.apiUrl = 'http://admin.wineobs.local';
-	Wineobs.init()
+	Wineobs.init();
+});
+
+wineobsApp.controller('stepsController', function ($scope,$rootScope){
+	$rootScope.bodyClass = 'steps';
+
+
+	Wineobs.init();
 });
 
 wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$location,reservation){
@@ -11,10 +18,12 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 		formattedDate: '',
 		date: '',
 	};
-	$scope.language = 0;
+
+	// if( typeof $scope.formData.language == "undefined") $scope.formData.language = 1;
 	if(typeof $scope.formData == "undefined") $scope.formData = {
 		adults: 2,
 		minors: 0,
+		language: 1,
 	};
 
 	//height equalizer for form steps
@@ -35,11 +44,23 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	$scope.setFormData = function(){
 
 		//DATA VALIDATION!!!
-		if(typeof $scope.formData.date == 'undefined') return;
+		if(typeof $scope.formData.date == 'undefined') {
+			swal('Fecha incompleta','Por favor, ingrese una fecha');
+			return
+		};
 		if($scope.formData.date.formattedDate == '') return;
-		if($scope.formData.language == '') return;
-		if(parseInt($scope.formData.minors,10) < 0 ) return;
-		if(parseInt($scope.formData.adults,10) < 1 ) return;
+		if($scope.formData.language == ''){
+			swal('Idioma incorrecto','Por favor, corrija el idioma');
+			return;
+		};
+		if(parseInt($scope.formData.minors,10) < 0 ){
+			swal('Cantidad de menores incorrecta','Por favor, corrija la cantidad de menores');
+			return;
+		};
+		if(parseInt($scope.formData.adults,10) < 1 ){
+			swal('Cantidad de adultos incorrecta','Por favor, corrija la cantidad de adultos');
+			return;
+		};
 
 		$scope.formData.date['serverDate'] = $scope.formData.date.date.reverse().join('-')
 
@@ -63,12 +84,9 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 	date = formData.date;
 	$scope.reservesToMake = reservation.getReservesToMake();
 
-
-
 	$http.defaults.useXDomain = true;
 	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate).
 		success(function(data, status, headers, config) {
-			console.log(data);
 			$scope.wineries = data;
 			$scope.cards = $scope.reservesToMake.concat(data);
 			Wineobs.initResults();
@@ -76,8 +94,7 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 			Wineobs.initPaginator();
 		}).
 		error(function(data, status, headers, config) {
-			console.log(data);
-			console.log(status);
+			swal('Error','Error');
 		});
 
 	$scope.infoClick = function(winery){
@@ -94,7 +111,6 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 
 	$scope.$on('updateReservesToMake', function(){
 		$scope.reservesToMake = reservation.getReservesToMake();
-		console.debug($scope.reservesToMake);
 		$scope.cards = $scope.reservesToMake.concat($scope.wineries);
 	})
 
@@ -120,6 +136,7 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 
 wineobsApp.controller('contactController', function ($scope,$rootScope){
 	$rootScope.bodyClass = 'contact';
+	Wineobs.init();
 });
 
 wineobsApp.controller('reservationModalController', function ($scope,$rootScope, reservation){
@@ -184,7 +201,7 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 			hour: time.hour,
 			minors: formData.quota.minors,
 			adults: formData.quota.adults,
-			quota: formData.quota.total,
+			quota: formData.quota.minors + formData.quota.adults,
 			date: formData.date,
 			languageId: formData.language,
 			language: language.name,
