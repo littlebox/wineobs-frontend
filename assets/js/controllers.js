@@ -133,8 +133,12 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 	$scope.formData = reservation.getFormData();
 
 	$scope.submit = function(){
-		reservation.setPersonalData($scope.formPersonalData);
-		reservation.sendReservesToMake();
+		if(reservation.getReservesToMake().length > 0){
+			reservation.setPersonalData($scope.formPersonalData);
+			reservation.sendReservesToMake();
+		}else{
+			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
+		}
 	}
 
 	$scope.removeReserve = function($index){
