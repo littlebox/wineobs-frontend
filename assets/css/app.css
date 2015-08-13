@@ -5479,4 +5479,12 @@ body.wineobs .signatures .signature {
   width: 20rem;
 }
 
+@media only screen and (max-width: 40em) {
+  /* line 1661, ../../scss/app.scss */
+  body {
+    background: #5a2a30;
+    background-image: none !important;
+  }
+}
+
 /*# sourceMappingURL=app.css.map */

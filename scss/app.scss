@@ -1656,3 +1656,10 @@ body.wineobs{
 		}
 	}
 }
+
+@media #{$small-only}{
+	body{
+		background: darken($tinto-wineobs,20%);
+		background-image: none !important;
+	}
+}

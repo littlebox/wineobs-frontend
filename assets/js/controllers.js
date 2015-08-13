@@ -76,7 +76,7 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	Wineobs.initReserveFormData();
 });
 
-wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,reservation){
+wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,reservation,$location){
 	$rootScope.bodyClass = 'results';
 
 	formData = reservation.getFormData();
@@ -113,6 +113,14 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 		$scope.reservesToMake = reservation.getReservesToMake();
 		$scope.cards = $scope.reservesToMake.concat($scope.wineries);
 	})
+
+	$scope.nextStep = function(){
+		if($scope.reservesToMake.length > 0){
+			$location.path('/datosPersonales');
+		}else{
+			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
+		}
+	}
 
 });
 

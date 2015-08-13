@@ -28,9 +28,9 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 		},
 		language: 1,
 		quota: {
-			minors: 3,
-			adults: 5,
-			total: 8,
+			minors: 0,
+			adults: 2,
+			total: 0,
 		},
 	}
 
