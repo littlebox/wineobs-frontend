@@ -76,7 +76,7 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	Wineobs.initReserveFormData();
 });
 
-wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,reservation,$location){
+wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,reservation,$location){
 	$rootScope.bodyClass = 'results';
 
 	formData = reservation.getFormData();
@@ -89,13 +89,23 @@ wineobsApp.controller('resultsController', function ($scope,$rootScope,$http,res
 		success(function(data, status, headers, config) {
 			$scope.wineries = data;
 			$scope.cards = $scope.reservesToMake.concat(data);
+			// data.forEach(function(v){loadLogos(v.Winery.id)})
 			Wineobs.initResults();
 			Wineobs.addWineryMarkers(data);
 			Wineobs.initPaginator();
+			$scope.show = true;
 		}).
 		error(function(data, status, headers, config) {
 			swal('Error','Error');
 		});
+
+	$scope.logos = function(w){
+		if(w.Winery.has_logo){
+			return $rootScope.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png';
+		}else{
+			return $rootScope.apiUrl+'/img/wineries/logos/default.png';
+		}
+	}
 
 	$scope.infoClick = function(winery){
 		reservation.showReservationModal(winery, 'info')

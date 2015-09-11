@@ -29,12 +29,12 @@
 				</div>
 
 				<div class="wineries-paginator">
-					<div class="winery-card" ng-class="{'reservation': w.reservation}" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in cards | itemsPerPage: 6 | filter:q">
+					<div class="winery-card" ng-show="show" ng-class="{'reservation': w.reservation}" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in cards | itemsPerPage: 6 | filter:q">
 						<div class="winery-card-front f1 flex fcolumn">
 							<div class="winery-card-top flex">
 								<div class="winery-card-top-mask f1 flex">
 									<div class="winery-logo f1">
-										<img src="/assets/img/lagardegrande.png">
+										<img src="{{logos(w)}}">
 										<p>{{w.Winery.name}}</p>
 									</div>
 									<div class="winery-address f1">
