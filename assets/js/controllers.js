@@ -1,7 +1,7 @@
 wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = '';
-	$rootScope.apiUrl = 'http://reservas.wineobs.com';
-	// $rootScope.apiUrl = 'http://admin.wineobs.local';
+	// $rootScope.apiUrl = 'http://reservas.wineobs.com';
+	$rootScope.apiUrl = 'http://metrobox.local';
 	Wineobs.init();
 });
 
@@ -100,10 +100,18 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		});
 
 	$scope.logos = function(w){
-		if(w.Winery.has_logo){
-			return $rootScope.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png';
-		}else{
-			return $rootScope.apiUrl+'/img/wineries/logos/default.png';
+		if(typeof w.Winery != "undefined"){
+			if(w.Winery.has_logo){
+				return $rootScope.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png';
+			}else{
+				return $rootScope.apiUrl+'/img/wineries/logos/default.png';
+			}
+		}else if(typeof w.winery != "undefined"){
+			if(w.winery.has_logo){
+				return $rootScope.apiUrl+'/img/wineries/logos/'+w.winery.id+'.png';
+			}else{
+				return $rootScope.apiUrl+'/img/wineries/logos/default.png';
+			}
 		}
 	}
 
@@ -223,7 +231,7 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 			hour: time.hour,
 			minors: formData.quota.minors,
 			adults: formData.quota.adults,
-			quota: formData.quota.minors + formData.quota.adults,
+			quota: parseInt(formData.quota.minors) + parseInt(formData.quota.adults),
 			date: formData.date,
 			languageId: formData.language,
 			language: language.name,

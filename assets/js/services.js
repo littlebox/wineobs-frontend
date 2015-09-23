@@ -119,10 +119,10 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 						function(){
 							swal({
 								title:'Forma de pago',
-								text:'Redireccion a mercado pago o paypal',
+								text:'Redireccion a mercado pago',
 							},
 								function(){
-									location.href = '/pasos';
+									location.href = data.mp_url;
 								}
 							)
 						}
