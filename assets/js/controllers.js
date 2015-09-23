@@ -1,7 +1,7 @@
 wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = '';
-	// $rootScope.apiUrl = 'http://reservas.wineobs.com';
-	$rootScope.apiUrl = 'http://metrobox.local';
+	$rootScope.apiUrl = 'http://reservas.wineobs.com';
+	// $rootScope.apiUrl = 'http://metrobox.local';
 	Wineobs.init();
 });
 
