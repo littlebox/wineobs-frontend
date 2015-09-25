@@ -24,6 +24,18 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			// controller: 'stepsController'
 		})
 
+		.when('/payment_success',{
+			templateUrl: '/view/payment_success.html',
+		})
+
+		.when('/payment_failure',{
+			templateUrl: '/view/payment_failure.html',
+		})
+
+		.when('/payment_pending',{
+			templateUrl: '/view/payment_pending.html',
+		})
+
 		.otherwise('/pasos',{
 			templateUrl: '/view/steps.html',
 		})
