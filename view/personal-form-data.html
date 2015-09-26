@@ -25,14 +25,17 @@
 									</div>
 									<div class="small-12">
 										<div class="small-12 column">
+											<label>Nombre y Apellido</label>
 											<input type="text" placeholder="nombre y apellido" type="text" ng-model="formPersonalData.fullName" required />
 										</div>
 									</div>
 									<div class="small-12">
 										<div class="small-6 column">
+											<label>Fecha de nacimiento</label>
 											<input type="date" placeholder="edad" type="text" ng-model="formPersonalData.birthDate" required />
 										</div>
 										<div class="small-6 column">
+											<label>País de origen</label>
 											<select class="country" ng-model="formPersonalData.country" required>
 												<option value="AF">Afghanistan</option>
 												<option value="AX">Åland Islands</option>
@@ -288,10 +291,22 @@
 									</div>
 									<div class="small-12">
 										<div class="small-6 column">
-											<input type="text" placeholder="celular" type="text" ng-model="formPersonalData.phone" required />
+											<label>Teléfono</label>
+											<input type="text" placeholder="123456789" type="text" ng-model="formPersonalData.phone" required />
 										</div>
 										<div class="small-6 column">
-											<input type="email" placeholder="email" type="text" ng-model="formPersonalData.email" required />
+											<label>Email</label>
+											<input type="email" placeholder="email@email.com" type="text" ng-model="formPersonalData.email" required />
+										</div>
+									</div>
+
+									<div class="small-12 payment-method">
+										<div class="small-12 column">
+											<label>Método de pago</label>
+											<select>
+												<option value="mp">Mercado pago</option>
+												<option value="pp" disabled="disabled">PayPal</option>
+											</select>
 										</div>
 									</div>
 									<!-- <div class="small-12">
@@ -338,8 +353,12 @@
 				<a ng-href="/resultados" class="wineobs-button">Anterior</a>
 			</div>
 			<div>
-				<a ng-click="submit()" class="wineobs-button">Confirmar</a>
+				<a ng-click="submit()" class="wineobs-button ladda-button submit" data-style="contract-overlay">Confirmar</a>
 			</div>
 		</div>
 	</div>
 </div>
+<link rel="stylesheet" type="text/css" href="/assets/ladda/dist/ladda-themeless.min.css">
+<script src="/assets/ladda/js/spin.js"></script>
+<script src="/assets/ladda/js/ladda.js"></script>
+<script src="/assets/ladda/dist/ladda.jquery.min.js"></script>

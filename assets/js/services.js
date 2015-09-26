@@ -112,19 +112,11 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 					})
 				}else{
 					swal({
-						title: data.content.title,
-						text: data.content.text,
-						closeOnConfirm: false,
+						title:'Forma de pago',
+						text:'Redireccion a mercado pago',
 					},
 						function(){
-							swal({
-								title:'Forma de pago',
-								text:'Redireccion a mercado pago',
-							},
-								function(){
-									location.href = data.mp_url;
-								}
-							)
+							location.href = data.mp_url;
 						}
 					)
 				}

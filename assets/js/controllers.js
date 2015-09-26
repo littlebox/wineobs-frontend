@@ -7,8 +7,6 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 
 wineobsApp.controller('stepsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = 'steps';
-
-
 	Wineobs.init();
 });
 
@@ -152,8 +150,12 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 
 	$scope.submit = function(){
 		if(reservation.getReservesToMake().length > 0){
-			reservation.setPersonalData($scope.formPersonalData);
-			reservation.sendReservesToMake();
+			$scope.submitButton = $('.wineobs-button.submit').ladda();
+			$scope.submitButton.ladda('start');
+			// window.setTimeout(2,function(){
+				reservation.setPersonalData($scope.formPersonalData);
+				reservation.sendReservesToMake();
+			// })
 		}else{
 			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
 		}
@@ -241,3 +243,8 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 	}
 
 })
+
+wineobsApp.controller('paymentController', function ($scope,$rootScope){
+	$rootScope.bodyClass = 'payment';
+	Wineobs.init();
+});

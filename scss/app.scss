@@ -1297,10 +1297,10 @@ body.personal-data{
 		.personal-data-form{
 			.form-container{
 				position: relative;
-				height: 12rem;
+				height: 21rem;
 				padding: 1rem;
 				form div{
-					height:2rem;
+					height:3.5rem;
 					label.form-title{
 						text-transform: uppercase;
 					}
@@ -1311,6 +1311,10 @@ body.personal-data{
 				}
 			}
 		}
+	}
+
+	.payment-method{
+		padding: 2px;
 	}
 
 	.date{
@@ -1629,6 +1633,22 @@ body.contact{
 			font-family: FuturaLTBold;
 			font-weight: bold;
 		}
+	}
+}
+
+body.payment{
+	div.title{
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 3.5rem;
+		font-family: BebasNeue;
+		letter-spacing: 0.1rem;
+	}
+	div.text,div.return{
+		text-align: center;
+		font-size: 2.5rem;
+		font-family: BebasNeue;
+		letter-spacing: 0.1rem;
 	}
 }
 
