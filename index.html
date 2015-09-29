@@ -25,7 +25,7 @@
 								</div>
 								<div class="menu-items">
 									<ul>
-										<li><a href="">inicio</a></li>
+										<li><a ng-href="/">inicio</a></li>
 										<li><a href="">sus reservas</a></li>
 										<li><a href="">bodegas</a></li>
 										<li><a href="">wineobs</a></li>
@@ -110,7 +110,7 @@
 								</li>
 							</ul>
 							<div class="image">
-								<img src="/assets/img/lagardegrande.png">
+								<img ng-src="{{w.Winery.has_logo && $root.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png' || $root.apiUrl+'/img/wineries/logos/default.png'}}">
 							</div>
 						</div>
 						<div class="small-9 column tabs-info">

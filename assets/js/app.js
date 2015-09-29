@@ -96,7 +96,8 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination']);
 				var latLng = new google.maps.LatLng(w.Winery.latitude,w.Winery.longitude);
 				Wineobs.markers[w.Winery.id] = new google.maps.Marker({
 					position: latLng,
-					// map: Wineobs.map,
+					map: Wineobs.map,
+					title: w.Winery.name,
 					icon: new google.maps.MarkerImage(
 						'/assets/img/marker.png',
 						new google.maps.Size(30, 30), //Original Size
@@ -107,7 +108,7 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination']);
 					// animation: google.maps.Animation.DROP,
 				});
 				Wineobs.bounds.extend(latLng);
-				Wineobs.markerClusterer.addMarker(Wineobs.markers[w.Winery.id]);
+				// Wineobs.markerClusterer.addMarker(Wineobs.markers[w.Winery.id]);
 			})
 			Wineobs.map.fitBounds(Wineobs.bounds);
 		},

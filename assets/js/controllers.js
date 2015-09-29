@@ -2,6 +2,11 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$rootScope.bodyClass = '';
 	$rootScope.apiUrl = 'http://reservas.wineobs.com';
 	// $rootScope.apiUrl = 'http://metrobox.local';
+
+	$scope.$on('$locationChangeStart', function(event) {
+		$('.menu-overlay').removeClass('open');
+	});
+
 	Wineobs.init();
 });
 
@@ -47,6 +52,15 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 			return
 		};
 		if($scope.formData.date.formattedDate == '') return;
+
+		a = $scope.formData.date.date;
+		date = new Date(a[2],a[1] - 1,a[0]);
+
+		if(date < Date.now()){
+			swal('Fecha ingresada invalida', 'Por favor corrija la fecha')
+			return;
+		}
+
 		if($scope.formData.language == ''){
 			swal('Idioma incorrecto','Por favor, corrija el idioma');
 			return;
@@ -149,13 +163,15 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 	$scope.formData = reservation.getFormData();
 
 	$scope.submit = function(){
-		if(reservation.getReservesToMake().length > 0){
-			$scope.submitButton = $('.wineobs-button.submit').ladda();
-			$scope.submitButton.ladda('start');
-			// window.setTimeout(2,function(){
+		if(true || reservation.getReservesToMake().length > 0 ){
+			if(!$('form.personal-form-data').hasClass('ng-invalid')){
+				$scope.submitButton = $('.wineobs-button.submit').ladda();
+				$scope.submitButton.ladda('start');
 				reservation.setPersonalData($scope.formPersonalData);
 				reservation.sendReservesToMake();
-			// })
+			}else{
+				swal('Datos no validos','Por favor, revise los datos antes de continuar');
+			}
 		}else{
 			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
 		}

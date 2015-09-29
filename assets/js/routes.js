@@ -36,8 +36,8 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			templateUrl: '/view/payment_pending.html',
 		})
 
-		.otherwise('/pasos',{
-			templateUrl: '/view/steps.html',
+		.otherwise('/datos',{
+			templateUrl: '/view/reserve-form-data.html',
 		})
 
 		$locationProvider.html5Mode(true);

@@ -3713,7 +3713,7 @@ body .footer .modals .modal-image-gallery .modal-content .tabs-selector, body .f
 }
 /* line 291, ../../scss/app.scss */
 body .footer .modals .modal-image-gallery .modal-content .tabs-selector .image img, body .footer .modals .modal-info-winery .modal-content .tabs-selector .image img {
-  max-height: 4rem;
+  max-height: 7rem;
 }
 /* line 295, ../../scss/app.scss */
 body .footer .modals .modal-image-gallery .modal-content .tabs-selector .tabs.vertical, body .footer .modals .modal-info-winery .modal-content .tabs-selector .tabs.vertical {
