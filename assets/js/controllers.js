@@ -113,6 +113,11 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 
 	$scope.logos = function(w){
 		if(typeof w.Winery != "undefined"){
+			if(w.Image.length){
+				console.log(w.Image[0]);
+				imgUrl = 'http://reservas.wineobs.com/img/wineries/'+w.Image[0].id+'.jpg';
+				$('div[data-winery-index="'+w.Image[0].winery_id+'"] div.winery-card-front').css('background-image','url('+imgUrl+')')
+			}
 			if(w.Winery.has_logo){
 				return $rootScope.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png';
 			}else{

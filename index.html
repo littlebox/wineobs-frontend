@@ -108,6 +108,9 @@
 								<li ng-class="{ 'active': toursActive }" class="tab-title" ng-click="setReservationModalActiveTab('tours')">
 									<a>Tours</a>
 								</li>
+								<li ng-class="{ 'active': commentsActive }" class="tab-title" ng-click="setReservationModalActiveTab('comments')">
+									<a>Comentarios</a>
+								</li>
 							</ul>
 							<div class="image">
 								<img ng-src="{{w.Winery.has_logo && $root.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png' || $root.apiUrl+'/img/wineries/logos/default.png'}}">
@@ -178,6 +181,9 @@
 											</div>
 										</div>
 									</div>
+								</div>
+								<div ng-class="{ 'active': commentsActive }" class="content" id="comments">
+
 								</div>
 							</div>
 						</div>
