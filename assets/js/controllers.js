@@ -157,6 +157,21 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		}
 	}
 
+	$('.gammaGallery .menu-close-button').on('click',function(){
+		$('.gammaGallery').removeClass('show');
+	})
+
+	$scope.showGammaGalery = function(winery){
+		// window.wineryGammaGalery = winery;
+		// $('.gammaGallery iframe').attr('src','assets/GammaGallery/index.php')
+
+		iframe = $('.gammaGallery iframe')[0];
+		if(iframe.contentWindow.init(winery)){
+			$('.gammaGallery').addClass('show');
+		}
+
+	}
+
 });
 
 wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,reservation){
@@ -168,7 +183,7 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 	$scope.formData = reservation.getFormData();
 
 	$scope.submit = function(){
-		if(true || reservation.getReservesToMake().length > 0 ){
+		if(reservation.getReservesToMake().length > 0 ){
 			if(!$('form.personal-form-data').hasClass('ng-invalid')){
 				$scope.submitButton = $('.wineobs-button.submit').ladda();
 				$scope.submitButton.ladda('start');

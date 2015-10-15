@@ -45,7 +45,7 @@
 							</div>
 							<div class="winery-icons f1">
 								<a ng-click="infoClick(w)" href=""><span class="icon icon-wineobs-info"></span></a>
-								<a href=""><span class="icon icon-wineobs-photo"></span></a>
+								<a ng-click="showGammaGalery(w)" href=""><span class="icon icon-wineobs-photo"></span></a>
 								<a href=""><span class="icon icon-wineobs-pin"></span></a>
 							</div>
 							<div class="winery-button f1">
@@ -81,5 +81,14 @@
 				<a ng-click="nextStep()" class="wineobs-button">Siguiente</a>
 			</div>
 		</div>
+	</div>
+
+	<div class="gammaGallery">
+		<div class="menu-close-button">
+			<div>
+				<span class="icon-wineobs-cross"></span>
+			</div>
+		</div>
+		<iframe src="assets/GammaGallery/index.php"></iframe>
 	</div>
 </div>

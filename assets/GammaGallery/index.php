@@ -16,35 +16,22 @@
 			<div class="main">
 				<header class="clearfix">
 
-					<img src="/assets/img/lagardegrande.png">
+					<img id="logo" src="">
 
 				</header>
-
-				<div class="gamma-container gamma-loading" id="gamma-container">
+				<!-- gamma-loading -->
+				<div class="gamma-container" id="gamma-container">
 
 					<ul class="gamma-gallery">
-						<?php for ($i=0; $i < 10; $i++): ?>
-							<li>
-								<div data-alt="lagarde" data-description="<h3>Lagarde</h3>" data-max-width="1800" data-max-height="1350">
-									<div data-src="images/xxxlarge/lagarde.jpg" data-min-width="1300"></div>
-									<div data-src="images/xxlarge/lagarde.jpg" data-min-width="1000"></div>
-									<div data-src="images/xlarge/lagarde.jpg" data-min-width="700"></div>
-									<div data-src="images/large/lagarde.jpg" data-min-width="300"></div>
-									<div data-src="images/medium/lagarde.jpg" data-min-width="200"></div>
-									<div data-src="images/small/lagarde.jpg" data-min-width="140"></div>
-									<div data-src="images/xsmall/lagarde.jpg"></div>
-									<noscript>
-										<img src="images/xsmall/lagarde.jpg" alt="lagarde"/>
-									</noscript>
-								</div>
-							</li>
-						<?php endfor; ?>
+
 					</ul>
 
 					<div class="gamma-overlay"></div>
 
 				</div>
 
+
+				<div class="gallery"></div>
 			</div><!--/main-->
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -56,8 +43,10 @@
 		<script type="text/javascript">
 
 			$(function() {
-
-				var GammaSettings = {
+				// msnr = new Masonry(document.querySelector('.gamma-gallery'),{
+				// 	itemSelector: '.item',
+				// });
+				window.GammaSettings = {
 						// order is important!
 						viewport : [ {
 							width : 1200,
@@ -77,37 +66,56 @@
 						} ]
 				};
 
-				Gamma.init( GammaSettings, fncallback );
-
-
-				// Example how to add more items (just a dummy):
-
-				var page = 0,
-					items = ['<li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li>']
-
-				function fncallback() {
-
-					$( '#loadmore' ).show().on( 'click', function() {
-
-						++page;
-						var newitems = items[page-1]
-						if( page <= 1 ) {
-
-							Gamma.add( $( newitems ) );
-
-						}
-						if( page === 1 ) {
-
-							$( this ).remove();
-
-						}
-
-					} );
-
-				}
+				Gamma.init( GammaSettings );
+				window.msnr = Gamma.gallery.masonry;
 
 			});
 
+			window.init = function(w){
+				logo = document.querySelector('#logo');
+				if(typeof w != "undefined"){
+					if(w.Winery.has_logo){
+						logo.src = "http://reservas.wineobs.com/img/wineries/logos/"+w.Winery.id+".png"
+					}else{
+						logo.src = "http://reservas.wineobs.com/img/wineries/logos/default.png"
+					}
+				}
+
+				if(w.Image.length > 0){
+					htmlImgs = ''
+					w.Image.forEach(function(img,k){
+						htmlImgs += '<li class="gamma-item" style="z-index:999;">\
+						<div data-alt="img03" data-description="<h3>'+w.Winery.name+'</h3>" data-max-width="1800" data-max-height="1350">\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'.jpg" data-min-width="1300"></div>\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'.jpg" data-min-width="1000"></div>\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'.jpg" data-min-width="700"></div>\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'.jpg" data-min-width="300"></div>\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'.jpg" data-min-width="200"></div>\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'.jpg" data-min-width="140"></div>\
+							<div data-src="http://reservas.wineobs.com/img/wineries/'+img.id+'"></div>\
+							<noscript><img src="http://reservas.wineobs.com/img/wineries/'+img.id+'"" alt="imgBodega"/></noscript>\
+						</div></li>'
+					})
+
+					// window.div = document.createElement('div');
+					// window.div.innerHTML = htmlImgs;
+
+					// console.debug(htmlImgs);
+
+					$('.gamma-gallery').html(htmlImgs);
+					// msnr.appended(div.children);
+					// msnr('remove')
+					// msnr.append($('.gamma-gallery div'))
+					Gamma.init(window.GammaSettings);
+
+				}
+
+				return true;
+			}
+
+			window.loadImages = function(){
+				console.log(w)
+			}
 		</script>
 	</body>
 </html>

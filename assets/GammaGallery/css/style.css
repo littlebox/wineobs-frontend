@@ -258,7 +258,7 @@ button.gamma-btn-sspause:before {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 99999;
+	z-index: 1;
 }
 
 /* Loaders */
@@ -288,6 +288,7 @@ button.gamma-btn-sspause:before {
 	user-select: none;
 }
 
+
 @media screen and (max-width: 750px) {
 
 	.gamma-description {
@@ -311,4 +312,8 @@ button.gamma-btn-sspause:before {
 		clear: both;
 	}
 
+}
+
+li.gamma-item:{
+	z-index: 999;
 }

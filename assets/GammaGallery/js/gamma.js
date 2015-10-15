@@ -4,11 +4,11 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2012, Codrops
  * http://www.codrops.com
  */
- 
+
 /**
  * Return a new JSON object of the old string.
  * Turns:
@@ -123,13 +123,13 @@ $.extend( $.expr[':'], {
 // by Joe Marini (@joemarini)
 function getHiddenProp(){
     var prefixes = ['webkit','moz','ms','o'];
-    
+
     // if 'hidden' is natively supported just return it
     if ('hidden' in document) return 'hidden';
-    
+
     // otherwise loop over all the known prefixes until we find one
     for (var i = 0; i < prefixes.length; i++){
-        if ((prefixes[i] + 'Hidden') in document) 
+        if ((prefixes[i] + 'Hidden') in document)
             return prefixes[i] + 'Hidden';
     }
 
@@ -139,7 +139,7 @@ function getHiddenProp(){
 function isHidden() {
     var prop = getHiddenProp();
     if (!prop) return false;
-    
+
     return document[prop];
 }
 
@@ -208,7 +208,7 @@ var Gamma = (function() {
 				Gamma.items.show();
 
 				// opens the single view if an image id is passed in the url
-				// we will assume for this demo that the id is the index of the item 
+				// we will assume for this demo that the id is the index of the item
 				// where the image is
 				// example: http://www.sitename.com/gamma/?img=12
 				if( Gamma.settings.historyapi ) {
@@ -245,7 +245,7 @@ var Gamma = (function() {
 			if ( !History.enabled && Gamma.settings.historyapi ) {
 
 				Gamma.settings.historyapi = false;
-			
+
 			}
 			Gamma.supportTransitions = Modernizr.csstransitions;
 
@@ -265,7 +265,7 @@ var Gamma = (function() {
 				_initEvents( 'singleview' );
 
 				_createSingleViewNavigation();
-			
+
 			}
 			else if( !Gamma.nav ) {
 
@@ -292,7 +292,7 @@ var Gamma = (function() {
 		_goto = function( anim, id ) {
 
 			if( Gamma.settings.historyapi ) {
-				
+
 				// get the url from history state (e.g. id=3) and extract the id
 				id = id || History.getState().url.queryStringToJSON().id;
 
@@ -320,11 +320,11 @@ var Gamma = (function() {
 						if( Gamma.supportTransitions ) {
 
 							_setTransition( Gamma.svImage , 'all', Gamma.settings.svImageTransitionSpeedFade , Gamma.settings.svImageTransitionEasingFade );
-						
+
 						}
 
 						_applyAnimation( Gamma.svImage, { opacity : 0 }, Gamma.settings.svImageTransitionSpeedFade, Gamma.supportTransitions, function() {
-						
+
 							$( this ).remove();
 							anim = false;
 							_singleviewitem( $item, anim );
@@ -332,18 +332,18 @@ var Gamma = (function() {
 						} );
 
 						if( Gamma.svDescription ) {
-				
+
 							_applyAnimation( Gamma.svDescription, { opacity : 0 }, 400, Gamma.supportTransitions );
-						
+
 						}
 
 					}
 					else {
 
 						if( Gamma.svDescription ) {
-				
+
 							Gamma.svDescription.empty();
-						
+
 						}
 						_singleviewitem( $item, anim );
 
@@ -370,11 +370,11 @@ var Gamma = (function() {
 			// adds a new state to the history object
 			// this will trigger the statechange on the window
 			else if( History.getState().url.queryStringToJSON().id !== id ) {
-					
+
 				History.pushState( null, null, '?id=' + id );
-			
+
 			}
-		
+
 		},
 		// transform initial html structure into a list of images (well mostly)
 		_layout = function( $items ) {
@@ -433,7 +433,7 @@ var Gamma = (function() {
 				} );
 
 			} );
-			
+
 			return theSources;
 
 		},
@@ -467,6 +467,16 @@ var Gamma = (function() {
 		_initMasonry = function( callback ) {
 
 			Gamma.gallery.imagesLoaded( function() {
+
+				/*window.msnr = new Masonry(
+					Gamma.gallery,
+					{
+						itemSelector : 'li',
+						columnWidth : function( containerWidth ) {
+							return containerWidth / Gamma.columns;
+						}
+					}
+				);*/
 
 				Gamma.gallery.masonry( {
 					itemSelector : 'li',
@@ -550,7 +560,7 @@ var Gamma = (function() {
 
 				Gamma.current = Gamma.current > 0 ? --Gamma.current :
 					Gamma.settings.circular ? Gamma.itemsCount - 1 : Gamma.current;
-				
+
 			}
 
 			if( current === Gamma.current ) {
@@ -685,7 +695,7 @@ var Gamma = (function() {
 			var sources = properties.sources,
 				imgMaxW = properties.imgMaxW || 0,
 				imgMaxH = properties.imgMaxH || 0,
-				source = _chooseImgSource( sources, properties.wrapper.width ), 
+				source = _chooseImgSource( sources, properties.wrapper.width ),
 				// calculate final size and position of image
 				finalSizePosition = _getFinalSizePosition( properties.image, properties.wrapper );
 
@@ -699,7 +709,7 @@ var Gamma = (function() {
 			// we still need to check one more detail:
 			// if the source is the largest one provided in the html rules,
 			// then we need to check if the final width/height are eventually bigger
-			// than the original image sizes. If so, we will show the image 
+			// than the original image sizes. If so, we will show the image
 			// with its original size, avoiding like this that the image gets pixelated
 			if( source.pos === 0 && ( imgMaxW !== 0 && finalSizePosition.width > imgMaxW || imgMaxH !== 0 && finalSizePosition.height > imgMaxH ) ) {
 
@@ -715,7 +725,7 @@ var Gamma = (function() {
 					var ratio = finalSizePosition.height / imgMaxH;
 					finalSizePosition.height = imgMaxH;
 					finalSizePosition.width /= ratio;
-					
+
 				}
 
 				finalSizePosition.left = properties.wrapper.width / 2 - finalSizePosition.width / 2;
@@ -744,7 +754,7 @@ var Gamma = (function() {
 			var id = $item.index(),
 				data = $item.data(),
 				$img = $item.children( 'img' );
-				
+
 			if( anim ) {
 
 				Gamma.fly = $( '<img/>' ).attr( 'src', $img.attr( 'src' ) ).addClass( 'gamma-img-fly' ).css( {
@@ -761,7 +771,7 @@ var Gamma = (function() {
 				}
 
 			}
-				
+
 			// need to know which source to load for the image.
 			// also need to know the final size and position.
 			var	finalConfig = _getFinalImgConfig( {
@@ -772,7 +782,7 @@ var Gamma = (function() {
 					wrapper : { width : $window.width() - Gamma.svMargins.horizontal, height : $window.height() - Gamma.svMargins.vertical },
 					image : { width : $img.width(), height : $img.height() }
 
-				} ),	
+				} ),
 				source = finalConfig.source,
 				finalSizePosition = finalConfig.finalSizePosition;
 
@@ -786,7 +796,7 @@ var Gamma = (function() {
 				_setTransition( Gamma.overlay , 'opacity' );
 
 			}
-			
+
 			setTimeout( function() {
 
 				_applyAnimation( Gamma.overlay, { 'opacity' : 1 }, Gamma.settings.speed, Gamma.supportTransitions || !anim, function() {
@@ -794,12 +804,12 @@ var Gamma = (function() {
 					if( !Gamma.isSV ) {
 
 						return false;
-					
+
 					}
 					if( Gamma.supportTransitions ) {
 						$( this ).off( transEndEventName );
 					}
-					
+
 					// set the overflow-y to hidden
 					$body.css( 'overflow-y', 'hidden' );
 					// force repaint. Chrome in Windows does not remove overflow..
@@ -825,11 +835,11 @@ var Gamma = (function() {
 							height : finalSizePosition.height,
 							left : finalSizePosition.left + $window.scrollLeft() + Gamma.svMargins.horizontal / 2,
 							top : finalSizePosition.top + $window.scrollTop() + Gamma.svMargins.vertical / 2
-						}, 
+						},
 						cond = Gamma.supportTransitions;
 
 					_applyAnimation( Gamma.fly, styleCSS, Gamma.settings.speed, cond, function() {
-						
+
 						if( cond ) {
 							$( this ).off( transEndEventName );
 						}
@@ -851,7 +861,7 @@ var Gamma = (function() {
 
 			// add description
 			if( !Gamma.svDescription ) {
-				
+
 				Gamma.svDescription = $( '<div/>' )
 										.addClass( 'gamma-description' )
 										.appendTo( Gamma.singleview ).wrap( '<div class="gamma-description-wrapper"></div>' );
@@ -867,7 +877,7 @@ var Gamma = (function() {
 
 			// loading status: give a little amount of time before displaying it
 			var loadingtimeout = setTimeout( function() { Gamma.singleview.addClass( 'gamma-loading' );	}, Gamma.settings.svImageTransitionSpeedFade + 250 );
-			
+
 			// preload the new image
 			Gamma.svImage = $( '<img/>' ).load( function() {
 
@@ -897,7 +907,7 @@ var Gamma = (function() {
 				}
 
 				if( Gamma.fly ) {
-					
+
 					if( Gamma.supportTransitions ) {
 
 						_setTransition( Gamma.fly, 'opacity', 1000 );
@@ -953,14 +963,14 @@ var Gamma = (function() {
 				var ratio = imgW / wrapperW;
 
 				finalH = imgH / ratio;
-				
+
 				if( finalH > wrapperH ) {
 
 					checksource = true;
 					ratio = finalH / wrapperH;
 					finalW /= ratio;
 					finalH = wrapperH;
-				
+
 				}
 
 			}
@@ -973,7 +983,7 @@ var Gamma = (function() {
 				finalW = imgW / ratio;
 
 				checksource = true;
-				
+
 				if( finalW > wrapperW ) {
 
 					checksource = false;
@@ -981,7 +991,7 @@ var Gamma = (function() {
 					ratio = finalW / wrapperW;
 					finalW = wrapperW;
 					finalH /= ratio;
-				
+
 				}
 
 			}
@@ -1027,7 +1037,7 @@ var Gamma = (function() {
 				var diff = $document.height() - $window.height();
 
 				if( wst > diff ) {
-					
+
 					wst = diff;
 				}
 
@@ -1042,9 +1052,9 @@ var Gamma = (function() {
 				position : 'absolute',
 				zIndex : 10000,
 				left : l,
-				top : t 
+				top : t
 			} );
-			
+
 			if( Gamma.supportTransitions ) {
 
 				_setTransition( Gamma.svImage  );
@@ -1064,7 +1074,7 @@ var Gamma = (function() {
 					top : $item.offset().top + ( $item.outerHeight( true ) - $item.height() ) / 2
 				}
 				_applyAnimation( Gamma.svImage, styleCSS, Gamma.settings.speed, Gamma.supportTransitions, function() {
-						
+
 					$item.css( 'visibility', 'visible' );
 					$( this ).remove();
 					Gamma.svImage = null;
@@ -1081,7 +1091,7 @@ var Gamma = (function() {
 					}
 
 					_applyAnimation( Gamma.overlay, { 'opacity' : 0 }, Gamma.settings.speed, Gamma.supportTransitions, function() {
-							
+
 						var $this = $( this );
 
 						if( Gamma.supportTransitions ) {
@@ -1099,7 +1109,10 @@ var Gamma = (function() {
 
 				}
 
+				// Gamma.svImage.remove()
+				// $('.gamma-img-fly').remove();
 				_saveState();
+
 
 			}, 25 );
 
@@ -1133,7 +1146,7 @@ var Gamma = (function() {
 			_toggleControl( Gamma.svclose, 'off' );
 			_toggleControl( Gamma.svnavprev, 'off', { left : -40 } );
 			_toggleControl( Gamma.svnavnext, 'off', { right : -40 } );
-			
+
 			_svResizeImage( function() {
 
 				Gamma.isAnimating = false;
@@ -1159,7 +1172,7 @@ var Gamma = (function() {
 					wrapper : { width : $window.width() - Gamma.svMargins.horizontal, height : $window.height() - Gamma.svMargins.vertical },
 					image : { width : $img.width(), height : $img.height() }
 
-				} ),	
+				} ),
 				source = finalConfig.source;
 
 			$( '<img/>' ).attr( 'src', source.src );
@@ -1200,7 +1213,7 @@ var Gamma = (function() {
 					Gamma.isAnimating = false;
 
 				} );
-			
+
 			}
 
 		},
@@ -1209,7 +1222,7 @@ var Gamma = (function() {
 
 			switch( type ) {
 
-				case 'window' : 
+				case 'window' :
 
 					if( Gamma.settings.historyapi ) {
 
@@ -1225,7 +1238,7 @@ var Gamma = (function() {
 
 					// use the property name to generate the prefixed event name
 					var visProp = getHiddenProp();
-					
+
 					// HTML5 PageVisibility API
 					// http://www.html5rocks.com/en/tutorials/pagevisibility/intro/
 					// by Joe Marini (@joemarini)
@@ -1233,19 +1246,19 @@ var Gamma = (function() {
 
 						var evtname = visProp.replace(/[H|h]idden/,'') + 'visibilitychange';
 						document.addEventListener(evtname, _visChange);
-					
+
 					}
-					
+
 					break;
 
-				case 'singleview' : 
+				case 'singleview' :
 
 					Gamma.gallery.on( 'click.gamma', 'li', _singleview );
 					Gamma.svclose.on( 'click.gamma', _closesingleview );
 
 					break;
 
-				case 'singleviewnavigation' : 
+				case 'singleviewnavigation' :
 
 					Gamma.svnavnext.on( 'click.gamma', function() { _onnavigate( 'next' ); } );
 					Gamma.svnavprev.on( 'click.gamma', function() { _onnavigate( 'prev' ); } );
@@ -1257,7 +1270,7 @@ var Gamma = (function() {
 					}
 
 					if ( Gamma.settings.keyboard ) {
-						
+
 						$document.on( 'keydown.gamma', function( event ) {
 
 							var keyCode = event.keyCode || event.which,
@@ -1269,14 +1282,14 @@ var Gamma = (function() {
 								};
 
 							switch (keyCode) {
-								
+
 								case arrow.left :
 
 									_onnavigate( 'prev' );
 									break;
-								
+
 								case arrow.right :
-									
+
 									_onnavigate( 'next' );
 									break;
 
@@ -1292,12 +1305,12 @@ var Gamma = (function() {
 							'swipeleft.gamma' : function() {
 
 								_onnavigate( 'next' );
-							
+
 							},
 							'swiperight.gamma' : function() {
 
 								_onnavigate( 'prev' );
-							
+
 							}
 						} );
 
@@ -1311,7 +1324,7 @@ var Gamma = (function() {
 
 						}
 						else if( !Gamma.isAnimating ) {
-								
+
 							_prepareSlideshow();
 
 						}
@@ -1353,6 +1366,13 @@ var Gamma = (function() {
 			if( fncomplete && cond ) {
 
 				el.on( transEndEventName, fncomplete );
+				el.on( transEndEventName, function(){
+					// debugger;
+					img = document.querySelectorAll('body > img.gamma-img-fly');
+					/*if( typeof img != "undefined" && typeof img.parentNode != "undefined"){
+						img.parentNode.removeChild(img);
+					}*/
+				} );
 
 			}
 
@@ -1372,9 +1392,21 @@ var Gamma = (function() {
 
 		};
 
+		removeAll = function() {
+
+			Gamma.gallery.remove();
+			$('.gamma-img-fly').remove();
+			Gamma.items = Gamma.gallery.children();
+			Gamma.itemsCount = Gamma.items.length;
+			// _layout();
+			_reloadMasonry();
+
+		};
+
 	return {
 		init : init,
-		add : add
+		add : add,
+		removeAll: removeAll,
 	}
 
 })();
