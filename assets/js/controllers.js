@@ -149,6 +149,10 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		$scope.cards = $scope.reservesToMake.concat($scope.wineries);
 	})
 
+	$scope.hideNext = function(){
+		return ($scope.reservesToMake.length == 0);
+	}
+
 	$scope.nextStep = function(){
 		if($scope.reservesToMake.length > 0){
 			$location.path('/datosPersonales');
