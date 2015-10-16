@@ -317,3 +317,14 @@ button.gamma-btn-sspause:before {
 li.gamma-item:{
 	z-index: 999;
 }
+
+.gamma-gallery .not-found{
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	font-size: 2rem;
+}
+
+.gamma-gallery .not-found *{
+	margin: 1rem 0;
+}

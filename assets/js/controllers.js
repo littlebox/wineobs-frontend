@@ -170,7 +170,7 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		// $('.gammaGallery iframe').attr('src','assets/GammaGallery/index.php')
 
 		iframe = $('.gammaGallery iframe')[0];
-		if(iframe.contentWindow.init(winery)){
+		if(iframe.contentWindow.init(winery,location.hostname)){
 			$('.gammaGallery').addClass('show');
 		}
 

@@ -71,7 +71,7 @@
 
 			});
 
-			window.init = function(w){
+			window.init = function(w,host){
 				logo = document.querySelector('#logo');
 				if(typeof w != "undefined"){
 					if(w.Winery.has_logo){
@@ -108,6 +108,9 @@
 					// msnr.append($('.gamma-gallery div'))
 					Gamma.init(window.GammaSettings);
 
+				}else{
+					$('.gamma-gallery').html('<div class="not-found"><p>No se encontraron imágenes de esta bodega</p>\
+						<div><img src="http://'+host+'/assets/img/shrug.svg"></div></div>');
 				}
 
 				return true;
