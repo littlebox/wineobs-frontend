@@ -37,7 +37,7 @@
 //   "foundation/components/tables",
 "foundation/components/tabs",
 //   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
+"foundation/components/tooltips",
 //   "foundation/components/top-bar",
 "foundation/components/type",
 //   "foundation/components/offcanvas",
@@ -176,6 +176,61 @@ body{
 								}
 							}
 						}
+					}
+				}
+
+				.cart{
+					.cart-open-button{
+						position:relative;
+						.reservation-qty-container{
+							position: absolute;
+							bottom: 0.7rem;
+							left: 1.9rem;
+							width: 1.2rem;
+							height: 1.2rem;
+							color: $tinto-wineobs;
+							background: $white;
+							text-align: center;
+							font-weight: bold;
+							font-size: 1rem;
+							border-radius: 0.6rem;
+							line-height: 1.2rem;
+							transform: scale(0.8);
+							transform-origin: 50% 50%;
+							transition: transform 100ms ease-in-out;
+							display:none;
+							&.animate{
+								display:block;
+								animation-duration:1s;
+								animation-name: blink;
+								animation-iteration-count: infinite;
+								animation-direction: alternate;
+							}
+
+							@keyframes blink{
+								from {
+									transform: scale(0.75);
+								}
+								to{
+									transform: scale(0.6);
+								}
+							}
+
+						}
+					}
+					.menu-close-button{
+						position:relative;
+						top: 1rem;
+					}
+					.pricing {
+						font-size: 1rem;
+					}
+					.reservation-container {
+						font-size: 1rem;
+						text-align: center;
+					}
+					.reservation-name {
+						text-align: left;
 					}
 				}
 			}

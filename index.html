@@ -36,9 +36,66 @@
 						</div>
 					</div>
 				</div>
-				<div class="cart">
-					<div class="cart-open-button">
+				<div class="cart" ng-controller="cartController">
+					<div class="cart-open-button" ng-click="cartSlided=(reservationQty?true:false)" ng-init="cartSlided=false">
 						<span class="icon-wineobs-wine-glass"></span>
+						<div ng-class="{animate: reservationQty}" class="reservation-qty-container">
+							<span class="reservation-qty">{{reservationQty}}</span>
+						</div>
+						<div ng-class="{open: cartSlided}" class="cart-slide menu-overlay overlay overlay-slide">
+							<div>
+								<div ng-click="cartSlided=false" class="small-1 small-offset-11 cart menu-close-button">
+									<div>
+										<span class="icon-wineobs-cross"></span>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="small-12 columns">
+										<div class="row reservation-container" ng-repeat="r in reservations | orderBy:'hour'">
+											<div class="reservation-name small-12">
+												{{r.winery.name}}
+											</div>
+											<div class="small-12">
+												<div class="small-2 column">
+													<h2>{{r.hour}}</h2>
+												</div>
+												<div class="small-3 column">
+													{{r.tour.name}}
+												</div>
+												<div class="small-2 column">
+													Idioma: {{r.language}}
+												</div>
+												<div class="small-2 column">
+													<div class="pricing row">
+														<div class="small-12 column">
+															Cupos y precios
+														</div>
+														<div class="small-12">
+															<div class="pricing-minors">
+																<span>{{r.minors}} menores x {{r.tour.minors_price}}</span>
+															</div>
+														</div>
+														<div class="small-12">
+															<div class="pricing-minors">
+																<span>{{r.adults}} mayores x {{r.tour.price}}</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="small-2 column">
+													<span>Subtotal: {{r.tour.minors_price * r.minors + r.tour.price * r.adults}}</span>
+												</div>
+												<div class="small-1 column">
+													<span class="icon-wineobs-cross"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -195,6 +252,7 @@
 	<script type="text/javascript" src="/assets/js/marker-clusterer.min.js"></script>
 
 	<script type="text/javascript" src="/assets/foundation/js/foundation.min.js"></script>
+	<script type="text/javascript" src="/assets/foundation/js/foundation/foundation.tooltip.min.js"></script>
 	<script type="text/javascript" src="/assets/js/app.js"></script>
 	<script src="/assets/js/routes.js"></script>
 	<script src="/assets/js/controllers.js"></script>

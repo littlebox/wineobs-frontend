@@ -100,7 +100,7 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate).
 		success(function(data, status, headers, config) {
 			$scope.wineries = data;
-			$scope.cards = $scope.reservesToMake.concat(data);
+			$scope.cards = data; //$scope.reservesToMake.concat(data);
 			// data.forEach(function(v){loadLogos(v.Winery.id)})
 			Wineobs.initResults();
 			Wineobs.addWineryMarkers(data);
@@ -144,10 +144,10 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		reservation.removeReserve($index);
 	}
 
-	$scope.$on('updateReservesToMake', function(){
+	/*$scope.$on('updateReservesToMake', function(){
 		$scope.reservesToMake = reservation.getReservesToMake();
 		$scope.cards = $scope.reservesToMake.concat($scope.wineries);
-	})
+	})*/
 
 	$scope.hideNext = function(){
 		return ($scope.reservesToMake.length == 0);
@@ -209,6 +209,26 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 wineobsApp.controller('contactController', function ($scope,$rootScope){
 	$rootScope.bodyClass = 'contact';
 	Wineobs.init();
+});
+
+wineobsApp.controller('cartController', function ($scope,$rootScope, reservation){
+	$scope.reservationQty = 0; //reservation.getReservesToMake().length;
+	$scope.cartSlided = false;
+	$scope.reservations = reservation.getReservesToMake();
+
+	$scope.$on('updateReservesToMake', function(){
+		$scope.reservationQty = reservation.getReservesToMake().length;
+	});
+
+	$scope.cartSlide = function(){
+		$scope.cartSlided = true;
+	}
+
+	var menuCartClose = document.querySelector('.cart.menu-close-button');
+
+	menuCartClose.addEventListener('click',function(ev){
+		ev.stopPropagation();
+	})
 });
 
 wineobsApp.controller('reservationModalController', function ($scope,$rootScope, reservation){
