@@ -1,4 +1,4 @@
-var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination']);
+var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.foundation']);
 (function(window){
 	'use strict';
 	var Wineobs = {
@@ -106,6 +106,11 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination']);
 					),
 					// animation: google.maps.Animation.DROP,
 				});
+
+				Wineobs.markers[w.Winery.id].addListener('mouseover',function(){
+					console.log('asdf')
+				})
+
 				Wineobs.bounds.extend(latLng);
 				// Wineobs.markerClusterer.addMarker(Wineobs.markers[w.Winery.id]);
 			})

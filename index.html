@@ -36,9 +36,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="cart" ng-controller="cartController">
+				<div ng-click="closeReserveTooltip()" class="cart" ng-controller="cartController">
 					<div class="cart-open-button" ng-click="cartSlided=(reservationQty?true:false)" ng-init="cartSlided=false">
-						<span class="icon-wineobs-wine-glass"></span>
+						<span class="new-reserve-tooltip has-tip icon-wineobs-wine-glass" tooltip-html-unsafe="{{newReserveTooltip}}" tooltip-trigger="new-reserve" tooltip-placement="bottom"></span>
 						<div ng-class="{animate: reservationQty}" class="reservation-qty-container">
 							<span class="reservation-qty">{{reservationQty}}</span>
 						</div>
@@ -52,7 +52,7 @@
 
 								<div class="row">
 									<div class="small-12 columns">
-										<div class="row reservation-container" ng-repeat="r in reservations | orderBy:'hour'">
+										<div class="row reservation-container" ng-repeat="(k,r) in reservations | orderBy:'hour'">
 											<div class="reservation-name small-12">
 												{{r.winery.name}}
 											</div>
@@ -87,7 +87,7 @@
 													<span>Subtotal: {{r.tour.minors_price * r.minors + r.tour.price * r.adults}}</span>
 												</div>
 												<div class="small-1 column">
-													<span class="icon-wineobs-cross"></span>
+													<span ng-click="removeReserve(k)" class="icon-wineobs-cross"></span>
 												</div>
 											</div>
 										</div>
@@ -252,8 +252,9 @@
 	<script type="text/javascript" src="/assets/js/marker-clusterer.min.js"></script>
 
 	<script type="text/javascript" src="/assets/foundation/js/foundation.min.js"></script>
-	<script type="text/javascript" src="/assets/foundation/js/foundation/foundation.tooltip.min.js"></script>
+	<script type="text/javascript" src="/assets/angular-foundation/mm-foundation-tpls.min.js"></script>
 	<script type="text/javascript" src="/assets/js/app.js"></script>
+
 	<script src="/assets/js/routes.js"></script>
 	<script src="/assets/js/controllers.js"></script>
 	<script src="/assets/js/services.js"></script>

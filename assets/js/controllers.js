@@ -211,17 +211,39 @@ wineobsApp.controller('contactController', function ($scope,$rootScope){
 	Wineobs.init();
 });
 
-wineobsApp.controller('cartController', function ($scope,$rootScope, reservation){
-	$scope.reservationQty = 0; //reservation.getReservesToMake().length;
-	$scope.cartSlided = false;
-	$scope.reservations = reservation.getReservesToMake();
+wineobsApp
+	.config(function($tooltipProvider){
+		$tooltipProvider.setTriggers({
+			'new-reserve':'end-new-reserve',
+		})
+	})
+	.controller('cartController', function ($scope,$rootScope, reservation){
+		$scope.reservationQty = 0; //reservation.getReservesToMake().length;
+		$scope.cartSlided = false;
+		$scope.reservations = reservation.getReservesToMake();
 
-	$scope.$on('updateReservesToMake', function(){
-		$scope.reservationQty = reservation.getReservesToMake().length;
-	});
+		$scope.newReserveTooltip = '<span class="icon-wineobs-cross"></span><h1>Nueva Reserva!</h1><p>Para ver sus reservas haga click en la copa</p>'
+
+		$scope.$on('updateReservesToMake', function(){
+			$scope.reservationQty = reservation.getReservesToMake().length;
+			if($scope.reservationQty < 3){
+				window.setTimeout(function(){
+					$('.new-reserve-tooltip').trigger('new-reserve');
+					window.setTimeout(function(){
+						$('.new-reserve-tooltip').trigger('end-new-reserve');
+					},4000)
+				},0)
+			}
+		});
 
 	$scope.cartSlide = function(){
 		$scope.cartSlided = true;
+	}
+
+	$scope.closeReserveTooltip = function(){
+		window.setTimeout(function(){
+			$('.new-reserve-tooltip').trigger('end-new-reserve');
+		})
 	}
 
 	var menuCartClose = document.querySelector('.cart.menu-close-button');
@@ -229,6 +251,10 @@ wineobsApp.controller('cartController', function ($scope,$rootScope, reservation
 	menuCartClose.addEventListener('click',function(ev){
 		ev.stopPropagation();
 	})
+
+	$scope.removeReserve = function($index){
+		reservation.removeReserve($index);
+	}
 });
 
 wineobsApp.controller('reservationModalController', function ($scope,$rootScope, reservation){
