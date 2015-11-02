@@ -9,7 +9,7 @@
 @import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
+"foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
 //   "foundation/components/button-groups",
 "foundation/components/buttons",
@@ -25,7 +25,7 @@
 //   "foundation/components/labels",
 //   "foundation/components/magellan",
 //   "foundation/components/orbit",
-//   "foundation/components/pagination",
+"foundation/components/pagination",
 //   "foundation/components/panels",
 //   "foundation/components/pricing-tables",
 //   "foundation/components/progress-bars",
@@ -102,10 +102,10 @@ body{
 	overflow-x:hidden;
 
 	.logo{
-		background-image: url('/assets/img/logo-wineobs.svg');
+		background-image: url('/assets/img/logo.svg');
 		background-repeat: no-repeat;
 		background-size:contain;
-		height: 100px;
+		height: 65px;
 		background-position:50%;
 		margin: 1rem 0 0;
 	}
@@ -1025,7 +1025,117 @@ body.results{
 			}
 		}
 		.wineries{
-			@include flex(5);
+
+			$winery-height: 12.5rem;
+
+			.winery{
+				position: relative;
+				min-height: $winery-height;
+				padding: 0;
+				margin: 0;
+				background: rgba(255, 255, 255, 0);
+				border: 0.3rem solid rgba(255, 255, 255, 0);
+
+				&:hover, &.highlight{
+					.winery-data{
+						transition: background-color 200ms ease-in-out;
+						background-color: rgba(0, 0, 0, 0.1);
+					}
+					.winery-image{
+						border: 0.2rem solid white;
+						transition: border 300ms ease-in-out;
+					}
+					.winery-logo{
+						img{
+							backface-visibility: hidden;
+							transform: rotateY(180deg);
+							transition: transform 500ms ease-in-out;
+						}
+						.winery-name{
+							transform: rotateY(0deg) !important;
+							transition: transform 500ms ease-in-out;
+						}
+					}
+					.winery-buttons{
+						transform: scale(1.2);
+						transition: transform 200ms ease-in-out;
+						a{
+							text-shadow: 1px 1px 2px black;
+							transition: text-shadow 200ms ease-in-out;
+						}
+					}
+				}
+
+				.winery-container,.winery-image,.winery-data{
+					position: absolute;
+					height: 100%;
+					width: 100%;
+				}
+				.winery-container{
+					box-shadow: 0.3rem 0.3rem 2px 0px rgba(0, 0, 0, 0.8);
+				}
+				.winery-image{
+					transition: border 200ms ease-in-out;
+				}
+				.winery-image-background{
+					width:100%;
+					height:100%;
+					background-size: cover;
+					background-repeat: no-repeat;
+					z-index: 1;
+				}
+				.winery-data{
+					z-index: 2;
+					background-color: rgba(0,0,0,0.6);
+					padding: 1rem;
+					transition: background-color 200ms ease-in-out;
+					.winery-logo{
+						padding: 0.5rem 0;
+						position: relative;
+						img{
+							width: 90%;
+						}
+						.winery-name{
+							position: absolute;
+							font-family: FuturaLTHeavy;
+							line-height: 2.2rem;
+							text-shadow: 1px 1px 2px #000;
+							width: 100%;
+							top: 2rem;
+							font-size: 2rem;
+							font-weight: bold;
+							transform: rotateY(180deg);
+							backface-visibility: hidden;
+							letter-spacing: 0.3rem;
+						}
+					}
+					.winery-buttons{
+						margin: 1rem 0;
+						a{
+							color: white;
+							font-size: 1.5rem;
+							margin: 0 0.8rem;
+							transition: color 200ms ease-in-out;
+							&:hover{
+								color: $tinto-wineobs;
+							}
+						}
+					}
+				}
+			}
+
+			.pagination-list{
+				min-height: $winery-height*2;
+			}
+
+			.pagination-container{
+				position: relative;
+				.pagination{
+					position: absolute;
+					top: 1rem;
+					right: 1rem;
+				}
+			}
 			position: relative;
 
 			.wineries-paginator{
@@ -1239,6 +1349,8 @@ body.results{
 					input{
 						width: 100%;
 						height: 30px;
+						font-size: 1rem;
+						font-weight: bold;
 					}
 				}
 				&.active{
@@ -1248,7 +1360,7 @@ body.results{
 				}
 			}
 
-			.pagination{
+			/* .pagination{
 				position: absolute;
 				bottom: -35px;
 				right: 0px;
@@ -1278,7 +1390,7 @@ body.results{
 						}
 					}
 				}
-			}
+			} */
 
 		}
 	}
@@ -1723,5 +1835,11 @@ body.wineobs{
 	body{
 		background: darken($tinto-wineobs,20%);
 		background-image: none !important;
+	}
+	.winery .winery-data .winery-logo img {
+		width: 90%;
+	}
+	body.results .step-content .wineries .winery{
+		min-height: 19.5rem;
 	}
 }

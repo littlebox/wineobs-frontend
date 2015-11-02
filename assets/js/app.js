@@ -1,4 +1,4 @@
-var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.foundation']);
+var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation']);
 (function(window){
 	'use strict';
 	var Wineobs = {
@@ -88,8 +88,8 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.found
 			});
 		},
 		addWineryMarkers: function(wineries){
-			console.debug('Anadiendo markers...');
-			console.debug(wineries);
+			// console.debug('Anadiendo markers...');
+			// console.debug(wineries);
 
 			wineries.forEach(function(w){
 				var latLng = new google.maps.LatLng(w.Winery.latitude,w.Winery.longitude);
@@ -104,11 +104,25 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.found
 						new google.maps.Point(15, 15), //Anchor
 						null //ScaledSize
 					),
+					visible: false,
 					// animation: google.maps.Animation.DROP,
 				});
 
-				Wineobs.markers[w.Winery.id].addListener('mouseover',function(){
-					console.log('asdf')
+				Wineobs.markers[w.Winery.id].addListener('mouseover',(function(id){
+					Wineobs.markers[id].setZIndex(9);
+					// angular.element('div[data-winery-id="'+id+'"]').addClass('highlight');
+					document.querySelector('div[data-winery-id="'+id+'"]').parentNode.classList.add('highlight');
+					// angular.element('.pagination-list').scope().highlightByName(id,true);
+				}).bind(null,w.Winery.id));
+
+				Wineobs.markers[w.Winery.id].addListener('mouseout',(function(id){
+					Wineobs.markers[id].setZIndex(1);
+
+					document.querySelector('div[data-winery-id="'+id+'"]').parentNode.classList.remove('highlight');
+					// angular.element('.pagination-list').scope().highlightByName(id,false);
+				}).bind(null,w.Winery.id));
+
+				Wineobs.markers[w.Winery.id].addListener('click',function(){
 				})
 
 				Wineobs.bounds.extend(latLng);
@@ -120,15 +134,11 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.found
 			var paginator = $('.wineries-paginator');
 
 			//Click on pin icon
-			paginator.on('click','.winery-icons .icon-wineobs-pin',function(ev){
+			$('.winery').on('click','.winery-buttons .icon-wineobs-pin',function(ev){
 				ev.preventDefault();
-				var button = this;
-				var mask = button.parentNode.parentNode.parentNode.querySelector('.winery-card-top-mask');
-				mask.classList.toggle('swipe-pin');
+				var pin = this;
 
-				var card = button.parentNode.parentNode.parentNode.parentNode;
-
-				var index = card.getAttribute('data-winery-index');
+				var index = pin.getAttribute('data-winery-id');
 				Wineobs.markers[index].setIcon(new google.maps.MarkerImage(
 					'/assets/img/marker-hover.png',
 					new google.maps.Size(30, 30), //Original Size
@@ -140,18 +150,18 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.found
 				Wineobs.map.panTo(Wineobs.markers[index].getPosition())
 			})
 
-			//Hover on winery card
-			paginator.on('mouseout','.winery-card-front',function(ev){
-				ev.preventDefault();
-				var index = this.parentNode.getAttribute('data-winery-index');
-				Wineobs.markers[index].setIcon(new google.maps.MarkerImage(
-					'/assets/img/marker.png',
-					new google.maps.Size(30, 30), //Original Size
-					new google.maps.Point(0, 0), //Origin
-					new google.maps.Point(15, 15), //Anchor
-					null //ScaledSize
-				))
-			})
+			// //Hover on winery card
+			// paginator.on('mouseout','.winery-card-front',function(ev){
+			// 	ev.preventDefault();
+			// 	var index = this.parentNode.getAttribute('data-winery-index');
+			// 	Wineobs.markers[index].setIcon(new google.maps.MarkerImage(
+			// 		'/assets/img/marker.png',
+			// 		new google.maps.Size(30, 30), //Original Size
+			// 		new google.maps.Point(0, 0), //Origin
+			// 		new google.maps.Point(15, 15), //Anchor
+			// 		null //ScaledSize
+			// 	))
+			// })
 
 			var buttons = [].slice.call( document.querySelectorAll( '.winery-card-front .winery-button .wineobs-button' ) )
 			buttons.forEach( function( button, idx ) {
@@ -197,11 +207,13 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute','pagination', 'mm.found
 				var input = search.querySelector('.search-input input');
 				lens.addEventListener('click',function(ev){
 					ev.preventDefault();
-					search.classList.toggle('active');
+					search.classList.add('active');
+					search.querySelector('input').focus();
 				});
 				input.addEventListener('blur',function(ev){
 					ev.preventDefault();
-					search.classList.remove('active');
+					if(input.value.length === 0)
+						search.classList.remove('active');
 				})
 			}
 		},

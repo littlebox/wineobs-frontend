@@ -88,8 +88,25 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	Wineobs.initReserveFormData();
 });
 
-wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,reservation,$location){
+wineobsApp
+.filter('search', function(){
+	return function(wineries,searchText){
+		searchText = searchText.trim();
+		if(searchText.length){
+			wineries = wineries.filter(function(w){
+				return (w.Winery.name.toLowerCase().match(searchText.toLowerCase()));
+			})
+		}
+		return wineries;
+	}
+})
+.controller('resultsController', function ($q,$scope,$rootScope,$http,reservation,$location,$filter){
 	$rootScope.bodyClass = 'results';
+
+	$scope.paginatedWineries = [];
+	$scope.itemsPerPage = 6;
+	$scope.search = '';
+	$scope.highlight = [];
 
 	formData = reservation.getFormData();
 	language = formData.language;
@@ -101,34 +118,68 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		success(function(data, status, headers, config) {
 			$scope.wineries = data;
 			$scope.cards = data; //$scope.reservesToMake.concat(data);
-			// data.forEach(function(v){loadLogos(v.Winery.id)})
 			Wineobs.initResults();
 			Wineobs.addWineryMarkers(data);
-			Wineobs.initPaginator();
+			// Wineobs.initPaginator();
 			$scope.show = true;
+
+			$scope.paginateWineries();
+
 		}).
 		error(function(data, status, headers, config) {
 			swal('Error','Error');
 		});
 
+	$scope.paginateWineries = function(){
+		paginatedWineries = [];
+		filteredWineries = $filter('search')($scope.wineries,$scope.search)
+		for (var i = 0; i <= Math.floor(filteredWineries.length/$scope.itemsPerPage); i++) {
+			paginatedWineries.push(filteredWineries.slice($scope.itemsPerPage*i,($scope.itemsPerPage*i)+$scope.itemsPerPage));
+		};
+		$scope.paginatedWineries = paginatedWineries;
+		$scope.totalItems = filteredWineries.length;
+		$scope.currentPage = 1;
+		$scope.updateMarkers(1);
+	}
+
+	$scope.updateMarkers = function(page){
+		Wineobs.markers.forEach(function(m){
+			m.setVisible(false);
+		})
+		ids = []
+		Wineobs.bounds = new google.maps.LatLngBounds
+		$scope.paginatedWineries[page-1].forEach(function(w,k){
+			latLng = new google.maps.LatLng(w.Winery.latitude,w.Winery.longitude);
+			Wineobs.bounds.extend(latLng);
+			ids.push(w.Winery.id);
+		})
+		Wineobs.map.fitBounds(Wineobs.bounds);
+		ids.forEach(function(i){
+			Wineobs.markers[i].setVisible(true);
+		})
+	}
+
+	$scope.highlightByName = function(id,active){
+		$scope.highlight[id] = active;
+	}
+
 	$scope.logos = function(w){
 		if(typeof w.Winery != "undefined"){
 			if(w.Image.length){
-				console.log(w.Image[0]);
 				imgUrl = 'http://reservas.wineobs.com/img/wineries/'+w.Image[0].id+'.jpg';
-				$('div[data-winery-index="'+w.Image[0].winery_id+'"] div.winery-card-front').css('background-image','url('+imgUrl+')')
+				$('li.winery div[data-winery-id="'+w.Image[0].winery_id+'"] div.winery-image-background').css('background-image','url('+imgUrl+')')
 			}
 			if(w.Winery.has_logo){
 				return $rootScope.apiUrl+'/img/wineries/logos/'+w.Winery.id+'.png';
 			}else{
-				return $rootScope.apiUrl+'/img/wineries/logos/default.png';
+				return $rootScope.apiUrl+'/img/wineries/logos/default.svg';
 			}
-		}else if(typeof w.winery != "undefined"){
-			if(w.winery.has_logo){
-				return $rootScope.apiUrl+'/img/wineries/logos/'+w.winery.id+'.png';
-			}else{
-				return $rootScope.apiUrl+'/img/wineries/logos/default.png';
-			}
+		// }else if(typeof w.winery != "undefined"){
+		// 	if(w.winery.has_logo){
+		// 		return $rootScope.apiUrl+'/img/wineries/logos/'+w.winery.id+'.png';
+		// 	}else{
+		// 		return $rootScope.apiUrl+'/img/wineries/logos/default.png';
+		// 	}
 		}
 	}
 
@@ -136,8 +187,9 @@ wineobsApp.controller('resultsController', function ($q,$scope,$rootScope,$http,
 		reservation.showReservationModal(winery, 'info')
 	}
 
-	$scope.buttonClick = function(winery){
-		reservation.showReservationModal(winery, 'tours')
+	$scope.wineryClick = function(winery,$event){
+		if($event.target.nodeName != "SPAN")
+			reservation.showReservationModal(winery, 'tours');
 	}
 
 	$scope.removeReserve = function($index){

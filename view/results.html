@@ -12,14 +12,14 @@
 			</div>
 		</div>
 
-		<div class="step-content flex">
-			<div class="map flex">
+		<div class="step-content">
+			<div class="map medium-5 column show-for-medium-up">
 				<div class="map-container f1"></div>
 			</div>
-			<div class="wineries flex">
-				<div class="search">
+			<div class="wineries medium-7 column">
+				<div class="search" ng-class="{active: search.lenght > 0}">
 					<div class="search-input">
-						<input ng-model="q.Winery.name" type="text">
+						<input ng-model="search" ng-change="paginateWineries()" type="text">
 					</div>
 					<div class="search-lens">
 						<div class="lens">
@@ -28,8 +28,28 @@
 					</div>
 				</div>
 
-				<div class="wineries-paginator">
-					<div class="winery-card" ng-show="show" ng-class="{'reservation': w.reservation}" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in cards | itemsPerPage: 6 | filter:q">
+				<ul class="small-block-grid-1 medium-block-grid-3 pagination-list">
+					<li class="winery" ng-repeat="(k,w) in paginatedWineries[currentPage-1]">
+						<div data-winery-id="{{w.Winery.id}}" class="winery-container" ng-click="wineryClick(w,$event)">
+							<div class="winery-image">
+								<div class="winery-image-background"></div>
+							</div>
+							<div class="winery-data">
+								<div class="winery-logo text-center">
+									<img src="{{logos(w)}}">
+									<div class="winery-name">
+										{{w.Winery.name}}
+									</div>
+								</div>
+								<div class="winery-buttons text-center">
+									<a ng-click="infoClick(w)" href="#"><span class="icon icon-wineobs-info"></span></a>
+									<a ng-click="showGammaGalery(w)" href="#"><span class="icon icon-wineobs-photo"></span></a>
+									<a href="#"><span ng-click="clickPin(w.Winery.id)" class="icon icon-wineobs-pin"></span></a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- <div class="winery-card" ng-show="show" ng-class="{'reservation': w.reservation}" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in cards | itemsPerPage: 6 | filter:q">
 						<div class="winery-card-front f1 flex fcolumn">
 							<div class="winery-card-top flex">
 								<div class="winery-card-top-mask f1 flex">
@@ -66,10 +86,13 @@
 								<a ng-click="removeReserve($index)"><span class="icon-wineobs-cross"></span></a>
 							</div>
 						</div>
-					</div>
+					</div> -->
+				</ul>
+				<div class="small-12 text-center pagination-container">
+					<pagination total-items="totalItems" page="currentPage" items-per-page="itemsPerPage" previous-text="<" next-text=">" on-select-page="updateMarkers(page)"></pagination>
 				</div>
 
-				<div dir-pagination-controls class="pagination"></div>
+				<!-- <div dir-pagination-controls class="pagination"></div> -->
 			</div>
 		</div>
 

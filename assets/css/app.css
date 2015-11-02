@@ -178,6 +178,536 @@ select {
   width: 100%;
 }
 
+/* line 107, ../foundation/scss/foundation/components/_block-grid.scss */
+[class*="block-grid-"] {
+  display: block;
+  padding: 0;
+  margin: 0 -0.625rem;
+}
+/* line 239, ../foundation/scss/foundation/components/_global.scss */
+[class*="block-grid-"]:before, [class*="block-grid-"]:after {
+  content: " ";
+  display: table;
+}
+/* line 240, ../foundation/scss/foundation/components/_global.scss */
+[class*="block-grid-"]:after {
+  clear: both;
+}
+/* line 51, ../foundation/scss/foundation/components/_block-grid.scss */
+[class*="block-grid-"] > li {
+  display: block;
+  float: left;
+  height: auto;
+  padding: 0 0.625rem 1.25rem;
+}
+
+@media only screen {
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-1 > li {
+    list-style: none;
+    width: 100%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-1 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-1 > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-2 > li {
+    list-style: none;
+    width: 50%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-2 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-2 > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-3 > li {
+    list-style: none;
+    width: 33.33333%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-3 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-3 > li:nth-of-type(3n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-4 > li {
+    list-style: none;
+    width: 25%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-4 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-4 > li:nth-of-type(4n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-5 > li {
+    list-style: none;
+    width: 20%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-5 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-5 > li:nth-of-type(5n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-6 > li {
+    list-style: none;
+    width: 16.66667%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-6 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-6 > li:nth-of-type(6n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li {
+    list-style: none;
+    width: 14.28571%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-7 > li:nth-of-type(7n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li {
+    list-style: none;
+    width: 12.5%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-8 > li:nth-of-type(8n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li {
+    list-style: none;
+    width: 11.11111%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-9 > li:nth-of-type(9n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li {
+    list-style: none;
+    width: 10%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-10 > li:nth-of-type(10n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li {
+    list-style: none;
+    width: 9.09091%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-11 > li:nth-of-type(11n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li {
+    list-style: none;
+    width: 8.33333%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .small-block-grid-12 > li:nth-of-type(12n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-1 > li {
+    list-style: none;
+    width: 100%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-1 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-1 > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-2 > li {
+    list-style: none;
+    width: 50%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-2 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-2 > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-3 > li {
+    list-style: none;
+    width: 33.33333%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-3 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-3 > li:nth-of-type(3n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-4 > li {
+    list-style: none;
+    width: 25%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-4 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-4 > li:nth-of-type(4n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-5 > li {
+    list-style: none;
+    width: 20%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-5 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-5 > li:nth-of-type(5n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-6 > li {
+    list-style: none;
+    width: 16.66667%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-6 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-6 > li:nth-of-type(6n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li {
+    list-style: none;
+    width: 14.28571%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-7 > li:nth-of-type(7n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li {
+    list-style: none;
+    width: 12.5%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-8 > li:nth-of-type(8n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li {
+    list-style: none;
+    width: 11.11111%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-9 > li:nth-of-type(9n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li {
+    list-style: none;
+    width: 10%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-10 > li:nth-of-type(10n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li {
+    list-style: none;
+    width: 9.09091%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-11 > li:nth-of-type(11n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li {
+    list-style: none;
+    width: 8.33333%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .medium-block-grid-12 > li:nth-of-type(12n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-1 > li {
+    list-style: none;
+    width: 100%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-1 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-1 > li:nth-of-type(1n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-2 > li {
+    list-style: none;
+    width: 50%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-2 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-2 > li:nth-of-type(2n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-3 > li {
+    list-style: none;
+    width: 33.33333%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-3 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-3 > li:nth-of-type(3n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-4 > li {
+    list-style: none;
+    width: 25%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-4 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-4 > li:nth-of-type(4n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-5 > li {
+    list-style: none;
+    width: 20%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-5 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-5 > li:nth-of-type(5n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-6 > li {
+    list-style: none;
+    width: 16.66667%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-6 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-6 > li:nth-of-type(6n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li {
+    list-style: none;
+    width: 14.28571%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-7 > li:nth-of-type(7n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li {
+    list-style: none;
+    width: 12.5%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-8 > li:nth-of-type(8n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li {
+    list-style: none;
+    width: 11.11111%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-9 > li:nth-of-type(9n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li {
+    list-style: none;
+    width: 10%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-10 > li:nth-of-type(10n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li {
+    list-style: none;
+    width: 9.09091%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-11 > li:nth-of-type(11n+1) {
+    clear: both;
+  }
+
+  /* line 62, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li {
+    list-style: none;
+    width: 8.33333%;
+  }
+  /* line 69, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-of-type(1n) {
+    clear: none;
+  }
+  /* line 70, ../foundation/scss/foundation/components/_block-grid.scss */
+  .large-block-grid-12 > li:nth-of-type(12n+1) {
+    clear: both;
+  }
+}
 /* line 218, ../foundation/scss/foundation/components/_buttons.scss */
 button, .button {
   -webkit-appearance: none;
@@ -1963,6 +2493,78 @@ button::-moz-focus-inner {
     left: auto;
   }
 }
+/* line 150, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination {
+  display: block;
+  margin-left: -0.3125rem;
+  min-height: 1.5rem;
+}
+/* line 105, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li {
+  color: #222222;
+  font-size: 0.875rem;
+  height: 1.5rem;
+  margin-left: 0.3125rem;
+}
+/* line 111, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li a, ul.pagination li button {
+  border-radius: 3px;
+  -moz-transition: background-color, 300ms, ease-out;
+  -o-transition: background-color, 300ms, ease-out;
+  -webkit-transition: background-color, 300ms, ease-out;
+  transition: background-color, 300ms, ease-out;
+  background: none;
+  color: #999999;
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: inherit;
+  padding: 0.0625rem 0.625rem 0.0625rem;
+}
+/* line 123, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li:hover a,
+ul.pagination li a:focus, ul.pagination li:hover button,
+ul.pagination li button:focus {
+  background: #e6e6e6;
+}
+/* line 51, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.unavailable a, ul.pagination li.unavailable button {
+  cursor: default;
+  color: #999999;
+  pointer-events: none;
+}
+/* line 56, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus, ul.pagination li.unavailable:hover button, ul.pagination li.unavailable button:focus {
+  background: transparent;
+}
+/* line 69, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.current a, ul.pagination li.current button {
+  background: #9f4b55;
+  color: #FFFFFF;
+  cursor: default;
+  font-weight: bold;
+}
+/* line 75, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
+  background: #9f4b55;
+}
+/* line 137, ../foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li {
+  display: block;
+  float: left;
+}
+
+/* Pagination centred wrapper */
+/* line 155, ../foundation/scss/foundation/components/_pagination.scss */
+.pagination-centered {
+  text-align: center;
+}
+/* line 137, ../foundation/scss/foundation/components/_pagination.scss */
+.pagination-centered ul.pagination li {
+  display: inline-block;
+  float: none;
+}
+
 /* line 30, ../foundation/scss/foundation/components/_tabs.scss */
 .tabs {
   margin-bottom: 0 !important;
@@ -3520,10 +4122,10 @@ body {
 }
 /* line 104, ../../scss/app.scss */
 body .logo {
-  background-image: url("/assets/img/logo-wineobs.svg");
+  background-image: url("/assets/img/logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100px;
+  height: 65px;
   background-position: 50%;
   margin: 1rem 0 0;
 }
@@ -4702,15 +5304,161 @@ body.results .step-content .map .map-container {
 }
 /* line 1027, ../../scss/app.scss */
 body.results .step-content .wineries {
-  -webkit-box-flex: 5;
-  -webkit-flex: 5;
-  -moz-box-flex: 5;
-  -moz-flex: 5;
-  -ms-flex: 5;
-  flex: 5;
   position: relative;
+  /* .pagination{
+  	position: absolute;
+  	bottom: -35px;
+  	right: 0px;
+  	ul{
+  		@include flexbox();
+  		li{
+  			@include flex(1,0);
+  			list-style: none;
+  			position: relative;
+  			margin: 0 0.2rem;
+  			background-color: $tinto-wineobs;
+  			color: $white;
+  			font-family: CamptonBold;
+  			font-size: 0.9rem;
+  			width: 1.2rem;
+  			height: 1.2rem;
+  			text-align: center;
+  			border-radius: 0.6rem;
+  			a{
+  				color: $white;
+  			}
+  			&.active, &:hover{
+  				background-color: $white;
+  				a{
+  					color: $tinto-wineobs;
+  				}
+  			}
+  		}
+  	}
+  } */
 }
 /* line 1031, ../../scss/app.scss */
+body.results .step-content .wineries .winery {
+  position: relative;
+  min-height: 12.5rem;
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0);
+  border: 0.3rem solid rgba(255, 255, 255, 0);
+}
+/* line 1040, ../../scss/app.scss */
+body.results .step-content .wineries .winery:hover .winery-data, body.results .step-content .wineries .winery.highlight .winery-data {
+  transition: background-color 200ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* line 1044, ../../scss/app.scss */
+body.results .step-content .wineries .winery:hover .winery-image, body.results .step-content .wineries .winery.highlight .winery-image {
+  border: 0.2rem solid white;
+  transition: border 300ms ease-in-out;
+}
+/* line 1049, ../../scss/app.scss */
+body.results .step-content .wineries .winery:hover .winery-logo img, body.results .step-content .wineries .winery.highlight .winery-logo img {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 500ms ease-in-out;
+}
+/* line 1054, ../../scss/app.scss */
+body.results .step-content .wineries .winery:hover .winery-logo .winery-name, body.results .step-content .wineries .winery.highlight .winery-logo .winery-name {
+  transform: rotateY(0deg) !important;
+  transition: transform 500ms ease-in-out;
+}
+/* line 1059, ../../scss/app.scss */
+body.results .step-content .wineries .winery:hover .winery-buttons, body.results .step-content .wineries .winery.highlight .winery-buttons {
+  transform: scale(1.2);
+  transition: transform 200ms ease-in-out;
+}
+/* line 1062, ../../scss/app.scss */
+body.results .step-content .wineries .winery:hover .winery-buttons a, body.results .step-content .wineries .winery.highlight .winery-buttons a {
+  text-shadow: 1px 1px 2px black;
+  transition: text-shadow 200ms ease-in-out;
+}
+/* line 1069, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-container, body.results .step-content .wineries .winery .winery-image, body.results .step-content .wineries .winery .winery-data {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+/* line 1074, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-container {
+  box-shadow: 0.3rem 0.3rem 2px 0px rgba(0, 0, 0, 0.8);
+}
+/* line 1077, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-image {
+  transition: border 200ms ease-in-out;
+}
+/* line 1080, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-image-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+/* line 1087, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  transition: background-color 200ms ease-in-out;
+}
+/* line 1092, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data .winery-logo {
+  padding: 0.5rem 0;
+  position: relative;
+}
+/* line 1095, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data .winery-logo img {
+  width: 90%;
+}
+/* line 1098, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data .winery-logo .winery-name {
+  position: absolute;
+  font-family: FuturaLTHeavy;
+  line-height: 2.2rem;
+  text-shadow: 1px 1px 2px #000;
+  width: 100%;
+  top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  letter-spacing: 0.3rem;
+}
+/* line 1112, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data .winery-buttons {
+  margin: 1rem 0;
+}
+/* line 1114, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data .winery-buttons a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0.8rem;
+  transition: color 200ms ease-in-out;
+}
+/* line 1119, ../../scss/app.scss */
+body.results .step-content .wineries .winery .winery-data .winery-buttons a:hover {
+  color: #9f4b55;
+}
+/* line 1127, ../../scss/app.scss */
+body.results .step-content .wineries .pagination-list {
+  min-height: 25rem;
+}
+/* line 1131, ../../scss/app.scss */
+body.results .step-content .wineries .pagination-container {
+  position: relative;
+}
+/* line 1133, ../../scss/app.scss */
+body.results .step-content .wineries .pagination-container .pagination {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+/* line 1141, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator {
   width: 100%;
   display: -webkit-box;
@@ -4723,7 +5471,7 @@ body.results .step-content .wineries .wineries-paginator {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1035, ../../scss/app.scss */
+/* line 1145, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4740,11 +5488,11 @@ body.results .step-content .wineries .wineries-paginator .winery-card {
   min-height: 12.8rem;
   margin: 0.25rem 0.25rem;
 }
-/* line 1046, ../../scss/app.scss */
+/* line 1156, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card.reservation .winery-card-front {
   display: none;
 }
-/* line 1050, ../../scss/app.scss */
+/* line 1160, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible {
   position: absolute;
   width: 100%;
@@ -4765,7 +5513,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1062, ../../scss/app.scss */
+/* line 1172, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div, body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 100%;
@@ -4779,40 +5527,40 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   -ms-flex-item-align: center;
   align-self: center;
 }
-/* line 1067, ../../scss/app.scss */
+/* line 1177, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div {
   text-align: center;
 }
-/* line 1070, ../../scss/app.scss */
+/* line 1180, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible p {
   line-height: 1.1;
   margin: 0;
   font-weight: bold;
   font-size: 0.9rem;
 }
-/* line 1076, ../../scss/app.scss */
+/* line 1186, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible p.winery-name {
   text-transform: uppercase;
 }
-/* line 1079, ../../scss/app.scss */
+/* line 1189, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible p.hour {
   text-transform: uppercase;
 }
-/* line 1082, ../../scss/app.scss */
+/* line 1192, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul {
   list-style: none;
 }
-/* line 1084, ../../scss/app.scss */
+/* line 1194, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul li {
   font-size: 0.77rem;
   font-weight: normal;
   padding: 0 0 0 1rem;
 }
-/* line 1088, ../../scss/app.scss */
+/* line 1198, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul li span {
   font-weight: bold;
 }
-/* line 1093, ../../scss/app.scss */
+/* line 1203, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.price p {
   background-color: #9f4b55;
   color: #FFFFFF;
@@ -4821,7 +5569,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   height: 1.2rem;
   line-height: 1.3;
 }
-/* line 1100, ../../scss/app.scss */
+/* line 1210, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.price p:after {
   position: absolute;
   content: ' ';
@@ -4831,7 +5579,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   border-right: 0.6rem solid #F0EDE5;
   border-top: 0.6rem solid transparent;
 }
-/* line 1110, ../../scss/app.scss */
+/* line 1220, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.remove-button {
   position: absolute;
   width: 1.5rem;
@@ -4840,15 +5588,15 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   top: 0;
   right: 0;
 }
-/* line 1117, ../../scss/app.scss */
+/* line 1227, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.remove-button span {
   color: #FFFFFF;
 }
-/* line 1120, ../../scss/app.scss */
+/* line 1230, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.remove-button:hover {
   background-color: #5E3038;
 }
-/* line 1126, ../../scss/app.scss */
+/* line 1236, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front {
   position: absolute;
   width: 100%;
@@ -4860,11 +5608,11 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   background-size: cover;
   background-position: 50% 50%;
 }
-/* line 1136, ../../scss/app.scss */
+/* line 1246, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front > div {
   z-index: 9;
 }
-/* line 1139, ../../scss/app.scss */
+/* line 1249, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front:after {
   content: ' ';
   position: absolute;
@@ -4874,12 +5622,12 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 1149, ../../scss/app.scss */
+/* line 1259, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front:hover:after {
   background-color: rgba(0, 0, 0, 0.4);
   transition: background-color 200ms ease-in-out;
 }
-/* line 1154, ../../scss/app.scss */
+/* line 1264, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top {
   -webkit-box-flex: 4;
   -webkit-flex: 4 0;
@@ -4900,7 +5648,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   overflow: hidden;
   width: 100%;
 }
-/* line 1160, ../../scss/app.scss */
+/* line 1270, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4912,35 +5660,35 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   -webkit-transition: -webkit-transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 1163, ../../scss/app.scss */
+/* line 1273, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask.swipe-pin {
   transform: translateX(-100%);
 }
-/* line 1166, ../../scss/app.scss */
+/* line 1276, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo, body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   flex: 1 0 100%;
   text-align: center;
 }
-/* line 1171, ../../scss/app.scss */
+/* line 1281, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo img {
   height: 4.5rem;
 }
-/* line 1175, ../../scss/app.scss */
+/* line 1285, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   padding: 1rem;
   text-align: left;
 }
-/* line 1178, ../../scss/app.scss */
+/* line 1288, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p {
   margin: 0 0 0.7rem;
   font-family: FuturaLTHeavy;
   font-size: 0.8rem;
 }
-/* line 1182, ../../scss/app.scss */
+/* line 1292, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p.address-title {
   text-transform: uppercase;
 }
-/* line 1189, ../../scss/app.scss */
+/* line 1299, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-icons, body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-button {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -4950,26 +5698,26 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   flex: 1;
   text-align: center;
 }
-/* line 1195, ../../scss/app.scss */
+/* line 1305, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon {
   color: #FFFFFF;
   font-size: 1.2rem;
 }
-/* line 1198, ../../scss/app.scss */
+/* line 1308, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon:hover {
   color: #9f4b55;
   transition: color 200ms ease-in-out;
 }
-/* line 1205, ../../scss/app.scss */
+/* line 1315, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-button {
   padding: 0 0 1rem;
 }
-/* line 1207, ../../scss/app.scss */
+/* line 1317, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-button .wineobs-button {
   font-size: 0.7rem;
   padding: 0.3rem 1rem 0.1rem;
 }
-/* line 1217, ../../scss/app.scss */
+/* line 1327, ../../scss/app.scss */
 body.results .step-content .wineries .search {
   position: absolute;
   width: 150px;
@@ -4982,7 +5730,7 @@ body.results .step-content .wineries .search {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 1224, ../../scss/app.scss */
+/* line 1334, ../../scss/app.scss */
 body.results .step-content .wineries .search .search-lens {
   -webkit-box-flex: 30px;
   -webkit-flex: 30px;
@@ -5010,7 +5758,7 @@ body.results .step-content .wineries .search .search-lens {
   align-items: center;
   z-index: 2;
 }
-/* line 1234, ../../scss/app.scss */
+/* line 1344, ../../scss/app.scss */
 body.results .step-content .wineries .search .search-input {
   -webkit-box-flex: 120px;
   -webkit-flex: 120px;
@@ -5028,65 +5776,21 @@ body.results .step-content .wineries .search .search-input {
   transition: transform, 200ms, cubic-bezier(0.15, 0.86, 0.32, 0.99);
   z-index: 1;
 }
-/* line 1239, ../../scss/app.scss */
+/* line 1349, ../../scss/app.scss */
 body.results .step-content .wineries .search .search-input input {
   width: 100%;
   height: 30px;
+  font-size: 1rem;
+  font-weight: bold;
 }
-/* line 1245, ../../scss/app.scss */
+/* line 1357, ../../scss/app.scss */
 body.results .step-content .wineries .search.active .search-input {
   -moz-transform: translateX(0) scaleX(1);
   -ms-transform: translateX(0) scaleX(1);
   -webkit-transform: translateX(0) scaleX(1);
   transform: translateX(0) scaleX(1);
 }
-/* line 1251, ../../scss/app.scss */
-body.results .step-content .wineries .pagination {
-  position: absolute;
-  bottom: -35px;
-  right: 0px;
-}
-/* line 1255, ../../scss/app.scss */
-body.results .step-content .wineries .pagination ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-/* line 1257, ../../scss/app.scss */
-body.results .step-content .wineries .pagination ul li {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0;
-  -moz-box-flex: 1;
-  -moz-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
-  list-style: none;
-  position: relative;
-  margin: 0 0.2rem;
-  background-color: #9f4b55;
-  color: #FFFFFF;
-  font-family: CamptonBold;
-  font-size: 0.9rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  text-align: center;
-  border-radius: 0.6rem;
-}
-/* line 1270, ../../scss/app.scss */
-body.results .step-content .wineries .pagination ul li a {
-  color: #FFFFFF;
-}
-/* line 1273, ../../scss/app.scss */
-body.results .step-content .wineries .pagination ul li.active, body.results .step-content .wineries .pagination ul li:hover {
-  background-color: #FFFFFF;
-}
-/* line 1275, ../../scss/app.scss */
-body.results .step-content .wineries .pagination ul li.active a, body.results .step-content .wineries .pagination ul li:hover a {
-  color: #9f4b55;
-}
-/* line 1286, ../../scss/app.scss */
+/* line 1398, ../../scss/app.scss */
 body.results .step-footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -5095,49 +5799,49 @@ body.results .step-footer {
   justify-content: center;
   margin: 1rem 0 0;
 }
-/* line 1289, ../../scss/app.scss */
+/* line 1401, ../../scss/app.scss */
 body.results .step-footer > div {
   margin: 0 1rem;
 }
-/* line 1294, ../../scss/app.scss */
+/* line 1406, ../../scss/app.scss */
 body.results a.wineobs-button.hide {
   visibility: hidden;
 }
 
-/* line 1299, ../../scss/app.scss */
+/* line 1411, ../../scss/app.scss */
 body.personal-data {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
 }
-/* line 1303, ../../scss/app.scss */
+/* line 1415, ../../scss/app.scss */
 body.personal-data .header-center {
   max-height: 4rem;
 }
-/* line 1307, ../../scss/app.scss */
+/* line 1419, ../../scss/app.scss */
 body.personal-data .content > div {
   padding: 0 1rem;
 }
-/* line 1311, ../../scss/app.scss */
+/* line 1423, ../../scss/app.scss */
 body.personal-data .step-header {
   padding: 0 1rem;
 }
-/* line 1313, ../../scss/app.scss */
+/* line 1425, ../../scss/app.scss */
 body.personal-data .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1319, ../../scss/app.scss */
+/* line 1431, ../../scss/app.scss */
 body.personal-data .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1323, ../../scss/app.scss */
+/* line 1435, ../../scss/app.scss */
 body.personal-data .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1329, ../../scss/app.scss */
+/* line 1441, ../../scss/app.scss */
 body.personal-data .step-footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -5146,57 +5850,57 @@ body.personal-data .step-footer {
   justify-content: center;
   margin: 1rem 0 0;
 }
-/* line 1332, ../../scss/app.scss */
+/* line 1444, ../../scss/app.scss */
 body.personal-data .step-footer > div {
   margin: 0 1rem;
 }
-/* line 1339, ../../scss/app.scss */
+/* line 1451, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container {
   position: relative;
   height: 21rem;
   padding: 1rem;
 }
-/* line 1343, ../../scss/app.scss */
+/* line 1455, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container form div {
   height: 3.5rem;
 }
-/* line 1345, ../../scss/app.scss */
+/* line 1457, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container form div label.form-title {
   text-transform: uppercase;
 }
-/* line 1349, ../../scss/app.scss */
+/* line 1461, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container input {
   margin: 0.1rem;
   width: 100%;
 }
-/* line 1357, ../../scss/app.scss */
+/* line 1469, ../../scss/app.scss */
 body.personal-data .payment-method {
   padding: 2px;
 }
-/* line 1361, ../../scss/app.scss */
+/* line 1473, ../../scss/app.scss */
 body.personal-data .date {
   font-family: CamptonBold;
   font-size: 2rem;
   margin: 1rem 0;
 }
-/* line 1368, ../../scss/app.scss */
+/* line 1480, ../../scss/app.scss */
 body.personal-data .form-container .form-title {
   font-family: BigJohn;
 }
-/* line 1372, ../../scss/app.scss */
+/* line 1484, ../../scss/app.scss */
 body.personal-data .form-container form input, body.personal-data .form-container form select {
   font-family: FuturaLTHeavy;
 }
-/* line 1375, ../../scss/app.scss */
+/* line 1487, ../../scss/app.scss */
 body.personal-data .form-container form input.ng-invalid.ng-touched {
   background-color: #9f4b55;
 }
-/* line 1378, ../../scss/app.scss */
+/* line 1490, ../../scss/app.scss */
 body.personal-data .form-container form select.country {
   background: #FFF;
   font-size: 0.9rem;
 }
-/* line 1385, ../../scss/app.scss */
+/* line 1497, ../../scss/app.scss */
 body.personal-data .wineries-paginator {
   width: 100%;
   display: -webkit-box;
@@ -5209,7 +5913,7 @@ body.personal-data .wineries-paginator {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1389, ../../scss/app.scss */
+/* line 1501, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5226,11 +5930,11 @@ body.personal-data .wineries-paginator .winery-card {
   min-height: 12.8rem;
   margin: 0.25rem 0.25rem;
 }
-/* line 1396, ../../scss/app.scss */
+/* line 1508, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card.reservation .winery-card-front {
   display: none;
 }
-/* line 1400, ../../scss/app.scss */
+/* line 1512, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible {
   position: absolute;
   width: 100%;
@@ -5251,7 +5955,7 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1412, ../../scss/app.scss */
+/* line 1524, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div, body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 100%;
@@ -5265,40 +5969,40 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   -ms-flex-item-align: center;
   align-self: center;
 }
-/* line 1417, ../../scss/app.scss */
+/* line 1529, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div {
   text-align: center;
 }
-/* line 1420, ../../scss/app.scss */
+/* line 1532, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible p {
   line-height: 1.1;
   margin: 0;
   font-weight: bold;
   font-size: 0.9rem;
 }
-/* line 1426, ../../scss/app.scss */
+/* line 1538, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible p.winery-name {
   text-transform: uppercase;
 }
-/* line 1429, ../../scss/app.scss */
+/* line 1541, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible p.hour {
   text-transform: uppercase;
 }
-/* line 1432, ../../scss/app.scss */
+/* line 1544, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul {
   list-style: none;
 }
-/* line 1434, ../../scss/app.scss */
+/* line 1546, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul li {
   font-size: 0.77rem;
   font-weight: normal;
   padding: 0 0 0 1rem;
 }
-/* line 1438, ../../scss/app.scss */
+/* line 1550, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul li span {
   font-weight: bold;
 }
-/* line 1443, ../../scss/app.scss */
+/* line 1555, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.price p {
   background-color: #9f4b55;
   color: #FFFFFF;
@@ -5307,7 +6011,7 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   height: 1.2rem;
   line-height: 1.3;
 }
-/* line 1450, ../../scss/app.scss */
+/* line 1562, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.price p:after {
   position: absolute;
   content: ' ';
@@ -5317,7 +6021,7 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   border-right: 0.6rem solid #F0EDE5;
   border-top: 0.6rem solid transparent;
 }
-/* line 1460, ../../scss/app.scss */
+/* line 1572, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.remove-button {
   position: absolute;
   width: 1.5rem;
@@ -5326,15 +6030,15 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   top: 0;
   right: 0;
 }
-/* line 1467, ../../scss/app.scss */
+/* line 1579, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.remove-button span {
   color: #FFFFFF;
 }
-/* line 1470, ../../scss/app.scss */
+/* line 1582, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.remove-button:hover {
   background-color: #5E3038;
 }
-/* line 1476, ../../scss/app.scss */
+/* line 1588, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front {
   position: absolute;
   width: 100%;
@@ -5346,11 +6050,11 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front {
   background-size: cover;
   background-position: 50% 50%;
 }
-/* line 1486, ../../scss/app.scss */
+/* line 1598, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front > div {
   z-index: 9;
 }
-/* line 1489, ../../scss/app.scss */
+/* line 1601, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front:after {
   content: ' ';
   position: absolute;
@@ -5360,12 +6064,12 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front:after {
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 1499, ../../scss/app.scss */
+/* line 1611, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front:hover:after {
   background-color: rgba(0, 0, 0, 0.4);
   transition: background-color 200ms ease-in-out;
 }
-/* line 1504, ../../scss/app.scss */
+/* line 1616, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top {
   -webkit-box-flex: 4;
   -webkit-flex: 4 0;
@@ -5386,7 +6090,7 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-c
   overflow: hidden;
   width: 100%;
 }
-/* line 1510, ../../scss/app.scss */
+/* line 1622, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5398,35 +6102,35 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-c
   -webkit-transition: -webkit-transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 1513, ../../scss/app.scss */
+/* line 1625, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask.swipe-pin {
   transform: translateX(-100%);
 }
-/* line 1516, ../../scss/app.scss */
+/* line 1628, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo, body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   flex: 1 0 100%;
   text-align: center;
 }
-/* line 1521, ../../scss/app.scss */
+/* line 1633, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo img {
   height: 4.5rem;
 }
-/* line 1525, ../../scss/app.scss */
+/* line 1637, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   padding: 1rem;
   text-align: left;
 }
-/* line 1528, ../../scss/app.scss */
+/* line 1640, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p {
   margin: 0 0 0.7rem;
   font-family: FuturaLTHeavy;
   font-size: 0.8rem;
 }
-/* line 1532, ../../scss/app.scss */
+/* line 1644, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p.address-title {
   text-transform: uppercase;
 }
-/* line 1539, ../../scss/app.scss */
+/* line 1651, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-icons, body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-button {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -5436,65 +6140,65 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-i
   flex: 1;
   text-align: center;
 }
-/* line 1545, ../../scss/app.scss */
+/* line 1657, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon {
   color: #FFFFFF;
   font-size: 1.2rem;
 }
-/* line 1548, ../../scss/app.scss */
+/* line 1660, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon:hover {
   color: #9f4b55;
   transition: color 200ms ease-in-out;
 }
-/* line 1555, ../../scss/app.scss */
+/* line 1667, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-button {
   padding: 0 0 1rem;
 }
-/* line 1557, ../../scss/app.scss */
+/* line 1669, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-button .wineobs-button {
   font-size: 0.7rem;
   padding: 0.3rem 1rem 0.1rem;
 }
 
-/* line 1569, ../../scss/app.scss */
+/* line 1681, ../../scss/app.scss */
 body.winery {
   background-image: url("/assets/img/backgrounds/backgroundcolor6.jpg");
   background-attachment: fixed;
 }
-/* line 1574, ../../scss/app.scss */
+/* line 1686, ../../scss/app.scss */
 body.winery header div.fake-background {
   background-color: rgba(10, 10, 10, 0.2);
 }
-/* line 1578, ../../scss/app.scss */
+/* line 1690, ../../scss/app.scss */
 body.winery .step-header {
   padding: 0 1rem;
 }
-/* line 1580, ../../scss/app.scss */
+/* line 1692, ../../scss/app.scss */
 body.winery .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1586, ../../scss/app.scss */
+/* line 1698, ../../scss/app.scss */
 body.winery .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1590, ../../scss/app.scss */
+/* line 1702, ../../scss/app.scss */
 body.winery .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1596, ../../scss/app.scss */
+/* line 1708, ../../scss/app.scss */
 body.winery .wineries {
   margin: 0 auto;
 }
-/* line 1598, ../../scss/app.scss */
+/* line 1710, ../../scss/app.scss */
 body.winery .wineries .winery {
   min-height: 15rem;
 }
-/* line 1600, ../../scss/app.scss */
+/* line 1712, ../../scss/app.scss */
 body.winery .wineries .winery .winery-content {
   border: 2px solid #FFFFFF;
   height: 90%;
@@ -5517,37 +6221,37 @@ body.winery .wineries .winery .winery-content {
   justify-content: center;
 }
 
-/* line 1617, ../../scss/app.scss */
+/* line 1729, ../../scss/app.scss */
 body.contact {
   background-image: url("/assets/img/backgrounds/backgroundcolor5.jpg");
   background-attachment: fixed;
 }
-/* line 1622, ../../scss/app.scss */
+/* line 1734, ../../scss/app.scss */
 body.contact header div.fake-background {
   background-color: rgba(10, 10, 10, 0.2);
 }
-/* line 1626, ../../scss/app.scss */
+/* line 1738, ../../scss/app.scss */
 body.contact .step-header {
   padding: 0 1rem;
 }
-/* line 1628, ../../scss/app.scss */
+/* line 1740, ../../scss/app.scss */
 body.contact .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1634, ../../scss/app.scss */
+/* line 1746, ../../scss/app.scss */
 body.contact .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1638, ../../scss/app.scss */
+/* line 1750, ../../scss/app.scss */
 body.contact .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1644, ../../scss/app.scss */
+/* line 1756, ../../scss/app.scss */
 body.contact .contact-container > div {
   border: 1px solid #FFFFFF;
   margin: 0 1rem;
@@ -5555,7 +6259,7 @@ body.contact .contact-container > div {
   background: rgba(255, 255, 255, 0.4);
   text-align: center;
 }
-/* line 1650, ../../scss/app.scss */
+/* line 1762, ../../scss/app.scss */
 body.contact .contact-container > div input, body.contact .contact-container > div textarea {
   width: calc(100% - 2rem);
   height: 2rem;
@@ -5565,7 +6269,7 @@ body.contact .contact-container > div input, body.contact .contact-container > d
   margin: 1rem;
   padding: 2rem;
 }
-/* line 1659, ../../scss/app.scss */
+/* line 1771, ../../scss/app.scss */
 body.contact .contact-container > div textarea {
   font-family: FuturaLTHeavy;
   text-align: left;
@@ -5573,20 +6277,20 @@ body.contact .contact-container > div textarea {
   min-height: 15rem;
   resize: none;
 }
-/* line 1668, ../../scss/app.scss */
+/* line 1780, ../../scss/app.scss */
 body.contact .email {
   margin: 1rem 0;
   padding: 0 1rem;
   font-family: FuturaLTHeavy;
   font-size: 1.1rem;
 }
-/* line 1673, ../../scss/app.scss */
+/* line 1785, ../../scss/app.scss */
 body.contact .email .bold {
   font-family: FuturaLTBold;
   font-weight: bold;
 }
 
-/* line 1681, ../../scss/app.scss */
+/* line 1793, ../../scss/app.scss */
 body.payment div.title {
   text-transform: uppercase;
   text-align: center;
@@ -5594,7 +6298,7 @@ body.payment div.title {
   font-family: BebasNeue;
   letter-spacing: 0.1rem;
 }
-/* line 1688, ../../scss/app.scss */
+/* line 1800, ../../scss/app.scss */
 body.payment div.text, body.payment div.return {
   text-align: center;
   font-size: 2.5rem;
@@ -5602,7 +6306,7 @@ body.payment div.text, body.payment div.return {
   letter-spacing: 0.1rem;
 }
 
-/* line 1697, ../../scss/app.scss */
+/* line 1809, ../../scss/app.scss */
 body.wineobs .column-2 {
   -moz-column-count: 2;
   -webkit-column-count: 2;
@@ -5611,34 +6315,44 @@ body.wineobs .column-2 {
   font-family: FuturaLTBook;
   margin: 1rem auto;
 }
-/* line 1702, ../../scss/app.scss */
+/* line 1814, ../../scss/app.scss */
 body.wineobs .column-2 h1 {
   color: #FFFFFF;
   font-size: 1.8rem;
   font-family: FuturaLTBold;
 }
-/* line 1707, ../../scss/app.scss */
+/* line 1819, ../../scss/app.scss */
 body.wineobs .column-2 p {
   line-height: 1.3;
 }
-/* line 1710, ../../scss/app.scss */
+/* line 1822, ../../scss/app.scss */
 body.wineobs .column-2 li {
   line-height: 1.3;
 }
-/* line 1714, ../../scss/app.scss */
+/* line 1826, ../../scss/app.scss */
 body.wineobs .signatures {
   text-align: center;
 }
-/* line 1716, ../../scss/app.scss */
+/* line 1828, ../../scss/app.scss */
 body.wineobs .signatures .signature {
   width: 20rem;
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 1723, ../../scss/app.scss */
+  /* line 1835, ../../scss/app.scss */
   body {
     background: #5a2a30;
     background-image: none !important;
+  }
+
+  /* line 1839, ../../scss/app.scss */
+  .winery .winery-data .winery-logo img {
+    width: 90%;
+  }
+
+  /* line 1842, ../../scss/app.scss */
+  body.results .step-content .wineries .winery {
+    min-height: 19.5rem;
   }
 }
 
