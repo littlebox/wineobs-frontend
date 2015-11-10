@@ -1,4 +1,4 @@
-var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation']);
+var wineobsApp = angular.module('wineobsApp', ['ngAnimate', 'ngRoute', 'mm.foundation']);
 (function(window){
 	'use strict';
 	var Wineobs = {
@@ -87,9 +87,8 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation']);
 				this.map.setCenter( this.map.getCenter() );
 			});
 		},
+
 		addWineryMarkers: function(wineries){
-			// console.debug('Anadiendo markers...');
-			// console.debug(wineries);
 
 			wineries.forEach(function(w){
 				var latLng = new google.maps.LatLng(w.Winery.latitude,w.Winery.longitude);
@@ -219,6 +218,13 @@ var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation']);
 		},
 		map:'',
 		markers:[],
+		reserveMarkers: new google.maps.MarkerImage(
+			'/assets/img/marker-reserve.png',
+			new google.maps.Size(30, 30), //Original Size
+			new google.maps.Point(0, 0), //Origin
+			new google.maps.Point(15, 15), //Anchor
+			null //ScaledSize
+		),
 	}
 	window.Wineobs = Wineobs;
 

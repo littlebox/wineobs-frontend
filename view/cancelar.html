@@ -1,0 +1,27 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	var code = getParams(window.location.search).code;
+	swal({
+		title: 'Cancelar reserva',
+		text: 'De en serio quiere cancelar la reserva? :(',
+		showCancelButton: true,
+	},function(){
+		data = { code : 'datos' };
+		$.post('http://reservas.wineobs.com/reserves/cancel/',data,function(d){
+			debugger;
+			//aca va el post
+		})
+		console.log('asdf');
+	})
+})
+
+function getParams(url){
+	var regex = /[?&]([^=#]+)=([^&#]*)/g,
+	params = {},
+	match;
+	while(match = regex.exec(url)) {
+		params[match[1]] = match[2];
+	}
+	return params;
+}
+</script>

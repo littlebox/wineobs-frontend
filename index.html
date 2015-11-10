@@ -73,7 +73,7 @@
 														</div>
 														<div class="small-12">
 															<div class="pricing-minors">
-																<span>{{r.minors}} menores x {{r.tour.minors_price}}</span>
+																<span ng-if="r.minors != 0">{{r.minors}} menores x {{r.tour.minors_price}}</span>
 															</div>
 														</div>
 														<div class="small-12">
@@ -246,6 +246,7 @@
 	<script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
 	<script src="/assets/angular/angular-1.4.2/angular.js"></script>
 	<script src="/assets/angular/angular-1.4.2/angular-route.js"></script>
+	<script src="/assets/angular/angular-1.4.2/angular-animate.js"></script>
 	<script type="text/javascript" src="/assets/js/dirPagination.js"></script>
 
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDEDXVukpE4oEEhjfWmhaZctW3SobbJYV4"></script>

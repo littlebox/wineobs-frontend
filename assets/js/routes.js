@@ -36,6 +36,10 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			templateUrl: '/view/payment_pending.html',
 		})
 
+		.when('/cancelar',{
+			templateUrl: '/view/cancelar.html',
+		})
+
 		.otherwise('/datos',{
 			templateUrl: '/view/reserve-form-data.html',
 		})

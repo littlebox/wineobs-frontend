@@ -22,6 +22,16 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 		date: '',
 	};
 
+	if(reservation.getReservesToMake().length){
+		swal({
+			text: 'Se borraron las reservas hechas anteriormente!',
+			title: 'Info',
+		});
+		reservation.getReservesToMake().forEach(function(r){
+			reservation.removeReserve(r);
+		});
+	}
+
 	// if( typeof $scope.formData.language == "undefined") $scope.formData.language = 1;
 	if(typeof $scope.formData == "undefined") $scope.formData = {
 		adults: 2,
@@ -100,7 +110,7 @@ wineobsApp
 		return wineries;
 	}
 })
-.controller('resultsController', function ($q,$scope,$rootScope,$http,reservation,$location,$filter){
+.controller('resultsController', function ($q,$scope,$rootScope,$http,reservation,$location,$filter,$modal,$animate){
 	$rootScope.bodyClass = 'results';
 
 	$scope.paginatedWineries = [];
@@ -148,6 +158,9 @@ wineobsApp
 		})
 		ids = []
 		Wineobs.bounds = new google.maps.LatLngBounds
+		window.reserveMarkers.forEach(function(m){
+			Wineobs.bounds.extend(m.getPosition());
+		})
 		$scope.paginatedWineries[page-1].forEach(function(w,k){
 			latLng = new google.maps.LatLng(w.Winery.latitude,w.Winery.longitude);
 			Wineobs.bounds.extend(latLng);
@@ -174,12 +187,6 @@ wineobsApp
 			}else{
 				return $rootScope.apiUrl+'/img/wineries/logos/default.svg';
 			}
-		// }else if(typeof w.winery != "undefined"){
-		// 	if(w.winery.has_logo){
-		// 		return $rootScope.apiUrl+'/img/wineries/logos/'+w.winery.id+'.png';
-		// 	}else{
-		// 		return $rootScope.apiUrl+'/img/wineries/logos/default.png';
-		// 	}
 		}
 	}
 
@@ -189,6 +196,7 @@ wineobsApp
 
 	$scope.wineryClick = function(winery,$event){
 		if($event.target.nodeName != "SPAN")
+			// $scope.modalOpen(winery);
 			reservation.showReservationModal(winery, 'tours');
 	}
 
@@ -196,10 +204,28 @@ wineobsApp
 		reservation.removeReserve($index);
 	}
 
-	/*$scope.$on('updateReservesToMake', function(){
+	window.reserveMarkers = [];
+	$scope.$on('updateReservesToMake', function(){
+		window.reserveMarkers.forEach(function(m){
+			m.setMap();
+		})
+		window.reserveMarkers = [];
 		$scope.reservesToMake = reservation.getReservesToMake();
-		$scope.cards = $scope.reservesToMake.concat($scope.wineries);
-	})*/
+
+		$filter('orderBy')($scope.reservesToMake,'hour').forEach(function(r,k){
+			console.debug(r);
+			p = new google.maps.LatLng(Number(r.winery.latitude),Number(r.winery.longitude));
+			m = new google.maps.Marker({
+				position: p,
+				label: (k+1).toString(),//new google.maps.MarkerLabel({text: 'asdf'}),
+				title: 'Reserva Numero: '+(k+1).toString(),
+				map: Wineobs.map,
+				icon: Wineobs.reserveMarkers,
+			})
+			window.reserveMarkers.push(m);
+		})
+		// $scope.cards = $scope.reservesToMake.concat($scope.wineries);
+	})
 
 	$scope.hideNext = function(){
 		return ($scope.reservesToMake.length == 0);
@@ -211,6 +237,18 @@ wineobsApp
 		}else{
 			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
 		}
+	}
+
+	$scope.modalOpen = function(winery){
+		var modalInstance = $modal.open({
+			templateUrl: 'view/modalContent.html',
+			controller: 'ModalInstanceController',
+			resolve: {
+				winery: function () {
+					return winery;
+				}
+			}
+		})
 	}
 
 	$('.gammaGallery .menu-close-button').on('click',function(){
@@ -386,3 +424,10 @@ wineobsApp.controller('paymentController', function ($scope,$rootScope){
 	$rootScope.bodyClass = 'payment';
 	Wineobs.init();
 });
+
+wineobsApp.controller('ModalInstanceController', function($scope, $modalInstance, winery){
+	$scope.w = winery;
+	$scope.cancel = function () {
+		$modalInstance.dismiss('cancel');
+	};
+})

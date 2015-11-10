@@ -2565,6 +2565,170 @@ ul.pagination li {
   float: none;
 }
 
+/* line 172, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal-bg {
+  background: #000000;
+  background: rgba(0, 0, 0, 0.45);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1004;
+  left: 0;
+}
+
+/* line 174, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal {
+  border-radius: 3px;
+  display: none;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1005;
+  left: 0;
+  background-color: #F0EDE5;
+  padding: 1.25rem;
+  border: solid 0px #666666;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+@media only screen and (max-width: 40em) {
+  /* line 174, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal {
+    min-height: 100vh;
+  }
+}
+/* line 89, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal .column, .reveal-modal .columns {
+  min-width: 0;
+}
+/* line 92, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal > :first-child {
+  margin-top: 0;
+}
+/* line 94, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal > :last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 174, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 174, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal {
+    top: 1.25rem;
+  }
+}
+/* line 185, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal.radius {
+  box-shadow: none;
+  border-radius: 3px;
+}
+/* line 186, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal.round {
+  box-shadow: none;
+  border-radius: 1000px;
+}
+/* line 187, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal.collapse {
+  padding: 0;
+  box-shadow: none;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 188, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal.tiny {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 189, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal.small {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 190, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal.medium {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 191, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal.large {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 192, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal.xlarge {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 95%;
+  }
+}
+/* line 193, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal.full {
+  height: 100vh;
+  height: 100%;
+  left: 0;
+  margin-left: 0 !important;
+  max-width: none !important;
+  min-height: 100vh;
+  top: 0;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 193, ../foundation/scss/foundation/components/_reveal.scss */
+  .reveal-modal.full {
+    left: 0;
+    margin: 0 auto;
+    max-width: 62.5rem;
+    right: 0;
+    width: 100%;
+  }
+}
+/* line 205, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal.toback {
+  z-index: 1003;
+}
+/* line 209, ../foundation/scss/foundation/components/_reveal.scss */
+.reveal-modal .close-reveal-modal {
+  color: #9f4b55;
+  cursor: pointer;
+  font-size: 2.5rem;
+  font-weight: "bold";
+  line-height: 1;
+  position: absolute;
+  top: 0.625rem;
+  right: 1.375rem;
+}
+
 /* line 30, ../foundation/scss/foundation/components/_tabs.scss */
 .tabs {
   margin-bottom: 0 !important;
@@ -2593,7 +2757,7 @@ ul.pagination li {
   display: block;
   background-color: #9f4b55;
   color: #5E3038;
-  font-family: BigJohn;
+  font-family: FuturaLTHeavy;
   font-size: 1rem;
   padding: 0.625rem 1.25rem;
 }
@@ -4509,7 +4673,7 @@ body .footer .modals .modal-image-gallery .modal-content .tabs-info .info-tours-
 /* line 380, ../../scss/app.scss */
 body .footer .modals .modal-image-gallery .modal-content .tabs-info .info-tours-tabs ul.tabs dd > a, body .footer .modals .modal-image-gallery .modal-content .tabs-info .info-tours-tabs ul.tabs .tab-title > a, body .footer .modals .modal-info-winery .modal-content .tabs-info .info-tours-tabs ul.tabs dd > a, body .footer .modals .modal-info-winery .modal-content .tabs-info .info-tours-tabs ul.tabs .tab-title > a {
   padding: 0.125rem 0.55rem;
-  font-family: BigJohn;
+  font-family: FuturaLTHeavy;
   font-size: 0.8rem;
   background: #FFFFFF;
   color: #9f4b55;

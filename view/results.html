@@ -29,7 +29,7 @@
 				</div>
 
 				<ul class="small-block-grid-1 medium-block-grid-3 pagination-list">
-					<li class="winery" ng-repeat="(k,w) in paginatedWineries[currentPage-1]">
+					<li class="winery" ng-repeat="(k,w) in paginatedWineries[currentPage-1]" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
 						<div data-winery-id="{{w.Winery.id}}" class="winery-container" ng-click="wineryClick(w,$event)">
 							<div class="winery-image">
 								<div class="winery-image-background"></div>
@@ -49,44 +49,6 @@
 							</div>
 						</div>
 					</li>
-					<!-- <div class="winery-card" ng-show="show" ng-class="{'reservation': w.reservation}" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in cards | itemsPerPage: 6 | filter:q">
-						<div class="winery-card-front f1 flex fcolumn">
-							<div class="winery-card-top flex">
-								<div class="winery-card-top-mask f1 flex">
-									<div class="winery-logo f1">
-										<img src="{{logos(w)}}">
-										<p>{{w.Winery.name}}</p>
-									</div>
-									<div class="winery-address f1">
-										<p class="address-title">{{w.Winery.name}}</p>
-										<p>{{w.Winery.address}}</p>
-									</div>
-								</div>
-							</div>
-							<div class="winery-icons f1">
-								<a ng-click="infoClick(w)" href=""><span class="icon icon-wineobs-info"></span></a>
-								<a ng-click="showGammaGalery(w)" href=""><span class="icon icon-wineobs-photo"></span></a>
-								<a href=""><span class="icon icon-wineobs-pin"></span></a>
-							</div>
-							<div class="winery-button f1">
-								<a ng-click="buttonClick(w)" class="wineobs-button">reservar</a>
-							</div>
-						</div>
-						<div ng-class="{'visible': w.reservation}" class="reservation-card">
-							<div><p class="winery-name">{{w.winery.name}}</p></div>
-							<div><p class="tour-name">{{w.tour.name}}</p></div>
-							<div><p class="hour">{{w.hour}}hs</p></div>
-							<ul>
-								<li>Cupos reservados: <span>{{w.quota}}</span></li>
-								<li>Idioma del tour: <span>{{w.language}}</span></li>
-								<li>Duracion: <span>{{w.tour.length}}</span></li>
-							</ul>
-							<div class="price"><p>Precio: ${{w.minors*w.tour.minors_price+w.adults*w.tour.price }}</p></div>
-							<div class="remove-button">
-								<a ng-click="removeReserve($index)"><span class="icon-wineobs-cross"></span></a>
-							</div>
-						</div>
-					</div> -->
 				</ul>
 				<div class="small-12 text-center pagination-container">
 					<pagination total-items="totalItems" page="currentPage" items-per-page="itemsPerPage" previous-text="<" next-text=">" on-select-page="updateMarkers(page)"></pagination>

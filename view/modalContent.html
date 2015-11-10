@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="small-8 column">
+		<tabset vertical="true" type="navType">
+			<tab heading="Bodega">
+				<h1 class="winery-name">
+					{{w.Winery.name}}
+				</h1>
+				<p>
+					{{w.Winery.description}}
+				</p>
+			</tab>
+			<tab heading="Tours">
+				<tabset>
+					<tab ng-repeat="tour in w.Tour" heading="{{tour.name}}">
+						<div class="small-8">
+							{{tour.description}}
+						</div>
+					</tab>
+				</tabset>
+			</tab>
+			<tab heading="Comentarios">comentarios</tab>
+		</tabset>
+	</div>
+	<div class="small-4 column">
+		<div class="">
+			<div class="" ng-repeat="t in w.Tour.time">
+				{{t.hour}}
+			</div>
+		</div>
+	</div>
+	<a class="close-reveal-modal" ng-click="cancel()">&#215;</a>
+</div>

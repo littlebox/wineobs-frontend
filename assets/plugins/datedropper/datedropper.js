@@ -963,6 +963,7 @@
 		// ON BLUR //
 
 		dd_overlay.click(function(){
+			$('.dd_submit').trigger('click');
 			dd_inner.addClass('dd_fadeout').removeClass('dd_'+settings.animation);
 			setTimeout(function(){
 				dd_inner.hide().removeClass('dd_fadeout');
