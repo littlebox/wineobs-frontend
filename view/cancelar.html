@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$.post('http://reservas.wineobs.com/reserves/cancel/',data,function(d){
 			swal({
 				title: 'Cancelar reserva',
-				text: 'Su reserva fue cancelada satisfactoriamente',
+				text: 'Su solicitud de cancelación fue procesada, en breve nos comunicaremos con usted.',
 			},function(){
 				window.location.href = '/';
 			})
