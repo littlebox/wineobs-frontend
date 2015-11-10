@@ -3,15 +3,18 @@ $(document).ready(function(){
 	var code = getParams(window.location.search).code;
 	swal({
 		title: 'Cancelar reserva',
-		text: 'De en serio quiere cancelar la reserva? :(',
+		text: 'Seguro quiere cancelar su reserva?',
 		showCancelButton: true,
 	},function(){
-		data = { code : 'datos' };
+		data = { 'code' : code };
 		$.post('http://reservas.wineobs.com/reserves/cancel/',data,function(d){
-			debugger;
-			//aca va el post
+			swal({
+				title: 'Cancelar reserva',
+				text: 'Su reserva fue cancelada satisfactoriamente',
+			},function(){
+				window.location.href = '/';
+			})
 		})
-		console.log('asdf');
 	})
 })
 
