@@ -309,11 +309,6 @@
 											</select>
 										</div>
 									</div>
-									<!-- <div class="small-12">
-										<div class="small-12 column">
-											<input type="text" placeholder="hotel/alojamiento" type="text" ng-model="formPersonalData.hotel" required />
-										</div>
-									</div> -->
 								</form>
 								{{form}}
 							</div>
@@ -324,7 +319,7 @@
 				<div class="small-5 column">
 					<div>
 						<div class="wineries-paginator">
-							<div class="winery-card reservation" data-winery-index="{{w.Winery.id}}" dir-paginate="(k,w) in reservations | itemsPerPage: 4 | filter:q">
+							<div class="winery-card reservation" data-winery-index="{{w.winery.id}}" ng-repeat="(k,w) in reservations">
 								<div class="visible reservation-card">
 									<div><p class="winery-name">{{w.winery.name}}</p></div>
 									<div><p class="tour-name">{{w.tour.name}}</p></div>
