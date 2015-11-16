@@ -299,6 +299,22 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 wineobsApp.controller('contactController', function ($scope,$rootScope){
 	$rootScope.bodyClass = 'contact';
 	Wineobs.init();
+
+	$scope.mail = {};
+
+	$scope.submit = function submit(){
+		if(!document.querySelector('form.contact').classList.contains('.ng-invalid'))
+			$('[ng-model*="user"]').addClass('ng-touched')
+			var url = $rootScope.apiUrl+'/send_email/'
+			$.post(url, {mail: $scope.mail}, function(e){
+				swal({
+					text: 'En breve nos pondremos en contacto con Usted.',
+					title: 'Gracias por su consulta',
+				},function(){
+					window.location.href = '/';
+				});
+			})
+	}
 });
 
 wineobsApp
@@ -430,4 +446,47 @@ wineobsApp.controller('ModalInstanceController', function($scope, $modalInstance
 	$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 	};
+})
+
+wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
+	$scope.getParams = function getParams(url){
+		var regex = /[?&]([^=#]+)=([^&#]*)/g,
+		params = {},
+		match;
+		while(match = regex.exec(url)) {
+			params[match[1]] = match[2];
+		}
+		return params;
+	}
+
+	$scope.wineriesComment = {};
+	$scope.comment = {};
+
+	$scope.token = $scope.getParams(window.location.search).token;
+	var getUrl = $rootScope.apiUrl+'/reviews/get_wineries_to_review/token:'+$scope.token;
+	var postUrl = $rootScope.apiUrl+'/reviews/add/';
+
+	$http({
+	  method: 'GET',
+	  url: getUrl,
+	}).then(function successCallback(response) {
+			$scope.wineriesComment = response.data;
+	  }, function errorCallback(response) {
+			debugger;
+	  });
+
+	$scope.sendComment = function(){
+		$http({
+		  method: 'POST',
+		  url: postUrl,
+			data: {
+				token: $scope.token,
+				json: $scope.comment,
+			}
+		}).then(function successCallback(response) {
+				debugger;
+		  }, function errorCallback(response) {
+				debugger;
+		  });
+	}
 })

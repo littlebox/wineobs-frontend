@@ -1,3 +1,5 @@
+$header-font-color: #fff;
+$form-label-font-color: #fff;
 @import "flexbox";
 @import "compass/css3/transition";
 @import "compass/css3/transform";
@@ -17,7 +19,7 @@
 //   "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
 //   "foundation/components/flex-video",
-//   "foundation/components/forms",
+"foundation/components/forms",
 "foundation/components/grid",
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
@@ -78,6 +80,10 @@
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
+.title{
+	text-transform: uppercase;
+	font-family: BebasNeue;
+}
 
 /* Flexbox! */
 .flex{
@@ -1787,6 +1793,13 @@ body.contact{
 			font-weight: bold;
 		}
 	}
+
+	//Du - Du code - Du code mich
+	.ng-touched.ng-invalid[ng-model*="mail"]{
+		border: 3px solid $tinto-wineobs;
+		transition: border 500ms ease-in-out;
+	}
+
 }
 
 body.payment{

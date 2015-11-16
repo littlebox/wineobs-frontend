@@ -2,15 +2,15 @@
 $(document).ready(function(){
 	var code = getParams(window.location.search).code;
 	swal({
-		title: 'Cancelar reserva',
-		text: 'Seguro quiere cancelar su reserva?',
+		title: '¿Está seguro de que quiere cancelar su reserva?',
+		text: 'Política de cancelación: Reembolso total hasta 3 días antes de la fecha de la reserva',
 		showCancelButton: true,
 	},function(){
 		data = { 'code' : code };
 		$.post('http://reservas.wineobs.com/reserves/cancel/',data,function(d){
 			swal({
-				title: 'Cancelar reserva',
-				text: 'Su solicitud de cancelación fue procesada, en breve nos comunicaremos con usted.',
+				title: 'Cancelación enviada',
+				text: 'En breve nos comunicaremos con Usted.',
 			},function(){
 				window.location.href = '/';
 			})

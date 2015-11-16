@@ -1,0 +1,40 @@
+<div class="" ng-controller="commentsController">
+	<div class="">
+		<div class="row">
+			<div class="small-12">
+				<h1 class="title">Comentarios</h1>
+			</div>
+			<div class="small-12">
+				<p>
+					Agregue sus comentarios aquí
+				</p>
+			</div>
+		</div>
+		<form>
+			<div class="" ng-show="wineriesComment == {} ">
+				Cargando...
+			</div>
+		  <div class="row" ng-repeat="(k,winery) in wineriesComment">
+		    <div class="large-12">
+					<div class="small-2 column text-center">
+						<div class="small-12 column"> logo </div>
+						<div class="small-12 column text-center">
+							<p> nombre bodega </p>
+						</div>
+					</div>
+					<div class="small-10 column">
+						<div class="small-12">
+				      <label>Comentario</label>
+							<textarea ng-model="comment[k]" name="name" rows="8" cols="40"></textarea>
+						</div>
+					</div>
+		    </div>
+		  </div>
+			<div class="row">
+				<div class="small-12 column">
+					<button type="button right" name="button" class="wineobs-button" ng-click="sendComment()" style="float:right;">Enviar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

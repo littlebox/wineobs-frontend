@@ -40,6 +40,10 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			templateUrl: '/view/cancelar.html',
 		})
 
+		.when('/comentarios',{
+			templateUrl: '/view/comments.html',
+		})
+
 		.otherwise('/datos',{
 			templateUrl: '/view/reserve-form-data.html',
 		})

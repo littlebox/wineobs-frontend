@@ -12,20 +12,22 @@
 			</div>
 			<div class="small-12 row contact-container">
 				<div class="small-12">
-					<div class="small-12 row">
-						<div class="small-6 column">
-							<input type="text" placeholder="NOMBRE Y APELLIDO">
+					<form class="contact">
+						<div class="small-12 row">
+							<div class="small-6 column">
+								<input type="text" placeholder="NOMBRE Y APELLIDO" ng-model="mail.user" required="required">
+							</div>
+							<div class="small-6 column">
+								<input type="email" placeholder="EMAIL" ng-model="mail.mail" required="required">
+							</div>
 						</div>
-						<div class="small-6 column">
-							<input type="email" placeholder="EMAIL">
-						</div>
-					</div>
 
-					<div class="small-12 row">
-						<div class="small-12">
-							<textarea></textarea>
+						<div class="small-12 row">
+							<div class="small-12">
+								<textarea ng-model="mail.content" required="required"></textarea>
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 			<div class="small-12 row email">
@@ -34,7 +36,7 @@
 				</div>
 				<div class="small-3 column">
 					<div class="right">
-						<button class="wineobs-button">Enviar</button>
+						<button class="wineobs-button" ng-click="submit()">Enviar</button>
 					</div>
 				</div>
 			</div>
