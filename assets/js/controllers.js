@@ -140,6 +140,25 @@ wineobsApp
 			swal('Error','Error');
 		});
 
+	$scope.clickPin = function(id){
+		Wineobs.markers[id].setIcon(new google.maps.MarkerImage(
+			'/assets/img/marker-hover.png',
+			new google.maps.Size(40, 40), //Original Size
+			new google.maps.Point(0, 0), //Origin
+			new google.maps.Point(20, 20), //Anchor
+			null //ScaledSize
+		))
+		window.setTimeout(function(){
+			Wineobs.markers[id].setIcon(new google.maps.MarkerImage(
+				'/assets/img/marker.png',
+				new google.maps.Size(30, 30), //Original Size
+				new google.maps.Point(0, 0), //Origin
+				new google.maps.Point(15, 15), //Anchor
+				null //ScaledSize
+			))
+		}, 4000)
+	}
+
 	$scope.paginateWineries = function(){
 		paginatedWineries = [];
 		filteredWineries = $filter('search')($scope.wineries,$scope.search)
