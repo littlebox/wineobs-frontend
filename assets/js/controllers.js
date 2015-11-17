@@ -486,26 +486,20 @@ wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
 	var postUrl = $rootScope.apiUrl+'/reviews/add/';
 
 	$http({
-	  method: 'GET',
-	  url: getUrl,
+		method: 'GET',
+		url: getUrl,
 	}).then(function successCallback(response) {
-			$scope.wineriesComment = response.data;
-	  }, function errorCallback(response) {
-			debugger;
-	  });
+		$scope.wineriesComment = response.data;
+	}, function errorCallback(response) {
+		debugger;
+	});
 
 	$scope.sendComment = function(){
-		$http({
-		  method: 'POST',
-		  url: postUrl,
-			data: {
-				token: $scope.token,
-				json: $scope.comment,
-			}
-		}).then(function successCallback(response) {
-				debugger;
-		  }, function errorCallback(response) {
-				debugger;
-		  });
+		jQuery.post(postUrl,{
+			token: $scope.token,
+			json: $scope.comment,
+		}, function(){
+			debugger;
+		})
 	}
 })
