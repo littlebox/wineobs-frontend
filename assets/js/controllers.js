@@ -1,4 +1,4 @@
-wineobsApp.controller('wineobsController', function ($scope,$rootScope){
+wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,reservation){
 	$rootScope.bodyClass = '';
 	$rootScope.apiUrl = 'http://reservas.wineobs.com';
 	// $rootScope.apiUrl = 'http://metrobox.local';
@@ -6,6 +6,16 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope){
 	$scope.$on('$locationChangeStart', function(event) {
 		$('.menu-overlay').removeClass('open');
 	});
+
+	$scope.susReservasClick = function($event){
+		$event.stopPropagation()
+		if(reservation.getReservesToMake().length){
+			jQuery('.menu .menu-overlay').removeClass('open');
+			$timeout(function(){
+				angular.element('.cart-open-button').trigger('click')
+			},500);
+		}
+	}
 
 	Wineobs.init();
 });
@@ -491,15 +501,22 @@ wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
 	}).then(function successCallback(response) {
 		$scope.wineriesComment = response.data;
 	}, function errorCallback(response) {
-		debugger;
+		swal({
+			title: 'Error',
+			text: 'Código incorrecto o ya se hicieron comentarios para estas reservas',
+		},function(){
+			window.location.href = '';
+		})
 	});
 
 	$scope.sendComment = function(){
 		jQuery.post(postUrl,{
 			token: $scope.token,
-			json: $scope.comment,
-		}, function(){
-			debugger;
+			review: $scope.comment,
+		}, function(resp){
+			if(!resp.error){
+				swal(resp.content);
+			}
 		})
 	}
 })

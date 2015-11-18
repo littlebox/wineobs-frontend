@@ -26,7 +26,7 @@
 								<div class="menu-items">
 									<ul>
 										<li><a ng-href="/">inicio</a></li>
-										<li><a href="">sus reservas</a></li>
+										<li><a ng-click="susReservasClick($event)">sus reservas</a></li>
 										<li><a href="">bodegas</a></li>
 										<li><a href="">wineobs</a></li>
 										<li><a ng-href="/contacto">contacto</a></li>
@@ -115,6 +115,16 @@
 		<div class="fake-background"></div>
 	</header>
 	<div class="site-content" ng-view>
+
+		<span ng-if="false">
+			<div class="small-12 row text-center">
+				<img src="assets/img/logo-completo.svg" alt="" style="width:80%"/>
+				<p style="font-family: BebasNeue;font-size:4rem">
+					One site. One obsession.
+				</p>
+
+			</div>
+		</span>
 
 	</div> <!-- END SITE CONTENT -->
 	<footer class="footer">

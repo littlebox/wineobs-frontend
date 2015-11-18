@@ -5887,19 +5887,22 @@ body.reserve-form-data .content.reserve-form-data .step .step-content.reserve-fo
   width: 2rem;
   height: 2rem;
   border: 1px solid white;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
-/* line 965, ../../scss/app.scss */
+/* line 968, ../../scss/app.scss */
 body.reserve-form-data .content.reserve-form-data .step .step-content.reserve-form-data-persons-qty ul li span.text {
   display: inline-block;
   font-family: GrandHotel;
   font-size: 1.8rem;
   padding: 0 1rem;
 }
-/* line 976, ../../scss/app.scss */
+/* line 979, ../../scss/app.scss */
 body.reserve-form-data .content.reserve-form-data .button-next {
   margin: 2rem auto;
 }
-/* line 980, ../../scss/app.scss */
+/* line 983, ../../scss/app.scss */
 body.reserve-form-data .content.reserve-form-data .step-footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -5908,46 +5911,46 @@ body.reserve-form-data .content.reserve-form-data .step-footer {
   justify-content: center;
   margin: 1rem 0 0;
 }
-/* line 983, ../../scss/app.scss */
+/* line 986, ../../scss/app.scss */
 body.reserve-form-data .content.reserve-form-data .step-footer > div {
   margin: 0 1rem;
 }
 
 /* results View */
-/* line 992, ../../scss/app.scss */
+/* line 995, ../../scss/app.scss */
 body.results {
   background-image: url("/assets/img/backgrounds/backgroundcolor2.jpg");
 }
-/* line 996, ../../scss/app.scss */
+/* line 999, ../../scss/app.scss */
 body.results .header-center {
   max-height: 4rem;
 }
-/* line 1000, ../../scss/app.scss */
+/* line 1003, ../../scss/app.scss */
 body.results .content > div {
   padding: 0 1rem;
 }
-/* line 1004, ../../scss/app.scss */
+/* line 1007, ../../scss/app.scss */
 body.results .step-header {
   padding: 0 1rem;
 }
-/* line 1006, ../../scss/app.scss */
+/* line 1009, ../../scss/app.scss */
 body.results .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1012, ../../scss/app.scss */
+/* line 1015, ../../scss/app.scss */
 body.results .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1016, ../../scss/app.scss */
+/* line 1019, ../../scss/app.scss */
 body.results .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1022, ../../scss/app.scss */
+/* line 1025, ../../scss/app.scss */
 body.results .step-content {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -5956,7 +5959,7 @@ body.results .step-content {
   -ms-flex: 1;
   flex: 1;
 }
-/* line 1024, ../../scss/app.scss */
+/* line 1027, ../../scss/app.scss */
 body.results .step-content .map {
   -webkit-box-flex: 4;
   -webkit-flex: 4;
@@ -5966,13 +5969,13 @@ body.results .step-content .map {
   flex: 4;
   padding: 0 1rem;
 }
-/* line 1027, ../../scss/app.scss */
+/* line 1030, ../../scss/app.scss */
 body.results .step-content .map .map-container {
   width: 100%;
   min-width: 200px;
   min-height: 400px;
 }
-/* line 1033, ../../scss/app.scss */
+/* line 1036, ../../scss/app.scss */
 body.results .step-content .wineries {
   position: relative;
   /* .pagination{
@@ -6007,7 +6010,7 @@ body.results .step-content .wineries {
   	}
   } */
 }
-/* line 1037, ../../scss/app.scss */
+/* line 1040, ../../scss/app.scss */
 body.results .step-content .wineries .winery {
   position: relative;
   min-height: 12.5rem;
@@ -6016,52 +6019,52 @@ body.results .step-content .wineries .winery {
   background: rgba(255, 255, 255, 0);
   border: 0.3rem solid rgba(255, 255, 255, 0);
 }
-/* line 1046, ../../scss/app.scss */
+/* line 1049, ../../scss/app.scss */
 body.results .step-content .wineries .winery:hover .winery-data, body.results .step-content .wineries .winery.highlight .winery-data {
   transition: background-color 200ms ease-in-out;
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* line 1050, ../../scss/app.scss */
+/* line 1053, ../../scss/app.scss */
 body.results .step-content .wineries .winery:hover .winery-image, body.results .step-content .wineries .winery.highlight .winery-image {
   border: 0.2rem solid white;
   transition: border 300ms ease-in-out;
 }
-/* line 1055, ../../scss/app.scss */
+/* line 1058, ../../scss/app.scss */
 body.results .step-content .wineries .winery:hover .winery-logo img, body.results .step-content .wineries .winery.highlight .winery-logo img {
   backface-visibility: hidden;
   transform: rotateY(180deg);
   transition: transform 500ms ease-in-out;
 }
-/* line 1060, ../../scss/app.scss */
+/* line 1063, ../../scss/app.scss */
 body.results .step-content .wineries .winery:hover .winery-logo .winery-name, body.results .step-content .wineries .winery.highlight .winery-logo .winery-name {
   transform: rotateY(0deg) !important;
   transition: transform 500ms ease-in-out;
 }
-/* line 1065, ../../scss/app.scss */
+/* line 1068, ../../scss/app.scss */
 body.results .step-content .wineries .winery:hover .winery-buttons, body.results .step-content .wineries .winery.highlight .winery-buttons {
   transform: scale(1.2);
   transition: transform 200ms ease-in-out;
 }
-/* line 1068, ../../scss/app.scss */
+/* line 1071, ../../scss/app.scss */
 body.results .step-content .wineries .winery:hover .winery-buttons a, body.results .step-content .wineries .winery.highlight .winery-buttons a {
   text-shadow: 1px 1px 2px black;
   transition: text-shadow 200ms ease-in-out;
 }
-/* line 1075, ../../scss/app.scss */
+/* line 1078, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-container, body.results .step-content .wineries .winery .winery-image, body.results .step-content .wineries .winery .winery-data {
   position: absolute;
   height: 100%;
   width: 100%;
 }
-/* line 1080, ../../scss/app.scss */
+/* line 1083, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-container {
   box-shadow: 0.3rem 0.3rem 2px 0px rgba(0, 0, 0, 0.8);
 }
-/* line 1083, ../../scss/app.scss */
+/* line 1086, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-image {
   transition: border 200ms ease-in-out;
 }
-/* line 1086, ../../scss/app.scss */
+/* line 1089, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-image-background {
   width: 100%;
   height: 100%;
@@ -6069,23 +6072,23 @@ body.results .step-content .wineries .winery .winery-image-background {
   background-repeat: no-repeat;
   z-index: 1;
 }
-/* line 1093, ../../scss/app.scss */
+/* line 1096, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data {
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1rem;
   transition: background-color 200ms ease-in-out;
 }
-/* line 1098, ../../scss/app.scss */
+/* line 1101, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data .winery-logo {
   padding: 0.5rem 0;
   position: relative;
 }
-/* line 1101, ../../scss/app.scss */
+/* line 1104, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data .winery-logo img {
   width: 90%;
 }
-/* line 1104, ../../scss/app.scss */
+/* line 1107, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data .winery-logo .winery-name {
   position: absolute;
   font-family: FuturaLTHeavy;
@@ -6099,36 +6102,36 @@ body.results .step-content .wineries .winery .winery-data .winery-logo .winery-n
   backface-visibility: hidden;
   letter-spacing: 0.3rem;
 }
-/* line 1118, ../../scss/app.scss */
+/* line 1121, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data .winery-buttons {
   margin: 1rem 0;
 }
-/* line 1120, ../../scss/app.scss */
+/* line 1123, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data .winery-buttons a {
   color: white;
   font-size: 1.5rem;
   margin: 0 0.8rem;
   transition: color 200ms ease-in-out;
 }
-/* line 1125, ../../scss/app.scss */
+/* line 1128, ../../scss/app.scss */
 body.results .step-content .wineries .winery .winery-data .winery-buttons a:hover {
   color: #9f4b55;
 }
-/* line 1133, ../../scss/app.scss */
+/* line 1136, ../../scss/app.scss */
 body.results .step-content .wineries .pagination-list {
   min-height: 25rem;
 }
-/* line 1137, ../../scss/app.scss */
+/* line 1140, ../../scss/app.scss */
 body.results .step-content .wineries .pagination-container {
   position: relative;
 }
-/* line 1139, ../../scss/app.scss */
+/* line 1142, ../../scss/app.scss */
 body.results .step-content .wineries .pagination-container .pagination {
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
-/* line 1147, ../../scss/app.scss */
+/* line 1150, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator {
   width: 100%;
   display: -webkit-box;
@@ -6141,7 +6144,7 @@ body.results .step-content .wineries .wineries-paginator {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1151, ../../scss/app.scss */
+/* line 1154, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6158,11 +6161,11 @@ body.results .step-content .wineries .wineries-paginator .winery-card {
   min-height: 12.8rem;
   margin: 0.25rem 0.25rem;
 }
-/* line 1162, ../../scss/app.scss */
+/* line 1165, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card.reservation .winery-card-front {
   display: none;
 }
-/* line 1166, ../../scss/app.scss */
+/* line 1169, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible {
   position: absolute;
   width: 100%;
@@ -6183,7 +6186,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1178, ../../scss/app.scss */
+/* line 1181, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div, body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 100%;
@@ -6197,40 +6200,40 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   -ms-flex-item-align: center;
   align-self: center;
 }
-/* line 1183, ../../scss/app.scss */
+/* line 1186, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div {
   text-align: center;
 }
-/* line 1186, ../../scss/app.scss */
+/* line 1189, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible p {
   line-height: 1.1;
   margin: 0;
   font-weight: bold;
   font-size: 0.9rem;
 }
-/* line 1192, ../../scss/app.scss */
+/* line 1195, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible p.winery-name {
   text-transform: uppercase;
 }
-/* line 1195, ../../scss/app.scss */
+/* line 1198, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible p.hour {
   text-transform: uppercase;
 }
-/* line 1198, ../../scss/app.scss */
+/* line 1201, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul {
   list-style: none;
 }
-/* line 1200, ../../scss/app.scss */
+/* line 1203, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul li {
   font-size: 0.77rem;
   font-weight: normal;
   padding: 0 0 0 1rem;
 }
-/* line 1204, ../../scss/app.scss */
+/* line 1207, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible ul li span {
   font-weight: bold;
 }
-/* line 1209, ../../scss/app.scss */
+/* line 1212, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.price p {
   background-color: #9f4b55;
   color: #FFFFFF;
@@ -6239,7 +6242,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   height: 1.2rem;
   line-height: 1.3;
 }
-/* line 1216, ../../scss/app.scss */
+/* line 1219, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.price p:after {
   position: absolute;
   content: ' ';
@@ -6249,7 +6252,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   border-right: 0.6rem solid #F0EDE5;
   border-top: 0.6rem solid transparent;
 }
-/* line 1226, ../../scss/app.scss */
+/* line 1229, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.remove-button {
   position: absolute;
   width: 1.5rem;
@@ -6258,15 +6261,15 @@ body.results .step-content .wineries .wineries-paginator .winery-card .reservati
   top: 0;
   right: 0;
 }
-/* line 1233, ../../scss/app.scss */
+/* line 1236, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.remove-button span {
   color: #FFFFFF;
 }
-/* line 1236, ../../scss/app.scss */
+/* line 1239, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .reservation-card.visible div.remove-button:hover {
   background-color: #5E3038;
 }
-/* line 1242, ../../scss/app.scss */
+/* line 1245, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front {
   position: absolute;
   width: 100%;
@@ -6278,11 +6281,11 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   background-size: cover;
   background-position: 50% 50%;
 }
-/* line 1252, ../../scss/app.scss */
+/* line 1255, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front > div {
   z-index: 9;
 }
-/* line 1255, ../../scss/app.scss */
+/* line 1258, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front:after {
   content: ' ';
   position: absolute;
@@ -6292,12 +6295,12 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 1265, ../../scss/app.scss */
+/* line 1268, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front:hover:after {
   background-color: rgba(0, 0, 0, 0.4);
   transition: background-color 200ms ease-in-out;
 }
-/* line 1270, ../../scss/app.scss */
+/* line 1273, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top {
   -webkit-box-flex: 4;
   -webkit-flex: 4 0;
@@ -6318,7 +6321,7 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   overflow: hidden;
   width: 100%;
 }
-/* line 1276, ../../scss/app.scss */
+/* line 1279, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6330,35 +6333,35 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   -webkit-transition: -webkit-transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 1279, ../../scss/app.scss */
+/* line 1282, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask.swipe-pin {
   transform: translateX(-100%);
 }
-/* line 1282, ../../scss/app.scss */
+/* line 1285, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo, body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   flex: 1 0 100%;
   text-align: center;
 }
-/* line 1287, ../../scss/app.scss */
+/* line 1290, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo img {
   height: 4.5rem;
 }
-/* line 1291, ../../scss/app.scss */
+/* line 1294, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   padding: 1rem;
   text-align: left;
 }
-/* line 1294, ../../scss/app.scss */
+/* line 1297, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p {
   margin: 0 0 0.7rem;
   font-family: FuturaLTHeavy;
   font-size: 0.8rem;
 }
-/* line 1298, ../../scss/app.scss */
+/* line 1301, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p.address-title {
   text-transform: uppercase;
 }
-/* line 1305, ../../scss/app.scss */
+/* line 1308, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-icons, body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-button {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -6368,26 +6371,26 @@ body.results .step-content .wineries .wineries-paginator .winery-card .winery-ca
   flex: 1;
   text-align: center;
 }
-/* line 1311, ../../scss/app.scss */
+/* line 1314, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon {
   color: #FFFFFF;
   font-size: 1.2rem;
 }
-/* line 1314, ../../scss/app.scss */
+/* line 1317, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon:hover {
   color: #9f4b55;
   transition: color 200ms ease-in-out;
 }
-/* line 1321, ../../scss/app.scss */
+/* line 1324, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-button {
   padding: 0 0 1rem;
 }
-/* line 1323, ../../scss/app.scss */
+/* line 1326, ../../scss/app.scss */
 body.results .step-content .wineries .wineries-paginator .winery-card .winery-card-front .winery-button .wineobs-button {
   font-size: 0.7rem;
   padding: 0.3rem 1rem 0.1rem;
 }
-/* line 1333, ../../scss/app.scss */
+/* line 1336, ../../scss/app.scss */
 body.results .step-content .wineries .search {
   position: absolute;
   width: 150px;
@@ -6400,7 +6403,7 @@ body.results .step-content .wineries .search {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 1340, ../../scss/app.scss */
+/* line 1343, ../../scss/app.scss */
 body.results .step-content .wineries .search .search-lens {
   -webkit-box-flex: 30px;
   -webkit-flex: 30px;
@@ -6428,7 +6431,7 @@ body.results .step-content .wineries .search .search-lens {
   align-items: center;
   z-index: 2;
 }
-/* line 1350, ../../scss/app.scss */
+/* line 1353, ../../scss/app.scss */
 body.results .step-content .wineries .search .search-input {
   -webkit-box-flex: 120px;
   -webkit-flex: 120px;
@@ -6446,21 +6449,21 @@ body.results .step-content .wineries .search .search-input {
   transition: transform, 200ms, cubic-bezier(0.15, 0.86, 0.32, 0.99);
   z-index: 1;
 }
-/* line 1355, ../../scss/app.scss */
+/* line 1358, ../../scss/app.scss */
 body.results .step-content .wineries .search .search-input input {
   width: 100%;
   height: 30px;
   font-size: 1rem;
   font-weight: bold;
 }
-/* line 1363, ../../scss/app.scss */
+/* line 1366, ../../scss/app.scss */
 body.results .step-content .wineries .search.active .search-input {
   -moz-transform: translateX(0) scaleX(1);
   -ms-transform: translateX(0) scaleX(1);
   -webkit-transform: translateX(0) scaleX(1);
   transform: translateX(0) scaleX(1);
 }
-/* line 1404, ../../scss/app.scss */
+/* line 1407, ../../scss/app.scss */
 body.results .step-footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -6469,49 +6472,49 @@ body.results .step-footer {
   justify-content: center;
   margin: 1rem 0 0;
 }
-/* line 1407, ../../scss/app.scss */
+/* line 1410, ../../scss/app.scss */
 body.results .step-footer > div {
   margin: 0 1rem;
 }
-/* line 1412, ../../scss/app.scss */
+/* line 1415, ../../scss/app.scss */
 body.results a.wineobs-button.hide {
   visibility: hidden;
 }
 
-/* line 1417, ../../scss/app.scss */
+/* line 1420, ../../scss/app.scss */
 body.personal-data {
   background-image: url("/assets/img/backgrounds/backgroundcolor4.jpg");
 }
-/* line 1421, ../../scss/app.scss */
+/* line 1424, ../../scss/app.scss */
 body.personal-data .header-center {
   max-height: 4rem;
 }
-/* line 1425, ../../scss/app.scss */
+/* line 1428, ../../scss/app.scss */
 body.personal-data .content > div {
   padding: 0 1rem;
 }
-/* line 1429, ../../scss/app.scss */
+/* line 1432, ../../scss/app.scss */
 body.personal-data .step-header {
   padding: 0 1rem;
 }
-/* line 1431, ../../scss/app.scss */
+/* line 1434, ../../scss/app.scss */
 body.personal-data .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1437, ../../scss/app.scss */
+/* line 1440, ../../scss/app.scss */
 body.personal-data .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1441, ../../scss/app.scss */
+/* line 1444, ../../scss/app.scss */
 body.personal-data .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1447, ../../scss/app.scss */
+/* line 1450, ../../scss/app.scss */
 body.personal-data .step-footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -6520,57 +6523,57 @@ body.personal-data .step-footer {
   justify-content: center;
   margin: 1rem 0 0;
 }
-/* line 1450, ../../scss/app.scss */
+/* line 1453, ../../scss/app.scss */
 body.personal-data .step-footer > div {
   margin: 0 1rem;
 }
-/* line 1457, ../../scss/app.scss */
+/* line 1460, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container {
   position: relative;
   height: 21rem;
   padding: 1rem;
 }
-/* line 1461, ../../scss/app.scss */
+/* line 1464, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container form div {
   height: 3.5rem;
 }
-/* line 1463, ../../scss/app.scss */
+/* line 1466, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container form div label.form-title {
   text-transform: uppercase;
 }
-/* line 1467, ../../scss/app.scss */
+/* line 1470, ../../scss/app.scss */
 body.personal-data .step-content .personal-data-form .form-container input {
   margin: 0.1rem;
   width: 100%;
 }
-/* line 1475, ../../scss/app.scss */
+/* line 1478, ../../scss/app.scss */
 body.personal-data .payment-method {
   padding: 2px;
 }
-/* line 1479, ../../scss/app.scss */
+/* line 1482, ../../scss/app.scss */
 body.personal-data .date {
   font-family: CamptonBold;
   font-size: 2rem;
   margin: 1rem 0;
 }
-/* line 1486, ../../scss/app.scss */
+/* line 1489, ../../scss/app.scss */
 body.personal-data .form-container .form-title {
   font-family: BigJohn;
 }
-/* line 1490, ../../scss/app.scss */
+/* line 1493, ../../scss/app.scss */
 body.personal-data .form-container form input, body.personal-data .form-container form select {
   font-family: FuturaLTHeavy;
 }
-/* line 1493, ../../scss/app.scss */
+/* line 1496, ../../scss/app.scss */
 body.personal-data .form-container form input.ng-invalid.ng-touched {
   background-color: #9f4b55;
 }
-/* line 1496, ../../scss/app.scss */
+/* line 1499, ../../scss/app.scss */
 body.personal-data .form-container form select.country {
   background: #FFF;
   font-size: 0.9rem;
 }
-/* line 1503, ../../scss/app.scss */
+/* line 1506, ../../scss/app.scss */
 body.personal-data .wineries-paginator {
   width: 100%;
   display: -webkit-box;
@@ -6583,7 +6586,7 @@ body.personal-data .wineries-paginator {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1507, ../../scss/app.scss */
+/* line 1510, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6600,11 +6603,11 @@ body.personal-data .wineries-paginator .winery-card {
   min-height: 12.8rem;
   margin: 0.25rem 0.25rem;
 }
-/* line 1514, ../../scss/app.scss */
+/* line 1517, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card.reservation .winery-card-front {
   display: none;
 }
-/* line 1518, ../../scss/app.scss */
+/* line 1521, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible {
   position: absolute;
   width: 100%;
@@ -6625,7 +6628,7 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 1530, ../../scss/app.scss */
+/* line 1533, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div, body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 100%;
@@ -6639,40 +6642,40 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   -ms-flex-item-align: center;
   align-self: center;
 }
-/* line 1535, ../../scss/app.scss */
+/* line 1538, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div {
   text-align: center;
 }
-/* line 1538, ../../scss/app.scss */
+/* line 1541, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible p {
   line-height: 1.1;
   margin: 0;
   font-weight: bold;
   font-size: 0.9rem;
 }
-/* line 1544, ../../scss/app.scss */
+/* line 1547, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible p.winery-name {
   text-transform: uppercase;
 }
-/* line 1547, ../../scss/app.scss */
+/* line 1550, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible p.hour {
   text-transform: uppercase;
 }
-/* line 1550, ../../scss/app.scss */
+/* line 1553, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul {
   list-style: none;
 }
-/* line 1552, ../../scss/app.scss */
+/* line 1555, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul li {
   font-size: 0.77rem;
   font-weight: normal;
   padding: 0 0 0 1rem;
 }
-/* line 1556, ../../scss/app.scss */
+/* line 1559, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible ul li span {
   font-weight: bold;
 }
-/* line 1561, ../../scss/app.scss */
+/* line 1564, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.price p {
   background-color: #9f4b55;
   color: #FFFFFF;
@@ -6681,7 +6684,7 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   height: 1.2rem;
   line-height: 1.3;
 }
-/* line 1568, ../../scss/app.scss */
+/* line 1571, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.price p:after {
   position: absolute;
   content: ' ';
@@ -6691,7 +6694,7 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   border-right: 0.6rem solid #F0EDE5;
   border-top: 0.6rem solid transparent;
 }
-/* line 1578, ../../scss/app.scss */
+/* line 1581, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.remove-button {
   position: absolute;
   width: 1.5rem;
@@ -6700,15 +6703,15 @@ body.personal-data .wineries-paginator .winery-card .reservation-card.visible di
   top: 0;
   right: 0;
 }
-/* line 1585, ../../scss/app.scss */
+/* line 1588, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.remove-button span {
   color: #FFFFFF;
 }
-/* line 1588, ../../scss/app.scss */
+/* line 1591, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .reservation-card.visible div.remove-button:hover {
   background-color: #5E3038;
 }
-/* line 1594, ../../scss/app.scss */
+/* line 1597, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front {
   position: absolute;
   width: 100%;
@@ -6720,11 +6723,11 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front {
   background-size: cover;
   background-position: 50% 50%;
 }
-/* line 1604, ../../scss/app.scss */
+/* line 1607, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front > div {
   z-index: 9;
 }
-/* line 1607, ../../scss/app.scss */
+/* line 1610, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front:after {
   content: ' ';
   position: absolute;
@@ -6734,12 +6737,12 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front:after {
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 1617, ../../scss/app.scss */
+/* line 1620, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front:hover:after {
   background-color: rgba(0, 0, 0, 0.4);
   transition: background-color 200ms ease-in-out;
 }
-/* line 1622, ../../scss/app.scss */
+/* line 1625, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top {
   -webkit-box-flex: 4;
   -webkit-flex: 4 0;
@@ -6760,7 +6763,7 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-c
   overflow: hidden;
   width: 100%;
 }
-/* line 1628, ../../scss/app.scss */
+/* line 1631, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -6772,35 +6775,35 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-c
   -webkit-transition: -webkit-transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform, 600ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 1631, ../../scss/app.scss */
+/* line 1634, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask.swipe-pin {
   transform: translateX(-100%);
 }
-/* line 1634, ../../scss/app.scss */
+/* line 1637, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo, body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   flex: 1 0 100%;
   text-align: center;
 }
-/* line 1639, ../../scss/app.scss */
+/* line 1642, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-logo img {
   height: 4.5rem;
 }
-/* line 1643, ../../scss/app.scss */
+/* line 1646, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address {
   padding: 1rem;
   text-align: left;
 }
-/* line 1646, ../../scss/app.scss */
+/* line 1649, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p {
   margin: 0 0 0.7rem;
   font-family: FuturaLTHeavy;
   font-size: 0.8rem;
 }
-/* line 1650, ../../scss/app.scss */
+/* line 1653, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-card-top .winery-card-top-mask .winery-address p.address-title {
   text-transform: uppercase;
 }
-/* line 1657, ../../scss/app.scss */
+/* line 1660, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-icons, body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-button {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -6810,65 +6813,65 @@ body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-i
   flex: 1;
   text-align: center;
 }
-/* line 1663, ../../scss/app.scss */
+/* line 1666, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon {
   color: #FFFFFF;
   font-size: 1.2rem;
 }
-/* line 1666, ../../scss/app.scss */
+/* line 1669, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-icons a .icon:hover {
   color: #9f4b55;
   transition: color 200ms ease-in-out;
 }
-/* line 1673, ../../scss/app.scss */
+/* line 1676, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-button {
   padding: 0 0 1rem;
 }
-/* line 1675, ../../scss/app.scss */
+/* line 1678, ../../scss/app.scss */
 body.personal-data .wineries-paginator .winery-card .winery-card-front .winery-button .wineobs-button {
   font-size: 0.7rem;
   padding: 0.3rem 1rem 0.1rem;
 }
 
-/* line 1687, ../../scss/app.scss */
+/* line 1690, ../../scss/app.scss */
 body.winery {
   background-image: url("/assets/img/backgrounds/backgroundcolor6.jpg");
   background-attachment: fixed;
 }
-/* line 1692, ../../scss/app.scss */
+/* line 1695, ../../scss/app.scss */
 body.winery header div.fake-background {
   background-color: rgba(10, 10, 10, 0.2);
 }
-/* line 1696, ../../scss/app.scss */
+/* line 1699, ../../scss/app.scss */
 body.winery .step-header {
   padding: 0 1rem;
 }
-/* line 1698, ../../scss/app.scss */
+/* line 1701, ../../scss/app.scss */
 body.winery .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1704, ../../scss/app.scss */
+/* line 1707, ../../scss/app.scss */
 body.winery .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1708, ../../scss/app.scss */
+/* line 1711, ../../scss/app.scss */
 body.winery .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1714, ../../scss/app.scss */
+/* line 1717, ../../scss/app.scss */
 body.winery .wineries {
   margin: 0 auto;
 }
-/* line 1716, ../../scss/app.scss */
+/* line 1719, ../../scss/app.scss */
 body.winery .wineries .winery {
   min-height: 15rem;
 }
-/* line 1718, ../../scss/app.scss */
+/* line 1721, ../../scss/app.scss */
 body.winery .wineries .winery .winery-content {
   border: 2px solid #FFFFFF;
   height: 90%;
@@ -6891,37 +6894,37 @@ body.winery .wineries .winery .winery-content {
   justify-content: center;
 }
 
-/* line 1735, ../../scss/app.scss */
+/* line 1738, ../../scss/app.scss */
 body.contact {
   background-image: url("/assets/img/backgrounds/backgroundcolor5.jpg");
   background-attachment: fixed;
 }
-/* line 1740, ../../scss/app.scss */
+/* line 1743, ../../scss/app.scss */
 body.contact header div.fake-background {
   background-color: rgba(10, 10, 10, 0.2);
 }
-/* line 1744, ../../scss/app.scss */
+/* line 1747, ../../scss/app.scss */
 body.contact .step-header {
   padding: 0 1rem;
 }
-/* line 1746, ../../scss/app.scss */
+/* line 1749, ../../scss/app.scss */
 body.contact .step-header > div {
   flex: 1;
   max-width: 20em;
   justify-content: center;
   align-items: center;
 }
-/* line 1752, ../../scss/app.scss */
+/* line 1755, ../../scss/app.scss */
 body.contact .step-header .step-text {
   width: 100%;
   text-align: center;
 }
-/* line 1756, ../../scss/app.scss */
+/* line 1759, ../../scss/app.scss */
 body.contact .step-header h2.step-title {
   font-size: 0.75rem;
   padding: 0.5rem 1rem 0.4rem;
 }
-/* line 1762, ../../scss/app.scss */
+/* line 1765, ../../scss/app.scss */
 body.contact .contact-container > div {
   border: 1px solid #FFFFFF;
   margin: 0 1rem;
@@ -6929,7 +6932,7 @@ body.contact .contact-container > div {
   background: rgba(255, 255, 255, 0.4);
   text-align: center;
 }
-/* line 1768, ../../scss/app.scss */
+/* line 1771, ../../scss/app.scss */
 body.contact .contact-container > div input, body.contact .contact-container > div textarea {
   width: calc(100% - 2rem);
   height: 2rem;
@@ -6939,7 +6942,7 @@ body.contact .contact-container > div input, body.contact .contact-container > d
   margin: 1rem;
   padding: 2rem;
 }
-/* line 1777, ../../scss/app.scss */
+/* line 1780, ../../scss/app.scss */
 body.contact .contact-container > div textarea {
   font-family: FuturaLTHeavy;
   text-align: left;
@@ -6947,25 +6950,25 @@ body.contact .contact-container > div textarea {
   min-height: 15rem;
   resize: none;
 }
-/* line 1786, ../../scss/app.scss */
+/* line 1789, ../../scss/app.scss */
 body.contact .email {
   margin: 1rem 0;
   padding: 0 1rem;
   font-family: FuturaLTHeavy;
   font-size: 1.1rem;
 }
-/* line 1791, ../../scss/app.scss */
+/* line 1794, ../../scss/app.scss */
 body.contact .email .bold {
   font-family: FuturaLTBold;
   font-weight: bold;
 }
-/* line 1798, ../../scss/app.scss */
+/* line 1801, ../../scss/app.scss */
 body.contact .ng-touched.ng-invalid[ng-model*="mail"] {
   border: 3px solid #9f4b55;
   transition: border 500ms ease-in-out;
 }
 
-/* line 1806, ../../scss/app.scss */
+/* line 1809, ../../scss/app.scss */
 body.payment div.title {
   text-transform: uppercase;
   text-align: center;
@@ -6973,7 +6976,7 @@ body.payment div.title {
   font-family: BebasNeue;
   letter-spacing: 0.1rem;
 }
-/* line 1813, ../../scss/app.scss */
+/* line 1816, ../../scss/app.scss */
 body.payment div.text, body.payment div.return {
   text-align: center;
   font-size: 2.5rem;
@@ -6981,7 +6984,7 @@ body.payment div.text, body.payment div.return {
   letter-spacing: 0.1rem;
 }
 
-/* line 1822, ../../scss/app.scss */
+/* line 1825, ../../scss/app.scss */
 body.wineobs .column-2 {
   -moz-column-count: 2;
   -webkit-column-count: 2;
@@ -6990,42 +6993,42 @@ body.wineobs .column-2 {
   font-family: FuturaLTBook;
   margin: 1rem auto;
 }
-/* line 1827, ../../scss/app.scss */
+/* line 1830, ../../scss/app.scss */
 body.wineobs .column-2 h1 {
   color: #FFFFFF;
   font-size: 1.8rem;
   font-family: FuturaLTBold;
 }
-/* line 1832, ../../scss/app.scss */
+/* line 1835, ../../scss/app.scss */
 body.wineobs .column-2 p {
   line-height: 1.3;
 }
-/* line 1835, ../../scss/app.scss */
+/* line 1838, ../../scss/app.scss */
 body.wineobs .column-2 li {
   line-height: 1.3;
 }
-/* line 1839, ../../scss/app.scss */
+/* line 1842, ../../scss/app.scss */
 body.wineobs .signatures {
   text-align: center;
 }
-/* line 1841, ../../scss/app.scss */
+/* line 1844, ../../scss/app.scss */
 body.wineobs .signatures .signature {
   width: 20rem;
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 1848, ../../scss/app.scss */
+  /* line 1851, ../../scss/app.scss */
   body {
     background: #5a2a30;
     background-image: none !important;
   }
 
-  /* line 1852, ../../scss/app.scss */
+  /* line 1855, ../../scss/app.scss */
   .winery .winery-data .winery-logo img {
     width: 90%;
   }
 
-  /* line 1855, ../../scss/app.scss */
+  /* line 1858, ../../scss/app.scss */
   body.results .step-content .wineries .winery {
     min-height: 19.5rem;
   }

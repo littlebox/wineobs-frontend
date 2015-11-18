@@ -17,9 +17,11 @@
 		  <div class="row" ng-repeat="(k,winery) in wineriesComment">
 		    <div class="large-12">
 					<div class="small-2 column text-center">
-						<div class="small-12 column"> logo </div>
+						<div class="small-12 column">
+							<img ng-src="http://reservas.wineobs.com/img/wineries/logos/{{winery.has_logo && winery.id+'.png' || 'default.svg'}}">
+						</div>
 						<div class="small-12 column text-center">
-							<p> nombre bodega </p>
+							<p style="text-transform:capitalize;">{{winery.name}}</p>
 						</div>
 					</div>
 					<div class="small-10 column">
