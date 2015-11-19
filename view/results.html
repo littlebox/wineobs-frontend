@@ -13,6 +13,13 @@
 		</div>
 
 		<div class="step-content">
+			<div ng-if="!wineries.length" class="circles-loader text-center small-12 row">
+				Cargando...
+				<svg class="circle-1" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"> <circle cx="50" cy="50" r="50"/> </svg>
+				<svg class="circle-2" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"> <circle cx="50" cy="50" r="50"/> </svg>
+				<svg class="circle-3" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"> <circle cx="50" cy="50" r="50"/> </svg>
+				<svg class="circle-4" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"> <circle cx="50" cy="50" r="50"/> </svg>
+			</div>
 			<div class="map medium-5 column show-for-medium-up">
 				<div class="map-container f1"></div>
 			</div>

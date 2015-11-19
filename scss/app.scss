@@ -85,6 +85,54 @@ $form-label-font-color: #fff;
 	font-family: BebasNeue;
 }
 
+.circles-loader{
+	position: relative;
+	text-transform: uppercase;
+	font-family: BebasNeue;
+	font-size: 4rem;
+	[class*="circle-"]{
+		width: 1rem;
+		height: 1rem;
+		position: absolute;
+		top: 7rem;
+		stroke-width: 8px;
+		stroke: $white2;
+		left: calc(50% - 1rem);
+	}
+	.circle-1{
+		fill: $tinto-wineobs;
+		transform: translateX(-1rem);
+		animation: move-right 0.5s alternate infinite;
+	}
+	.circle-2{
+		fill: $tinto-malbec;
+		transform: translateX(1rem);
+		animation: move-left 0.7s alternate infinite;
+	}
+	.circle-3{
+		fill: $white2;
+		animation: move-right 0.6s alternate infinite;
+	}
+	.circle-4{
+		fill: darken($tinto-malbec, 0.2);
+		animation: move-left 0.8s alternate infinite;
+	}
+
+	@keyframes move-right{
+		to{
+			transform: translateX(2rem);
+			opacity: 0.7;
+		}
+	}
+	@keyframes move-left{
+		to{
+			transform: translateX(-2rem);
+			opacity: 0.7;
+		}
+	}
+
+}
+
 /* Flexbox! */
 .flex{
 	@include flexbox();
