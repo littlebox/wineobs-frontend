@@ -364,7 +364,7 @@ body{
 						background-color: $white2;
 						.tabs-content{
 							height: 27rem;
-							.info-bodega{
+							.info-bodega, .info-comments{
 								color: $grey;
 								h1.winery-name{
 									font-size: 2rem;
@@ -374,6 +374,10 @@ body{
 								p.winery-description{
 									font-size: 1rem;
 									color: $grey;
+								}
+								blockquote{
+									text-align: left;
+									margin: 1rem 0 0;
 								}
 							}
 						}
@@ -934,15 +938,15 @@ body.reserve-form-data{
 				}
 				&.reserve-form-data-date{
 					input[type="text"]{
-						background-color: rgba(0,0,0,0);
-						font-family: CamptonBold;
-						font-weight: bold;
-						font-size: 1.2rem;
-						color:$white;
+						background-color: rgba(0, 0, 0, 0);
+						font-family: GrandHotel;
+						font-size: 1.8rem;
+						height: 4rem;
+						color: #FFF;
 						text-align: center;
-						width:80%;
-						margin:2rem auto;
-						padding:1rem 0;
+						width: 80%;
+						margin: 2rem auto;
+						padding: 1rem 0;
 					}
 				}
 				&.reserve-form-data-persons-qty{

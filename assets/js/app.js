@@ -1,4 +1,19 @@
-var wineobsApp = angular.module('wineobsApp', ['ngAnimate', 'ngRoute', 'mm.foundation']);
+var wineobsApp = angular.module('wineobsApp', ['ngAnimate', 'ngRoute', 'mm.foundation','pascalprecht.translate']);
+wineobsApp.config(function ($translateProvider) {
+	$translateProvider.translations('en', {
+		INICIO: 'Start',
+		TITULO_DATOS: 'Travel. Discover. Enjoy.'
+	});
+	$translateProvider.translations('es', {
+		INICIO: 'Inicio',
+		TITULO_DATOS: 'Recorrer. Conocer. Disfrutar.'
+	});
+	var regex = /[lg]=([^&#]*)/g
+	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
+	var lg = ( window.location.search.search(regex) > -1 ) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0];
+	console.log(lg);
+	$translateProvider.preferredLanguage(lg);
+});
 (function(window){
 	'use strict';
 	var Wineobs = {

@@ -16,7 +16,6 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,
 			},500);
 		}
 	}
-
 	Wineobs.init();
 });
 
@@ -431,13 +430,8 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 	}
 
 	$scope.setReservationModalActiveTab = function(activeTab){
-		if(activeTab == "tours"){
-			$scope.infoActive = false;
-			$scope.toursActive = true;
-		}else{
-			$scope.infoActive = true;
-			$scope.toursActive = false;
-		}
+		$scope.infoActive = $scope.toursActive = $scope.commentsActive = false;
+		$scope[activeTab+'Active'] = true;
 	}
 
 	$scope.makeReserve = function(){

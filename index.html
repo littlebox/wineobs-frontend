@@ -25,10 +25,10 @@
 								</div>
 								<div class="menu-items">
 									<ul>
-										<li><a ng-href="/">inicio</a></li>
+										<li><a ng-href="/" translate="INICIO">inicio</a></li>
 										<li><a ng-click="susReservasClick($event)">sus reservas</a></li>
-										<li><a href="">bodegas</a></li>
-										<li><a href="">wineobs</a></li>
+										<!-- <li><a href="">bodegas</a></li> -->
+										<!-- <li><a href="">wineobs</a></li> -->
 										<li><a ng-href="/contacto">contacto</a></li>
 									</ul>
 								</div>
@@ -118,8 +118,7 @@
 
 		<span ng-if="false">
 			<div class="small-12 row text-center">
-				<img src="assets/img/logo-completo.svg" alt="" style="width:80%"/>
-				<p style="font-family: BebasNeue;font-size:4rem">
+				<p style="font-family: BebasNeue;font-size:6rem; margin: 8rem 0 0;">
 					One site. One obsession.
 				</p>
 
@@ -241,8 +240,16 @@
 										</div>
 									</div>
 								</div>
-								<div ng-class="{ 'active': commentsActive }" class="content" id="comments">
-
+								<div ng-class="{ 'active': commentsActive }" class="content info-comments" id="comments">
+									<div ng-show="!w.Review.length">
+										No se han hecho comentarios sobre la bodega
+									</div>
+									<div class="comments" ng-repeat="review in w.Review">
+										<blockquote>
+											{{review.review}}
+											<cite>{{review.Client.full_name}}</cite>
+										</blockquote>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -264,6 +271,7 @@
 
 	<script type="text/javascript" src="/assets/foundation/js/foundation.min.js"></script>
 	<script type="text/javascript" src="/assets/angular-foundation/mm-foundation-tpls.min.js"></script>
+	<script type="text/javascript" src="/assets/angular-translate/angular-translate.js"></script>
 	<script type="text/javascript" src="/assets/js/app.js"></script>
 
 	<script src="/assets/js/routes.js"></script>
