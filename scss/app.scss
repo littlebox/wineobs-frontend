@@ -1910,4 +1910,73 @@ body.wineobs{
 	body.results .step-content .wineries .winery{
 		min-height: 19.5rem;
 	}
+
+	header{
+		min-height: 12rem;
+	}
+	.logo{
+		position: absolute;
+		top: 3rem;
+		left: calc(50% - 6rem);
+		margin: 2rem 0 !important;
+		width: 12rem
+	}
+	body.reserve-form-data .content.reserve-form-data .step .step-content .step-content-container{
+		width: 70%;
+	}
+	body.results .step-header {
+		padding: 0 1rem 3rem !important;
+	}
+	body.results .step-content .wineries .pagination-container .pagination{
+		width: auto !important;
+		margin: 0 auto;
+		position: absolute
+	}
+	body.results .step-content .wineries .pagination-container {
+		position: relative;
+		height: 3rem;
+	}
+	.modal-small{
+		padding: 0 !important;
+		margin: 0 !important;
+		height: 100vh;
+		.fixed-top{
+				position: fixed;
+				width: 100vw;
+				min-height: 20vh;
+				background: $tinto-wineobs;
+		}
+		.tabs-content{
+			position: relative;
+			height: 80vh;
+			background: $tinto-malbec;
+			top: 20vh;
+			& > .content.active {
+				display: block;
+				float: none;
+				overflow: hidden;
+			}
+		}
+		.tours-list-scroller{
+			padding: 0 !important;
+			width: 100vw;
+			overflow: scroll
+		}
+		.tours-list{
+			margin: 0;
+			position: relative;
+			height: 2rem;
+			li{
+				width: 100vw;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				color: $grey2;
+				float: left;
+				position: relative;
+				padding: 0.5rem 0;
+				background: $white2;
+			}
+		}
+	}
 }

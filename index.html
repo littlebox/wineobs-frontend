@@ -159,7 +159,7 @@
 		</div>
 		<div class="modals">
 			<div ng-controller="reservationModalController" class="modal-info-winery">
-				<div class="content">
+				<div class="content show-for-medium-up">
 					<div class="modal-content row">
 						<div class="small-3 column tabs-selector">
 							<ul class="tabs vertical">
@@ -258,6 +258,58 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="content show-for-small-only">
+					<div class="modal-small small-12">
+						<div ng-click="closeClick()" class="close-modal">
+							<span class="icon-wineobs-cross"></span>
+						</div>
+						<div class="fixed-top">
+							<ul class="tabs vertical">
+								<li ng-class="{ 'active': infoActive }" class="tab-title" ng-click="setReservationModalActiveTab('info')">
+									<a>Bodega</a>
+								</li>
+								<li ng-class="{ 'active': toursActive }" class="tab-title" ng-click="setReservationModalActiveTab('tours')">
+									<a>Tours</a>
+								</li>
+								<li ng-class="{ 'active': commentsActive }" class="tab-title" ng-click="setReservationModalActiveTab('comments')">
+									<a>Comentarios</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="tabs-content">
+							<div ng-class="{ 'active': infoActive }" class="content info-bodega" id="info-bodega">
+								<h1 class="winery-name">{{w.Winery.name}}</h1>
+								<p class="winery-description">{{w.Winery.description}}</p>
+							</div>
+							<div ng-class="{ 'active': commentsActive }" class="content info-comments" id="comments">
+								<div ng-show="!w.Review.length">
+									No se han hecho comentarios sobre la bodega
+								</div>
+								<div class="comments" ng-repeat="review in w.Review">
+									<blockquote>
+										{{review.review}}
+										<cite>{{review.Client.full_name}}</cite>
+									</blockquote>
+								</div>
+							</div>
+							<div ng-class="{ 'active': toursActive }" class="content tours-bodega" id="tours-bodega">
+								<div class="tours-list-scroller">
+									<ul class="tours-list" ng-style="{'width': 100*w.Tour.length+'vw'}">
+										<li ng-repeat="tour in w.Tour" ng-click="changeActiveTour(tour.id, $index)">{{tour.name}}</li>
+									</ul>
+								</div>
+								<div class="">
+									{{w.Tour[activeIndex].name}}
+								</div>
+							</div>
+						</div>
+
+						<div class="mierda"> </div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</footer>

@@ -405,8 +405,9 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 	$scope.activeTour = null;
 
 	$scope.changeActiveTour = function(tourId,index){
-		$scope.activeTour = tourId
-		$scope.activeHour = $scope.w.Tour[index].Time[0].id
+		$scope.activeTour = tourId;
+		$scope.activeIndex = index;
+		$scope.activeHour = $scope.w.Tour[index].Time[0].id;
 	}
 
 	$scope.isTourActive = function(tourId){

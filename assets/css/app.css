@@ -7088,6 +7088,94 @@ body.wineobs .signatures .signature {
   body.results .step-content .wineries .winery {
     min-height: 19.5rem;
   }
+
+  /* line 1914, ../../scss/app.scss */
+  header {
+    min-height: 12rem;
+  }
+
+  /* line 1917, ../../scss/app.scss */
+  .logo {
+    position: absolute;
+    top: 3rem;
+    left: calc(50% - 6rem);
+    margin: 2rem 0 !important;
+    width: 12rem;
+  }
+
+  /* line 1924, ../../scss/app.scss */
+  body.reserve-form-data .content.reserve-form-data .step .step-content .step-content-container {
+    width: 70%;
+  }
+
+  /* line 1927, ../../scss/app.scss */
+  body.results .step-header {
+    padding: 0 1rem 3rem !important;
+  }
+
+  /* line 1930, ../../scss/app.scss */
+  body.results .step-content .wineries .pagination-container .pagination {
+    width: auto !important;
+    margin: 0 auto;
+    position: absolute;
+  }
+
+  /* line 1935, ../../scss/app.scss */
+  body.results .step-content .wineries .pagination-container {
+    position: relative;
+    height: 3rem;
+  }
+
+  /* line 1939, ../../scss/app.scss */
+  .modal-small {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+  }
+  /* line 1943, ../../scss/app.scss */
+  .modal-small .fixed-top {
+    position: fixed;
+    width: 100vw;
+    min-height: 20vh;
+    background: #9f4b55;
+  }
+  /* line 1949, ../../scss/app.scss */
+  .modal-small .tabs-content {
+    position: relative;
+    height: 80vh;
+    background: #5E3038;
+    top: 20vh;
+  }
+  /* line 1954, ../../scss/app.scss */
+  .modal-small .tabs-content > .content.active {
+    display: block;
+    float: none;
+    overflow: hidden;
+  }
+  /* line 1960, ../../scss/app.scss */
+  .modal-small .tours-list-scroller {
+    padding: 0 !important;
+    width: 100vw;
+    overflow: scroll;
+  }
+  /* line 1965, ../../scss/app.scss */
+  .modal-small .tours-list {
+    margin: 0;
+    position: relative;
+    height: 2rem;
+  }
+  /* line 1969, ../../scss/app.scss */
+  .modal-small .tours-list li {
+    width: 100vw;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #545454;
+    float: left;
+    position: relative;
+    padding: 0.5rem 0;
+    background: #F0EDE5;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
