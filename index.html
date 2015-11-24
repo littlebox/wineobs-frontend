@@ -265,7 +265,7 @@
 							<span class="icon-wineobs-cross"></span>
 						</div>
 						<div class="fixed-top">
-							<ul class="tabs vertical">
+							<ul class="tabs">
 								<li ng-class="{ 'active': infoActive }" class="tab-title" ng-click="setReservationModalActiveTab('info')">
 									<a>Bodega</a>
 								</li>
@@ -300,8 +300,45 @@
 										<li ng-repeat="tour in w.Tour" ng-click="changeActiveTour(tour.id, $index)">{{tour.name}}</li>
 									</ul>
 								</div>
-								<div class="">
-									{{w.Tour[activeIndex].name}}
+
+								<div class="winery-hours">
+									<div class="winery-hours-title">Seleccione Horario</div>
+									<div class="winery-hours-grid">
+										<ul class="hours">
+											<li ng-repeat="t in w.Tour[activeIndex].Time" class="winery-hour" ng-class="{'active': isActiveHour(t.id)}" ng-click="setReservationHour(t.id)">
+												{{t.hour}}
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="button-reserve">
+									<div class="winery-button">
+										<a class="wineobs-button" ng-click="makeReserve()">reservar</a>
+									</div>
+								</div>
+								<div class="description">
+									{{w.Tour[activeIndex].description}}
+								</div>
+								<div class="winery-length small-4 column">
+									<div class="winery-length-title">Duracion</div>
+									<div class="winery-length-grid">
+										<div class="winery-hour">{{w.Tour[activeIndex].length}} hs</div>
+									</div>
+								</div>
+
+								<div class="winery-prices small-8 column">
+									<div class="small-4 column">
+										<div class="price">${{w.Tour[activeIndex].price}}</div>
+										<div class="text">adultos</div>
+									</div>
+									<div class="small-4 column">
+										<div class="price">${{w.Tour[activeIndex].minors_price}}</div>
+										<div class="text">menores</div>
+									</div>
+									<div class="small-4 column">
+										<div>Precio: ${{w.Tour[activeIndex].minors_price * formData.quota.minors + w.Tour[activeIndex].price * formData.quota.adults}}</div>
+									</div>
 								</div>
 							</div>
 						</div>

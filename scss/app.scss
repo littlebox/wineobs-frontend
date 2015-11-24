@@ -1943,18 +1943,51 @@ body.wineobs{
 		.fixed-top{
 				position: fixed;
 				width: 100vw;
-				min-height: 20vh;
+				min-height: 3rem;
 				background: $tinto-wineobs;
 		}
 		.tabs-content{
+			font-family: FuturaLTHeavy;
 			position: relative;
-			height: 80vh;
+			height: calc(100vh - 3rem);
 			background: $tinto-malbec;
-			top: 20vh;
+			top: 3rem;
 			& > .content.active {
 				display: block;
 				float: none;
 				overflow: hidden;
+			}
+			.button-reserve{
+				height: 3rem;
+				.winery-button{
+					position: relative;
+					top: 1rem;
+				}
+			}
+			.winery-description{
+				padding:2rem;
+			}
+			.hours{
+				padding: 0;
+				margin: 0;
+				height: 4rem;
+				li{
+					list-style: none;
+					float: left;
+					list-style: none;
+					float: left;
+					width: 4rem;
+					border: 1px solid $tinto-wineobs;
+					margin: 0 0.3rem;
+					padding: 0.3rem;
+					&.active{
+						border: 1px solid $white2;
+					}
+				}
+			}
+			.description{
+				height: 40vh;
+				overflow: scroll;
 			}
 		}
 		.tours-list-scroller{
@@ -1976,6 +2009,10 @@ body.wineobs{
 				position: relative;
 				padding: 0.5rem 0;
 				background: $white2;
+				height: 4rem;
+				border-left: 2px solid $tinto-malbec;
+				border-right: 2px solid $tinto-malbec;
+				padding: 0 2rem
 			}
 		}
 	}

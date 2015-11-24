@@ -7136,35 +7136,75 @@ body.wineobs .signatures .signature {
   .modal-small .fixed-top {
     position: fixed;
     width: 100vw;
-    min-height: 20vh;
+    min-height: 3rem;
     background: #9f4b55;
   }
   /* line 1949, ../../scss/app.scss */
   .modal-small .tabs-content {
+    font-family: FuturaLTHeavy;
     position: relative;
-    height: 80vh;
+    height: calc(100vh - 3rem);
     background: #5E3038;
-    top: 20vh;
+    top: 3rem;
   }
-  /* line 1954, ../../scss/app.scss */
+  /* line 1955, ../../scss/app.scss */
   .modal-small .tabs-content > .content.active {
     display: block;
     float: none;
     overflow: hidden;
   }
   /* line 1960, ../../scss/app.scss */
+  .modal-small .tabs-content .button-reserve {
+    height: 3rem;
+  }
+  /* line 1962, ../../scss/app.scss */
+  .modal-small .tabs-content .button-reserve .winery-button {
+    position: relative;
+    top: 1rem;
+  }
+  /* line 1967, ../../scss/app.scss */
+  .modal-small .tabs-content .winery-description {
+    padding: 2rem;
+  }
+  /* line 1970, ../../scss/app.scss */
+  .modal-small .tabs-content .hours {
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+  }
+  /* line 1974, ../../scss/app.scss */
+  .modal-small .tabs-content .hours li {
+    list-style: none;
+    float: left;
+    list-style: none;
+    float: left;
+    width: 4rem;
+    border: 1px solid #9f4b55;
+    margin: 0 0.3rem;
+    padding: 0.3rem;
+  }
+  /* line 1983, ../../scss/app.scss */
+  .modal-small .tabs-content .hours li.active {
+    border: 1px solid #F0EDE5;
+  }
+  /* line 1988, ../../scss/app.scss */
+  .modal-small .tabs-content .description {
+    height: 40vh;
+    overflow: scroll;
+  }
+  /* line 1993, ../../scss/app.scss */
   .modal-small .tours-list-scroller {
     padding: 0 !important;
     width: 100vw;
     overflow: scroll;
   }
-  /* line 1965, ../../scss/app.scss */
+  /* line 1998, ../../scss/app.scss */
   .modal-small .tours-list {
     margin: 0;
     position: relative;
     height: 2rem;
   }
-  /* line 1969, ../../scss/app.scss */
+  /* line 2002, ../../scss/app.scss */
   .modal-small .tours-list li {
     width: 100vw;
     list-style: none;
@@ -7175,7 +7215,9 @@ body.wineobs .signatures .signature {
     position: relative;
     padding: 0.5rem 0;
     background: #F0EDE5;
+    height: 4rem;
+    border-left: 2px solid #5E3038;
+    border-right: 2px solid #5E3038;
+    padding: 0 2rem;
   }
 }
-
-/*# sourceMappingURL=app.css.map */

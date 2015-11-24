@@ -408,6 +408,7 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 		$scope.activeTour = tourId;
 		$scope.activeIndex = index;
 		$scope.activeHour = $scope.w.Tour[index].Time[0].id;
+		$scope.$applyAsync();
 	}
 
 	$scope.isTourActive = function(tourId){
@@ -418,8 +419,10 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 		$scope.setReservationModalActiveTab(data.modalReservationActiveTab);
 		$scope.reservationModal.classList.add('show');
 		$scope.w = reservation.getWinery();
+		if(!$scope.w.Tour.length) return;
 		$scope.activeTour = $scope.w.Tour[0].id
 		$scope.activeHour = $scope.w.Tour[0].Time[0].id
+		$scope.changeActiveTour($scope.activeTour,0);
 	})
 
 	$scope.setReservationHour = function(timeId){
@@ -457,6 +460,17 @@ wineobsApp.controller('reservationModalController', function ($scope,$rootScope,
 		reservation.pushReservesToMake(reserve);
 		$scope.closeClick();
 	}
+
+	//modal scroller mobile
+	angular.element('.tours-list-scroller').on('scroll',function(ev){
+		var currentScroll = (ev.target.scrollLeft*$scope.w.Tour.length/ev.target.scrollWidth)+1;
+		var index = Math.ceil(currentScroll);
+		if(currentScroll % 1 > 0.5 && currentScroll % 1 != 0){
+			$scope.changeActiveTour($scope.w.Tour[index - 1].id, index-1)
+		}else{
+			$scope.changeActiveTour($scope.w.Tour[index - 2].id, index-2)
+		}
+	})
 
 })
 
