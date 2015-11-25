@@ -3,7 +3,7 @@
 <head>
 	<title>Wineobs</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name=viewport content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 	<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
 	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
@@ -12,8 +12,8 @@
 <body class="{{bodyClass}}" ng-controller="wineobsController">
 	<header>
 		<div class="header-content">
-			<div class="header-left">
-				<div class="menu">
+			<div class="header-left small-6 column no-padding">
+				<div class="menu column no-padding">
 					<div class="menu-open-button">
 						<span class="menu-icon icon-wineobs-3lines"></span>
 						<div class="menu-overlay overlay overlay-slide">
@@ -36,7 +36,7 @@
 						</div>
 					</div>
 				</div>
-				<div ng-click="closeReserveTooltip()" class="cart" ng-controller="cartController">
+				<div ng-click="closeReserveTooltip()" class="cart column no-padding" ng-controller="cartController">
 					<div class="cart-open-button" ng-click="cartSlided=(reservationQty?true:false)" ng-init="cartSlided=false">
 						<span class="new-reserve-tooltip has-tip icon-wineobs-wine-glass" tooltip-html-unsafe="{{newReserveTooltip}}" tooltip-trigger="new-reserve" tooltip-placement="bottom"></span>
 						<div ng-class="{animate: reservationQty}" class="reservation-qty-container">
@@ -99,11 +99,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="header-center">
-				<div class="title">One site. One obsession</div>
-				<div class="logo"></div>
-			</div>
-			<div class="header-right">
+			<div class="header-right small-6 column">
 				<div class="languages">
 					<ul>
 						<li><a href="">inglés</a></li>
@@ -111,10 +107,15 @@
 					</ul>
 				</div>
 			</div>
+			<div class="header-center small-12 column">
+				<div class="title">One site. One obsession</div>
+				<div class="logo"></div>
+			</div>
 		</div>
 		<div class="fake-background"></div>
 	</header>
-	<div class="site-content" ng-view>
+
+	<div class="site-content small-12" ng-view>
 
 		<span ng-if="false">
 			<div class="circles-loader" class="small-12 row text-center">
@@ -159,7 +160,7 @@
 		</div>
 		<div class="modals">
 			<div ng-controller="reservationModalController" class="modal-info-winery">
-				<div class="content show-for-medium-up">
+				<div class="content show-for-large-up">
 					<div class="modal-content row">
 						<div class="small-3 column tabs-selector">
 							<ul class="tabs vertical">
@@ -259,7 +260,7 @@
 					</div>
 				</div>
 
-				<div class="content show-for-small-only">
+				<div class="content hidden-for-large-up">
 					<div class="modal-small small-12">
 						<div ng-click="closeClick()" class="close-modal">
 							<span class="icon-wineobs-cross"></span>
@@ -284,7 +285,7 @@
 								<p class="winery-description">{{w.Winery.description}}</p>
 							</div>
 							<div ng-class="{ 'active': commentsActive }" class="content info-comments" id="comments">
-								<div ng-show="!w.Review.length">
+								<div ng-show="!w.Review.length" style="margin:5rem 0 0;">
 									No se han hecho comentarios sobre la bodega
 								</div>
 								<div class="comments" ng-repeat="review in w.Review">
