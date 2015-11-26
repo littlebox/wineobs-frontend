@@ -3,10 +3,8 @@ body.stop-scrolling {
   overflow: hidden; }
 
 .sweet-overlay {
-  background-color: black;
-  /* IE8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  /* IE8 */
+  background-color: black;/* IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";/* IE8 */
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
@@ -14,14 +12,15 @@ body.stop-scrolling {
   top: 0;
   bottom: 0;
   display: none;
-  z-index: 10000; }
+  z-index: 10000;
+  }
 
 .sweet-alert {
-  background-color: white;
+  background-color: #FFF;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 478px;
   padding: 17px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   text-align: center;
   position: fixed;
   left: 50%;
@@ -30,7 +29,8 @@ body.stop-scrolling {
   margin-top: -200px;
   overflow: hidden;
   display: none;
-  z-index: 99999; }
+  z-index: 99999;
+  }
   @media all and (max-width: 540px) {
     .sweet-alert {
       width: auto;
@@ -170,8 +170,8 @@ body.stop-scrolling {
     opacity: 0;
     visibility: hidden; }
   .sweet-alert button {
-    background-color: #8CD4F5;
-    color: white;
+    background-color: #9F4B55;
+    color: #FFF;
     border: none;
     box-shadow: none;
     font-size: 17px;
@@ -180,7 +180,8 @@ body.stop-scrolling {
     border-radius: 5px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
-    cursor: pointer; }
+    cursor: pointer;
+    }
     .sweet-alert button:focus {
       outline: none;
       box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
@@ -320,7 +321,7 @@ body.stop-scrolling {
       .sweet-alert .sa-icon.sa-success .sa-placeholder {
         width: 80px;
         height: 80px;
-        border: 4px solid rgba(165, 220, 134, 0.2);
+        border: 4px solid rgba(175,66,72,0.8);
         -webkit-border-radius: 40px;
         border-radius: 40px;
         border-radius: 50%;
@@ -328,7 +329,8 @@ body.stop-scrolling {
         position: absolute;
         left: -4px;
         top: -4px;
-        z-index: 2; }
+        z-index: 2;
+        }
       .sweet-alert .sa-icon.sa-success .sa-fix {
         width: 5px;
         height: 90px;
@@ -341,11 +343,12 @@ body.stop-scrolling {
         transform: rotate(-45deg); }
       .sweet-alert .sa-icon.sa-success .sa-line {
         height: 5px;
-        background-color: #A5DC86;
+        background-color: #9F4B55;
         display: block;
         border-radius: 2px;
         position: absolute;
-        z-index: 2; }
+        z-index: 2;
+        }
         .sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
           width: 25px;
           left: 14px;

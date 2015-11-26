@@ -337,7 +337,8 @@ wineobsApp.controller('contactController', function ($scope,$rootScope){
 			$.post(url, {mail: $scope.mail}, function(e){
 				swal({
 					text: 'En breve nos pondremos en contacto con Usted.',
-					title: 'Gracias por su consulta',
+					title: 'Gracias por su consulta!',
+					type: 'success',
 				},function(){
 					window.location.href = '/';
 				});
