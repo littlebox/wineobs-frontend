@@ -2029,6 +2029,12 @@ body.wineobs{
 				padding: 0 2rem
 			}
 		}
+		.comments{
+			margin-top: 3rem;
+		}
+		blockquote, blockquote p, blockquote cite{
+			color: $white2;
+		}
 	}
 }
 @media #{$medium-only}{
@@ -2040,9 +2046,11 @@ body.wineobs{
 		width: 90%;
 	}
 	body.results .step-content .wineries .winery{
-		min-height: 19.5rem;
+		min-height: 12.5rem;
 	}
-
+	body.results .step-content .wineries .winery .winery-data .winery-buttons a{
+		font-size: 1rem;
+	}
 	header{
 		min-height: 12rem;
 	}
@@ -2150,15 +2158,6 @@ body.wineobs{
 				padding: 0 2rem
 			}
 		}
-	}
-}
-
-@media #{$xlarge-only}{
-	body.results .step-content .wineries .winery{
-		min-height: 20rem;
-	}
-	body.results .step-content .map .map-container{
-		min-height: 65vh;
 	}
 }
 

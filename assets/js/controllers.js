@@ -34,7 +34,8 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 	if(reservation.getReservesToMake().length){
 		swal({
 			text: 'Se borraron las reservas hechas anteriormente!',
-			title: 'Info',
+			title: 'Info.',
+			type: 'info',
 		});
 		reservation.getReservesToMake().forEach(function(r){
 			reservation.removeReserve(r);
@@ -67,7 +68,11 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 
 		//DATA VALIDATION!!!
 		if(typeof $scope.formData.date == 'undefined') {
-			swal('Fecha incompleta','Por favor, ingrese una fecha');
+			swal({
+				title:'Fecha incompleta!',
+				text:'Por favor, ingrese una fecha.',
+				type: 'warning',
+			});
 			return
 		};
 		if($scope.formData.date.formattedDate == '') return;
@@ -76,20 +81,36 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 		date = new Date(a[2],a[1] - 1,a[0]);
 
 		if(date < Date.now()){
-			swal('Fecha ingresada invalida', 'Por favor corrija la fecha')
+			swal({
+				title:'Fecha ingresada invalida!',
+				text:'Por favor corrija la fecha.',
+				type: 'warning',
+			})
 			return;
 		}
 
 		if($scope.formData.language == ''){
-			swal('Idioma incorrecto','Por favor, corrija el idioma');
+			swal({
+				title:'Idioma incorrecto!',
+				text:'Por favor, corrija el idioma.',
+				type: 'warning',
+			});
 			return;
 		};
 		if(parseInt($scope.formData.minors,10) < 0 ){
-			swal('Cantidad de menores incorrecta','Por favor, corrija la cantidad de menores');
+			swal({
+				title:'Cantidad de menores incorrecta!',
+				text:'Por favor, corrija la cantidad de menores.',
+				type: 'warning',
+			});
 			return;
 		};
 		if(parseInt($scope.formData.adults,10) < 1 ){
-			swal('Cantidad de adultos incorrecta','Por favor, corrija la cantidad de adultos');
+			swal({
+				title:'Cantidad de adultos incorrecta!',
+				text:'Por favor, corrija la cantidad de adultos.',
+				type: 'warning',
+			});
 			return;
 		};
 
@@ -146,7 +167,11 @@ wineobsApp
 
 		}).
 		error(function(data, status, headers, config) {
-			swal('Error','Error');
+			swal({
+				title:'Error',
+				text:'Error',
+				type: 'error',
+			});
 		});
 
 	$scope.clickPin = function(id){
@@ -263,7 +288,11 @@ wineobsApp
 		if($scope.reservesToMake.length > 0){
 			$location.path('/datosPersonales');
 		}else{
-			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
+			swal({
+				title:'Ninguna reserva!',
+				text:'Por favor, haga una reserva antes de continuar.',
+				type: 'warning',
+			});
 		}
 	}
 
@@ -312,10 +341,18 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 				reservation.setPersonalData($scope.formPersonalData);
 				reservation.sendReservesToMake();
 			}else{
-				swal('Datos no validos','Por favor, revise los datos antes de continuar');
+				swal({
+					title:'Datos no validos!',
+					text:'Por favor, revise los datos antes de continuar.',
+					type: 'warning',
+				});
 			}
 		}else{
-			swal('Ninguna reserva','Por favor, haga una reserva antes de continuar');
+			swal({
+				title:'Ninguna reserva!',
+				text:'Por favor, haga una reserva antes de continuar.',
+				type: 'warning',
+			});
 		}
 	}
 
@@ -512,8 +549,8 @@ wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
 		$scope.wineriesComment = response.data;
 	}, function errorCallback(response) {
 		swal({
-			title: 'Error',
-			text: 'Código incorrecto o ya se hicieron comentarios para estas reservas',
+			title: 'Error!',
+			text: 'Código incorrecto o ya se hicieron comentarios para estas reservas.',
 		},function(){
 			window.location.href = '';
 		})

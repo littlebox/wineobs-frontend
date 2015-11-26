@@ -11,8 +11,8 @@ wineobsApp.config(function ($translateProvider) {
 	var regex = /[lg]=([^&#]*)/g
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
 	var lg = ( window.location.search.search(regex) > -1 ) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0];
-	console.log(lg);
 	$translateProvider.preferredLanguage(lg);
+	$translateProvider.useSanitizeValueStrategy('escape');
 });
 (function(window){
 	'use strict';
