@@ -1,6 +1,6 @@
 <div class="content reserve-form-data" ng-controller="123StepController">
 	<div class="small-12 column">
-		<div class="small-12 medium-9 column">
+		<div class="small-12 medium-12 column">
 			<!-- BEGIN TITLE -->
 			<div class="row small-12">
 				<div class="title">Recorrer. Conocer. Disfrutar.</div>
@@ -9,7 +9,7 @@
 			<!-- BEGIN STEPS -->
 			<div class="row small-12" data-equalizer>
 				<div class="small-12 medium-3 column" data-equalizer-watch>
-					<div class="step small-12 medium-2 text-center column">
+					<div class="step small-12 medium-4 text-center column">
 						<div class="step-number">1</div>
 						<div class="step-text">
 							<h2 class="step-title white-border">
@@ -88,7 +88,7 @@
 			</div>
 			<!-- END STEPS -->
 		</div>
-		<div class="small-12 medium-3 column">Publicidad</div>
+		<!-- <div class="small-12 medium-3 column">Publicidad</div> -->
 
 	</div>
 
