@@ -75,6 +75,10 @@ $form-label-font-color: #fff;
 	font-family: 'GrandHotel';
 	src: url('/assets/fonts/GrandHotel-Regular.otf');
 }
+@font-face{
+	font-family: 'Basura';
+	src: url('/assets/fonts/TrashHand.ttf');
+}
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
@@ -86,48 +90,60 @@ $form-label-font-color: #fff;
 }
 
 .circles-loader{
-	position: relative;
+	position: absolute;
 	text-transform: uppercase;
 	font-family: BebasNeue;
 	font-size: 4rem;
+	height: 10rem;
+	top: calc(50vh - 10rem);
+	left: calc(50vw - 7.5rem);
+	margin: 0;
+	width: 15rem;
 	[class*="circle-"]{
 		width: 1rem;
 		height: 1rem;
 		position: absolute;
 		top: 7rem;
-		stroke-width: 8px;
+		stroke-width: 0px;
 		stroke: $white2;
 		left: calc(50% - 1rem);
 	}
 	.circle-1{
 		fill: $tinto-wineobs;
-		transform: translateX(-1rem);
-		animation: move-right 0.5s alternate infinite;
+		transform: translateX(-2rem);
+		animation: move-right 3s 0s infinite ease-in-out;
 	}
 	.circle-2{
 		fill: $tinto-malbec;
-		transform: translateX(1rem);
-		animation: move-left 0.7s alternate infinite;
+		transform: translateX(-2rem);
+		animation: move-right 3s 0.2s infinite ease-in-out;
 	}
 	.circle-3{
-		fill: $white2;
-		animation: move-right 0.6s alternate infinite;
+		fill: lighten($tinto-wineobs, 0.2);;
+		transform: translateX(-2rem);
+		animation: move-right 3s 0.4s infinite ease-in-out;
 	}
 	.circle-4{
 		fill: darken($tinto-malbec, 0.2);
-		animation: move-left 0.8s alternate infinite;
+		transform: translateX(-2rem);
+		animation: move-right 3s 0.6s infinite ease-in-out;
 	}
 
 	@keyframes move-right{
-		to{
-			transform: translateX(2rem);
-			opacity: 0.7;
-		}
-	}
-	@keyframes move-left{
-		to{
+		0%{
 			transform: translateX(-2rem);
-			opacity: 0.7;
+		}
+		30%{
+			transform: translateX(-2rem);
+		}
+		50%{
+			transform: translateX(2rem);
+		}
+		80%{
+			transform: translateX(2rem);
+		}
+		100%{
+			transform: translateX(-2rem);
 		}
 	}
 
@@ -927,7 +943,7 @@ body.reserve-form-data{
 			text-transform:uppercase;
 			text-align: left;
 			font-size: 3rem;
-			font-family: BebasNeue;
+			font-family: Basura;
 			letter-spacing: 0.1rem;
 		}
 
@@ -1040,7 +1056,7 @@ body.reserve-form-data{
 
 		.step-footer{
 			@include justify-content(center);
-			margin: 1rem 0 0;
+			margin: 3rem 0 0;
 			&>div{
 				margin: 0 1rem;
 			}
@@ -1051,7 +1067,7 @@ body.reserve-form-data{
 
 /* results View */
 body.results{
-	background-image: url('/assets/img/backgrounds/backgroundcolor2.jpg');
+	background-image: url('/assets/img/backgrounds/backgroundcolor3.jpg');
 	// background-size: 100%;
 
 	.header-center{
@@ -1169,6 +1185,18 @@ body.results{
 							text-shadow: 1px 1px 2px #000;
 							width: 100%;
 							top: 2rem;
+							font-size: 2rem;
+							font-weight: bold;
+							transform: rotateY(180deg);
+							backface-visibility: hidden;
+							letter-spacing: 0.3rem;
+						}
+						.winery-address-small{
+							font-family: FuturaLTHeavy;
+							line-height: 2.2rem;
+							text-shadow: 1px 1px 2px #000;
+							width: 100%;
+							top: 5rem;
 							font-size: 2rem;
 							font-weight: bold;
 							transform: rotateY(180deg);
@@ -1954,11 +1982,27 @@ body.wineobs{
 		padding: 0 !important;
 		margin: 0 !important;
 		height: 100vh;
+		background: $tinto-malbec;
+		.close-modal{
+			left: 0;
+			right: inherit !important;
+			background: $tinto-malbec !important;
+		}
 		.fixed-top{
 				position: fixed;
 				width: 100vw;
 				min-height: 3rem;
-				background: $tinto-wineobs;
+				background: $tinto-malbec;
+				width: 90vw;
+				margin: 0 auto;
+				left: 5vw;
+				a{
+					background: $tinto-malbec;
+					color: $white2;
+				}
+				.tabs{
+					display: inline-block;
+				}
 		}
 		.tabs-content{
 			font-family: FuturaLTHeavy;
@@ -1981,21 +2025,31 @@ body.wineobs{
 			.winery-description{
 				padding:2rem;
 			}
+			.winery-prices{
+				width: 60vw;
+				display: inline-block;
+				margin: 1rem 0 0;
+			}
+			.winery-hours-title{
+				margin: 1.2rem 0 1.7rem;
+				font-size: 1.5rem;
+				text-transform: uppercase;
+			}
 			.hours{
 				padding: 0;
-				margin: 0;
-				height: 4rem;
-				li{
-					list-style: none;
-					float: left;
+				margin: 0 auto;
+				width: 60vw;
+					li{
 					list-style: none;
 					float: left;
 					width: 4rem;
-					border: 1px solid $tinto-wineobs;
-					margin: 0 0.3rem;
-					padding: 0.3rem;
+					margin: 0.3rem 0.3rem;
+					padding: 0.2rem;
+					background: $white2;
+					color: $tinto-wineobs;
 					&.active{
-						border: 1px solid $white2;
+						color: $white2;
+						background:$tinto-wineobs;
 					}
 				}
 			}
@@ -2012,7 +2066,7 @@ body.wineobs{
 		.tours-list{
 			margin: 0;
 			position: relative;
-			height: 2rem;
+			height:4rem;
 			li{
 				width: 100vw;
 				list-style: none;
@@ -2026,7 +2080,8 @@ body.wineobs{
 				height: 4rem;
 				border-left: 2px solid $tinto-malbec;
 				border-right: 2px solid $tinto-malbec;
-				padding: 0 2rem
+				padding: 0 2rem;
+				line-height: 4.3rem;
 			}
 		}
 		.comments{

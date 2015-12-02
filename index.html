@@ -25,11 +25,11 @@
 								</div>
 								<div class="menu-items">
 									<ul>
-										<li><a ng-href="/" translate="INICIO">inicio</a></li>
-										<li><a ng-click="susReservasClick($event)">sus reservas</a></li>
+										<li><a ng-href="/" translate="MENU_ITEM1">inicio</a></li>
+										<li><a ng-click="susReservasClick($event)" translate="MENU_ITEM2">sus reservas</a></li>
 										<!-- <li><a href="">bodegas</a></li> -->
 										<!-- <li><a href="">wineobs</a></li> -->
-										<li><a ng-href="/contacto">contacto</a></li>
+										<li><a ng-href="/contacto" translate="MENU_ITEM3">contacto</a></li>
 									</ul>
 								</div>
 							</div>
@@ -261,7 +261,7 @@
 				</div>
 
 				<div class="content hidden-for-medium-up">
-					<div class="modal-small small-12">
+				<div class="modal-small small-12">
 						<div ng-click="closeClick()" class="close-modal">
 							<span class="icon-wineobs-cross"></span>
 						</div>
@@ -302,8 +302,25 @@
 									</ul>
 								</div>
 
-								<div class="winery-hours">
-									<div class="winery-hours-title">Seleccione Horario</div>
+								<div class="winery-prices small-8 text-center">
+									<div class="small-4 column">
+										<div class="price">${{w.Tour[activeIndex].price}}</div>
+										<div class="text">adultos</div>
+									</div>
+									<div class="small-4 column">
+										<div class="price">${{w.Tour[activeIndex].minors_price}}</div>
+										<div class="text">menores</div>
+									</div>
+									<div class="winery-length small-4 column">
+										<div class="winery-length-title">Duracion</div>
+										<div class="winery-length-grid">
+											<div class="winery-hour">{{w.Tour[activeIndex].length}} hs</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="winery-hours small-12 column">
+									<div class="winery-hours-title">Seleccione Horarios</div>
 									<div class="winery-hours-grid">
 										<ul class="hours">
 											<li ng-repeat="t in w.Tour[activeIndex].Time" class="winery-hour" ng-class="{'active': isActiveHour(t.id)}" ng-click="setReservationHour(t.id)">
@@ -313,7 +330,7 @@
 									</div>
 								</div>
 
-								<div class="button-reserve">
+								<div class="button-reserve small-12 column">
 									<div class="winery-button">
 										<a class="wineobs-button" ng-click="makeReserve()">reservar</a>
 									</div>
@@ -321,26 +338,7 @@
 								<div class="description">
 									{{w.Tour[activeIndex].description}}
 								</div>
-								<div class="winery-length small-4 column">
-									<div class="winery-length-title">Duracion</div>
-									<div class="winery-length-grid">
-										<div class="winery-hour">{{w.Tour[activeIndex].length}} hs</div>
-									</div>
-								</div>
 
-								<div class="winery-prices small-8 column">
-									<div class="small-4 column">
-										<div class="price">${{w.Tour[activeIndex].price}}</div>
-										<div class="text">adultos</div>
-									</div>
-									<div class="small-4 column">
-										<div class="price">${{w.Tour[activeIndex].minors_price}}</div>
-										<div class="text">menores</div>
-									</div>
-									<div class="small-4 column">
-										<div>Precio: ${{w.Tour[activeIndex].minors_price * formData.quota.minors + w.Tour[activeIndex].price * formData.quota.adults}}</div>
-									</div>
-								</div>
 							</div>
 						</div>
 

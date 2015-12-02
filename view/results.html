@@ -5,7 +5,7 @@
 			<div class="flex fcolumn">
 				<div class="step-number">4</div>
 				<div class="step-text">
-					<h2 class="step-title white-border">
+					<h2 class="step-title white-border"  translate="TITULO_PASO4">
 						Seleccione las bodegas
 					</h2>
 				</div>
@@ -47,6 +47,9 @@
 									<div class="winery-name">
 										{{w.Winery.name}}
 									</div>
+									<div class="show-for-small-only winery-address-small">
+										{{w.Winery.address}}
+									</div>
 								</div>
 								<div class="winery-buttons text-center">
 									<a ng-click="infoClick(w)" href="#"><span class="icon icon-wineobs-info"></span></a>
@@ -73,7 +76,7 @@
 				<a ng-class="{hide: hideNext()}" ng-click="nextStep()" class="wineobs-button">Siguiente</a>
 			</div>
 		</div>
-		<div class="row small-12 text-center">
+		<div class="row small-12 text-center" translate="TITULO_FOOTER_TRANSPORTE">
 			*El servicio de transporte no esta incluido
 		</div>
 	</div>
