@@ -61,7 +61,7 @@ $tooltip-max-width: 300px !default;
       max-width: $tooltip-max-width;
       padding: $tooltip-padding;
       position: absolute;
-      width: 100%;
+      width: 60% !important;
       z-index: 1006;
       #{$default-float}: 50%;
 

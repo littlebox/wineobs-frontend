@@ -4,12 +4,17 @@
 	<title>Wineobs</title>
 	<meta charset="UTF-8">
 	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="outdatedbrowser.css" href="/assets/outdatedbrowser/outdatedbrowser.min.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="/assets/css/app.css">
 	<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
 	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
 	<base href="/">
 </head>
 <body class="{{bodyClass}}" ng-controller="wineobsController">
+
+	<!-- ============= Outdated Browser ============= -->
+	<div id="outdated"></div>
+
 	<header>
 		<div class="header-content">
 			<div class="header-left small-6 column no-padding">
@@ -351,6 +356,32 @@
 	</footer>
 	<link rel="stylesheet" type="text/css" href="/assets/fonts/icons-wineobs/style.css">
 
+	<script type="text/javascript" src="/assets/outdatedbrowser/outdatedbrowser.min.js"></script>
+	<script type="text/javascript">
+		//event listener: DOM ready
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+					window.onload = func;
+			} else {
+				window.onload = function() {
+						if(oldonload) {
+								oldonload();
+						}
+						func();
+				}
+			}
+		}
+		//call plugin function after DOM ready
+		addLoadEvent(function(){
+			outdatedBrowser({
+					bgColor: '#f25648',
+					color: '#ffffff',
+					lowerThan: 'transform',
+					languagePath: '/assets/outdatedbrowser/lang/es.html'
+			})
+		});
+	</script>
 	<script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
 	<script src="/assets/angular/angular-1.4.2/angular.js"></script>
 	<script src="/assets/angular/angular-1.4.2/angular-route.js"></script>
@@ -369,8 +400,8 @@
 	<script src="/assets/js/controllers.js"></script>
 	<script src="/assets/js/services.js"></script>
 	<!-- BEGIN DATEDROPPER -->
-	<script src="/assets/plugins/datedropper/datedropper.js"></script>
-	<link rel="stylesheet" type="text/css" href="/assets/plugins/datedropper/datedropper.css">
+	<script src="/assets/foundation/js/foundation-datepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/foundation/css/foundation-datepicker.css">
 	<!-- END DATEDROPPER -->
 	<!-- BEGIN DATEDROPPER -->
 	<script src="/assets/sweetalert-master/sweetalert.min.js"></script>

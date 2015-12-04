@@ -46,9 +46,9 @@
 									<img src="{{logos(w)}}">
 									<div class="winery-name">
 										{{w.Winery.name}}
-									</div>
-									<div class="show-for-small-only winery-address-small">
-										{{w.Winery.address}}
+										<div class="show-for-small-only winery-address-small">
+											{{w.Winery.address}} - {{w.Winery.city}}
+										</div>
 									</div>
 								</div>
 								<div class="winery-buttons text-center">
@@ -76,7 +76,7 @@
 				<a ng-class="{hide: hideNext()}" ng-click="nextStep()" class="wineobs-button">Siguiente</a>
 			</div>
 		</div>
-		<div class="row small-12 text-center" translate="TITULO_FOOTER_TRANSPORTE">
+		<div class="row small-12 text-center footer-transporte" translate="TITULO_FOOTER_TRANSPORTE">
 			*El servicio de transporte no esta incluido
 		</div>
 	</div>
