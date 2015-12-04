@@ -2097,6 +2097,17 @@ body.wineobs{
 			color: $white2;
 		}
 	}
+
+	body.personal-data .step-content .personal-data-form .form-container {
+		position: relative;
+		height: 28rem;
+		padding: 1rem;
+	}
+
+	.winery-card.reservation.small-12.medium-4{
+		display: block !important;
+		flex: none;
+	}
 }
 @media #{$medium-only}{
 	body{

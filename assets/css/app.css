@@ -7290,35 +7290,48 @@ body.wineobs .signatures .signature {
   .modal-small blockquote, .modal-small blockquote p, .modal-small blockquote cite {
     color: #F0EDE5;
   }
+
+  /* line 2101, ../../scss/app.scss */
+  body.personal-data .step-content .personal-data-form .form-container {
+    position: relative;
+    height: 28rem;
+    padding: 1rem;
+  }
+
+  /* line 2107, ../../scss/app.scss */
+  .winery-card.reservation.small-12.medium-4 {
+    display: block !important;
+    flex: none;
+  }
 }
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-  /* line 2102, ../../scss/app.scss */
+  /* line 2113, ../../scss/app.scss */
   body {
     background: #5a2a30;
     background-image: none !important;
   }
 
-  /* line 2106, ../../scss/app.scss */
+  /* line 2117, ../../scss/app.scss */
   .winery .winery-data .winery-logo img {
     width: 90%;
   }
 
-  /* line 2109, ../../scss/app.scss */
+  /* line 2120, ../../scss/app.scss */
   body.results .step-content .wineries .winery {
     min-height: 12.5rem;
   }
 
-  /* line 2112, ../../scss/app.scss */
+  /* line 2123, ../../scss/app.scss */
   body.results .step-content .wineries .winery .winery-data .winery-buttons a {
     font-size: 1rem;
   }
 
-  /* line 2115, ../../scss/app.scss */
+  /* line 2126, ../../scss/app.scss */
   header {
     min-height: 12rem;
   }
 
-  /* line 2118, ../../scss/app.scss */
+  /* line 2129, ../../scss/app.scss */
   .logo {
     position: absolute;
     top: 3rem;
@@ -7327,48 +7340,48 @@ body.wineobs .signatures .signature {
     width: 12rem;
   }
 
-  /* line 2125, ../../scss/app.scss */
+  /* line 2136, ../../scss/app.scss */
   body.reserve-form-data .content.reserve-form-data .step .step-content .step-content-container {
     width: 70%;
   }
 
-  /* line 2128, ../../scss/app.scss */
+  /* line 2139, ../../scss/app.scss */
   body.results .step-header {
     padding: 0 1rem 3rem !important;
   }
 
-  /* line 2131, ../../scss/app.scss */
+  /* line 2142, ../../scss/app.scss */
   body.results .step-content .wineries .pagination-container .pagination {
     width: auto !important;
     margin: 0 auto;
     position: absolute;
   }
 
-  /* line 2136, ../../scss/app.scss */
+  /* line 2147, ../../scss/app.scss */
   body.results .step-content .wineries .pagination-container {
     position: relative;
     height: 3rem;
   }
 
-  /* line 2140, ../../scss/app.scss */
+  /* line 2151, ../../scss/app.scss */
   .reservation-container {
     font-size: 0.75rem;
   }
 
-  /* line 2143, ../../scss/app.scss */
+  /* line 2154, ../../scss/app.scss */
   .modal-small {
     padding: 0 !important;
     margin: 0 !important;
     height: 100vh;
   }
-  /* line 2147, ../../scss/app.scss */
+  /* line 2158, ../../scss/app.scss */
   .modal-small .fixed-top {
     position: fixed;
     width: 100vw;
     min-height: 3rem;
     background: #9f4b55;
   }
-  /* line 2153, ../../scss/app.scss */
+  /* line 2164, ../../scss/app.scss */
   .modal-small .tabs-content {
     font-family: FuturaLTHeavy;
     position: relative;
@@ -7376,32 +7389,32 @@ body.wineobs .signatures .signature {
     background: #5E3038;
     top: 3rem;
   }
-  /* line 2159, ../../scss/app.scss */
+  /* line 2170, ../../scss/app.scss */
   .modal-small .tabs-content > .content.active {
     display: block;
     float: none;
     overflow: hidden;
   }
-  /* line 2164, ../../scss/app.scss */
+  /* line 2175, ../../scss/app.scss */
   .modal-small .tabs-content .button-reserve {
     height: 3rem;
   }
-  /* line 2166, ../../scss/app.scss */
+  /* line 2177, ../../scss/app.scss */
   .modal-small .tabs-content .button-reserve .winery-button {
     position: relative;
     top: 1rem;
   }
-  /* line 2171, ../../scss/app.scss */
+  /* line 2182, ../../scss/app.scss */
   .modal-small .tabs-content .winery-description {
     padding: 2rem;
   }
-  /* line 2174, ../../scss/app.scss */
+  /* line 2185, ../../scss/app.scss */
   .modal-small .tabs-content .hours {
     padding: 0;
     margin: 0;
     height: 4rem;
   }
-  /* line 2178, ../../scss/app.scss */
+  /* line 2189, ../../scss/app.scss */
   .modal-small .tabs-content .hours li {
     list-style: none;
     float: left;
@@ -7412,28 +7425,28 @@ body.wineobs .signatures .signature {
     margin: 0 0.3rem;
     padding: 0.3rem;
   }
-  /* line 2187, ../../scss/app.scss */
+  /* line 2198, ../../scss/app.scss */
   .modal-small .tabs-content .hours li.active {
     border: 1px solid #F0EDE5;
   }
-  /* line 2192, ../../scss/app.scss */
+  /* line 2203, ../../scss/app.scss */
   .modal-small .tabs-content .description {
     height: 40vh;
     overflow: scroll;
   }
-  /* line 2197, ../../scss/app.scss */
+  /* line 2208, ../../scss/app.scss */
   .modal-small .tours-list-scroller {
     padding: 0 !important;
     width: 100vw;
     overflow: scroll;
   }
-  /* line 2202, ../../scss/app.scss */
+  /* line 2213, ../../scss/app.scss */
   .modal-small .tours-list {
     margin: 0;
     position: relative;
     height: 2rem;
   }
-  /* line 2206, ../../scss/app.scss */
+  /* line 2217, ../../scss/app.scss */
   .modal-small .tours-list li {
     width: 100vw;
     list-style: none;
@@ -7451,12 +7464,12 @@ body.wineobs .signatures .signature {
   }
 }
 @media only screen and (min-width: 90.0625em) and (max-width: 120em) {
-  /* line 2226, ../../scss/app.scss */
+  /* line 2237, ../../scss/app.scss */
   body.results .step-content .wineries .winery {
     min-height: 20rem;
   }
 
-  /* line 2229, ../../scss/app.scss */
+  /* line 2240, ../../scss/app.scss */
   body.results .step-content .map .map-container {
     min-height: 65vh;
   }

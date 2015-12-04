@@ -14,7 +14,7 @@
 
 		<div class="step-content flex">
 			<div class="small-12">
-				<div class="small-5 column">
+				<div class="small-12 medium-6 column">
 					<div class="small-12 date">{{formData.date.formattedDate}}</div>
 					<div class="personal-data-form small-12">
 						<div class="white-border">
@@ -30,11 +30,11 @@
 										</div>
 									</div>
 									<div class="small-12">
-										<div class="small-6 column">
+										<div class="small-12 medium-6 column">
 											<label>Fecha de nacimiento</label>
 											<input type="date" placeholder="edad" type="text" ng-model="formPersonalData.birthDate" required />
 										</div>
-										<div class="small-6 column">
+										<div class="small-12 medium-6 column">
 											<label>País de origen</label>
 											<select class="country" ng-model="formPersonalData.country" required>
 												<option value="AF">Afghanistan</option>
@@ -290,11 +290,11 @@
 										</div>
 									</div>
 									<div class="small-12">
-										<div class="small-6 column">
+										<div class="small-12 medium-6 column">
 											<label>Teléfono</label>
 											<input type="text" placeholder="123456789" type="text" ng-model="formPersonalData.phone" required />
 										</div>
-										<div class="small-6 column">
+										<div class="small-12 medium-6 column">
 											<label>Email</label>
 											<input type="email" placeholder="email@email.com" type="text" ng-model="formPersonalData.email" required />
 										</div>
@@ -316,10 +316,10 @@
 					</div>
 					<!-- <div class="small-12">mas publicidad</div> -->
 				</div>
-				<div class="small-5 column">
+				<div class="small-12 medium-6 column">
 					<div>
 						<div class="wineries-paginator">
-							<div class="winery-card reservation" data-winery-index="{{w.winery.id}}" ng-repeat="(k,w) in reservations">
+							<div class="winery-card reservation small-12 medium-4" data-winery-index="{{w.winery.id}}" ng-repeat="(k,w) in reservations">
 								<div class="visible reservation-card">
 									<div><p class="winery-name">{{w.winery.name}}</p></div>
 									<div><p class="tour-name">{{w.tour.name}}</p></div>
