@@ -57,45 +57,27 @@
 
 								<div class="row">
 									<div class="small-12 columns">
-										<div class="row reservation-container" ng-repeat="(k,r) in reservations | orderBy:'hour'">
-											<div class="reservation-name small-12">
-												{{r.winery.name}}
-											</div>
-											<div class="small-12">
-												<div class="small-2 column">
-													<h2>{{r.hour}}</h2>
-												</div>
-												<div class="small-3 column">
-													{{r.tour.name}}
-												</div>
-												<div class="small-2 column">
-													Idioma: {{r.language}}
-												</div>
-												<div class="small-2 column">
-													<div class="pricing row">
-														<div class="small-12 column">
-															Cupos y precios
-														</div>
-														<div class="small-12">
-															<div class="pricing-minors">
-																<span ng-if="r.minors != 0">{{r.minors}} menores x {{r.tour.minors_price}}</span>
-															</div>
-														</div>
-														<div class="small-12">
-															<div class="pricing-minors">
-																<span>{{r.adults}} mayores x {{r.tour.price}}</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="small-2 column">
-													<span>Subtotal: {{r.tour.minors_price * r.minors + r.tour.price * r.adults}}</span>
-												</div>
-												<div class="small-1 column">
-													<span ng-click="removeReserve(k)" class="icon-wineobs-cross"></span>
-												</div>
-											</div>
+										<div class="reservations-places">
+											Cupos: <span> {{reservations[0].adults}} adultos </span>
+											<span ng-if="reservations[0].minors"> y {{reservations[0].minors}} menores</span>
 										</div>
+										<div class="reservations-language"> Idioma: {{reservations[0].language}} </div>
+										<div class="reservations-count"> Reservas: {{reservations.length}} </div>
+										<div class="row">
+											<ul class="small-block-grid-4">
+												<li class="" ng-repeat="(k,r) in reservations | orderBy:'hour'">
+													<div class="cart-card">
+														<div class="cart-close small-1 column"> <span ng-click="removeReserve(k)" class="icon-wineobs-cross"></span> </div>
+														<div class="cart-card-name small-12 column"> {{r.winery.name}} </div>
+														<div class="cart-card-hour small-12 column"> {{r.hour}} </div>
+														<div class="cart-card-tour small-12 column"> Tour: {{r.tour.name}} </div>
+														<div class="cart-card-length small-12 column"> Duración: {{r.tour.length}} </div>
+														<div class="cart-card-subtotal small-12 column"> ${{r.tour.price * r.adults + r.tour.minors_price * r.minors}} </div>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="small-12 column text-right"> Subtotal: ${{subtotal}} </div>
 									</div>
 								</div>
 
@@ -107,15 +89,17 @@
 			<div class="header-right small-6 column">
 				<div class="languages">
 					<ul>
-						<li><a href="">inglés</a></li>
-						<li><a href="">portugués</a></li>
+						<li ng-click="changeLanguage('en')"><a ng-show="lg!='en'"><img class="flag" src="assets/img/uk.svg"> english</a></li>
+						<li ng-click="changeLanguage('pt')"><a ng-show="lg!='pt'"><img class="flag" src="assets/img/portugal.svg">português</a></li>
+						<li ng-click="changeLanguage('es')"><a ng-show="lg!='es'"><img class="flag" src="assets/img/spain.svg">español</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="header-center small-12 column">
+			<div class="header-center small-8 small-offset-2 column">
 				<div class="title">One site. One obsession</div>
 				<div class="logo"></div>
 			</div>
+			<div class="small-2"></div>
 		</div>
 		<div class="fake-background"></div>
 	</header>

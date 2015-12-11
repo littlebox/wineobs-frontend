@@ -166,7 +166,7 @@ wineobsApp.config(function ($translateProvider) {
 	});
 	var regex = /[lg]=([^&#]*)/g
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
-	var lg = ( window.location.search.search(regex) > -1 ) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0];
+	window.lg = ( window.location.search.search(regex) > -1 ) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0];
 	$translateProvider.preferredLanguage(lg);
 	$translateProvider.useSanitizeValueStrategy('escape');
 });

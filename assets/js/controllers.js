@@ -1,4 +1,4 @@
-wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,reservation){
+wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,reservation, $translate){
 	$rootScope.bodyClass = '';
 	$rootScope.apiUrl = 'http://reservas.wineobs.com';
 	// $rootScope.apiUrl = 'http://metrobox.local';
@@ -15,6 +15,14 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,
 				angular.element('.cart-open-button').trigger('click')
 			},500);
 		}
+	}
+
+	$scope.lg = window.lg;
+
+	$scope.changeLanguage = function(lg){
+		$scope.lg = lg;
+		window.lg = lg;
+		$translate.use(lg);
 	}
 	Wineobs.init();
 });
@@ -154,7 +162,7 @@ wineobsApp
 	$scope.reservesToMake = reservation.getReservesToMake();
 
 	$http.defaults.useXDomain = true;
-	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate).
+	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate+'/adults:'+formData.quota.adults+'/minors:'+formData.quota.minors).
 		success(function(data, status, headers, config) {
 			$scope.wineries = data;
 			$scope.cards = data; //$scope.reservesToMake.concat(data);
@@ -266,7 +274,7 @@ wineobsApp
 		$scope.reservesToMake = reservation.getReservesToMake();
 
 		$filter('orderBy')($scope.reservesToMake,'hour').forEach(function(r,k){
-			console.debug(r);
+			// console.debug(r);
 			p = new google.maps.LatLng(Number(r.winery.latitude),Number(r.winery.longitude));
 			m = new google.maps.Marker({
 				position: p,
@@ -427,6 +435,14 @@ wineobsApp
 	$scope.removeReserve = function($index){
 		reservation.removeReserve($index);
 	}
+
+	$scope.$on('updateReservesToMake', function(ev,data){
+		s = 0;
+		data.reservesToMake.forEach(function(v){
+			s += v.tour.price * v.adults + v.tour.minors_price * v.minors;
+		})
+		$scope.subtotal = s;
+	})
 });
 
 wineobsApp.controller('reservationModalController', function ($scope,$rootScope, reservation){

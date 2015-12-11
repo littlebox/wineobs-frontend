@@ -126,6 +126,10 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 			});
 	}
 
+	var getSubtotal = function(){
+		debugger;
+	}
+
 	return {
 		getFormData: getFormData,
 		setFormData: setFormData,
@@ -138,5 +142,6 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 		getReservesToMake: getReservesToMake,
 		removeReserve: removeReserve,
 		sendReservesToMake: sendReservesToMake,
+		getSubtotal: getSubtotal,
 	}
 })

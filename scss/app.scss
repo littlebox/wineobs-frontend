@@ -89,6 +89,12 @@ $form-label-font-color: #fff;
 	font-family: BebasNeue;
 }
 
+.flag{
+	width: 1.6rem;
+	display: inline-block;
+	margin: -0.2rem 0.4rem 0;
+}
+
 .circles-loader{
 	position: absolute;
 	text-transform: uppercase;
@@ -147,6 +153,27 @@ $form-label-font-color: #fff;
 		}
 	}
 
+}
+
+.cart-card{
+	background-color: $white2;
+	color: $grey2;
+	position: relative;
+	text-align: center;
+	min-height: 9rem;
+	.cart-close{
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0.2rem;
+		background: $tinto-wineobs;
+		text-align: center;
+		display: block;
+		.icon-wineobs-cross{
+			color: $white;
+			text-align: center;
+		}
+	}
 }
 
 /* Flexbox! */
@@ -1024,6 +1051,9 @@ body.reserve-form-data{
 						width: 80%;
 						margin: 2rem auto;
 						padding: 1rem 0;
+						&::-webkit-input-placeholder{
+							color:$white;
+						}
 					}
 				}
 				&.reserve-form-data-persons-qty{
@@ -1258,7 +1288,7 @@ body.results{
 						display: none;
 					}
 
-					.reservation-card.visible{
+					.reservation-card{
 						position: absolute;
 						width: 100%;
 						height: 100%;
