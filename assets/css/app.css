@@ -4830,7 +4830,7 @@ th.hide-for-touch {
   color: #545454;
   position: relative;
   text-align: center;
-  min-height: 9rem;
+  min-height: 12rem;
 }
 /* line 164, ../../scss/app.scss */
 .cart-card .cart-close {

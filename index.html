@@ -67,8 +67,8 @@
 											<ul class="small-block-grid-4">
 												<li class="" ng-repeat="(k,r) in reservations | orderBy:'hour'">
 													<div class="cart-card">
-														<div class="cart-close small-1 column"> <span ng-click="removeReserve(k)" class="icon-wineobs-cross"></span> </div>
-														<div class="cart-card-name small-12 column"> {{r.winery.name}} </div>
+														<div class="cart-close small-1 column" ng-click="removeReserve(k)"> <span class="icon-wineobs-cross"></span> </div>
+														<div class="cart-card-name small-6 small-offset-3 column"> {{r.winery.name}} </div>
 														<div class="cart-card-hour small-12 column"> {{r.hour}} </div>
 														<div class="cart-card-tour small-12 column"> Tour: {{r.tour.name}} </div>
 														<div class="cart-card-length small-12 column"> Duración: {{r.tour.length}} </div>
