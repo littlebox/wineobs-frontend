@@ -184,19 +184,21 @@ wineobsApp
 
 	$scope.clickPin = function(id){
 		Wineobs.markers[id].setIcon(new google.maps.MarkerImage(
-			'/assets/img/marker-hover.png',
-			new google.maps.Size(40, 40), //Original Size
-			new google.maps.Point(0, 0), //Origin
-			new google.maps.Point(20, 20), //Anchor
-			null //ScaledSize
+			'/assets/img/marker-hover-wineobs.png',
+			null,
+			null,
+			// new google.maps.Point(0,0),
+			null,
+			new google.maps.Size(36, 36)
 		))
 		window.setTimeout(function(){
 			Wineobs.markers[id].setIcon(new google.maps.MarkerImage(
-				'/assets/img/marker.png',
-				new google.maps.Size(30, 30), //Original Size
-				new google.maps.Point(0, 0), //Origin
-				new google.maps.Point(15, 15), //Anchor
-				null //ScaledSize
+				'/assets/img/marker-wineobs.png',
+				null,
+				null,
+				// new google.maps.Point(0,0),
+				null,
+				new google.maps.Size(36, 36)
 			))
 		}, 4000)
 	}

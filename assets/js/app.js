@@ -273,11 +273,12 @@ wineobsApp.config(function ($translateProvider) {
 					map: Wineobs.map,
 					title: w.Winery.name,
 					icon: new google.maps.MarkerImage(
-						'/assets/img/marker.png',
-						new google.maps.Size(30, 30), //Original Size
-						new google.maps.Point(0, 0), //Origin
-						new google.maps.Point(15, 15), //Anchor
-						null //ScaledSize
+						'/assets/img/marker-wineobs.png',
+						null,
+						null,
+						// new google.maps.Point(0,0),
+						null,
+						new google.maps.Size(36, 36)
 					),
 					visible: false,
 					// animation: google.maps.Animation.DROP,
@@ -315,11 +316,12 @@ wineobsApp.config(function ($translateProvider) {
 
 				var index = pin.getAttribute('data-winery-id');
 				Wineobs.markers[index].setIcon(new google.maps.MarkerImage(
-					'/assets/img/marker-hover.png',
-					new google.maps.Size(30, 30), //Original Size
-					new google.maps.Point(0, 0), //Origin
-					new google.maps.Point(15, 15), //Anchor
-					null //ScaledSize
+					'/assets/img/marker-hover-wineobs.png',
+					null,
+					null,
+					// new google.maps.Point(0,0),
+					null,
+					new google.maps.Size(36, 36)
 				));
 				Wineobs.markers[index].setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
 				Wineobs.map.panTo(Wineobs.markers[index].getPosition())
