@@ -5,7 +5,7 @@
 			<div class="flex fcolumn">
 				<div class="step-number">5</div>
 				<div class="step-text">
-					<h2 class="step-title white-border">
+					<h2 class="step-title white-border" translate="TITULO_PASO5">
 						Confirme su reserva
 					</h2>
 				</div>
@@ -21,21 +21,21 @@
 							<div class="form-container">
 								<form class="personal-form-data" novalidate>
 									<div class="small-12">
-										<label class="form-title">Datos personales</label>
+										<label translate="INFO_DATOS_PERSONALES" class="form-title">Datos personales</label>
 									</div>
 									<div class="small-12">
 										<div class="small-12 column">
-											<label>Nombre y Apellido</label>
+											<label translate="INFO_DATOS_PERSONALESa">Nombre y Apellido</label>
 											<input type="text" placeholder="nombre y apellido" type="text" ng-model="formPersonalData.fullName" required />
 										</div>
 									</div>
 									<div class="small-12">
 										<div class="small-12 medium-6 column">
-											<label>Fecha de nacimiento</label>
+											<label translate="INFO_DATOS_PERSONALESb">Fecha de nacimiento</label>
 											<input type="date" placeholder="edad" type="text" ng-model="formPersonalData.birthDate" required />
 										</div>
 										<div class="small-12 medium-6 column">
-											<label>País de origen</label>
+											<label translate="INFO_DATOS_PERSONALESc">País de origen</label>
 											<select class="country" ng-model="formPersonalData.country" required>
 												<option value="AF">Afghanistan</option>
 												<option value="AX">Åland Islands</option>
@@ -291,18 +291,18 @@
 									</div>
 									<div class="small-12">
 										<div class="small-12 medium-6 column">
-											<label>Teléfono</label>
+											<label translate="INFO_DATOS_PERSONALESd">Teléfono</label>
 											<input type="text" placeholder="123456789" type="text" ng-model="formPersonalData.phone" required />
 										</div>
 										<div class="small-12 medium-6 column">
-											<label>Email</label>
+											<label translate="INFO_DATOS_PERSONALESe">Email</label>
 											<input type="email" placeholder="email@email.com" type="text" ng-model="formPersonalData.email" required />
 										</div>
 									</div>
 
 									<div class="small-12 payment-method">
 										<div class="small-12 column">
-											<label>Método de pago</label>
+											<label translate="INFO_DATOS_PERSONALESf">Método de pago</label>
 											<select>
 												<option value="mp">Mercado pago</option>
 												<option value="pp" disabled="disabled">PayPal</option>
@@ -345,10 +345,10 @@
 
 		<div class="step-footer flex">
 			<div>
-				<a ng-href="/resultados" class="wineobs-button">Anterior</a>
+				<a ng-href="/resultados" class="wineobs-button" translate="BOTON_ATRAS">Anterior</a>
 			</div>
 			<div>
-				<a ng-click="submit()" class="wineobs-button ladda-button submit" data-style="contract-overlay">Confirmar</a>
+				<a ng-click="submit()" class="wineobs-button ladda-button submit" data-style="contract-overlay" translate="BOTON_CONFIRMAR">Confirmar</a>
 			</div>
 		</div>
 	</div>

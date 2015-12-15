@@ -634,6 +634,12 @@ body{
 	font-size: 2rem;
 }
 
+.personal-form-data{
+	label{
+		// padding: 1rem 0 0;
+	}
+}
+
 .step-number{
 	width: 4rem;
 	height: 3rem;
@@ -1583,10 +1589,16 @@ body.personal-data{
 				position: relative;
 				height: 21rem;
 				padding: 1rem;
-				form div{
-					height:3.5rem;
+				form > div{
+					height:3.9rem;
+					&:nth-child(1){
+						height: 2.5rem;
+					}
 					label.form-title{
 						text-transform: uppercase;
+					}
+					select{
+						margin: 0;
 					}
 				}
 				input{
@@ -2138,6 +2150,22 @@ body.wineobs{
 		display: block !important;
 		flex: none;
 	}
+
+	body.results .step-content .wineries .winery .winery-data{
+		.winery-logo{
+			height: 14rem;
+		}
+		.winery-buttons{
+			height: 1rem;
+		}
+		.winery-buttons a{
+			font-size: 1rem;
+		}
+		.winery-address-small{
+			font-size: 1rem;
+		}
+	}
+
 }
 @media #{$medium-only}{
 	body{

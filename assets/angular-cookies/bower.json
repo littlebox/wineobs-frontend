@@ -1,0 +1,10 @@
+{
+  "name": "angular-cookies",
+  "version": "1.4.8",
+  "main": "./angular-cookies.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.4.8",
+    "angular-translate-storage-cookie": "~2.8.1"
+  }
+}

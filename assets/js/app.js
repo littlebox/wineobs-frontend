@@ -1,4 +1,4 @@
-var wineobsApp = angular.module('wineobsApp', ['ngAnimate', 'ngRoute', 'mm.foundation','pascalprecht.translate']);
+var wineobsApp = angular.module('wineobsApp', ['ngAnimate', 'ngRoute', 'mm.foundation','pascalprecht.translate', 'ngCookies']);
 wineobsApp.config(function ($translateProvider) {
 	$translateProvider.translations('es', {
 	  INICIO: 'Inicio',
@@ -51,9 +51,8 @@ wineobsApp.config(function ($translateProvider) {
 	  INFO_CONTACTOa:'Nombre y Apellido',
 	  INFO_CONTACTOb:'E-Mail',
 	  INFO_CONTACTOc:'Mensaje',
-	  INFO_CONTACTOd:'O envie un mail a:info@wineobs.com',
+	  INFO_CONTACTOd:'O envie un mail a:',
 	  BOTON_CONTACTO:'ENVIAR',
-
 	});
 	$translateProvider.translations('en', {
 		INICIO: 'Start',
@@ -75,8 +74,8 @@ wineobsApp.config(function ($translateProvider) {
 	  INFOBOX_PAGOS:'You will be redirected to PayPal to finish your purchase. Thanks!',
 	  BOTON_CONTINUAR:'CONTINUE',
 	  CONTENIDO_PASO1: 'mm.dd.yyyy',
-	  CONTENIDO_PASO2a: 'english',
-	  CONTENIDO_PASO2b: 'spanish',
+	  CONTENIDO_PASO2a: 'spanish',
+	  CONTENIDO_PASO2b: 'english',
 	  CONTENIDO_PASO3a: 'adults',
 	  CONTENIDO_PASO3b: 'children',
 	  INFOBOX_MENORES:'People under 18 years old can\'t participate at the tasting.',
@@ -100,13 +99,13 @@ wineobsApp.config(function ($translateProvider) {
 	  INFO_TOUR_RESERVADOb:'Tour Language',
 	  INFO_TOUR_RESERVADOc:'Duration',
 	  INFO_TOUR_VISTA_RESERVASa:'Language:',
-	  INFO_TOUR_VISTA_RESERVASb:'Places & Prices:',
+	  INFO_TOUR_VISTA_RESERVASb:'Places and Prices:',
 	  INFO_TOUR_VISTA_RESERVASc:'Subtotal:',
 	  TITULO_CONTACTO:'CONTACT',
-	  INFO_CONTACTOa:'Name & Surname',
+	  INFO_CONTACTOa:'Name and Surname',
 	  INFO_CONTACTOb:'E-Mail',
 	  INFO_CONTACTOc:'Message',
-	  INFO_CONTACTOd:'Or send an email to:info@wineobs.com',
+	  INFO_CONTACTOd:'Or send an email to:',
 	  BOTON_CONTACTO:'SEND',
 	});
 
@@ -161,11 +160,12 @@ wineobsApp.config(function ($translateProvider) {
 	  INFO_CONTACTOa:'Nome Completo',
 	  INFO_CONTACTOb:'E-Mail',
 	  INFO_CONTACTOc:'Mensagem',
-	  INFO_CONTACTOd:'Ou envie um e-mail para:info@wineobs.com',
+	  INFO_CONTACTOd:'Ou envie um e-mail para:',
 	  BOTON_CONTACTO:'ENVIAR',
 	});
-	var regex = /[lg]=([^&#]*)/g
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
+	$translateProvider.useCookieStorage();
+	var regex = /[lg]=([^&#]*)/g
 	window.lg = ( window.location.search.search(regex) > -1 ) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0];
 	$translateProvider.preferredLanguage(lg);
 	$translateProvider.useSanitizeValueStrategy('escape');
