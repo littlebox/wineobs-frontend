@@ -112,8 +112,9 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 					})
 				}else{
 					swal({
-						title:'Forma de pago',
-						text:'Redireccion a mercado pago',
+						type: 'success',
+						title:'Muy bien!',
+						text:'A continuación será redireccionado a MercadoPago para finalizar su compra. Muchas gracias!.',
 					},
 						function(){
 							location.href = data.mp_url;
