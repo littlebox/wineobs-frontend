@@ -5,6 +5,11 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			// controller: 'reserveFormDataController'
 		})
 
+		.when('/inicio',{
+			templateUrl: '/view/reserve-form-data.html',
+			// controller: 'reserveFormDataController'
+		})
+
 		.when('/resultados',{
 			templateUrl: '/view/results.html',
 			// controller: 'resultsController'

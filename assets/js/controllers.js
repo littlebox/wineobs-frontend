@@ -1,4 +1,4 @@
-wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,reservation, $translate){
+wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,reservation, $translate, $route){
 	$rootScope.bodyClass = '';
 	$rootScope.apiUrl = 'http://reservas.wineobs.com';
 	// $rootScope.apiUrl = 'http://metrobox.local';
@@ -24,6 +24,26 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,
 		window.lg = lg;
 		$translate.use(lg);
 	}
+
+	$rootScope.$on('$routeChangeStart',function(ev,next,current){
+		if(!reservation.getReservesToMake().length) return true;
+		if(next.redirectTo == '/datos'){
+			ev.preventDefault();
+			swal({
+				title: 'Volver a empezar?',
+				text: 'Si vuelve al inicio se borraran las reservas realizadas!',
+				showCancelButton: true,
+			}, function(isConfirm){
+				if(isConfirm){
+					reservation.getReservesToMake().forEach(function(k){
+						reservation.removeReserve(k);
+					})
+					window.location.href = '/inicio'
+				};
+			});
+		}
+	})
+
 	Wineobs.init();
 });
 
@@ -344,25 +364,45 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 	$scope.formData = reservation.getFormData();
 
 	$scope.submit = function(){
-		if(reservation.getReservesToMake().length > 0 ){
-			if(!$('form.personal-form-data').hasClass('ng-invalid')){
+		try {
+			if(reservation.getReservesToMake().length > 0 ){
+				if($('form.personal-form-data').hasClass('ng-invalid')){throw new Error('Algo invalido!')}
+
+				var fecha = $scope.formPersonalData.birthDate;
+				var fechaArr = fecha.split('/');
+				if(fechaArr.length != 3){ throw new Error('Fecha invalida');}
+				var date = new Date(fechaArr[2],fechaArr[1]-1,fechaArr[0]);
+				if ( Object.prototype.toString.call(date) === "[object Date]" ) {
+				  if ( isNaN( date.getTime() ) ) {
+						throw new Error('Fecha invalida');
+				  }
+				  else {
+						$scope.formPersonalData.birthDate = date;
+				  }
+				}
+				else {
+					throw new Error('Fecha invalida');
+				}
+
 				$scope.submitButton = $('.wineobs-button.submit').ladda();
 				$scope.submitButton.ladda('start');
 				reservation.setPersonalData($scope.formPersonalData);
 				reservation.sendReservesToMake();
 			}else{
 				swal({
-					title:'Datos no validos!',
-					text:'Por favor, revise los datos antes de continuar.',
+					title:'Ninguna reserva!',
+					text:'Por favor, haga una reserva antes de continuar.',
 					type: 'warning',
 				});
 			}
-		}else{
+		} catch (e) {
 			swal({
-				title:'Ninguna reserva!',
-				text:'Por favor, haga una reserva antes de continuar.',
+				title:'Datos no validos!',
+				text:'Por favor, revise los datos antes de continuar.',
 				type: 'warning',
 			});
+		} finally {
+
 		}
 	}
 
