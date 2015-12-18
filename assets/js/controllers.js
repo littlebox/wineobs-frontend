@@ -587,8 +587,8 @@ wineobsApp.controller('ModalInstanceController', function($scope, $modalInstance
 wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
 	$scope.getParams = function getParams(url){
 		var regex = /[?&]([^=#]+)=([^&#]*)/g,
-		params = {},
-		match;
+			params = {},
+			match = [];
 		while(match = regex.exec(url)) {
 			params[match[1]] = match[2];
 		}
@@ -621,8 +621,20 @@ wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
 			token: $scope.token,
 			review: $scope.comment,
 		}, function(resp){
-			if(!resp.error){
-				swal(resp.content);
+			if(!resp.error.length){
+				swal({
+					title: resp.content.title,
+					text: resp.content.text,
+					showCancelButton: false,
+				},function(){
+					window.location.href = '/';
+				});
+			}else{
+				swal({
+					text: resp.error.title,
+					text: resp.error.text,
+					showCancelButton: false,
+				});
 			}
 		})
 	}
