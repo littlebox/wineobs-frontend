@@ -5086,7 +5086,6 @@ body .site-content {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 70%;
-  margin-bottom: 40px;
 }
 /* line 364, ../../scss/app.scss */
 body .site-content .content {
@@ -5250,7 +5249,7 @@ body .footer .modals .modal-image-gallery .modal-content .tabs-info .tabs-conten
 body .footer .modals .modal-image-gallery .modal-content .tabs-info .tabs-content .info-bodega p.winery-description, body .footer .modals .modal-image-gallery .modal-content .tabs-info .tabs-content .info-comments p.winery-description, body .footer .modals .modal-info-winery .modal-content .tabs-info .tabs-content .info-bodega p.winery-description, body .footer .modals .modal-info-winery .modal-content .tabs-info .tabs-content .info-comments p.winery-description {
   font-family: FuturaLTHeavy;
   font-size: 1rem;
-  color: #9B9A9A;
+  color: #545454;
 }
 /* line 476, ../../scss/app.scss */
 body .footer .modals .modal-image-gallery .modal-content .tabs-info .tabs-content .info-bodega blockquote, body .footer .modals .modal-image-gallery .modal-content .tabs-info .tabs-content .info-comments blockquote, body .footer .modals .modal-info-winery .modal-content .tabs-info .tabs-content .info-bodega blockquote, body .footer .modals .modal-info-winery .modal-content .tabs-info .tabs-content .info-comments blockquote {
