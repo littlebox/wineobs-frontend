@@ -160,7 +160,16 @@ $form-label-font-color: #fff;
 	color: $grey2;
 	position: relative;
 	text-align: center;
-	min-height: 12rem;
+	min-height: 14rem;
+	.cart-card-name, .cart-card-hour, .cart-card-tour, .cart-card-length, .cart-card-subtotal{
+		font-family: FuturaLTHeavy;
+		font-size: 0.8rem;
+		margin: 0.1rem 0;
+	}
+	.cart-card-name{
+		font-size: 1rem;
+		margin: 1rem 0 0.1rem;
+	}
 	.cart-close{
 		position: absolute;
 		top: 0;
