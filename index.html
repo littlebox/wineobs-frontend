@@ -174,7 +174,7 @@
 							<div class="tabs-content">
 								<div ng-class="{ 'active': infoActive }" class="content info-bodega" id="info-bodega">
 									<h1 class="winery-name">{{w.Winery.name}}</h1>
-									<p class="winery-description">{{w.Winery.description}}</p>
+									<p class="winery-description">{{w.Winery.description[$root.lg]}}</p>
 								</div>
 								<div ng-class="{ 'active': toursActive }" class="content" id="info-tours">
 									<div class="small-12 row">
@@ -187,7 +187,7 @@
 											<div class="tours-content">
 												<div id="{{tour.id}}" class="tour-content small-12" ng-repeat="tour in w.Tour" ng-class="{'active': isTourActive(tour.id)}">
 													<div class="description small-8 column">
-														<p>{{tour.description}}</p>
+														<p>{{tour.description[$root.lg]}}</p>
 													</div>
 													<div class="modal-winery-reserve small-4 column">
 														<div class="winery-reserve">

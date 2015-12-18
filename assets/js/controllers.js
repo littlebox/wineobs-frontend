@@ -18,10 +18,12 @@ wineobsApp.controller('wineobsController', function ($scope,$rootScope,$timeout,
 	}
 
 	$scope.lg = window.lg;
+	$rootScope.lg = window.lg;
 
 	$scope.changeLanguage = function(lg){
 		$scope.lg = lg;
 		window.lg = lg;
+		$rootScope.lg = lg;
 		$translate.use(lg);
 	}
 
