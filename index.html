@@ -33,8 +33,8 @@
 										<li><a ng-href="/" translate="MENU_ITEM1">inicio</a></li>
 										<li><a ng-click="susReservasClick($event)" translate="MENU_ITEM2">sus reservas</a></li>
 										<!-- <li><a href="">bodegas</a></li> -->
-										<!-- <li><a href="">wineobs</a></li> -->
 										<li><a ng-href="/contacto" translate="MENU_ITEM3">contacto</a></li>
+										<li><a ng-href="/quienes-somos" translate="MENU_ITEM4">quienes somos</a></li>
 									</ul>
 								</div>
 							</div>
@@ -240,7 +240,7 @@
 									<div class="comments" ng-repeat="review in w.Review">
 										<blockquote>
 											{{review.review}}
-											<cite>{{review.Client.full_name}}</cite>
+											<cite>{{review.Client.full_name}} <span>{{formatDate(review.created)}}</span> <span>{{formatCountry(review.Client.country)}}</span></cite>
 										</blockquote>
 									</div>
 								</div>
@@ -271,7 +271,7 @@
 						<div class="tabs-content">
 							<div ng-class="{ 'active': infoActive }" class="content info-bodega" id="info-bodega">
 								<h1 class="winery-name">{{w.Winery.name}}</h1>
-								<p class="winery-description">{{w.Winery.description}}</p>
+								<p class="winery-description">{{w.Winery.description[$root.lg]}}</p>
 							</div>
 							<div ng-class="{ 'active': commentsActive }" class="content info-comments" id="comments">
 								<div ng-show="!w.Review.length" style="margin:5rem 0 0;">
@@ -280,7 +280,7 @@
 								<div class="comments" ng-repeat="review in w.Review">
 									<blockquote>
 										{{review.review}}
-										<cite>{{review.Client.full_name}}</cite>
+										<cite>{{review.Client.full_name}} <span>{{formatDate(review.created)}}</span> <span>{{formatCountry(review.Client.country)}}</span></cite>
 									</blockquote>
 								</div>
 							</div>
@@ -325,7 +325,7 @@
 									</div>
 								</div>
 								<div class="description">
-									{{w.Tour[activeIndex].description}}
+									{{w.Tour[activeIndex].description[$root.lg]}}
 								</div>
 
 							</div>
@@ -367,22 +367,23 @@
 		});
 	</script>
 	<script type="text/javascript" src="/assets/jquery/dist/jquery.min.js"></script>
-	<script src="/assets/angular/angular-1.4.2/angular.min.js"></script>
+	<!-- <script src="/assets/angular/angular-1.4.2/angular.min.js"></script>
 	<script src="/assets/angular/angular-1.4.2/angular-route.min.js"></script>
 	<script src="/assets/angular/angular-1.4.2/angular-animate.min.js"></script>
 	<script type="text/javascript" src="/assets/angular-cookies/angular-cookies.min.js"></script>
 	<script type="text/javascript" src="/assets/angular-translate/angular-translate.min.js"></script>
-	<script type="text/javascript" src="/assets/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
-	<!-- <script src="/assets/angular.min.js"></script> -->
+	<script type="text/javascript" src="/assets/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script> -->
+	<script src="/assets/angular.min.js"></script>
 	<!-- <script type="text/javascript" src="/assets/js/dirPagination.js"></script> -->
 
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDEDXVukpE4oEEhjfWmhaZctW3SobbJYV4"></script>
-	<!-- <script type="text/javascript" src="/assets/js/marker-clusterer.min.js"></script> -->
+	<script type="text/javascript" src="/assets/js/markerwithlabel.min.js"></script>
 
 	<script type="text/javascript" src="/assets/angular-foundation/mm-foundation-tpls.min.js"></script>
 	<script type="text/javascript" src="/assets/foundation/js/foundation.min.js"></script>
 
-	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript" src="/assets/js/wineobs.js"></script>
+	<!-- <script type="text/javascript" src="/assets/js/app.js"></script> -->
 	<!-- <script src="/assets/js/routes.js"></script> -->
 	<!-- <script src="/assets/js/controllers.js"></script> -->
 	<!-- <script src="/assets/js/services.js"></script> -->
@@ -397,9 +398,9 @@
 	<!-- END DATEDROPPER -->
 	<script type="text/javascript">
 		$(document).foundation();
-		$(function(){
-			// window.Wineobs.init();
-		})
+		// $(function(){
+		// 	// window.Wineobs.init();
+		// })
 	</script>
 	</body>
 </html>

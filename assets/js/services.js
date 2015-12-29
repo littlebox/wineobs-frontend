@@ -4,9 +4,7 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 
 	var pushReservesToMake = function(reserve){
 		reservesToMake.push(reserve);
-		$rootScope.$broadcast('updateReservesToMake',{
-			reservesToMake,
-		})
+		$rootScope.$broadcast('updateReservesToMake', reservesToMake )
 	}
 
 	var getReservesToMake = function(){
@@ -15,9 +13,7 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 
 	var removeReserve = function(k){
 		reservesToMake.splice(k,1);
-		$rootScope.$broadcast('updateReservesToMake',{
-			reservesToMake,
-		});
+		$rootScope.$broadcast('updateReservesToMake', reservesToMake);
 	}
 
 	var formData = {
