@@ -192,6 +192,12 @@ div.marker-label {
 	transform: translate(-6px,-14px);
 }
 
+.payment-method{
+	a{
+		cursor: pointer;
+	}
+}
+
 /* Flexbox! */
 .flex{
 	@include flexbox();
