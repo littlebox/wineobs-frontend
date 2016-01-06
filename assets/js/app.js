@@ -67,14 +67,14 @@ wineobsApp.config(function ($translateProvider) {
 	  TITULO_FOOTER_TRANSPORTE: '*Transport is not included',
 	  PRECIO_TOTAL:'Total Price',
 	  MENU_ITEM1: 'Start',
-	  MENU_ITEM2: 'Your Bookings',
+	  MENU_ITEM2: 'Your Reservations',
 	  MENU_ITEM3: 'Contact',
 	  MENU_ITEM4: 'About us',
 	  TITULO_PASO1: 'DATE',
 	  TITULO_PASO2: 'LANGUAGE',
 	  TITULO_PASO3: 'NUMBER OF PEOPLE',
 	  TITULO_PASO4: 'CHOOSE A WINERY',
-	  TITULO_PASO5: 'CONFIRM YOUR BOOKING',
+	  TITULO_PASO5: 'CONFIRM YOUR RESERVATION',
 	  TITULO_IMAGENES:'IMAGES',
 	  TITULO_BODEGA:'HISTORY',
 	  INFOBOX_DISTANCIA:'Please bear in mind the distance between wineries when planning your transportation.',
@@ -118,6 +118,8 @@ wineobsApp.config(function ($translateProvider) {
 		alerts: {
 			ROUTE_CHANGE_TITLE: 'Warning',
 			ROUTE_CHANGE_TEXT: 'If you continue, your reservations will be deleted.',
+			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Incomplete date',
+			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Please enter the date again.',
 		}
 	});
 
@@ -178,6 +180,8 @@ wineobsApp.config(function ($translateProvider) {
 		alerts: {
 			ROUTE_CHANGE_TITLE: 'Advertência',
 			ROUTE_CHANGE_TEXT: 'Se você continuar as reservas realizadas serão apagadas.',
+			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Data incompleta!',
+			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Por favor, insira uma data.',
 		}
 	});
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
