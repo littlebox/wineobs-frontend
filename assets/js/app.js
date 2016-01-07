@@ -81,7 +81,7 @@ wineobsApp.config(function ($translateProvider) {
 	  INFOBOX_RECOMENDACION:'It is not advisable to book more than 4 wine tours per day.',
 	  INFOBOX_PAGOS:'You will be redirected to PayPal to finish your purchase. Thanks!',
 	  BOTON_CONTINUAR:'CONTINUE',
-	  CONTENIDO_PASO1: 'mm.dd.yyyy',
+	  CONTENIDO_PASO1: 'dd.mm.yyyy',
 	  CONTENIDO_PASO2a: 'spanish',
 	  CONTENIDO_PASO2b: 'english',
 	  CONTENIDO_PASO3a: 'adults',
