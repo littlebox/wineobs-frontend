@@ -109,13 +109,19 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 				}else{
 					swal({
 						type: 'success',
-						title:'Muy bien!',
-						text:'A continuación será redireccionado a MercadoPago para finalizar su compra. Muchas gracias!.',
-					},
-						function(){
-							location.href = data.mp_url;
-						}
-					)
+						title:'Seleccione un método de pago para continuar con la compra',
+						text:[
+							'<div class="small-12 row payment_method">',
+								'<div class="small-6 column">',
+									'<a target="_self" href="'+data.mp_url+'"><img src="/assets/img/mercadopago-logo.svg" style="height:120px" heigth="120px"></a>',
+								'</div>',
+								'<div class="small-6 column">',
+									'<a target="_self" href="'+data.pp_url+'"><img src="/assets/img/paypal-logo.jpg" style="height:120px" heigth="120px"></a>',
+								'</div>',
+							'</div>'].join(''),
+						html: true,
+						showConfirmButton: false,
+					})
 				}
 			}).
 			error(function(data, status, headers, config) {
