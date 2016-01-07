@@ -16,11 +16,18 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 		$rootScope.$broadcast('updateReservesToMake', reservesToMake);
 	}
 
+	var noDate = new Date(Date.now()+1000*60*60*24);
+	var noDateArr = {
+		day: noDate.getDate(),
+		month: noDate.getMonth() + 1,
+		year: noDate.getFullYear(),
+	}
+
 	var formData = {
 		date: {
-			formattedDate: '01.01.2016',
-			date: ['2016','01','01'],
-			serverDate: '2016-01-01',
+			formattedDate: noDateArr.day+'.'+noDate.month+'.'+noDate.year,
+			date: [noDateArr.year,noDateArr.month,noDateArr.day],
+			serverDate: noDateArr.year+'-'+noDateArr.month+'-'+noDateArr.day,
 		},
 		language: 1,
 		quota: {
