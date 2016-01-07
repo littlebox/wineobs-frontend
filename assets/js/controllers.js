@@ -28,9 +28,6 @@ wineobsApp.controller('wineobsController',['$scope', '$rootScope', '$timeout', '
 	}
 
 	$rootScope.$on('$routeChangeStart',function(ev,next,current){
-		$translate(['alerts.ROUTE_CHANGE_TITLE', 'alerts.ROUTE_CHANGE_TEXT']).then(function(tr){
-			for(k in tr){ if(tr.hasOwnProperty(k)) $scope[k] = tr[k]; }
-		})
 		if(!reservation.getReservesToMake().length) return true;
 		if(next.redirectTo == '/datos'){
 			ev.preventDefault();
