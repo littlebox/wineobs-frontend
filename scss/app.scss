@@ -483,6 +483,7 @@ body{
 						background-color: $white2;
 						.tabs-content{
 							height: 60vh;
+							overflow-y: scroll;
 							.info-bodega, .info-comments{
 								color: $grey;
 								margin-top: 2rem;
@@ -495,6 +496,7 @@ body{
 									font-family: FuturaLTHeavy;
 									font-size: 1rem;
 									color: $grey2;
+									white-space: pre-line;
 								}
 								blockquote{
 									text-align: left;

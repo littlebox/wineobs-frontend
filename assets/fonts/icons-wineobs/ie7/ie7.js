@@ -13,6 +13,9 @@
 		el.innerHTML = '<span style="font-family: \'icons-wineobs\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'icon-wineobs-user': '&#xf007;',
+		'icon-wineobs-repeat': '&#xf01e;',
+		'icon-wineobs-rotate-right': '&#xf01e;',
 		'icon-wineobs-info': '&#xe60f;',
 		'icon-wineobs-lens': '&#xe614;',
 		'icon-wineobs-photo': '&#xe613;',
@@ -30,8 +33,6 @@
 		'icon-wineobs-person-group': '&#xe605;',
 		'icon-wineobs-calendar': '&#xe606;',
 		'icon-wineobs-world': '&#xe607;',
-		'icon-wineobs-repeat': '&#xf01e;',
-		'icon-wineobs-rotate-right': '&#xf01e;',
 		'0': 0
 		},
 		els = document.getElementsByTagName('*'),

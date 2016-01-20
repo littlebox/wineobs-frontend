@@ -355,6 +355,7 @@ wineobsApp
 		// $('.gammaGallery iframe').attr('src','assets/GammaGallery/index.php')
 
 		iframe = $('.gammaGallery iframe')[0];
+
 		if(iframe.contentWindow.init(winery,location.hostname)){
 			$('.gammaGallery').addClass('show');
 		}

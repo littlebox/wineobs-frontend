@@ -81,7 +81,7 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 	  INFOBOX_RECOMENDACION:'It is not advisable to book more than 4 wine tours per day.',
 	  INFOBOX_PAGOS:'You will be redirected to PayPal to finish your purchase. Thanks!',
 	  BOTON_CONTINUAR:'CONTINUE',
-	  CONTENIDO_PASO1: 'mm.dd.yyyy',
+	  CONTENIDO_PASO1: 'dd.mm.yyyy',
 	  CONTENIDO_PASO2a: 'spanish',
 	  CONTENIDO_PASO2b: 'english',
 	  CONTENIDO_PASO3a: 'adults',
@@ -848,6 +848,7 @@ wineobsApp
 		// $('.gammaGallery iframe').attr('src','assets/GammaGallery/index.php')
 
 		iframe = $('.gammaGallery iframe')[0];
+
 		if(iframe.contentWindow.init(winery,location.hostname)){
 			$('.gammaGallery').addClass('show');
 		}
@@ -1273,9 +1274,11 @@ wineobsApp.service('reservation',["$rootScope", "$http", "$location", function($
 							'<div class="small-12 row payment_method">',
 								'<div class="small-6 column">',
 									'<a target="_self" href="'+data.mp_url+'"><img src="/assets/img/mercadopago-logo.svg" style="height:120px" heigth="120px"></a>',
+									'<p> Moneda: Pesos argentinos (ARS)</p>',
 								'</div>',
 								'<div class="small-6 column">',
 									'<a target="_self" href="'+data.pp_url+'"><img src="/assets/img/paypal-logo.jpg" style="height:120px" heigth="120px"></a>',
+									'<p> Moneda: Dólar estadounidense (USD)</p>',
 								'</div>',
 							'</div>'].join(''),
 						html: true,

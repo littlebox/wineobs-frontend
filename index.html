@@ -240,7 +240,11 @@
 									<div class="comments" ng-repeat="review in w.Review">
 										<blockquote>
 											{{review.review}}
-											<cite>{{review.Client.full_name}} <span>{{formatDate(review.created)}}</span> <span>{{formatCountry(review.Client.country)}}</span></cite>
+											<cite>
+												<span class="icon-wineobs-user"></span><span> {{review.Client.full_name}} </span>&nbsp;
+												<span class="icon-wineobs-calendar"></span> <span> {{formatDate(review.created)}} </span>&nbsp;
+												<span class="icon-wineobs-world"></span> <span> {{formatCountry(review.Client.country)}} </span>&nbsp;
+											</cite>
 										</blockquote>
 									</div>
 								</div>
