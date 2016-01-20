@@ -14,6 +14,11 @@
 	}
 	var icons = {
 		'icon-wineobs-user': '&#xf007;',
+		'icon-wineobs-close': '&#xf00d;',
+		'icon-wineobs-remove': '&#xf00d;',
+		'icon-wineobs-times': '&#xf00d;',
+		'icon-wineobs-chevron-left': '&#xf053;',
+		'icon-wineobs-chevron-right': '&#xf054;',
 		'icon-wineobs-repeat': '&#xf01e;',
 		'icon-wineobs-rotate-right': '&#xf01e;',
 		'icon-wineobs-info': '&#xe60f;',

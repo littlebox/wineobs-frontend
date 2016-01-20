@@ -1,4 +1,4 @@
-var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation','pascalprecht.translate', 'ngCookies']);
+var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation','pascalprecht.translate', 'ngCookies', 'jkuri.gallery']);
 wineobsApp.config(["$translateProvider", function ($translateProvider) {
 	$translateProvider.translations('es', {
 	  INICIO: 'Inicio',
@@ -839,22 +839,25 @@ wineobsApp
 		})
 	}
 
-	$('.gammaGallery .menu-close-button').on('click',function(){
-		$('.gammaGallery').removeClass('show');
-	})
-
-	$scope.showGammaGalery = function(winery){
-		// window.wineryGammaGalery = winery;
-		// $('.gammaGallery iframe').attr('src','assets/GammaGallery/index.php')
-
-		iframe = $('.gammaGallery iframe')[0];
-
-		if(iframe.contentWindow.init(winery,location.hostname)){
-			$('.gammaGallery').addClass('show');
-		}
-
+	$scope.modalGallery = function(winery){
+		var modalInstance = $modal.open({
+			templateUrl: 'view/modalGallery.html',
+			controller: 'ModalGalleryController',
+			windowClass: 'fullscreenModal',
+			backdrop: false,
+			resolve: {
+				wineryId: function(){
+					return (winery.Winery.has_logo) ? winery.Winery.id: null;
+				},
+				images: function () {
+					imgs = winery.Image.map(function(i){
+						return {thumb: $rootScope.apiUrl+'/img/wineries/'+i.id+'.jpg', img: $rootScope.apiUrl+'/img/wineries/'+i.id+'.jpg', description: winery.Winery.name}
+					});
+					return imgs;
+				}
+			}
+		})
 	}
-
 }]);
 
 wineobsApp.controller('personalFormDataController', ["$scope", "$rootScope", "reservation", function ($scope,$rootScope,reservation){
@@ -1090,6 +1093,14 @@ wineobsApp.controller('paymentController', ["$scope", "$rootScope", function ($s
 
 wineobsApp.controller('ModalInstanceController', ["$scope", "$modalInstance", "winery", function($scope, $modalInstance, winery){
 	$scope.w = winery;
+	$scope.cancel = function () {
+		$modalInstance.dismiss('cancel');
+	};
+}])
+
+wineobsApp.controller('ModalGalleryController', ["$rootScope", "$scope", "$modalInstance", "images", "wineryId", function($rootScope, $scope, $modalInstance, images, wineryId){
+	$scope.images = images;
+	$scope.logo = $rootScope.apiUrl+'/img/wineries/logos/'+wineryId+'.png'
 	$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 	};

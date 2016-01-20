@@ -1,4 +1,4 @@
-var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation','pascalprecht.translate', 'ngCookies']);
+var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation','pascalprecht.translate', 'ngCookies', 'jkuri.gallery']);
 wineobsApp.config(function ($translateProvider) {
 	$translateProvider.translations('es', {
 	  INICIO: 'Inicio',
