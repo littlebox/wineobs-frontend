@@ -75,7 +75,10 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			LISTA_5:'Puedes reservar desde cualquier parte del mundo, en cualquier momento del día y desde cualquier dispositivo móvil.',
 			LISTA_6:'¡Reservas de último minuto!',
 			LISTA_7:'Compra protegida.',
-		}
+		},
+		PAYMENT_TITLE: 'Seleccione un método de pago para continuar con la compra',
+		TEXTO_MONEDA_MERCADOPAGO: 'Moneda: Pesos argentinos (ARS)',
+		TEXTO_MONEDA_PAYPAL: 'Moneda: Dólar estadounidense (USD)',
 	});
 	$translateProvider.translations('en', {
 		INICIO: 'Start',
@@ -149,7 +152,10 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			LISTA_5: 'Reservations can be made anytime, anywhere and from any device.',
 			LISTA_6: 'Las minute reservations!',
 			LISTA_7: 'Safe purchase.',
-		}
+		},
+		PAYMENT_TITLE: 'Select a payment method to continue shopping',
+		TEXTO_MONEDA_MERCADOPAGO: 'Currency: Argentine Peso (ARS)',
+		TEXTO_MONEDA_PAYPAL: 'Currency: USA Dollar (USD)',
 	});
 
 	$translateProvider.translations('pt', {
@@ -225,6 +231,9 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			LISTA_6:'Reservas de última hora!',
 			LISTA_7:'Compras seguras.',
 		},
+		PAYMENT_TITLE: 'Selecione um método de pagamento para continuar a fazer compras',
+		TEXTO_MONEDA_MERCADOPAGO: 'Moneda: Pesos argentinos (ARS)',
+		TEXTO_MONEDA_PAYPAL: 'Moneda: Dólar estadounidense (USD)',
 	});
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
 	$translateProvider.useCookieStorage();
@@ -1204,7 +1213,7 @@ wineobsApp.controller('commentsController', ["$scope", "$rootScope", "$http", fu
 	}
 }])
 
-wineobsApp.service('reservation',["$rootScope", "$http", "$location", function($rootScope, $http, $location){
+wineobsApp.service('reservation',["$rootScope", "$http", "$location", "$filter", function($rootScope, $http, $location, $filter){
 
 	var reservesToMake = [];
 
@@ -1320,18 +1329,21 @@ wineobsApp.service('reservation',["$rootScope", "$http", "$location", function($
 						swal('Error',e.text,'error')
 					})
 				}else{
+					var payment_title = $filter('translate')('PAYMENT_TITLE');
+					var texto_mp = $filter('translate')('TEXTO_MONEDA_MERCADOPAGO');
+					var texto_pp = $filter('translate')('TEXTO_MONEDA_PAYPAL');
 					swal({
 						type: 'success',
-						title:'Seleccione un método de pago para continuar con la compra',
+						title: payment_title,
 						text:[
 							'<div class="small-12 row payment_method">',
 								'<div class="small-6 column">',
 									'<a target="_self" href="'+data.mp_url+'"><img src="/assets/img/mercadopago-logo.svg" style="height:120px" heigth="120px"></a>',
-									'<p> Moneda: Pesos argentinos (ARS)</p>',
+									'<p>'+texto_mp+'</p>',
 								'</div>',
 								'<div class="small-6 column">',
 									'<a target="_self" href="'+data.pp_url+'"><img src="/assets/img/paypal-logo.jpg" style="height:120px" heigth="120px"></a>',
-									'<p> Moneda: Dólar estadounidense (USD)</p>',
+									'<p>'+texto_pp+'</p>',
 								'</div>',
 							'</div>'].join(''),
 						html: true,

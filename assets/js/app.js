@@ -75,7 +75,10 @@ wineobsApp.config(function ($translateProvider) {
 			LISTA_5:'Puedes reservar desde cualquier parte del mundo, en cualquier momento del día y desde cualquier dispositivo móvil.',
 			LISTA_6:'¡Reservas de último minuto!',
 			LISTA_7:'Compra protegida.',
-		}
+		},
+		PAYMENT_TITLE: 'Seleccione un método de pago para continuar con la compra',
+		TEXTO_MONEDA_MERCADOPAGO: 'Moneda: Pesos argentinos (ARS)',
+		TEXTO_MONEDA_PAYPAL: 'Moneda: Dólar estadounidense (USD)',
 	});
 	$translateProvider.translations('en', {
 		INICIO: 'Start',
@@ -149,7 +152,10 @@ wineobsApp.config(function ($translateProvider) {
 			LISTA_5: 'Reservations can be made anytime, anywhere and from any device.',
 			LISTA_6: 'Las minute reservations!',
 			LISTA_7: 'Safe purchase.',
-		}
+		},
+		PAYMENT_TITLE: 'Select a payment method to continue shopping',
+		TEXTO_MONEDA_MERCADOPAGO: 'Currency: Argentine Peso (ARS)',
+		TEXTO_MONEDA_PAYPAL: 'Currency: USA Dollar (USD)',
 	});
 
 	$translateProvider.translations('pt', {
@@ -225,6 +231,9 @@ wineobsApp.config(function ($translateProvider) {
 			LISTA_6:'Reservas de última hora!',
 			LISTA_7:'Compras seguras.',
 		},
+		PAYMENT_TITLE: 'Selecione um método de pagamento para continuar a fazer compras',
+		TEXTO_MONEDA_MERCADOPAGO: 'Moneda: Pesos argentinos (ARS)',
+		TEXTO_MONEDA_PAYPAL: 'Moneda: Dólar estadounidense (USD)',
 	});
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
 	$translateProvider.useCookieStorage();

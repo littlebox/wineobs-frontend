@@ -1,4 +1,4 @@
-wineobsApp.service('reservation',function($rootScope, $http, $location){
+wineobsApp.service('reservation',function($rootScope, $http, $location, $filter){
 
 	var reservesToMake = [];
 
@@ -114,18 +114,21 @@ wineobsApp.service('reservation',function($rootScope, $http, $location){
 						swal('Error',e.text,'error')
 					})
 				}else{
+					var payment_title = $filter('translate')('PAYMENT_TITLE');
+					var texto_mp = $filter('translate')('TEXTO_MONEDA_MERCADOPAGO');
+					var texto_pp = $filter('translate')('TEXTO_MONEDA_PAYPAL');
 					swal({
 						type: 'success',
-						title:'Seleccione un método de pago para continuar con la compra',
+						title: payment_title,
 						text:[
 							'<div class="small-12 row payment_method">',
 								'<div class="small-6 column">',
 									'<a target="_self" href="'+data.mp_url+'"><img src="/assets/img/mercadopago-logo.svg" style="height:120px" heigth="120px"></a>',
-									'<p> Moneda: Pesos argentinos (ARS)</p>',
+									'<p>'+texto_mp+'</p>',
 								'</div>',
 								'<div class="small-6 column">',
 									'<a target="_self" href="'+data.pp_url+'"><img src="/assets/img/paypal-logo.jpg" style="height:120px" heigth="120px"></a>',
-									'<p> Moneda: Dólar estadounidense (USD)</p>',
+									'<p>'+texto_pp+'</p>',
 								'</div>',
 							'</div>'].join(''),
 						html: true,
