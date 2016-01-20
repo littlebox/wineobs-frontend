@@ -59,6 +59,22 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			ROUTE_CHANGE_TEXT: 'Si continúa se borrarán las reservas realizadas.',
 			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Fecha incompleta!',
 			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Por favor ingrese una fecha',
+		},
+		ABOUT_US: {
+			INICIO: 'Wineobs es una empresa joven creada en 2014 por Sofía Ruiz Cavanagh, Licenciada en Enología.\
+				Siendo originaria de la ciudad de Mendoza y muy interesada en la vitivinicultura y el turismo regional, su mision es ofrecer una forma diferente de obsesionarnos con el vino y las bodegas.\
+				Con el objetivo de facilitar a los amantes del vino la accesibilidad a degustaciones, visitas y otras actividades relacionadas al enoturismo, con WineObs proponemos un sitio web que reúne toda la información de relevancia turística de un gran número de bodegas. De esta manera, los visitantes podrán planificar de forma simple y rápida un extraordinario día de degustaciones y visitas turísticas.\
+				Lo que distingue a WineObs es que ofrecemos reservas en tiempo real al mismo precio al que se encuentran los mismos servicios en cada una de las diferentes bodegas.\
+				Por otra parte, el sitio también funciona como un nuevo canal de comunicación que las bodegas pueden utilizar para ofrecer y promocionar sus servicios, contribuyendo tanto a la diversificación de las bodegas visitadas, como al crecimiento y afianzamiento de la marca “vino argentino”.\
+				¡Usar WineObs implica beneficios! Gestione su reserva con nosotros en rápidos y sencillos pasos.',
+			TITULO_LISTA: 'RESERVAR CON WINEOBS',
+			LISTA_1:'Todas las bodegas en un mismo sitio.',
+			LISTA_2:'Gestión de reservas on-line. ¡Sin confirmación o tiempos de espera!',
+			LISTA_3:'El mismo precio que reservar directamente en cada una de las bodegas asociadas.',
+			LISTA_4:'Comentarios y puntajes reales de clientes que ya probaron wineobs y visitaron bodegas.',
+			LISTA_5:'Puedes reservar desde cualquier parte del mundo, en cualquier momento del día y desde cualquier dispositivo móvil.',
+			LISTA_6:'¡Reservas de último minuto!',
+			LISTA_7:'Compra protegida.',
 		}
 	});
 	$translateProvider.translations('en', {
@@ -120,6 +136,19 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			ROUTE_CHANGE_TEXT: 'If you continue, your reservations will be deleted.',
 			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Incomplete date',
 			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Please enter the date again.',
+		},
+		ABOUT_US: {
+			INICIO: 'WineObs is a young company created in 2014 by Sofia Ruiz Cavanagh, wine maker. Born and raised in Mendoza, Sofia´s passions are wine making and local tourism. In this web site, Sofia not only shares her passion about wines but she also invites people to enjoy and learn about the world of wine.\
+				WineObs main objective is to facilitate wine lovers with tours, wine tastings, and other interesting activities related with wine-tourism. In WineObs web site, tourists are able to plan an amazing day in the most beautiful and top range wineries in Mendoza. Tourists can organize their activities in five simple and quick steps.\
+				Last but not least, using WineObs bring along lots of benefits! Make your reservation now!',
+			TITULO_LISTA: 'Booking with wineobs',
+			LISTA_1: 'All the wineries in one site.',
+			LISTA_2: 'Immediate confirmation!',
+			LISTA_3: 'The same price as if booked in the winery per se.',
+			LISTA_4: 'Comments and reviews from clients.',
+			LISTA_5: 'Reservations can be made anytime, anywhere and from any device.',
+			LISTA_6: 'Las minute reservations!',
+			LISTA_7: 'Safe purchase.',
 		}
 	});
 
@@ -182,7 +211,20 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			ROUTE_CHANGE_TEXT: 'Se você continuar as reservas realizadas serão apagadas.',
 			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Data incompleta!',
 			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Por favor, insira uma data.',
-		}
+		},
+		ABOUT_US: {
+			INICIO: 'Windows é uma empresa jovem, criada em 2014 por Sofía Ruiz Cavanagh, formado em enologia. Sendo originalmente da cidade de Mendoza e muito interessado em viticultura e do turismo regional, sua missão é oferecer uma maneira diferente de obcecado com vinho e vinícolas.\
+			Com o objetivo de fornecer provas de amantes do vinho de acessibilidade, passeios e outras atividades relacionadas ao turismo de vinhos, com WineObs sugerir um site que reúne toda a informação turística relevante de um grande número de vinícolas. Assim, os visitantes podem planejar forma simples e rápida um dia extraordinário de degustações e passeios. O que distingue WineObs é oferecer reservas em tempo real, ao mesmo preço a que os serviços são os mesmos em cada um dos diferentes vinícolas.\
+			Além disso, o site também serve como um novo canal de comunicação que as vinícolas podem utilizar para oferecer e promover os seus serviços, contribuindo assim para a diversificação das vinícolas visitadas, eo crescimento e consolidação da marca "vinho argentino." Use WineObs implica benefícios! Gerencie sua reserva connosco em passos rápidos e fáceis.',
+			TITULO_LISTA: 'LIVRO COM WINEOBS',
+			LISTA_1: 'Todas las bodegas en un mismo sitio.',
+			LISTA_2:'Gerenciando reservas on-line. Nenhuma confirmação ou tempos de espera!',
+			LISTA_3:'O mesmo preço para reservar directamente em cada uma das vinícolas associadas.',
+			LISTA_4:'Comentários e pontuações reais dos clientes já testados janelas e vinícolas visitadas.',
+			LISTA_5:'Você pode reservar a partir de qualquer lugar do mundo, a qualquer hora do dia e em qualquer dispositivo móvel.',
+			LISTA_6:'Reservas de última hora!',
+			LISTA_7:'Compras seguras.',
+		},
 	});
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
 	$translateProvider.useCookieStorage();
