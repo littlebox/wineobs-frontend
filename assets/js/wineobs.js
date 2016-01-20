@@ -1,6 +1,15 @@
 var wineobsApp = angular.module('wineobsApp', ['ngRoute', 'mm.foundation','pascalprecht.translate', 'ngCookies', 'jkuri.gallery']);
 wineobsApp.config(["$translateProvider", function ($translateProvider) {
 	$translateProvider.translations('es', {
+		WINERY: 'Bodega',
+		TOUR: 'Tours',
+		COMMENTS: 'Comentarios',
+		TOUR_LENGTH: 'Duracion',
+		SELECT_TOUR_TIME: 'Seleccione horario',
+		RESERVAR: 'Reservar',
+		ADULTS: 'Adultos',
+		MINORS: 'Menores',
+		NO_COMMENTS: 'No se han hecho comentarios sobre la bodega',
 	  INICIO: 'Inicio',
 	  TITULO_DATOS: 'Recorrer. Conocer. Disfrutar.',
 	  TITULO_FOOTER_TRANSPORTE: '*El servicio de transporte no está incluido',
@@ -59,6 +68,25 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			ROUTE_CHANGE_TEXT: 'Si continúa se borrarán las reservas realizadas.',
 			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Fecha incompleta!',
 			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Por favor ingrese una fecha',
+			RESERVES_DELETED: 'Se borraron las reservas hechas anteriormente!',
+			INVALID_DATE_TITLE: 'Fecha no válida!',
+			INVALID_DATE_TEXT: 'Por favor ingrese la fecha nuevamente.',
+			INVALID_LANGUAGE_TITLE: 'Idioma no válido!',
+			INVALID_LANGUAGE_TEXT: 'Por favor, seleccione el idioma nuevamente.',
+			INVALID_MINORS_TITLE: 'Cantidad de menores no válida!',
+			INVALID_MINORS_TEXT: 'Por favor, ingrese nuevamente la cantidad de menores.',
+			INVALID_ADULTS_TITLE: 'Cantidad de adultos no válida!',
+			INVALID_ADULTS_TEXT: 'Por favor, ingrese nuevamente la cantidad de adultos.',
+			NO_RESERVES_TITLE: 'No hay reservas',
+			NO_RESERVES_TEXT: 'Es necesario hacer una reserva para poder continuar.',
+			INVALID_DATA_TITLE: 'Datos no válidos!',
+			INVALID_DATA_TEXT: 'Por favor, revise los datos antes de continuar',
+			THANKS_CONTACT_TITLE: 'Gracias por su consulta',
+			THANKS_CONTACT_TEXT: 'En breve nos pondremos en contacto con usted.',
+			COMMENTS_ERROR_TITLE: 'Error!',
+			COMMENTS_ERROR_TEXT: 'Ya se hicieron comentarios sobre estas reservas',
+			ERROR_RESERVE_TITLE: 'Error!',
+			ERROR_RESERVE_TEXT: 'Hubo un error al intentar realizar la reserva.',
 		},
 		ABOUT_US: {
 			INICIO: 'Wineobs es una empresa joven creada en 2014 por Sofía Ruiz Cavanagh, Licenciada en Enología.\
@@ -79,8 +107,19 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 		PAYMENT_TITLE: 'Seleccione un método de pago para continuar con la compra',
 		TEXTO_MONEDA_MERCADOPAGO: 'Moneda: Pesos argentinos (ARS)',
 		TEXTO_MONEDA_PAYPAL: 'Moneda: Dólar estadounidense (USD)',
+		TOOLTIP_TITLE: 'Nueva reserva!',
+		TOOLTIP_TEXT: 'Para ver sus reservas haga click en la copa.',
 	});
 	$translateProvider.translations('en', {
+		WINERY: 'Winery',
+		TOUR: 'Tours',
+		COMMENTS: 'Comments',
+		TOUR_LENGTH: 'Length',
+		SELECT_TOUR_TIME: 'Select time',
+		RESERVAR: 'Reserve',
+		ADULTS: 'Adults',
+		MINORS: 'Minors',
+		NO_COMMENTS: 'There are not comments about this winery',
 		INICIO: 'Start',
 		TITULO_DATOS: 'Get Around. Visit. Enjoy.',
 	  TITULO_FOOTER_TRANSPORTE: '*Transport is not included',
@@ -139,6 +178,25 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			ROUTE_CHANGE_TEXT: 'If you continue, your reservations will be deleted.',
 			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Incomplete date',
 			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Please enter the date again.',
+			RESERVES_DELETED: 'The reserves were deleted',
+			INVALID_DATE_TITLE: 'The date is not valid',
+			INVALID_DATE_TEXT: 'Please enter the date again',
+			INVALID_LANGUAGE_TITLE: 'The language is not valid.',
+			INVALID_LANGUAGE_TEXT: 'Please select the language again',
+			INVALID_MINORS_TITLE: 'The number of people is not valid.',
+			INVALID_MINORS_TEXT: 'Please enter again the numer of people under 18 years old.',
+			INVALID_ADULTS_TITLE: 'The number of people is not valid.',
+			INVALID_ADULTS_TEXT: 'Please enter again the numer of people over 18 years old.',
+			NO_RESERVES_TITLE: 'There are no reservations',
+			NO_RESERVES_TEXT: 'Please make a reservation to continue',
+			INVALID_DATA_TITLE: 'The data is not valid',
+			INVALID_DATA_TEXT: 'Please check the information entered and try again.',
+			THANKS_CONTACT_TITLE: 'Thanks for your e-mail',
+			THANKS_CONTACT_TEXT: 'We will contact you soon.',
+			COMMENTS_ERROR_TITLE: 'Error!',
+			COMMENTS_ERROR_TEXT: 'The comments of this reservations have already been sent.',
+			ERROR_RESERVE_TITLE: 'Error!',
+			ERROR_RESERVE_TEXT: 'There was an error trying to make the reserves.',
 		},
 		ABOUT_US: {
 			INICIO: 'WineObs is a young company created in 2014 by Sofia Ruiz Cavanagh, wine maker. Born and raised in Mendoza, Sofia´s passions are wine making and local tourism. In this web site, Sofia not only shares her passion about wines but she also invites people to enjoy and learn about the world of wine.\
@@ -156,9 +214,20 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 		PAYMENT_TITLE: 'Select a payment method to continue shopping',
 		TEXTO_MONEDA_MERCADOPAGO: 'Currency: Argentine Peso (ARS)',
 		TEXTO_MONEDA_PAYPAL: 'Currency: USA Dollar (USD)',
+		TOOLTIP_TITLE: 'New reservation!',
+		TOOLTIP_TEXT: 'To see your reservations, click on the wine glass.',
 	});
 
 	$translateProvider.translations('pt', {
+		WINERY: 'Vinicolas',
+		TOUR: 'Tours',
+		COMMENTS: 'Comentários',
+		TOUR_LENGTH: 'Duração',
+		SELECT_TOUR_TIME: 'Seleccione hora',
+		RESERVAR: 'Reservar',
+		ADULTS: 'Adultos',
+		MINORS: 'Crianças',
+		NO_COMMENTS: 'Nenhum comentário nessa adega',
 	  INICIO: 'Começar',
 	  TITULO_DATOS: 'Percorra. Conheça. Desfrute.',
 	  TITULO_FOOTER_TRANSPORTE: '*O serviço de traslado não está incluído.',
@@ -217,16 +286,35 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			ROUTE_CHANGE_TEXT: 'Se você continuar as reservas realizadas serão apagadas.',
 			FORM_DATA_INCOMPLETE_DATE_TITLE: 'Data incompleta!',
 			FORM_DATA_INCOMPLETE_DATE_TEXT: 'Por favor, insira uma data.',
+			RESERVES_DELETED: 'Reservas borradas',
+			INVALID_DATE_TITLE: 'Data inválida!',
+			INVALID_DATE_TEXT: 'Por favor, indique a data de novamente.',
+			INVALID_LANGUAGE_TITLE: 'Idioma inválido!',
+			INVALID_LANGUAGE_TEXT: 'Por favor, selecione o idioma novamente.',
+			INVALID_MINORS_TITLE: 'Número de menores inválido',
+			INVALID_MINORS_TEXT: 'Por favor, indique o número de crianças novamente.',
+			INVALID_ADULTS_TITLE: 'Número de adultos inválido',
+			INVALID_ADULTS_TEXT: 'Por favor, indique o número de adultos novamente.',
+			NO_RESERVES_TITLE: 'Não há reservas!',
+			NO_RESERVES_TEXT: 'Precisa fazer uma reserva para continuar.',
+			INVALID_DATA_TITLE: 'Dados inválidos!',
+			INVALID_DATA_TEXT: 'Por favor verifique os dados antes de continuar',
+			THANKS_CONTACT_TITLE: 'Obrigado por sua consulta!',
+			THANKS_CONTACT_TEXT: 'Logo entraremos em contato com você.',
+			COMMENTS_ERROR_TITLE: 'Erro!',
+			COMMENTS_ERROR_TEXT: 'Foram efetuados comentários sobre estas reservas.',
+			ERROR_RESERVE_TITLE: 'Error!',
+			ERROR_RESERVE_TEXT: 'Houve um erro ao tentar fazer a reserva',
 		},
 		ABOUT_US: {
 			INICIO: 'Windows é uma empresa jovem, criada em 2014 por Sofía Ruiz Cavanagh, formado em enologia. Sendo originalmente da cidade de Mendoza e muito interessado em viticultura e do turismo regional, sua missão é oferecer uma maneira diferente de obcecado com vinho e vinícolas.\
 			Com o objetivo de fornecer provas de amantes do vinho de acessibilidade, passeios e outras atividades relacionadas ao turismo de vinhos, com WineObs sugerir um site que reúne toda a informação turística relevante de um grande número de vinícolas. Assim, os visitantes podem planejar forma simples e rápida um dia extraordinário de degustações e passeios. O que distingue WineObs é oferecer reservas em tempo real, ao mesmo preço a que os serviços são os mesmos em cada um dos diferentes vinícolas.\
 			Além disso, o site também serve como um novo canal de comunicação que as vinícolas podem utilizar para oferecer e promover os seus serviços, contribuindo assim para a diversificação das vinícolas visitadas, eo crescimento e consolidação da marca "vinho argentino." Use WineObs implica benefícios! Gerencie sua reserva connosco em passos rápidos e fáceis.',
-			TITULO_LISTA: 'LIVRO COM WINEOBS',
-			LISTA_1: 'Todas las bodegas en un mismo sitio.',
-			LISTA_2:'Gerenciando reservas on-line. Nenhuma confirmação ou tempos de espera!',
-			LISTA_3:'O mesmo preço para reservar directamente em cada uma das vinícolas associadas.',
-			LISTA_4:'Comentários e pontuações reais dos clientes já testados janelas e vinícolas visitadas.',
+			TITULO_LISTA: 'RESERVAR CON WINEOBS',
+			LISTA_1: 'Todas as vinícolas em um só lugar',
+			LISTA_2:'Gerenciando reservas on-line. Sem confirmação ou tempos de espera!',
+			LISTA_3:'O mesmo preço para reservar diretamente em cada uma das vinícolas associadas.',
+			LISTA_4:'Comentários e pontuações reais dos clientes já e vinícolas visitadas.',
 			LISTA_5:'Você pode reservar a partir de qualquer lugar do mundo, a qualquer hora do dia e em qualquer dispositivo móvel.',
 			LISTA_6:'Reservas de última hora!',
 			LISTA_7:'Compras seguras.',
@@ -234,6 +322,8 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 		PAYMENT_TITLE: 'Selecione um método de pagamento para continuar a fazer compras',
 		TEXTO_MONEDA_MERCADOPAGO: 'Moneda: Pesos argentinos (ARS)',
 		TEXTO_MONEDA_PAYPAL: 'Moneda: Dólar estadounidense (USD)',
+		TOOLTIP_TITLE: 'Nova reserva!',
+		TOOLTIP_TEXT: 'Para ver as suas reservas, clique na taça de vinho',
 	});
 	// var lg = (window.location.search.) ? regex.exec(window.location.search)[1] : window.navigator.language.split('-')[0]
 	$translateProvider.useCookieStorage();
@@ -607,7 +697,7 @@ wineobsApp.controller('reserveFormDataController', ["$scope", "$rootScope", "$lo
 
 	if(reservation.getReservesToMake().length){
 		swal({
-			text: 'Se borraron las reservas hechas anteriormente!',
+			text: $filter('translate')('alerts.RESERVES_DELETED'),
 			title: 'Info.',
 			type: 'info',
 		});
@@ -654,34 +744,42 @@ wineobsApp.controller('reserveFormDataController', ["$scope", "$rootScope", "$lo
 		date = new Date(a[2],a[1] - 1,a[0]);
 
 		if(date < Date.now()){
+			var title = $filter('translate')('alerts.INVALID_DATE_TITLE')
+			var text = $filter('translate')('alerts.INVALID_DATE_TEXT')
 			swal({
-				title:'Fecha ingresada invalida!',
-				text:'Por favor corrija la fecha.',
+				title: title,
+				text: text,
 				type: 'warning',
 			})
 			return;
 		}
 
 		if($scope.formData.language == ''){
+			var text = $filter('translate')('alerts.INVALID_LANGUAGE_TEXT');
+			var title = $filter('translate')('alerts.INVALID_LANGUAGE_TITLE');
 			swal({
-				title:'Idioma incorrecto!',
-				text:'Por favor, corrija el idioma.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 			return;
 		};
 		if(parseInt($scope.formData.minors,10) < 0 ){
+			var text = $filter('translate')('alerts.INVALID_MINORS_TEXT');
+			var title = $filter('translate')('alerts.INVALID_MINORS_TITLE');
 			swal({
-				title:'Cantidad de menores incorrecta!',
-				text:'Por favor, corrija la cantidad de menores.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 			return;
 		};
 		if(parseInt($scope.formData.adults,10) < 1 ){
+			var text = $filter('translate')('alerts.INVALID_ADULTS_TEXT');
+			var title = $filter('translate')('alerts.INVALID_ADULTS_TITLE');
 			swal({
-				title:'Cantidad de adultos incorrecta!',
-				text:'Por favor, corrija la cantidad de adultos.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 			return;
@@ -870,9 +968,11 @@ wineobsApp
 		if($scope.reservesToMake.length > 0){
 			$location.path('/datosPersonales');
 		}else{
+			var text = $filter('translate')('alerts.NO_RESERVES_TEXT');
+			var title = $filter('translate')('alerts.NO_RESERVES_TITLE');
 			swal({
-				title:'Ninguna reserva!',
-				text:'Por favor, haga una reserva antes de continuar.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 		}
@@ -911,7 +1011,7 @@ wineobsApp
 	}
 }]);
 
-wineobsApp.controller('personalFormDataController', ["$scope", "$rootScope", "reservation", function ($scope,$rootScope,reservation){
+wineobsApp.controller('personalFormDataController', ["$scope", "$rootScope", "$filter", "reservation", function ($scope, $rootScope, $filter, reservation){
 	$rootScope.bodyClass = 'personal-data';
 	$scope.formPersonalData = {
 		country: 'AR'
@@ -945,16 +1045,20 @@ wineobsApp.controller('personalFormDataController', ["$scope", "$rootScope", "re
 				reservation.setPersonalData($scope.formPersonalData);
 				reservation.sendReservesToMake();
 			}else{
+				var text = $filter('translate')('alerts.NO_RESERVES_TEXT');
+				var title = $filter('translate')('alerts.NO_RESERVES_TITLE');
 				swal({
-					title:'Ninguna reserva!',
-					text:'Por favor, haga una reserva antes de continuar.',
+					title: title,
+					text: text,
 					type: 'warning',
 				});
 			}
 		} catch (e) {
+			var text = $filter('translate')('alerts.INVALID_DATA_TEXT');
+			var title = $filter('translate')('alerts.INVALID_DATA_TITLE');
 			swal({
-				title:'Datos no validos!',
-				text:'Por favor, revise los datos antes de continuar.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 		} finally {
@@ -978,9 +1082,11 @@ wineobsApp.controller('contactController', ["$scope", "$rootScope", function ($s
 			$('[ng-model*="user"]').addClass('ng-touched')
 			var url = $rootScope.apiUrl+'/send_email/'
 			$.post(url, {mail: $scope.mail}, function(e){
+				var text = $filter('translate')('alerts.THANKS_CONTACT_TEXT');
+				var title = $filter('translate')('alerts.THANKS_CONTACT_TITLE');
 				swal({
-					text: 'En breve nos pondremos en contacto con Usted.',
-					title: 'Gracias por su consulta!',
+					title: title,
+					text: text,
 					type: 'success',
 				},function(){
 					window.location.href = '/';
@@ -995,12 +1101,15 @@ wineobsApp
 			'new-reserve':'end-new-reserve',
 		})
 	}])
-	.controller('cartController', ["$scope", "$rootScope", "reservation", function ($scope,$rootScope, reservation){
+	.controller('cartController', ["$scope", "$rootScope", "reservation", "$filter", function ($scope,$rootScope, reservation, $filter){
 		$scope.reservationQty = 0; //reservation.getReservesToMake().length;
 		$scope.cartSlided = false;
 		$scope.reservations = reservation.getReservesToMake();
 
-		$scope.newReserveTooltip = '<span class="icon-wineobs-cross"></span><h1>Nueva Reserva!</h1><p>Para ver sus reservas haga click en la copa</p>'
+		var title = $filter('translate')('TOOLTIP_TITLE');
+		var text = $filter('translate')('TOOLTIP_TEXT');
+
+		$scope.newReserveTooltip = '<span class="icon-wineobs-cross"></span><h1>'+title+'</h1><p>'+text+'</p>'
 
 		$scope.$on('updateReservesToMake', function(){
 			$scope.reservationQty = reservation.getReservesToMake().length;
@@ -1181,9 +1290,11 @@ wineobsApp.controller('commentsController', ["$scope", "$rootScope", "$http", fu
 	}).then(function successCallback(response) {
 		$scope.wineriesComment = response.data;
 	}, function errorCallback(response) {
-		swal({
-			title: 'Error!',
-			text: 'Código incorrecto o ya se hicieron comentarios para estas reservas.',
+			var text = $filter('translate')('alerts.COMMENTS_ERROR_TEXT');
+			var title = $filter('translate')('alerts.COMMENTS_ERROR_TITLE');
+			swal({
+				title: title,
+				text: text,
 		},function(){
 			window.location.href = '';
 		})
@@ -1352,7 +1463,12 @@ wineobsApp.service('reservation',["$rootScope", "$http", "$location", "$filter",
 				}
 			}).
 			error(function(data, status, headers, config) {
-				swal('Hubo un error al intentar reservar','Error','error');
+				var text = $filter('translate')('alerts.ERROR_RESERVE_TEXT');
+				var title = $filter('translate')('alerts.ERROR_RESERVE_TITLE');
+				swal({
+					title: title,
+					text: text,
+				});
 			});
 	}
 

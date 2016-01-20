@@ -154,13 +154,13 @@
 						<div class="small-3 column tabs-selector">
 							<ul class="tabs vertical">
 								<li ng-class="{ 'active': infoActive }" class="tab-title" ng-click="setReservationModalActiveTab('info')">
-									<a>Bodega</a>
+									<a translate="WINERY">Bodega</a>
 								</li>
 								<li ng-class="{ 'active': toursActive }" class="tab-title" ng-click="setReservationModalActiveTab('tours')">
-									<a>Tours</a>
+									<a translate="TOUR">Tours</a>
 								</li>
 								<li ng-class="{ 'active': commentsActive }" class="tab-title" ng-click="setReservationModalActiveTab('comments')">
-									<a>Comentarios</a>
+									<a translate="COMMENTS">Comentarios</a>
 								</li>
 							</ul>
 							<div class="image">
@@ -193,14 +193,14 @@
 														<div class="winery-reserve">
 
 															<div class="winery-length">
-																<div class="winery-length-title">Duracion</div>
+																<div class="winery-length-title" translate="TOUR_LENGTH">Duracion</div>
 																<div class="winery-length-grid">
 																	<div class="winery-hour">{{tour.length}} hs</div>
 																</div>
 															</div>
 
 															<div class="winery-hours">
-																<div class="winery-hours-title">Seleccione Horario</div>
+																<div class="winery-hours-title" translate="SELECT_TOUR_TIME">Seleccione Horario</div>
 																<div class="winery-hours-grid">
 																	<div ng-repeat="t in tour.Time" class="winery-hour" ng-class="{'active': isActiveHour(t.id)}" ng-click="setReservationHour(t.id)">
 																		{{t.hour}}
@@ -212,11 +212,11 @@
 																<div class="flex f1">
 																	<div class="flex f1 fcolumn">
 																		<div class="price">${{tour.price}}</div>
-																		<div class="text">adultos</div>
+																		<div class="text" translate="ADULTS">adultos</div>
 																	</div>
 																	<div class="flex f1 fcolumn">
 																		<div class="price">${{tour.minors_price}}</div>
-																		<div class="text">menores</div>
+																		<div class="text" translate="MINORS">menores</div>
 																	</div>
 																</div>
 															</div>
@@ -224,7 +224,7 @@
 																<div>Precio: ${{tour.minors_price * formData.quota.minors + tour.price * formData.quota.adults}}</div>
 															</div>
 															<div class="winery-button f1">
-																<a class="wineobs-button" ng-click="makeReserve()">reservar</a>
+																<a class="wineobs-button" ng-click="makeReserve()" translate="RESERVAR">reservar</a>
 															</div>
 														</div>
 													</div>
@@ -234,7 +234,7 @@
 									</div>
 								</div>
 								<div ng-class="{ 'active': commentsActive }" class="content info-comments" id="comments">
-									<div ng-show="!w.Review.length">
+									<div ng-show="!w.Review.length" translate="NO_COMMENTS">
 										No se han hecho comentarios sobre la bodega
 									</div>
 									<div class="comments" ng-repeat="review in w.Review">

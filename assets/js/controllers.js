@@ -63,7 +63,7 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 
 	if(reservation.getReservesToMake().length){
 		swal({
-			text: 'Se borraron las reservas hechas anteriormente!',
+			text: $filter('translate')('alerts.RESERVES_DELETED'),
 			title: 'Info.',
 			type: 'info',
 		});
@@ -110,34 +110,42 @@ wineobsApp.controller('reserveFormDataController', function ($scope,$rootScope,$
 		date = new Date(a[2],a[1] - 1,a[0]);
 
 		if(date < Date.now()){
+			var title = $filter('translate')('alerts.INVALID_DATE_TITLE')
+			var text = $filter('translate')('alerts.INVALID_DATE_TEXT')
 			swal({
-				title:'Fecha ingresada invalida!',
-				text:'Por favor corrija la fecha.',
+				title: title,
+				text: text,
 				type: 'warning',
 			})
 			return;
 		}
 
 		if($scope.formData.language == ''){
+			var text = $filter('translate')('alerts.INVALID_LANGUAGE_TEXT');
+			var title = $filter('translate')('alerts.INVALID_LANGUAGE_TITLE');
 			swal({
-				title:'Idioma incorrecto!',
-				text:'Por favor, corrija el idioma.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 			return;
 		};
 		if(parseInt($scope.formData.minors,10) < 0 ){
+			var text = $filter('translate')('alerts.INVALID_MINORS_TEXT');
+			var title = $filter('translate')('alerts.INVALID_MINORS_TITLE');
 			swal({
-				title:'Cantidad de menores incorrecta!',
-				text:'Por favor, corrija la cantidad de menores.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 			return;
 		};
 		if(parseInt($scope.formData.adults,10) < 1 ){
+			var text = $filter('translate')('alerts.INVALID_ADULTS_TEXT');
+			var title = $filter('translate')('alerts.INVALID_ADULTS_TITLE');
 			swal({
-				title:'Cantidad de adultos incorrecta!',
-				text:'Por favor, corrija la cantidad de adultos.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 			return;
@@ -326,9 +334,11 @@ wineobsApp
 		if($scope.reservesToMake.length > 0){
 			$location.path('/datosPersonales');
 		}else{
+			var text = $filter('translate')('alerts.NO_RESERVES_TEXT');
+			var title = $filter('translate')('alerts.NO_RESERVES_TITLE');
 			swal({
-				title:'Ninguna reserva!',
-				text:'Por favor, haga una reserva antes de continuar.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 		}
@@ -367,7 +377,7 @@ wineobsApp
 	}
 });
 
-wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,reservation){
+wineobsApp.controller('personalFormDataController', function ($scope, $rootScope, $filter, reservation){
 	$rootScope.bodyClass = 'personal-data';
 	$scope.formPersonalData = {
 		country: 'AR'
@@ -401,16 +411,20 @@ wineobsApp.controller('personalFormDataController', function ($scope,$rootScope,
 				reservation.setPersonalData($scope.formPersonalData);
 				reservation.sendReservesToMake();
 			}else{
+				var text = $filter('translate')('alerts.NO_RESERVES_TEXT');
+				var title = $filter('translate')('alerts.NO_RESERVES_TITLE');
 				swal({
-					title:'Ninguna reserva!',
-					text:'Por favor, haga una reserva antes de continuar.',
+					title: title,
+					text: text,
 					type: 'warning',
 				});
 			}
 		} catch (e) {
+			var text = $filter('translate')('alerts.INVALID_DATA_TEXT');
+			var title = $filter('translate')('alerts.INVALID_DATA_TITLE');
 			swal({
-				title:'Datos no validos!',
-				text:'Por favor, revise los datos antes de continuar.',
+				title: title,
+				text: text,
 				type: 'warning',
 			});
 		} finally {
@@ -434,9 +448,11 @@ wineobsApp.controller('contactController', function ($scope,$rootScope){
 			$('[ng-model*="user"]').addClass('ng-touched')
 			var url = $rootScope.apiUrl+'/send_email/'
 			$.post(url, {mail: $scope.mail}, function(e){
+				var text = $filter('translate')('alerts.THANKS_CONTACT_TEXT');
+				var title = $filter('translate')('alerts.THANKS_CONTACT_TITLE');
 				swal({
-					text: 'En breve nos pondremos en contacto con Usted.',
-					title: 'Gracias por su consulta!',
+					title: title,
+					text: text,
 					type: 'success',
 				},function(){
 					window.location.href = '/';
@@ -451,12 +467,15 @@ wineobsApp
 			'new-reserve':'end-new-reserve',
 		})
 	})
-	.controller('cartController', function ($scope,$rootScope, reservation){
+	.controller('cartController', function ($scope,$rootScope, reservation, $filter){
 		$scope.reservationQty = 0; //reservation.getReservesToMake().length;
 		$scope.cartSlided = false;
 		$scope.reservations = reservation.getReservesToMake();
 
-		$scope.newReserveTooltip = '<span class="icon-wineobs-cross"></span><h1>Nueva Reserva!</h1><p>Para ver sus reservas haga click en la copa</p>'
+		var title = $filter('translate')('TOOLTIP_TITLE');
+		var text = $filter('translate')('TOOLTIP_TEXT');
+
+		$scope.newReserveTooltip = '<span class="icon-wineobs-cross"></span><h1>'+title+'</h1><p>'+text+'</p>'
 
 		$scope.$on('updateReservesToMake', function(){
 			$scope.reservationQty = reservation.getReservesToMake().length;
@@ -637,9 +656,11 @@ wineobsApp.controller('commentsController', function($scope,$rootScope,$http){
 	}).then(function successCallback(response) {
 		$scope.wineriesComment = response.data;
 	}, function errorCallback(response) {
-		swal({
-			title: 'Error!',
-			text: 'Código incorrecto o ya se hicieron comentarios para estas reservas.',
+			var text = $filter('translate')('alerts.COMMENTS_ERROR_TEXT');
+			var title = $filter('translate')('alerts.COMMENTS_ERROR_TITLE');
+			swal({
+				title: title,
+				text: text,
 		},function(){
 			window.location.href = '';
 		})

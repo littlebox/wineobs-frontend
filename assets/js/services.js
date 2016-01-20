@@ -137,7 +137,12 @@ wineobsApp.service('reservation',function($rootScope, $http, $location, $filter)
 				}
 			}).
 			error(function(data, status, headers, config) {
-				swal('Hubo un error al intentar reservar','Error','error');
+				var text = $filter('translate')('alerts.ERROR_RESERVE_TEXT');
+				var title = $filter('translate')('alerts.ERROR_RESERVE_TITLE');
+				swal({
+					title: title,
+					text: text,
+				});
 			});
 	}
 
