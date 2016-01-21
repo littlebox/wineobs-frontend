@@ -234,9 +234,9 @@
 									</div>
 								</div>
 								<div ng-class="{ 'active': commentsActive }" class="content info-comments" id="comments">
-									<div ng-show="!w.Review.length" translate="NO_COMMENTS">
+									<p class="no-comments" ng-show="!w.Review.length" translate="NO_COMMENTS">
 										No se han hecho comentarios sobre la bodega
-									</div>
+									</p>
 									<div class="comments" ng-repeat="review in w.Review">
 										<blockquote>
 											{{review.review}}

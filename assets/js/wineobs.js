@@ -87,6 +87,8 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			COMMENTS_ERROR_TEXT: 'Ya se hicieron comentarios sobre estas reservas',
 			ERROR_RESERVE_TITLE: 'Error!',
 			ERROR_RESERVE_TEXT: 'Hubo un error al intentar realizar la reserva.',
+			WINERIES_NOT_FOUND_TITLE: 'No se encontro ninguna bodega disponible!',
+			WINERIES_NOT_FOUND_TEXT: 'Por favor, realice una nueva busqueda',
 		},
 		ABOUT_US: {
 			INICIO: 'Wineobs es una empresa joven creada en 2014 por Sofía Ruiz Cavanagh, Licenciada en Enología.\
@@ -197,6 +199,8 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			COMMENTS_ERROR_TEXT: 'The comments of this reservations have already been sent.',
 			ERROR_RESERVE_TITLE: 'Error!',
 			ERROR_RESERVE_TEXT: 'There was an error trying to make the reserves.',
+			WINERIES_NOT_FOUND_TITLE: 'There is not an available winery!',
+			WINERIES_NOT_FOUND_TEXT: 'Please, make a new search',
 		},
 		ABOUT_US: {
 			INICIO: 'WineObs is a young company created in 2014 by Sofia Ruiz Cavanagh, wine maker. Born and raised in Mendoza, Sofia´s passions are wine making and local tourism. In this web site, Sofia not only shares her passion about wines but she also invites people to enjoy and learn about the world of wine.\
@@ -305,6 +309,8 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			COMMENTS_ERROR_TEXT: 'Foram efetuados comentários sobre estas reservas.',
 			ERROR_RESERVE_TITLE: 'Error!',
 			ERROR_RESERVE_TEXT: 'Houve um erro ao tentar fazer a reserva',
+			WINERIES_NOT_FOUND_TITLE: 'Adega disponível não é encontrado!',
+			WINERIES_NOT_FOUND_TEXT: 'Por favor faça uma nova pesquisa',
 		},
 		ABOUT_US: {
 			INICIO: 'Windows é uma empresa jovem, criada em 2014 por Sofía Ruiz Cavanagh, formado em enologia. Sendo originalmente da cidade de Mendoza e muito interessado em viticultura e do turismo regional, sua missão é oferecer uma maneira diferente de obcecado com vinho e vinícolas.\
@@ -827,6 +833,16 @@ wineobsApp
 	$http.defaults.useXDomain = true;
 	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate+'/adults:'+formData.quota.adults+'/minors:'+formData.quota.minors).
 		success(function(data, status, headers, config) {
+			if(!data.length){
+				title = $filter('translate')('alerts.WINERIES_NOT_FOUND_TITLE');
+				text = $filter('translate')('alerts.WINERIES_NOT_FOUND_TEXT');
+				swal({
+					title: title,
+					text:  text,
+				},function(){
+					window.location.pathname = '/';
+				})
+			};
 			$scope.wineries = data;
 			$scope.cards = data; //$scope.reservesToMake.concat(data);
 			Wineobs.initResults();

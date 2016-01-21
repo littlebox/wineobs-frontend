@@ -193,6 +193,16 @@ wineobsApp
 	$http.defaults.useXDomain = true;
 	$http.get($rootScope.apiUrl + '/wineries/get/language:'+language+'/date:'+date.serverDate+'/adults:'+formData.quota.adults+'/minors:'+formData.quota.minors).
 		success(function(data, status, headers, config) {
+			if(!data.length){
+				title = $filter('translate')('alerts.WINERIES_NOT_FOUND_TITLE');
+				text = $filter('translate')('alerts.WINERIES_NOT_FOUND_TEXT');
+				swal({
+					title: title,
+					text:  text,
+				},function(){
+					window.location.pathname = '/';
+				})
+			};
 			$scope.wineries = data;
 			$scope.cards = data; //$scope.reservesToMake.concat(data);
 			Wineobs.initResults();
