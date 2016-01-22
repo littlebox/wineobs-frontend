@@ -212,7 +212,7 @@ wineobsApp.config(function ($translateProvider) {
 			LISTA_3: 'The same price as if booked in the winery per se.',
 			LISTA_4: 'Comments and reviews from clients.',
 			LISTA_5: 'Reservations can be made anytime, anywhere and from any device.',
-			LISTA_6: 'Las minute reservations!',
+			LISTA_6: 'Last minute reservations!',
 			LISTA_7: 'Safe purchase.',
 		},
 		PAYMENT_TITLE: 'Select a payment method to continue shopping',
