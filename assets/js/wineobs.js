@@ -1137,6 +1137,30 @@ wineobsApp
 					},4000)
 				},0)
 			}
+			if($scope.reservationQty > 3){
+				if(!window.alert4){
+					var text = $filter('translate')('INFOBOX_DISTANCIA');
+					var title = $filter('translate')('alerts.ROUTE_CHANGE_TITLE');
+					swal({
+						title: title,
+						text: text,
+						type: 'warning',
+					});
+					window.alert4 = true;
+				}
+			}
+			if($scope.reservationQty == 2){
+				if(!window.alert2){
+					var text = $filter('translate')('INFOBOX_RECOMENDACION');
+					var title = $filter('translate')('alerts.ROUTE_CHANGE_TITLE');
+					swal({
+						title: title,
+						text: text,
+						type: 'warning',
+					});
+				}
+				window.alert2 = true;
+			}
 		});
 
 	$scope.cartSlide = function(){
