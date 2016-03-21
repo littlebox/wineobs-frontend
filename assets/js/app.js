@@ -574,4 +574,23 @@ wineobsApp.config(function ($translateProvider) {
 	}
 	window.Wineobs = Wineobs;
 
+
 })(window)
+
+function checkScrollTabs(){
+  hContainer = $('div.modal-content').height();
+  hScroller  = $('p.winery-description').height();
+  if(hScroller > hContainer){
+    $('p.winery-description').closest('.tabs-content').css('overflow-y','scroll')
+  }else{
+    $('p.winery-description').closest('.tabs-content').css('overflow-y','visible')
+  }
+}
+
+$(document).ready(function(){
+  checkScrollTabs()
+})
+
+$(window).on('resize', function(){
+  checkScrollTabs()
+})
