@@ -53,6 +53,10 @@ wineobsApp.config(function($routeProvider, $locationProvider){
 			templateUrl: '/view/aboutus.html',
 		})
 
+		.when('/terminos',{
+			templateUrl: '/view/terms.html',
+		})
+
 		.otherwise('/datos',{
 			templateUrl: '/view/reserve-form-data.html',
 		})
