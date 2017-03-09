@@ -1191,11 +1191,11 @@ body.results{
 						img{
 							backface-visibility: hidden;
 							transform: rotateY(180deg);
-							transition: transform 500ms ease-in-out;
+							// transition: transform 500ms ease-in-out;
 						}
 						.winery-name{
 							transform: rotateY(0deg) !important;
-							transition: transform 500ms ease-in-out;
+							// transition: transform 500ms ease-in-out;
 						}
 					}
 					.winery-buttons{

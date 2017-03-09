@@ -5147,11 +5147,13 @@ body.results {
         body.results .step-content .wineries .winery:hover .winery-logo img, body.results .step-content .wineries .winery.highlight .winery-logo img {
           backface-visibility: hidden;
           transform: rotateY(180deg);
-          transition: transform 500ms ease-in-out; }
+          /*transition: transform 500ms ease-in-out;*/
+        }
         /* line 1196, ../../scss/app.scss */
         body.results .step-content .wineries .winery:hover .winery-logo .winery-name, body.results .step-content .wineries .winery.highlight .winery-logo .winery-name {
           transform: rotateY(0deg) !important;
-          transition: transform 500ms ease-in-out; }
+          /*transition: transform 500ms ease-in-out;*/
+        }
         /* line 1201, ../../scss/app.scss */
         body.results .step-content .wineries .winery:hover .winery-buttons, body.results .step-content .wineries .winery.highlight .winery-buttons {
           transform: scale(1.2);
