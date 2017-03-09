@@ -378,7 +378,7 @@ wineobsApp.config(["$translateProvider", function ($translateProvider) {
 			// });
 			$('.datedropper').fdatepicker({
 				format: 'dd.mm.yyyy',
-				startDate: new Date(Date.now()+(1000*3600*24)),
+				startDate: new Date(Date.now()),//+(1000*3600*24)),
 				language: 'es',
 			});
 		},
