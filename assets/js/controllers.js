@@ -552,7 +552,28 @@ wineobsApp
 	})
 });
 
-wineobsApp.controller('reservationModalController', function ($scope,$rootScope, reservation){
+wineobsApp.controller('reservationModalController', function ($scope,$rootScope,$modal, reservation){
+
+	$scope.modalGallery = function(winery){
+		var modalInstance = $modal.open({
+			templateUrl: 'view/modalGallery.html',
+			controller: 'ModalGalleryController',
+			windowClass: 'fullscreenModal',
+			backdrop: false,
+			resolve: {
+				wineryId: function(){
+					return (winery.Winery.has_logo) ? winery.Winery.id: null;
+				},
+				images: function () {
+					imgs = winery.Image.map(function(i){
+						return {thumb: $rootScope.apiUrl+'/img/wineries/'+i.id+'.jpg', img: $rootScope.apiUrl+'/img/wineries/'+i.id+'.jpg', description: winery.Winery.name}
+					});
+					return imgs;
+				}
+			}
+		})
+	}
+
 	$scope.reservationModal = document.querySelector('footer .modals .modal-info-winery');
 	$scope.w = null;
 	$scope.activeTour = '';
