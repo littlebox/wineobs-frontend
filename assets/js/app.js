@@ -3,7 +3,7 @@ wineobsApp.config(function ($translateProvider) {
 	$translateProvider.translations('es', {
 		WINERY: 'Bodega',
 		TOUR: 'Tours',
-		GALLERY: 'Galeria de fotos',
+		GALLERY: 'Fotos',
 		COMMENTS: 'Comentarios',
 		TOUR_LENGTH: 'Duracion',
 		SELECT_TOUR_TIME: 'Seleccione horario',
@@ -116,7 +116,7 @@ wineobsApp.config(function ($translateProvider) {
 	$translateProvider.translations('en', {
 		WINERY: 'Winery',
 		TOUR: 'Tours',
-		GALLERY: 'Gallery',
+		GALLERY: 'Pictures',
 		COMMENTS: 'Comments',
 		TOUR_LENGTH: 'Length',
 		SELECT_TOUR_TIME: 'Select time',
@@ -227,7 +227,7 @@ wineobsApp.config(function ($translateProvider) {
 	$translateProvider.translations('pt', {
 		WINERY: 'Vinicolas',
 		TOUR: 'Tours',
-		GALLERY: 'As fotos',
+		GALLERY: 'Fotos',
 		COMMENTS: 'Comentários',
 		TOUR_LENGTH: 'Duração',
 		SELECT_TOUR_TIME: 'Seleccione hora',
